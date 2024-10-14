@@ -1,0 +1,191 @@
+{
+  "header": {
+    "personal": "Para você",
+    "business": "Para sua empresa",
+    "cta": "Entre em contato",
+    "nav": {
+      "home": "Home",
+      "services": "Serviços",
+      "about": "Sobre",
+      "events": "Eventos e Palestras",
+      "blog": "blog"
+    }
+  },
+  "home": {
+    "transition": [
+      "Desenvolvendo",
+      "Aconselhando",
+      "Ajudando",
+      "Encorajando",
+      "Incentivando"
+    ],
+    "subtitle": "líderes de sucesso com equilíbrio entre negócios, família e propósito",
+    "bible": {
+      "content": "Bem-aventurado o homem que suporta a provação; porque, depois de aprovado, receberá a coroa da vida, que o Senhor prometeu aos que o amam.",
+      "verse": "Tiago 1:12"
+    },
+    "sayings": {
+      "content": "Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos.",
+      "verse": "Provérbios 16:3"
+    },
+    "about": {
+      "title": "Um propósito e uma missão",
+      "subtitle": "Douglas Borges, Psicologo, Marido, Pai e Cristão",
+      "description": [
+        "I am glad that you have made it here to send a distress signal, and inform the Senate that all on board were killed. Dantooine.  I’m not going to Alderaan. I really got to go.",
+        "But that to me. Send a distress signal, and inform the Senate that all on board were killed. Dantooine. They’re on Dantooine. The plans you refer to will soon be back in our hands. Alderaan? I’m not going to Alderaan. I got to go home."
+      ]
+    },
+    "services": {
+      "title": "Meus serviços",
+      "items": [
+        {
+          "title": "1:1",
+          "description": ""
+        },
+        {
+          "title": "Coaching Executivo",
+          "description": "Desenvolvimento de liderança com base em princípios bíblicos, fortalecendo decisões empresariais com propósito e resiliência."
+        },
+        {
+          "title": "Programas de Inteligência Emocional para Equipes",
+          "description": "Aumente a coesão e o desempenho da sua equipe, promovendo um ambiente de trabalho ético e equilibrado."
+        },
+        {
+          "title": "Aconselhamento para Alta Performance Pessoal e Profissional",
+          "description": "Um acompanhamento para empresários que precisam gerenciar o estresse e maximizar seu desempenho."
+        },
+        {
+          "title": "Workshops In-Company",
+          "description": " Treinamentos práticos e baseados em valores cristãos para capacitar líderes e equipes em inteligência emocional, produtividade e gestão de conflitos."
+        },
+        {
+          "title": "Consultoria para o Equilíbrio Vida-Trabalho",
+          "description": "Apoio na criação de uma cultura organizacional onde o bem-estar pessoal, familiar e empresarial se alinham para melhorar o desempenho a longo prazo."
+        }
+      ]
+    },
+    "counting": [
+      {
+        "title": "+1000",
+        "description": "Pessoas atendidas"
+      },
+      {
+        "title": "+20",
+        "description": "Anos de experiencia"
+      },
+      {
+        "title": "+50",
+        "description": "Palestras"
+      },
+      {
+        "title": "+20",
+        "description": "Empresas atendidas"
+      }
+    ],
+    "person": {
+      "fellings": [
+        {
+          "icon": "",
+          "title": "Sentido da Vida",
+          "description": "Encontre Sentido e Propósito",
+          "text": "Descubra o que realmente importa na sua vida, identificando valores e motivações que dão significado às suas ações. A Logoterapia ajuda você a encontrar clareza e direção para uma vida mais plena e satisfatória."
+        },
+        {
+          "icon": "",
+          "title": "Vazio Existencial",
+          "description": "Encontre Sentido e Propósito",
+          "text": "Imagine despertar todos os dias sabendo que há um propósito maior na sua vida. Imagine superar a ansiedade, o burnout e a tristeza com um novo sentido que te motiva e inspira."
+        },
+        {
+          "icon": "",
+          "title": "Burnout",
+          "description": "Recupere a Paixão pelo Trabalho",
+          "text": "Redefina seu papel profissional e reencontre a motivação. Ao alinhar seu propósito pessoal aos objetivos de carreira, você transforma o estresse em energia positiva e recupera a satisfação no trabalho."
+        },
+        {
+          "icon": "",
+          "title": "Transtornos de Ansiedade",
+          "description": "Redução de Ansiedade",
+          "text": "Aprenda a lidar com a ansiedade ao entender suas causas e encontrar formas saudáveis de enfrentá-la. A Psicoterapia oferece ferramentas para enfrentar os desafios com mais confiança e tranquilidade."
+        },
+        {
+          "icon": "",
+          "title": "Depressão",
+          "description": "Superação de Apatia e Depressão",
+          "text": "Compreenda as raízes dos sentimentos de apatia e tristeza profunda. Ao reformular experiências dolorosas, você ganha uma nova perspectiva e renova a vontade de viver, superando a paralisia emocional."
+        },
+        {
+          "icon": "",
+          "title": "Relacionamentos",
+          "description": "Ame-se primeiro",
+          "text": "Se alguma dessas situações soa familiar, saiba que você não está sozinho. Muitas pessoas enfrentam o mesmo desafio, mas poucas conhecem o caminho para superá-lo. É aqui que a Logoterapia pode ajudar."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Receba Dicas Exclusivas para Liderança e Equilíbrio de Vida",
+      "description": "Reflexões inspiradoras, insights práticos sobre inteligência emocional, liderança estratégica com propósito e como alcançar equilíbrio entre sua vida pessoal, familiar e empresarial diretamente no seu e-mail."
+    },
+    "copy": "Todos os direitos reservados."
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "questions": [
+      {
+        "type": ["company", "person"],
+        "title": "É pertinente trabalhar questões de trabalho e família com o mesmo profissional?",
+        "description": "Não só pertinente , mas indicado. Os princípios que mantêm relações saudáveis são os mesmos dentro de todos os sistemas que o indivíduo ocupa. Leis como ordem, hierarquia, equilíbrio entre dar e receber e pertencimento, estão presentes em todas as nossas relações com pequenas especificidades em relação à postura que o cliente deve apresentar. Geralmente a mudança da postura e a intervenção em qualquer dos 3 pilares citados anteriormente, influenciam os demais sistemas, sendo assim, uma fonte criadora de equilíbrio múltiplo em todas as áreas de sua visa."
+      },
+      {
+        "type": ["company"],
+        "title": "Psicólogas(os) podem utilizar o coaching na atuação profissional?",
+        "description": "Segundo o CRP/PR- Conselho regional de psicologia, é possível que a(o) Psicóloga(o) utilize o Coaching em sua prática profissional. Contudo, esta técnica pode ser utilizada pela(o) Psicóloga(o) de forma complementar à atuação. Sendo assim, a(o) profissional deverá atuar de forma condizente aos Princípios Fundamentais e Artigos do Código de Ética Profissional do Psicólogo."
+      },
+      {
+        "type": ["company"],
+        "title": "Como podemos definir o coaching e qual a linha entre psicoterapia e coaching?",
+        "description": "Segundo o CFP- Conselho federal de psicologia, enquanto um processo que se propõe a auxiliar o indivíduo a alcançar objetivos previamente definidos, o Coaching é uma técnica que transita entre campos de atuação que abordam o autoconhecimento e o desenvolvimento humano, que também são conteúdos da Psicologia.\nRessalta-se que a(o) Psicóloga(o) que utilizar esta técnica em sua atuação deverá fazê-lo de modo complementar à Psicologia, uma vez que sua atuação profissional é como Psicóloga(o)."
+      }
+    ]
+  },
+  "testimonials": {
+    "span": "Testemunhos",
+    "title": "Resultados que ajudei a criar",
+    "subtitle": "Ouça o que meus clientes dizem sobre mim.",
+    "items": [
+      {
+        "image": "/assets/testmonials/william_novak.png",
+        "name": "William N",
+        "description": "A Patrícia tem me ajudado bastante a entender meus sentimentos e comportamentos perante os desafios que venho enfrentando, principalmente no âmbito profissional. Gosto muito de trabalhar com ela, pois sinto que sua experiencia previa no meio corporativo faz com que compreenda as dinâmicas e o cotidiano que trago nas consultas. Além disso, sempre me traz reflexões pertinentes, que em conjunto aos exercícios semanais, posso pôr em prática certas mudanças de comportamento ou visão de mundo. Só tenho a elogiar s2"
+      },
+      {
+        "image": "/assets/testmonials/person_1.png",
+        "name": "João Da Silva",
+        "description": "Recomendo o pacote completo da Pat para executivos. A Pat me ajuda no papel de coach, mentora e psicoterapeuta, com uma visão holística do pessoal e profissional, que afinal estão entrelaçados. Com sua rica experiência na área de RH, conselhos, atividades e indicações estou crescendo dentro da função de CEO da minha startup."
+      },
+      {
+        "image": "/assets/testmonials/person_2.png",
+        "name": "Marina Helena, PORMADE",
+        "description": "Foi minha primeira experiência e gostei bastante. Uma conversa natural e ao mesmo tempo objetiva e acolhedora. A Patricia foi excelente e acredito que nossas próximas seções serão bastante proveitosas."
+      },
+      {
+        "image": "/assets/testmonials/person_3.png",
+        "name": "Fabio H. D. A.",
+        "description": "A Dra. Patricia simplesmente mudou minha vida! Temos uma conexão muito especial e ela sempre sabe o que fazer e como me aconselhar nas mais diversas ocasiões. Além disso, é uma mulher inteligente, sabe sobre diversos assuntos e abordagens, tornando seu tratamento ainda mais completo. Indico para todos que conheço porque sou outra pessoa hoje em dia."
+      },
+      {
+        "image": "/assets/testmonials/person_1.png",
+        "name": "João Da Silva",
+        "description": "Recomendo o pacote completo da Pat para executivos. A Pat me ajuda no papel de coach, mentora e psicoterapeuta, com uma visão holística do pessoal e profissional, que afinal estão entrelaçados. Com sua rica experiência na área de RH, conselhos, atividades e indicações estou crescendo dentro da função de CEO da minha startup."
+      },
+      {
+        "image": "/assets/testmonials/person_2.png",
+        "name": "Marina Helena, PORMADE",
+        "description": "Foi minha primeira experiência e gostei bastante. Uma conversa natural e ao mesmo tempo objetiva e acolhedora. A Patricia foi excelente e acredito que nossas próximas seções serão bastante proveitosas."
+      }
+    ]
+  }
+}
