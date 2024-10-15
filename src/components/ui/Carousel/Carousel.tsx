@@ -1,16 +1,16 @@
 "use client";
 
-import React, { useCallback } from "react";
+import React, { ReactNode, useCallback } from "react";
 import { EmblaOptionsType, EmblaCarouselType } from "embla-carousel";
 import { DotButton, useDotButton } from "./CarouselDot";
 import { PrevButton, NextButton, usePrevNextButtons } from "./CarouselButton";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import "./styles.css";
-import { Box, Flex, HStack, VStack } from "@chakra-ui/react";
+import { Box, Flex, VStack } from "@chakra-ui/react";
 
 type PropType = {
-  slides: number[];
+  slides: ReactNode;
   options?: EmblaOptionsType;
 };
 
@@ -53,11 +53,15 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     >
       <Box className="embla__viewport" ref={emblaRef} w="full">
         <Box className="embla__container" w="full">
-          {slides.map((s, i) => (
-            <Box className="embla__slide" key={i}>
-              {s}
-            </Box>
-          ))}
+          {slides && Array.isArray(slides) ? (
+            slides.map((s, i) => (
+              <Box className="embla__slide" key={i}>
+                {s}
+              </Box>
+            ))
+          ) : (
+            <></>
+          )}
         </Box>
       </Box>
 

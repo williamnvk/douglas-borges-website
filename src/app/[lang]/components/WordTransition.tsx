@@ -3,7 +3,10 @@
 import { FC, useState, useEffect } from "react";
 import TextTransition, { presets } from "react-text-transition";
 
-const WordTransition: FC<{ words: string[] }> = ({ words }) => {
+const WordTransition: FC<{ words: string[]; inline?: boolean }> = ({
+  words,
+  inline = true,
+}) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -15,7 +18,7 @@ const WordTransition: FC<{ words: string[] }> = ({ words }) => {
   }, []);
 
   return (
-    <TextTransition springConfig={presets.wobbly} inline>
+    <TextTransition springConfig={presets.wobbly} inline={inline}>
       {words[index % words.length]}
     </TextTransition>
   );

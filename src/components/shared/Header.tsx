@@ -1,5 +1,5 @@
 import { LanguageType } from "@/consts/langs";
-import { Button, Heading, HStack } from "@chakra-ui/react";
+import { Button, HStack } from "@chakra-ui/react";
 import { LanguageSelector } from "./LanguageSelector";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import Link from "next/link";
@@ -21,13 +21,13 @@ export const Header = async ({ lang }: { lang: LanguageType }) => {
       zIndex={1}
       bg="white"
     >
-      <HStack>
-        <Heading fontFamily="heading">
+      <HStack gap={8}>
+        <h1>
           <span>
             <strong>Douglas</strong>
           </span>
           &nbsp;<span>Borges</span>
-        </Heading>
+        </h1>
 
         <HStack gap={4} border={1} borderRadius={4} borderColor="gray.100">
           <Button
@@ -51,7 +51,9 @@ export const Header = async ({ lang }: { lang: LanguageType }) => {
         <HStack gap={4}>
           <Button variant="link">{intl.header.nav.home}</Button>
           <Button variant="link">{intl.header.nav.services}</Button>
-          <Button variant="link">{intl.header.nav.about}</Button>
+          <Button variant="link" as={Link} href="/sobre">
+            {intl.header.nav.about}
+          </Button>
           <Button variant="link">{intl.header.nav.events}</Button>
           <Button variant="link">{intl.header.nav.blog}</Button>
         </HStack>

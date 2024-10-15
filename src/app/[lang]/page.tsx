@@ -26,7 +26,7 @@ type Props = {
   };
 };
 
-const chunkArray = (arr, size) => {
+const chunkArray = (arr: string | never[], size: number) => {
   const result = [];
   for (let i = 0; i < arr.length; i += size) {
     result.push(arr.slice(i, i + size));
@@ -38,11 +38,22 @@ export default async function Home({ params: { lang } }: Props) {
   const intl = await getDictionary(lang);
   const h = "72px";
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const groupedItems = chunkArray(intl.testimonials.items, 3);
 
   return (
     <>
-      <Box h={`calc(100vh - ${h})`} alignContent="center">
+      <Box
+        h={`calc(100vh - ${h})`}
+        bg="#f9f8f6"
+        alignContent="center"
+        backgroundImage="url(/assets/hero/1.webp)"
+        backgroundSize="auto 100%"
+        backgroundRepeat="no-repeat"
+        backgroundPosition="center right"
+        filter="grayscale(1)"
+      >
         <Container maxW="container.xl">
           <VStack maxW="container.md" align="flex-start" gap={8}>
             <Heading fontSize="7xl">
@@ -51,9 +62,9 @@ export default async function Home({ params: { lang } }: Props) {
             </Heading>
             <Button size="lg">DE O PRIMEIRO PASSO</Button>
             <Box pr={16}>
-              <QuoteIcon style={{position: "absolute"}} />
-              <Text>{intl.home.bible.content}</Text>
-              <Text>{intl.home.bible.verse}</Text>
+              <QuoteIcon style={{ position: "absolute" }} />
+              <Text ml={8}>{intl.home.bible.content}</Text>
+              <Text ml={8}>{intl.home.bible.verse}</Text>
             </Box>
           </VStack>
         </Container>
@@ -66,13 +77,13 @@ export default async function Home({ params: { lang } }: Props) {
           backgroundRepeat: "no-repeat",
           backgroundSize: `auto calc(100vh - ${h})`,
         }}
-        bg="gray.100"
+        filter="grayscale(1)"
         h={`calc(100vh - ${h})`}
         alignContent="center"
       >
         <Container maxW="container.xl">
           <VStack maxW="container.md" align="flex-start" gap={4}>
-            <Heading maxW="container.sm" fontSize="7xl">
+            <Heading maxW="450px" fontSize="7xl">
               {intl.home.about.title}
             </Heading>
             <Text>CRP/PR 08-21013 · CRP/SC 12-13884</Text>
@@ -95,24 +106,106 @@ export default async function Home({ params: { lang } }: Props) {
         </Container>
       </Box>
 
-      <Container maxW="container.xl" my={32} bg="gray.50" borderRadius={6}>
-        {/* <Heading>{intl.home.services.title}</Heading> */}
-        <SimpleGrid templateColumns="repeat(3, 1fr)" spacing={8}>
-          {intl.home.services.items.map((s, i) => (
-            <VStack
-              key={`home-services-${i}`}
-              w="full"
-              align="flex-start"
-              justify="flex-start"
-            >
-              <Heading fontSize="2xl">{s.title}</Heading>
-              <Text fontSize="smaller">{s.description}</Text>
-            </VStack>
-          ))}
-        </SimpleGrid>
-      </Container>
+      <Box alignContent="center">
+        <Container
+          maxW="container.xl"
+          my={16}
+          p={16}
+          bg="white"
+          borderRadius={6}
+          borderColor="gray.100"
+          borderWidth={1}
+        >
+          <Heading fontSize="6xl">
+            <WordTransition
+              words={intl.home.person.fellings.map((f) => f.title)}
+            />
+          </Heading>
+          <Text fontSize="4xl">
+            <WordTransition
+              words={intl.home.person.fellings.map((f) => f.description)}
+            />
+          </Text>
+          <Text fontSize="xl">
+            <WordTransition
+              inline={false}
+              words={intl.home.person.fellings.map((f) => f.text)}
+            />
+          </Text>
 
-      <Box h={`calc(100vh - ${h})`} alignContent="center" bg="orange.100">
+          <br />
+          <br />
+          <br />
+
+          <VStack w="full" gap={8} align="flex-start">
+            <Heading>{intl.home.services.title}</Heading>
+            <SimpleGrid templateColumns="repeat(3, 1fr)" spacing={4}>
+              {intl.home.services.items.map((s, i) => (
+                <VStack
+                  key={`home-services-${i}`}
+                  w="full"
+                  align="flex-start"
+                  justify="flex-start"
+                  borderRadius={6}
+                  p={4}
+                  bg="gray.50"
+                >
+                  <Heading fontSize="2xl">{s.title}</Heading>
+                  <Text fontSize="smaller">{s.description}</Text>
+                </VStack>
+              ))}
+            </SimpleGrid>
+          </VStack>
+        </Container>
+
+        <Container
+          maxW="container.xl"
+          mb={16}
+          borderRadius={6}
+          borderColor="gray.100"
+          borderWidth={1}
+          bg="white"
+          p={16}
+        >
+          <VStack w="full" gap={8} align="flex-start">
+            <HStack w="full">
+              <Heading flex={1}>{intl.topics.title}</Heading>
+              <HStack gap={4}>
+                <Button>CONTRATE</Button>
+                <Button variant="link">Saiba mais</Button>
+              </HStack>
+            </HStack>
+            <SimpleGrid templateColumns="repeat(3, 1fr)" spacing={8}>
+              {intl.topics.items.map((s, i) => (
+                <VStack
+                  key={`home-topics-${i}`}
+                  w="full"
+                  align="flex-start"
+                  justify="flex-start"
+                  gap={4}
+                >
+                  <Box
+                    w="full"
+                    borderRadius={4}
+                    h="180px"
+                    style={{
+                      backgroundImage: `url(${s.image})`,
+                      backgroundPosition: "top center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: `100% 100%`,
+                    }}
+                    filter="grayscale(1)"
+                  />
+                  <Heading fontSize="2xl">{s.title}</Heading>
+                  <Text fontSize="smaller">{s.description}</Text>
+                </VStack>
+              ))}
+            </SimpleGrid>
+          </VStack>
+        </Container>
+      </Box>
+
+      <Box py={16} alignContent="center" bg="orange.100">
         <Container maxW="container.xl">
           <VStack gap={0} w="full" mb={{ base: 4, md: 8 }}>
             <Tag>{intl.testimonials.span}</Tag>
@@ -131,6 +224,7 @@ export default async function Home({ params: { lang } }: Props) {
                     align="flex-start"
                     justify="flex-start"
                   >
+                    {/** @ts-expect-error eslint-disable @typescript-eslint/ban-ts-comment */}
                     {group.map((t) => (
                       <VStack
                         key={`testimonials-item-${t.name}`}
@@ -200,6 +294,23 @@ export default async function Home({ params: { lang } }: Props) {
           </Accordion>
         </VStack>
       </Container>
+
+      <Box bg="gray.100" py={16}>
+        <Container maxW="container.xl">
+          <HStack w="full">
+            <VStack gap={2} flex={1} align="flex-start">
+              <Heading>
+                Como as mudanças que você quer vão realmente acontecer?
+              </Heading>
+              <Text>
+                Entre em contato agora conosco e crie uma parceria pela
+                construção de um novo caminho para sua carreira!
+              </Text>
+            </VStack>
+            <Button>Entrar em contato</Button>
+          </HStack>
+        </Container>
+      </Box>
     </>
   );
 }

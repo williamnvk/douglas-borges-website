@@ -29,7 +29,7 @@
       "verse": "Provérbios 16:3"
     },
     "about": {
-      "title": "Um propósito e uma missão",
+      "title": "Um propósito uma missão",
       "subtitle": "Douglas Borges, Psicologo, Marido, Pai e Cristão",
       "description": [
         "I am glad that you have made it here to send a distress signal, and inform the Senate that all on board were killed. Dantooine.  I’m not going to Alderaan. I really got to go.",
@@ -39,10 +39,6 @@
     "services": {
       "title": "Meus serviços",
       "items": [
-        {
-          "title": "1:1",
-          "description": ""
-        },
         {
           "title": "Coaching Executivo",
           "description": "Desenvolvimento de liderança com base em princípios bíblicos, fortalecendo decisões empresariais com propósito e resiliência."
@@ -185,6 +181,72 @@
         "image": "/assets/testmonials/person_2.png",
         "name": "Marina Helena, PORMADE",
         "description": "Foi minha primeira experiência e gostei bastante. Uma conversa natural e ao mesmo tempo objetiva e acolhedora. A Patricia foi excelente e acredito que nossas próximas seções serão bastante proveitosas."
+      }
+    ]
+  },
+  "about": {
+    "title": "Conheça Douglas Borges",
+    "entry": "Douglas Borges é um psicólogo e psicanalista com quase 10 anos de experiência, especializado em consultoria psicológica e inteligência emocional. Ele se dedica a ajudar profissionais de alto nível, como CEOs e executivos, a equilibrar suas vidas pessoais e profissionais. Sua abordagem visa alinhar os desafios da gestão corporativa com a qualidade de vida, promovendo um equilíbrio saudável entre as exigências do trabalho e os compromissos pessoais.",
+    "exp": {
+      "title": "Formação e Experiência",
+      "items": [
+        {
+          "title": "Psicólogo",
+          "description": "Douglas possui registro profissional (CRP/PR 08-21013 e CRP/SC 12-13884) e tem experiência em diversas áreas da psicologia, incluindo a terapia cognitiva comportamental, analítica e psicanalítica."
+        },
+        {
+          "title": "Consultoria Organizacional",
+          "description": "Ele atua como psicólogo organizacional, oferecendo treinamento e desenvolvimento para líderes e equipes nas empresas."
+        },
+        {
+          "title": "Experiência Diversificada",
+          "description": "Antes de sua carreira na psicologia, Douglas trabalhou como engenheiro químico por sete anos e foi empreendedor em diferentes setores, incluindo indústria e varejo."
+        }
+      ]
+    },
+    "approaches": {
+      "title": "Abordagens de Trabalho",
+      "entry": "Douglas utiliza uma variedade de métodos terapêuticos para atender às necessidades de seus clientes:",
+      "items": [
+        {
+          "title": "Psicoterapia",
+          "description": "Oferece sessões terapêuticas focadas na análise de questões emocionais e comportamentais, com o objetivo de promover autoconhecimento e mudanças positivas."
+        },
+        {
+          "title": "Orientação Psicológica",
+          "description": "Ajuda indivíduos a resolver conflitos pessoais ou profissionais, desenvolver autoconfiança e equilibrar a ansiedade."
+        },
+        {
+          "title": "Análise de Perfil Comportamental",
+          "description": "Realiza análises para compatibilizar perfis emocionais de colaboradores com as expectativas organizacionais."
+        }
+      ]
+    },
+    "mission": {
+      "title": "Missão",
+      "entry": "A missão de Douglas é proporcionar um espaço seguro onde seus clientes possam explorar seus desafios emocionais e encontrar soluções práticas para melhorar sua qualidade de vida. Ele enfatiza a importância do equilíbrio entre as demandas profissionais e pessoais, buscando sempre o bem-estar mental dos indivíduos que atende."
+    }
+  },
+  "topics": {
+    "title": "Palestras",
+    "items": [
+      {
+        "image": "/assets/ansiedade.jpg",
+        "slug": "palestra-controlar-ansiedade",
+        "title": "Como controlar a ansiedade",
+        "description": "Combinando conteúdos práticos e ferramentas exclusivas usadas em orientações psicológicas, conheça às técnicas para controlar a Ansiedade. No evento/palestra/treinamento “Como controlar a Ansiedade” ministrado pelo Dr. Douglas Borges você participará de momentos incríveis para buscar o melhor gerenciamento das emoções e ressignificar crenças e conceitos negativos. Também é abordado assuntos sobre relacionamentos pessoais, trabalho, dinheiro e muito mais."
+      },
+      {
+        "image": "/assets/viva-sua-historia.png",
+        "slug": "palestra-viva-sua-historia",
+        "title": "Viva sua história",
+        "description": "Reflexões sobre protagonismo humano no ambiente profissional. Qual história você quer contar para o mundo?"
+      },
+      {
+        "image": "/assets/fe-e-esperanca.jpg",
+        "slug": "palestra-fe-e-esperanca-na-atualidade",
+        "title": "A Fé e a esperança frente aos desafios da atualidade",
+        "description": "Na nossa palestra abordamos a vida do pescador Tomé, que foi convidado a seguir Jesus. Mas ele tinha uma personalidade muito forte."
       }
     ]
   }

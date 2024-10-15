@@ -10,3 +10,59 @@
     object-fit: cover;
   }
 }
+
+:root {
+  --nav-item-offset: 10vw;
+  --nav-item-hover-offset: 2%;
+  --easing: cubic-bezier(0.8, 0, 0.2, 1);
+  --duration: 0.6s;
+}
+.bar-navigation {
+  height: 90vh;
+  width: 90vw;
+  background-color: var(--color-tan);
+}
+
+.nav-list {
+  display: grid;
+  height: 100%;
+}
+
+.nav-item {
+  display: grid;
+  position: absolute;
+  height: 100%;
+  width: calc(60vw - var(--i) * var(--nav-item-offset));
+  transition: transform var(--duration) var(--easing);
+  
+  margin-left: calc(var(--i) * var(--nav-item-offset));
+  
+  transform: translateX(calc(-100% + var(--nav-item-offset)));
+  
+}
+
+.nav-item:hover,
+.nav-item:focus {
+   transform: translateX(-2vw);
+   outline: none; 
+}
+
+.nav-item::before {
+   counter-increment: list; 
+   content: counter(list) ".";
+   display: block; 
+   text-align:right; 
+   font-size:8vmin; 
+   padding-right:.5vw; 
+}
+
+.nav-item::after {
+   content:""; 
+   position:absolute; 
+   top:0; 
+   left:-1vw; 
+   right:-1vw; 
+   height:auto; 
+   background-color:variables(--color); 
+   transition-transform: var(--easing) var(--duration);
+}

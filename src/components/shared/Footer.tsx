@@ -21,7 +21,7 @@ async function Footer({ lang }: { lang: LanguageType }) {
 
   return (
     <Box as="footer" borderTopWidth="1px">
-      <Container maxW="container.xl" p={8} gap={16}>
+      <Container maxW="container.xl" py={8} gap={16}>
         <Stack
           direction={{ base: "column", md: "row" }}
           align="center"
