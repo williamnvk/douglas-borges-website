@@ -19,6 +19,7 @@ import { getDictionary, Locale } from "./dictionaries";
 import { WordTransition } from "./components/WordTransition";
 import EmblaCarousel from "@/components/ui/Carousel/Carousel";
 import { QuoteIcon } from "lucide-react";
+import CardStack from "./components/CardStack";
 
 type Props = {
   params: {
@@ -53,6 +54,8 @@ export default async function Home({ params: { lang } }: Props) {
         backgroundRepeat="no-repeat"
         backgroundPosition="center right"
         filter="grayscale(1)"
+        data-aos="fade-up"
+        data-aos-duration="3000"
       >
         <Container maxW="container.xl">
           <VStack maxW="container.md" align="flex-start" gap={8}>
@@ -80,6 +83,8 @@ export default async function Home({ params: { lang } }: Props) {
         filter="grayscale(1)"
         h={`calc(100vh - ${h})`}
         alignContent="center"
+        data-aos="fade-up"
+        data-aos-duration="3000"
       >
         <Container maxW="container.xl">
           <VStack maxW="container.md" align="flex-start" gap={4}>
@@ -106,7 +111,11 @@ export default async function Home({ params: { lang } }: Props) {
         </Container>
       </Box>
 
-      <Box alignContent="center">
+      <Container maxW="container.xl">
+        <CardStack cards={intl.home.person.fellings} />
+      </Container>
+
+      <Box alignContent="center" data-aos="fade-up" data-aos-duration="3000">
         <Container
           maxW="container.xl"
           my={16}

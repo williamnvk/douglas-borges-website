@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Providers } from "../providers";
 import { Header } from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import { AOSInit } from "./components/AOS";
 
 export const metaDataTitle = "Douglas Borges";
 export const metaDataDescription =
@@ -83,6 +84,7 @@ export default function RootLayout({
       </Head>
       <body>
         <Providers>
+          <AOSInit />
           <Header lang={params.lang} />
           <main style={{ marginTop: "72px" }}>{children}</main>
           <Footer lang={params.lang} />
