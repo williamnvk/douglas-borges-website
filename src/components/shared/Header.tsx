@@ -1,13 +1,18 @@
-import { LanguageType } from "@/consts/langs";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+
 import { Button, HStack } from "@chakra-ui/react";
 import { LanguageSelector } from "./LanguageSelector";
-import { getDictionary } from "@/app/[lang]/dictionaries";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useMemo } from "react";
 
-export const Header = async ({ lang }: { lang: LanguageType }) => {
-  const intl = await getDictionary(lang as never);
-
-  const isCompany = false;
+export const Header = async ({ intl, lang }: { intl: any; lang: any }) => {
+  const pathname = usePathname();
+  const isCompany = useMemo(
+    () => pathname?.includes("/empresas") || false,
+    [pathname]
+  );
 
   return (
     <HStack
@@ -18,7 +23,7 @@ export const Header = async ({ lang }: { lang: LanguageType }) => {
       pos="fixed"
       left={0}
       top={0}
-      zIndex={100}
+      zIndex={1}
       bg="white"
     >
       <HStack gap={8}>
@@ -32,14 +37,14 @@ export const Header = async ({ lang }: { lang: LanguageType }) => {
         </Link>
         <HStack gap={4} border={1} borderRadius={4} borderColor="gray.100">
           <Button
-            variant={!isCompany ? "solid" : "link"}
+            variant={!isCompany ? "outline" : "link"}
             as={Link}
             href="/voce"
           >
             {intl.header.personal}
           </Button>
           <Button
-            variant={isCompany ? "solid" : "link"}
+            variant={isCompany ? "outline" : "link"}
             as={Link}
             href="/empresas"
           >

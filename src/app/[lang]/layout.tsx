@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import Head from "next/head";
 import { Providers } from "../providers";
-import { Header } from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { AOSInit } from "./components/AOS";
+import { HeaderWrapper } from "@/components/shared/HeaderWrapper";
 
 export const metaDataTitle = "Douglas Borges";
 export const metaDataDescription =
@@ -85,7 +85,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <AOSInit />
-          <Header lang={params.lang} />
+          <HeaderWrapper lang={params.lang} />
           <main style={{ marginTop: "72px" }}>{children}</main>
           <Footer lang={params.lang} />
         </Providers>
