@@ -12,14 +12,21 @@
     }
   },
   "home": {
-    "transition": [
+    "firstWord": [
       "Desenvolvendo",
       "Aconselhando",
       "Ajudando",
       "Encorajando",
       "Incentivando"
     ],
-    "subtitle": "líderes de sucesso com equilíbrio entre negócios, família e propósito",
+    "secondWord": [
+      "empresários",
+      "executivos",
+      "líderes",
+      "profissionais",
+      "empreendedores"
+    ],
+    "subtitle": "de sucesso com equilíbrio entre negócios, família e propósito",
     "bible": {
       "content": "Bem-aventurado o homem que suporta a provação; porque, depois de aprovado, receberá a coroa da vida, que o Senhor prometeu aos que o amam.",
       "verse": "Tiago 1:12"
@@ -30,7 +37,7 @@
     },
     "about": {
       "title": "Um propósito uma missão",
-      "subtitle": "Douglas Borges, Psicologo, Marido, Pai e Cristão",
+      "subtitle": "Douglas Borges, Marido, Pai, Cristão e Psicólogo",
       "description": [
         "I am glad that you have made it here to send a distress signal, and inform the Senate that all on board were killed. Dantooine.  I’m not going to Alderaan. I really got to go.",
         "But that to me. Send a distress signal, and inform the Senate that all on board were killed. Dantooine. They’re on Dantooine. The plans you refer to will soon be back in our hands. Alderaan? I’m not going to Alderaan. I got to go home."
@@ -63,56 +70,56 @@
     },
     "counting": [
       {
-        "title": "+1000",
+        "title": "1000",
         "description": "Pessoas atendidas"
       },
       {
-        "title": "+20",
+        "title": "20",
         "description": "Anos de experiencia"
       },
       {
-        "title": "+50",
+        "title": "50",
         "description": "Palestras"
       },
       {
-        "title": "+20",
+        "title": "20",
         "description": "Empresas atendidas"
       }
     ],
     "person": {
       "fellings": [
         {
-          "icon": "",
-          "title": "Sentido da Vida",
-          "description": "Encontre Sentido e Propósito",
-          "text": "Descubra o que realmente importa na sua vida, identificando valores e motivações que dão significado às suas ações. A Logoterapia ajuda você a encontrar clareza e direção para uma vida mais plena e satisfatória."
-        },
-        {
-          "icon": "",
-          "title": "Vazio Existencial",
-          "description": "Encontre Sentido e Propósito",
-          "text": "Imagine despertar todos os dias sabendo que há um propósito maior na sua vida. Imagine superar a ansiedade, o burnout e a tristeza com um novo sentido que te motiva e inspira."
-        },
-        {
-          "icon": "",
+          "bg": "white",
           "title": "Burnout",
           "description": "Recupere a Paixão pelo Trabalho",
           "text": "Redefina seu papel profissional e reencontre a motivação. Ao alinhar seu propósito pessoal aos objetivos de carreira, você transforma o estresse em energia positiva e recupera a satisfação no trabalho."
         },
         {
-          "icon": "",
+          "bg": "blue.50",
+          "title": "Sentido da Vida",
+          "description": "Encontre Sentido e Propósito",
+          "text": "Descubra o que realmente importa na sua vida, identificando valores e motivações que dão significado às suas ações. A Logoterapia ajuda você a encontrar clareza e direção para uma vida mais plena e satisfatória."
+        },
+        {
+          "bg": "orange.50",
+          "title": "Vazio Existencial",
+          "description": "Encontre Sentido e Propósito",
+          "text": "Imagine despertar todos os dias sabendo que há um propósito maior na sua vida. Imagine superar a ansiedade, o burnout e a tristeza com um novo sentido que te motiva e inspira."
+        },
+        {
+          "bg": "red.100",
           "title": "Transtornos de Ansiedade",
           "description": "Redução de Ansiedade",
           "text": "Aprenda a lidar com a ansiedade ao entender suas causas e encontrar formas saudáveis de enfrentá-la. A Psicoterapia oferece ferramentas para enfrentar os desafios com mais confiança e tranquilidade."
         },
         {
-          "icon": "",
+          "bg": "gray.50",
           "title": "Depressão",
           "description": "Superação de Apatia e Depressão",
           "text": "Compreenda as raízes dos sentimentos de apatia e tristeza profunda. Ao reformular experiências dolorosas, você ganha uma nova perspectiva e renova a vontade de viver, superando a paralisia emocional."
         },
         {
-          "icon": "",
+          "bg": "pink.50",
           "title": "Relacionamentos",
           "description": "Ame-se primeiro",
           "text": "Se alguma dessas situações soa familiar, saiba que você não está sozinho. Muitas pessoas enfrentam o mesmo desafio, mas poucas conhecem o caminho para superá-lo. É aqui que a Logoterapia pode ajudar."

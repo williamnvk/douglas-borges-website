@@ -7,7 +7,6 @@ import {
   Box,
   Button,
   Container,
-  Divider,
   Heading,
   HStack,
   SimpleGrid,
@@ -18,7 +17,7 @@ import {
 import { getDictionary, Locale } from "./dictionaries";
 import { WordTransition } from "./components/WordTransition";
 import EmblaCarousel from "@/components/ui/Carousel/Carousel";
-import { QuoteIcon } from "lucide-react";
+import { PlusIcon, QuoteIcon } from "lucide-react";
 import CardStack from "./components/CardStack";
 
 type Props = {
@@ -46,107 +45,114 @@ export default async function Home({ params: { lang } }: Props) {
   return (
     <>
       <Box
-        h={`calc(100vh - ${h})`}
+        pt={h}
         bg="#f9f8f6"
+        display="flex"
         alignContent="center"
+        justifyContent="center"
         backgroundImage="url(/assets/hero/1.webp)"
-        backgroundSize="auto 100%"
+        backgroundSize={`auto 100vh`}
         backgroundRepeat="no-repeat"
         backgroundPosition="center right"
-        filter="grayscale(1)"
-        data-aos="fade-up"
-        data-aos-duration="3000"
+        backgroundAttachment="fixed"
       >
-        <Container maxW="container.xl">
-          <VStack maxW="container.md" align="flex-start" gap={8}>
-            <Heading fontSize="7xl">
-              <WordTransition words={intl.home.transition} />{" "}
+        <Container maxW="container.xl" my={32}>
+          <VStack w="container.md" align="flex-start" gap={8}>
+            <Heading fontSize="6xl" fontWeight="light">
+              <WordTransition typewriter words={intl.home.firstWord} />
+              <br />
+              <strong>
+                <WordTransition
+                  typewriter
+                  words={intl.home.secondWord}
+                  delay={5000}
+                />
+              </strong>{" "}
               {intl.home.subtitle}
             </Heading>
-            <Button size="lg">DE O PRIMEIRO PASSO</Button>
-            <Box pr={16}>
-              <QuoteIcon style={{ position: "absolute" }} />
-              <Text ml={8}>{intl.home.bible.content}</Text>
-              <Text ml={8}>{intl.home.bible.verse}</Text>
+            <Button size="lg" data-aos="fade-up">
+              DE O PRIMEIRO PASSO
+            </Button>
+            <Box position="relative" data-aos="fade-up">
+              <QuoteIcon size={32} style={{ position: "absolute", right: 0 }} />
+              <Text fontSize="smaller" fontStyle="italic">
+                {intl.home.bible.content}
+              </Text>
+              <Text fontSize="smaller" fontStyle="italic">
+                {intl.home.bible.verse}
+              </Text>
             </Box>
-          </VStack>
-        </Container>
-      </Box>
+            <SimpleGrid gap={4} w="full" templateColumns="repeat(4, 1fr)">
+              {intl.home.counting.map((c, i) => (
+                <VStack
+                  key={`home-counting-${i}`}
+                  align="flex-start"
+                  p={4}
+                  borderRadius={4}
+                  bg="white"
+                  data-aos="fade-up"
+                  data-aos-delay={i * 200}
+                >
+                  <Heading letterSpacing={2} fontSize="4xl">
+                    <PlusIcon style={{ display: "inline" }} />
+                    {c.title}
+                  </Heading>
+                  <Text fontSize="x-small" textTransform="uppercase">
+                    {c.description}
+                  </Text>
+                </VStack>
+              ))}
+            </SimpleGrid>
 
-      <Box
-        style={{
-          backgroundImage: "url(/assets/douglas-borges.png)",
-          backgroundPosition: "top right",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: `auto calc(100vh - ${h})`,
-        }}
-        filter="grayscale(1)"
-        h={`calc(100vh - ${h})`}
-        alignContent="center"
-        data-aos="fade-up"
-        data-aos-duration="3000"
-      >
-        <Container maxW="container.xl">
-          <VStack maxW="container.md" align="flex-start" gap={4}>
-            <Heading maxW="450px" fontSize="7xl">
+            <Heading maxW="450px" fontSize="7xl" mt={`25vh`} data-aos="fade-up">
               {intl.home.about.title}
             </Heading>
-            <Text>CRP/PR 08-21013 · CRP/SC 12-13884</Text>
+
             {intl.home.about.description.map((p, i) => (
-              <Text fontSize="larger" key={`home-about-${i}`}>
+              <Text
+                fontSize="larger"
+                key={`home-about-${i}`}
+                data-aos="fade-up"
+              >
                 {p}
               </Text>
             ))}
-            <Text fontSize="smaller">{intl.home.about.subtitle}</Text>
-            <Divider my={8} />
-            <HStack gap={16} w="full">
-              {intl.home.counting.map((c, i) => (
-                <VStack key={`home-counting-${i}`} align="flex-start">
-                  <Heading fontSize="3xl">{c.title}</Heading>
-                  <Text fontSize="small">{c.description}</Text>
-                </VStack>
-              ))}
-            </HStack>
+            <Text data-aos="fade-up">{intl.home.about.subtitle}</Text>
+            <Text fontSize="small" data-aos="fade-up">
+              CRP/PR 08-21013 · CRP/SC 12-13884
+            </Text>
           </VStack>
         </Container>
       </Box>
 
-      <Container maxW="container.xl">
+      <Container maxW="container.xl" mt={-8}>
         <CardStack cards={intl.home.person.fellings} />
       </Container>
 
-      <Box alignContent="center" data-aos="fade-up" data-aos-duration="3000">
-        <Container
-          maxW="container.xl"
-          my={16}
-          p={16}
-          bg="white"
-          borderRadius={6}
-          borderColor="gray.100"
-          borderWidth={1}
-        >
-          <Heading fontSize="6xl">
-            <WordTransition
-              words={intl.home.person.fellings.map((f) => f.title)}
-            />
-          </Heading>
-          <Text fontSize="4xl">
-            <WordTransition
-              words={intl.home.person.fellings.map((f) => f.description)}
-            />
-          </Text>
-          <Text fontSize="xl">
-            <WordTransition
-              inline={false}
-              words={intl.home.person.fellings.map((f) => f.text)}
-            />
-          </Text>
-
-          <br />
-          <br />
-          <br />
-
-          <VStack w="full" gap={8} align="flex-start">
+      <Box
+        pos="relative"
+        p={32}
+        _after={{
+          content: '""',
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "100%",
+          backgroundImage:
+            "radial-gradient(circle at bottom center, #e0e0e0 0%, rgba(224, 224, 224, 0) 70%)",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      >
+        <Container maxW="container.xl" position="relative">
+          <VStack
+            w="full"
+            gap={8}
+            align="flex-start"
+            position="relative"
+            zIndex={1}
+          >
             <Heading>{intl.home.services.title}</Heading>
             <SimpleGrid templateColumns="repeat(3, 1fr)" spacing={4}>
               {intl.home.services.items.map((s, i) => (
@@ -156,55 +162,10 @@ export default async function Home({ params: { lang } }: Props) {
                   align="flex-start"
                   justify="flex-start"
                   borderRadius={6}
-                  p={4}
-                  bg="gray.50"
+                  p={8}
+                  bg="white"
+                  boxShadow="md"
                 >
-                  <Heading fontSize="2xl">{s.title}</Heading>
-                  <Text fontSize="smaller">{s.description}</Text>
-                </VStack>
-              ))}
-            </SimpleGrid>
-          </VStack>
-        </Container>
-
-        <Container
-          maxW="container.xl"
-          mb={16}
-          borderRadius={6}
-          borderColor="gray.100"
-          borderWidth={1}
-          bg="white"
-          p={16}
-        >
-          <VStack w="full" gap={8} align="flex-start">
-            <HStack w="full">
-              <Heading flex={1}>{intl.topics.title}</Heading>
-              <HStack gap={4}>
-                <Button>CONTRATE</Button>
-                <Button variant="link">Saiba mais</Button>
-              </HStack>
-            </HStack>
-            <SimpleGrid templateColumns="repeat(3, 1fr)" spacing={8}>
-              {intl.topics.items.map((s, i) => (
-                <VStack
-                  key={`home-topics-${i}`}
-                  w="full"
-                  align="flex-start"
-                  justify="flex-start"
-                  gap={4}
-                >
-                  <Box
-                    w="full"
-                    borderRadius={4}
-                    h="180px"
-                    style={{
-                      backgroundImage: `url(${s.image})`,
-                      backgroundPosition: "top center",
-                      backgroundRepeat: "no-repeat",
-                      backgroundSize: `100% 100%`,
-                    }}
-                    filter="grayscale(1)"
-                  />
                   <Heading fontSize="2xl">{s.title}</Heading>
                   <Text fontSize="smaller">{s.description}</Text>
                 </VStack>
@@ -214,6 +175,43 @@ export default async function Home({ params: { lang } }: Props) {
         </Container>
       </Box>
 
+      <Container maxW="container.xl" py={24}>
+        <VStack w="full" gap={8} align="flex-start">
+          <HStack w="full">
+            <Heading flex={1}>{intl.topics.title}</Heading>
+            <HStack gap={4}>
+              <Button>CONTRATE</Button>
+              <Button variant="link">Saiba mais</Button>
+            </HStack>
+          </HStack>
+          <SimpleGrid templateColumns="repeat(3, 1fr)" spacing={8}>
+            {intl.topics.items.map((s, i) => (
+              <VStack
+                key={`home-topics-${i}`}
+                w="full"
+                align="flex-start"
+                justify="flex-start"
+                gap={4}
+              >
+                <Box
+                  w="full"
+                  borderRadius={4}
+                  h="180px"
+                  style={{
+                    backgroundImage: `url(${s.image})`,
+                    backgroundPosition: "top center",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: `100% 100%`,
+                  }}
+                  filter="grayscale(1)"
+                />
+                <Heading fontSize="2xl">{s.title}</Heading>
+                <Text fontSize="smaller">{s.description}</Text>
+              </VStack>
+            ))}
+          </SimpleGrid>
+        </VStack>
+      </Container>
       <Box py={16} alignContent="center" bg="orange.100">
         <Container maxW="container.xl">
           <VStack gap={0} w="full" mb={{ base: 4, md: 8 }}>

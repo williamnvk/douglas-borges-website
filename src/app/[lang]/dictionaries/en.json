@@ -12,19 +12,32 @@
     }
   },
   "home": {
-    "transition": ["Develop", "Account", "Help", "Encourage"],
-    "subtitle": "líderes de sucesso com equilíbrio entre negócios, família e propósito",
+    "firstWord": [
+      "Developing",
+      "Advising",
+      "Helping",
+      "Encouraging",
+      "Motivating"
+    ],
+    "secondWord": [
+      "entrepreneurs",
+      "executives",
+      "leaders",
+      "professionals",
+      "business owners"
+    ],
+    "subtitle": "successful leaders with balance between business, family, and purpose",
     "bible": {
-      "content": "Bem-aventurado o homem que suporta a provação; porque, depois de aprovado, receberá a coroa da vida, que o Senhor prometeu aos que o amam.",
-      "verse": "Tiago 1:12"
+      "content": "Blessed is the one who perseveres under trial because, having stood the test, that person will receive the crown of life that the Lord has promised to those who love him.",
+      "verse": "James 1:12"
     },
     "sayings": {
-      "content": "Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos.",
-      "verse": "Provérbios 16:3"
+      "content": "Commit to the Lord whatever you do, and he will establish your plans.",
+      "verse": "Proverbs 16:3"
     },
     "about": {
       "title": "I help individuals to become their best version.",
-      "subtitle": "Douglas Borges, Psicologo, Marido, Pai e Servo",
+      "subtitle": "Douglas Borges, Husband, Father, Christian, and Psychologist",
       "description": [
         "I am glad that you have made it here to send a distress signal, and inform the Senate that all on board were killed. Dantooine.  I’m not going to Alderaan. I really got to go.",
         "But that to me. Send a distress signal, and inform the Senate that all on board were killed. Dantooine. They’re on Dantooine. The plans you refer to will soon be back in our hands. Alderaan? I’m not going to Alderaan. I got to go home."
@@ -34,90 +47,90 @@
       "title": "My services",
       "items": [
         {
-          "title": "Coaching Executivo",
-          "description": "Desenvolvimento de liderança com base em princípios bíblicos, fortalecendo decisões empresariais com propósito e resiliência."
+          "title": "Executive Coaching",
+          "description": "Leadership development based on biblical principles, strengthening business decisions with purpose and resilience."
         },
         {
-          "title": "Programas de Inteligência Emocional para Equipes",
-          "description": "Aumente a coesão e o desempenho da sua equipe, promovendo um ambiente de trabalho ético e equilibrado."
+          "title": "Emotional Intelligence Programs for Teams",
+          "description": "Increase your team's cohesion and performance, promoting an ethical and balanced work environment."
         },
         {
-          "title": "Aconselhamento para Alta Performance Pessoal e Profissional",
-          "description": "Um acompanhamento para empresários que precisam gerenciar o estresse e maximizar seu desempenho."
+          "title": "Personal and Professional High Performance Counseling",
+          "description": "Guidance for entrepreneurs who need to manage stress and maximize their performance."
         },
         {
-          "title": "Workshops In-Company",
-          "description": " Treinamentos práticos e baseados em valores cristãos para capacitar líderes e equipes em inteligência emocional, produtividade e gestão de conflitos."
+          "title": "In-Company Workshops",
+          "description": "Practical training based on Christian values to empower leaders and teams in emotional intelligence, productivity, and conflict management."
         },
         {
-          "title": "Consultoria para o Equilíbrio Vida-Trabalho",
-          "description": "Apoio na criação de uma cultura organizacional onde o bem-estar pessoal, familiar e empresarial se alinham para melhorar o desempenho a longo prazo."
+          "title": "Work-Life Balance Consulting",
+          "description": "Support in creating an organizational culture where personal, family, and business well-being align to improve long-term performance."
         }
       ]
     },
     "counting": [
       {
-        "title": "+1000",
-        "description": "Pessoas atendidas"
+        "title": "1000",
+        "description": "People served"
       },
       {
-        "title": "+20",
-        "description": "Anosde experiencia"
+        "title": "20",
+        "description": "Years of experience"
       },
       {
-        "title": "+50",
-        "description": "Palestras"
+        "title": "50",
+        "description": "Lectures"
       },
       {
-        "title": "+20",
-        "description": "Empresasas atendidas"
+        "title": "20",
+        "description": "Companies served"
       }
     ],
     "person": {
       "fellings": [
         {
-          "icon": "",
-          "title": "Sentido da Vida",
-          "description": "Encontre Sentido e Propósito",
-          "text": "Descubra o que realmente importa na sua vida, identificando valores e motivações que dão significado às suas ações. A Logoterapia ajuda você a encontrar clareza e direção para uma vida mais plena e satisfatória."
-        },
-        {
-          "icon": "",
-          "title": "Vazio Existencial",
-          "description": "Encontre Sentido e Propósito",
-          "text": "Imagine despertar todos os dias sabendo que há um propósito maior na sua vida. Imagine superar a ansiedade, o burnout e a tristeza com um novo sentido que te motiva e inspira."
-        },
-        {
-          "icon": "",
+          "bg": "white",
           "title": "Burnout",
-          "description": "Recupere a Paixão pelo Trabalho",
-          "text": "Redefina seu papel profissional e reencontre a motivação. Ao alinhar seu propósito pessoal aos objetivos de carreira, você transforma o estresse em energia positiva e recupera a satisfação no trabalho."
+          "description": "Regain Passion for Work",
+          "text": "Redefine your professional role and rediscover motivation. By aligning your personal purpose with career goals, you transform stress into positive energy and regain job satisfaction."
         },
         {
-          "icon": "",
-          "title": "Transtornos de Ansiedade",
-          "description": "Redução de Ansiedade",
-          "text": "Aprenda a lidar com a ansiedade ao entender suas causas e encontrar formas saudáveis de enfrentá-la. A Psicoterapia oferece ferramentas para enfrentar os desafios com mais confiança e tranquilidade."
+          "bg": "blue.50",
+          "title": "Meaning of Life",
+          "description": "Find Meaning and Purpose",
+          "text": "Discover what really matters in your life, identifying values and motivations that give meaning to your actions. Logotherapy helps you find clarity and direction for a more fulfilling and satisfying life."
         },
         {
-          "icon": "",
-          "title": "Depressão",
-          "description": "Superação de Apatia e Depressão",
-          "text": "Compreenda as raízes dos sentimentos de apatia e tristeza profunda. Ao reformular experiências dolorosas, você ganha uma nova perspectiva e renova a vontade de viver, superando a paralisia emocional."
+          "bg": "orange.50",
+          "title": "Existential Void",
+          "description": "Find Meaning and Purpose",
+          "text": "Imagine waking up every day knowing there is a greater purpose in your life. Imagine overcoming anxiety, burnout, and sadness with a new sense that motivates and inspires you."
         },
         {
-          "icon": "",
-          "title": "Relacionamentos",
-          "description": "Ame-se primeiro",
-          "text": "Se alguma dessas situações soa familiar, saiba que você não está sozinho. Muitas pessoas enfrentam o mesmo desafio, mas poucas conhecem o caminho para superá-lo. É aqui que a Logoterapia pode ajudar."
+          "bg": "red.100",
+          "title": "Anxiety Disorders",
+          "description": "Reduction of Anxiety",
+          "text": "Learn to deal with anxiety by understanding its causes and finding healthy ways to confront it. Psychotherapy provides tools to confront challenges with more confidence and tranquility."
+        },
+        {
+          "bg": "gray.50",
+          "title": "Depression",
+          "description": "Overcoming Apathy and Depression",
+          "text": "Understand the roots of apathy and deep sadness. By reformulating painful experiences, you gain a new perspective and renew your desire to live, overcoming emotional paralysis."
+        },
+        {
+          "bg": "pink.50",
+          "title": "Relationships",
+          "description": "Love yourself first",
+          "text": "If any of these situations feel familiar, know that you are not alone. Many people face the same challenge, but few know the path to overcome it. Here is where Logotherapy can help."
         }
       ]
     }
   },
   "footer": {
     "newsletter": {
-      "title": "Receba Dicas Exclusivas para Liderança e Equilíbrio de Vida",
-      "description": "Tenha acesso a conteúdos exclusivos sobre inteligência emocional, liderança estratégica com propósito e como alcançar equilíbrio entre sua vida pessoal, familiar e empresarial. Receba reflexões inspiradoras, insights práticos e novidades diretamente no seu e-mail."
+      "title": "Receive Exclusive Tips for Leadership and Life Balance",
+      "description": "Gain access to exclusive content about emotional intelligence, strategic leadership with purpose, and how to achieve balance between your personal, family, and business life. Receive inspirational reflections, practical insights, and news directly in your email."
     },
     "copy": "All rights reserved."
   },
@@ -126,18 +139,18 @@
     "questions": [
       {
         "type": ["company", "person"],
-        "title": "É pertinente trabalhar questões de trabalho e família com o mesmo profissional?",
-        "description": "Não só pertinente , mas indicado. Os princípios que mantêm relações saudáveis são os mesmos dentro de todos os sistemas que o indivíduo ocupa. Leis como ordem, hierarquia, equilíbrio entre dar e receber e pertencimento, estão presentes em todas as nossas relações com pequenas especificidades em relação à postura que o cliente deve apresentar. Geralmente a mudança da postura e a intervenção em qualquer dos 3 pilares citados anteriormente, influenciam os demais sistemas, sendo assim, uma fonte criadora de equilíbrio múltiplo em todas as áreas de sua visa."
+        "title": "Is it relevant to work on issues of work and family with the same professional?",
+        "description": "Not only relevant, but also recommended. The principles that maintain healthy relationships are the same within all systems that the individual occupies. Laws like order, hierarchy, balance between giving and receiving, and belonging, are present in all our relationships with small specificities in relation to the posture that the client must present. Generally, changing the posture and intervening in any of the 3 pillars mentioned above, influence the other systems, being thus, a source of multiple balance in all areas of your vision."
       },
       {
         "type": ["company"],
-        "title": "Psicólogas(os) podem utilizar o coaching na atuação profissional?",
-        "description": "Segundo o CRP/PR- Conselho regional de psicologia, é possível que a(o) Psicóloga(o) utilize o Coaching em sua prática profissional. Contudo, esta técnica pode ser utilizada pela(o) Psicóloga(o) de forma complementar à atuação. Sendo assim, a(o) profissional deverá atuar de forma condizente aos Princípios Fundamentais e Artigos do Código de Ética Profissional do Psicólogo."
+        "title": "Can psychologists (psychologists) use coaching in their professional practice?",
+        "description": "According to the CRP/PR- Regional Council of Psychology, it is possible that the psychologist (psychologist) utilizes coaching in their professional practice. However, this technique can be used by the psychologist (psychologist) in a complementary way to the practice. Being thus, the professional should act in a way that is consistent with the Fundamental Principles and Articles of the Code of Ethics of the Psychologist."
       },
       {
         "type": ["company"],
-        "title": "Como podemos definir o coaching e qual a linha entre psicoterapia e coaching?",
-        "description": "Segundo o CFP- Conselho federal de psicologia, enquanto um processo que se propõe a auxiliar o indivíduo a alcançar objetivos previamente definidos, o Coaching é uma técnica que transita entre campos de atuação que abordam o autoconhecimento e o desenvolvimento humano, que também são conteúdos da Psicologia.\nRessalta-se que a(o) Psicóloga(o) que utilizar esta técnica em sua atuação deverá fazê-lo de modo complementar à Psicologia, uma vez que sua atuação profissional é como Psicóloga(o)."
+        "title": "How can we define coaching and what is the line between psychotherapy and coaching?",
+        "description": "According to the CFP- Federal Council of Psychology, while a process that proposes to assist the individual in achieving previously defined objectives, coaching is a technique that transits between fields of action that address autoconsciousness and human development, which are also contents of Psychology.\nIt is emphasized that the psychologist (psychologist) who utilizes this technique in their practice should do so in a complementary way to Psychology, once their professional practice is as Psychologist (psychologist)."
       }
     ]
   },
@@ -149,32 +162,32 @@
       {
         "image": "/assets/testmonials/william_novak.png",
         "name": "William N",
-        "description": "A Patrícia tem me ajudado bastante a entender meus sentimentos e comportamentos perante os desafios que venho enfrentando, principalmente no âmbito profissional. Gosto muito de trabalhar com ela, pois sinto que sua experiencia previa no meio corporativo faz com que compreenda as dinâmicas e o cotidiano que trago nas consultas. Além disso, sempre me traz reflexões pertinentes, que em conjunto aos exercícios semanais, posso pôr em prática certas mudanças de comportamento ou visão de mundo. Só tenho a elogiar s2"
+        "description": "Patrícia has helped me a lot to understand my feelings and behaviors in front of the challenges I've been facing, mainly in the professional field. I like working with her, because I feel that her previous experience in the corporate world makes her understand the dynamics and daily routine that I bring to the consultations. In addition, she always brings pertinent reflections, which, in conjunction with the weekly exercises, I can put into practice certain changes in behavior or vision of the world. I only have to praise her."
       },
       {
         "image": "/assets/testmonials/person_1.png",
         "name": "João Da Silva",
-        "description": "Recomendo o pacote completo da Pat para executivos. A Pat me ajuda no papel de coach, mentora e psicoterapeuta, com uma visão holística do pessoal e profissional, que afinal estão entrelaçados. Com sua rica experiência na área de RH, conselhos, atividades e indicações estou crescendo dentro da função de CEO da minha startup."
+        "description": "I recommend the complete package of Pat for executives. Pat helps me in the role of coach, mentor, and psychotherapist, with a holistic vision of the personnel and professional, that in the end are intertwined. With her rich experience in the area of HR, advice, activities, and indications, I'm growing inside the function of CEO of my startup."
       },
       {
         "image": "/assets/testmonials/person_2.png",
         "name": "Marina Helena, PORMADE",
-        "description": "Foi minha primeira experiência e gostei bastante. Uma conversa natural e ao mesmo tempo objetiva e acolhedora. A Patricia foi excelente e acredito que nossas próximas seções serão bastante proveitosas."
+        "description": "It was my first experience and I liked it a lot. A natural conversation and at the same time objective and welcoming. Patricia was excellent and I believe that our next sections will be very profitable."
       },
       {
         "image": "/assets/testmonials/person_3.png",
         "name": "Fabio H. D. A.",
-        "description": "A Dra. Patricia simplesmente mudou minha vida! Temos uma conexão muito especial e ela sempre sabe o que fazer e como me aconselhar nas mais diversas ocasiões. Além disso, é uma mulher inteligente, sabe sobre diversos assuntos e abordagens, tornando seu tratamento ainda mais completo. Indico para todos que conheço porque sou outra pessoa hoje em dia."
+        "description": "Dr. Patricia simply changed my life! We have a very special connection and she always knows what to do and how to advise me in the most diverse situations. In addition, she is a smart woman, knows about various subjects and approaches, making her treatment even more complete. I recommend it to everyone I know because I am another person today."
       },
       {
         "image": "/assets/testmonials/person_1.png",
         "name": "João Da Silva",
-        "description": "Recomendo o pacote completo da Pat para executivos. A Pat me ajuda no papel de coach, mentora e psicoterapeuta, com uma visão holística do pessoal e profissional, que afinal estão entrelaçados. Com sua rica experiência na área de RH, conselhos, atividades e indicações estou crescendo dentro da função de CEO da minha startup."
+        "description": "I recommend the complete package of Pat for executives. Pat helps me in the role of coach, mentor, and psychotherapist, with a holistic vision of the personnel and professional, that in the end are intertwined. With her rich experience in the area of HR, advice, activities, and indications, I'm growing inside the function of CEO of my startup."
       },
       {
         "image": "/assets/testmonials/person_2.png",
         "name": "Marina Helena, PORMADE",
-        "description": "Foi minha primeira experiência e gostei bastante. Uma conversa natural e ao mesmo tempo objetiva e acolhedora. A Patricia foi excelente e acredito que nossas próximas seções serão bastante proveitosas."
+        "description": "It was my first experience and I liked it a lot. A natural conversation and at the same time objective and welcoming. Patricia was excellent and I believe that our next sections will be very profitable."
       }
     ]
   },
@@ -222,25 +235,25 @@
     }
   },
   "topics": {
-    "title": "Palestras",
+    "title": "Lectures",
     "items": [
       {
         "image": "/assets/ansiedade.jpg",
         "slug": "palestra-controlar-ansiedade",
-        "title": "Como controlar a ansiedade",
-        "description": "Combinando conteúdos práticos e ferramentas exclusivas usadas em orientações psicológicas, conheça às técnicas para controlar a Ansiedade. No evento/palestra/treinamento “Como controlar a Ansiedade” ministrado pelo Dr. Douglas Borges você participará de momentos incríveis para buscar o melhor gerenciamento das emoções e ressignificar crenças e conceitos negativos. Também é abordado assuntos sobre relacionamentos pessoais, trabalho, dinheiro e muito mais."
+        "title": "How to control anxiety",
+        "description": "Combining practical contents and exclusive tools used in psychological orientations, learn about the techniques to control Anxiety. In the event/lecture/training “How to Control Anxiety” led by Dr. Douglas Borges, you will participate in incredible moments to seek the best management of emotions and resignify beliefs and concepts that are negative. It is also addressed subjects about personal relationships, work, money, and much more."
       },
       {
         "image": "/assets/viva-sua-historia.png",
         "slug": "palestra-viva-sua-historia",
-        "title": "Viva sua história",
-        "description": "Reflexões sobre protagonismo humano no ambiente profissional. Qual história você quer contar para o mundo?"
+        "title": "Viva your story",
+        "description": "Reflections on human protagonism in the professional environment. What story do you want to tell the world?"
       },
       {
         "image": "/assets/fe-e-esperanca.jpg",
         "slug": "palestra-fe-e-esperanca-na-atualidade",
-        "title": "A Fé e a esperança frente aos desafios da atualidade",
-        "description": "Na nossa palestra abordamos a vida do pescador Tomé, que foi convidado a seguir Jesus. Mas ele tinha uma personalidade muito forte."
+        "title": "Faith and hope in the face of the challenges of the present",
+        "description": "In our lecture, we discuss the life of Tomé the fisherman, who was invited to follow Jesus. But he had a very strong personality."
       }
     ]
   }
