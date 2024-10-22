@@ -45,26 +45,32 @@
     },
     "services": {
       "title": "Meus serviços",
+      "subtitle": "Juntos, podemos criar um mundo mais saudável e equilibrado.",
       "items": [
         {
-          "title": "Coaching Executivo",
-          "description": "Desenvolvimento de liderança com base em princípios bíblicos, fortalecendo decisões empresariais com propósito e resiliência."
-        },
-        {
+          "icon": "handshake",
           "title": "Programas de Inteligência Emocional para Equipes",
           "description": "Aumente a coesão e o desempenho da sua equipe, promovendo um ambiente de trabalho ético e equilibrado."
         },
         {
+          "icon": "quote",
           "title": "Aconselhamento para Alta Performance Pessoal e Profissional",
           "description": "Um acompanhamento para empresários que precisam gerenciar o estresse e maximizar seu desempenho."
         },
         {
+          "icon": "plus",
           "title": "Workshops In-Company",
           "description": " Treinamentos práticos e baseados em valores cristãos para capacitar líderes e equipes em inteligência emocional, produtividade e gestão de conflitos."
         },
         {
+          "icon": "scale",
           "title": "Consultoria para o Equilíbrio Vida-Trabalho",
           "description": "Apoio na criação de uma cultura organizacional onde o bem-estar pessoal, familiar e empresarial se alinham para melhorar o desempenho a longo prazo."
+        },
+        {
+          "icon": "user",
+          "title": "Coaching Executivo",
+          "description": "Desenvolvimento de liderança com base em princípios bíblicos, fortalecendo decisões empresariais com propósito e resiliência."
         }
       ]
     },
@@ -87,6 +93,8 @@
       }
     ],
     "person": {
+      "preTitle": "Para",
+      "title": "você",
       "fellings": [
         {
           "bg": "white",
@@ -114,8 +122,8 @@
         },
         {
           "bg": "gray.50",
-          "title": "Depressão",
-          "description": "Superação de Apatia e Depressão",
+          "title": "Apatia e Depressão",
+          "description": "Superação ",
           "text": "Compreenda as raízes dos sentimentos de apatia e tristeza profunda. Ao reformular experiências dolorosas, você ganha uma nova perspectiva e renova a vontade de viver, superando a paralisia emocional."
         },
         {
@@ -241,7 +249,7 @@
         "image": "/assets/ansiedade.jpg",
         "slug": "palestra-controlar-ansiedade",
         "title": "Como controlar a ansiedade",
-        "description": "Combinando conteúdos práticos e ferramentas exclusivas usadas em orientações psicológicas, conheça às técnicas para controlar a Ansiedade. No evento/palestra/treinamento “Como controlar a Ansiedade” ministrado pelo Dr. Douglas Borges você participará de momentos incríveis para buscar o melhor gerenciamento das emoções e ressignificar crenças e conceitos negativos. Também é abordado assuntos sobre relacionamentos pessoais, trabalho, dinheiro e muito mais."
+        "description": "Combinando conteúdos práticos e ferramentas exclusivas usadas em orientações psicológicas, conheça às técnicas para controlar a Ansiedade."
       },
       {
         "image": "/assets/viva-sua-historia.png",

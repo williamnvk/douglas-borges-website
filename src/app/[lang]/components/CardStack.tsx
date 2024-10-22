@@ -19,7 +19,7 @@ const CardStack: FC<{
   useEffect(() => {
     setWindowHeight(window.innerHeight);
     const handleResize = () => setWindowHeight(window.innerHeight);
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     const handleScroll = () => {
       if (containerRef.current) {
@@ -36,7 +36,7 @@ const CardStack: FC<{
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -68,6 +68,7 @@ const CardStack: FC<{
           w="full"
           key={card.title}
           p={16}
+          gap={16}
           borderRadius={16}
           bg={card.bg}
           align="center"
@@ -85,17 +86,18 @@ const CardStack: FC<{
           borderColor="white"
           data-aos="fade-up"
         >
+          <Heading flex={2} fontSize="6xl" data-aos="fade-up">
+            {card.description}
+          </Heading>
+
           <VStack flex={1} align="start" justify="center">
-            <Heading fontSize="7xl" data-aos="fade-up">
-              {card.title}
-            </Heading>
-            <Text fontSize="xl" data-aos="fade-up">
-              {card.description}
+            <Text fontSize="large" fontWeight="light" data-aos="fade-up">
+              {card.title.toUpperCase()}
+            </Text>
+            <Text flex={1} data-aos="fade-up" fontSize="sm">
+              {card.text}
             </Text>
           </VStack>
-          <Text flex={1} data-aos="fade-up">
-            {card.text}
-          </Text>
         </HStack>
       ))}
     </VStack>

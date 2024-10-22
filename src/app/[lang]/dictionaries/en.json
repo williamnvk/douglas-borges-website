@@ -45,24 +45,30 @@
     },
     "services": {
       "title": "My services",
+      "subtitle":"Increase your team's cohesion and performance, promoting an ethical and balanced work environment.",
       "items": [
         {
+          "icon": "user",
           "title": "Executive Coaching",
           "description": "Leadership development based on biblical principles, strengthening business decisions with purpose and resilience."
         },
         {
+          "icon": "handshake",
           "title": "Emotional Intelligence Programs for Teams",
           "description": "Increase your team's cohesion and performance, promoting an ethical and balanced work environment."
         },
         {
+          "icon": "quote",
           "title": "Personal and Professional High Performance Counseling",
           "description": "Guidance for entrepreneurs who need to manage stress and maximize their performance."
         },
         {
+          "icon": "plus",	
           "title": "In-Company Workshops",
           "description": "Practical training based on Christian values to empower leaders and teams in emotional intelligence, productivity, and conflict management."
         },
         {
+          "icon": "scale",
           "title": "Work-Life Balance Consulting",
           "description": "Support in creating an organizational culture where personal, family, and business well-being align to improve long-term performance."
         }
@@ -87,6 +93,8 @@
       }
     ],
     "person": {
+      "preTitle": "For",
+      "title": "You",
       "fellings": [
         {
           "bg": "white",

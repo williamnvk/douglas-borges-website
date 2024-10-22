@@ -1,9 +1,4 @@
 import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
   Box,
   Button,
   Container,
@@ -19,6 +14,7 @@ import { WordTransition } from "./components/WordTransition";
 import EmblaCarousel from "@/components/ui/Carousel/Carousel";
 import { PlusIcon, QuoteIcon } from "lucide-react";
 import CardStack from "./components/CardStack";
+import Icon from "@/components/shared/DynamicIcon";
 
 type Props = {
   params: {
@@ -57,7 +53,7 @@ export default async function Home({ params: { lang } }: Props) {
         backgroundAttachment="fixed"
       >
         <Container maxW="container.xl" my={32}>
-          <VStack w="container.md" align="flex-start" gap={8}>
+          <VStack w="container.md" align="flex-start" gap={8} mb={16}>
             <Heading fontSize="6xl" fontWeight="light">
               <WordTransition typewriter words={intl.home.firstWord} />
               <br />
@@ -125,13 +121,12 @@ export default async function Home({ params: { lang } }: Props) {
         </Container>
       </Box>
 
-      <Container maxW="container.xl" mt={-8} pb={16}>
+      <Container maxW="container.xl" mt={-24} pb={16}>
         <CardStack cards={intl.home.person.fellings} />
       </Container>
 
       <Box
         pos="relative"
-        p={32}
         _after={{
           content: '""',
           position: "absolute",
@@ -140,34 +135,41 @@ export default async function Home({ params: { lang } }: Props) {
           right: 0,
           height: "100%",
           backgroundImage:
-            "radial-gradient(circle at bottom center, #e0e0e0 0%, rgba(224, 224, 224, 0) 25%)",
+            "radial-gradient(circle at bottom center, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0.3) 50%)",
           pointerEvents: "none",
           zIndex: 0,
         }}
       >
-        <Container maxW="container.xl" position="relative">
+        <Container maxW="container.xl" position="relative" py={16}>
           <VStack
             w="full"
-            gap={8}
+            gap={16}
             align="flex-start"
             position="relative"
             zIndex={1}
           >
-            <Heading>{intl.home.services.title}</Heading>
+            <VStack gap={0} w="full" align="flex-start ">
+              <Heading fontSize="6xl">{intl.home.services.title}</Heading>
+              <Text>{intl.home.services.subtitle}</Text>
+            </VStack>
             <SimpleGrid templateColumns="repeat(3, 1fr)" spacing={4}>
               {intl.home.services.items.map((s, i) => (
                 <VStack
                   key={`home-services-${i}`}
                   w="full"
                   align="flex-start"
-                  justify="flex-start"
                   borderRadius={6}
                   p={8}
                   bg="white"
-                  boxShadow="md"
                 >
-                  <Heading fontSize="2xl">{s.title}</Heading>
-                  <Text fontSize="smaller">{s.description}</Text>
+                  <VStack flex={1} w="full" align="flex-start">
+                    <Icon size={32} name={s.icon as never} />
+                    <Heading fontSize="4xl">{s.title}</Heading>
+                    <Text color="gray.400" fontSize="small" my={4}>
+                      {s.description}
+                    </Text>
+                  </VStack>
+                  <Button variant="outline">Saiba +</Button>
                 </VStack>
               ))}
             </SimpleGrid>
@@ -193,20 +195,27 @@ export default async function Home({ params: { lang } }: Props) {
                 justify="flex-start"
                 gap={4}
               >
-                <Box
-                  w="full"
-                  borderRadius={4}
-                  h="180px"
-                  style={{
-                    backgroundImage: `url(${s.image})`,
-                    backgroundPosition: "top center",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: `100% 100%`,
-                  }}
-                  filter="grayscale(1)"
-                />
-                <Heading fontSize="2xl">{s.title}</Heading>
-                <Text fontSize="smaller">{s.description}</Text>
+                <VStack flex={1} w="full" align="flex-start">
+                  <Box
+                    w="full"
+                    borderRadius={4}
+                    h="180px"
+                    style={{
+                      backgroundImage: `url(${s.image})`,
+                      backgroundPosition: "top center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "100% auto",
+                      transition: "all 0.3s ease-in-out",
+                    }}
+                    filter="grayscale(1)"
+                    _hover={{
+                      filter: "grayscale(0)",
+                    }}
+                  />
+                  <Heading fontSize="2xl">{s.title}</Heading>
+                  <Text fontSize="smaller">{s.description}</Text>
+                </VStack>
+                <Button>Veja</Button>
               </VStack>
             ))}
           </SimpleGrid>
@@ -283,7 +292,7 @@ export default async function Home({ params: { lang } }: Props) {
         </Container>
       </Box>
 
-      <Container maxW="container.xl">
+      {/* <Container maxW="container.xl">
         <VStack gap={8} w="full">
           <Heading fontSize="xl">{intl.faq.title}</Heading>
           <Accordion w="full">
@@ -300,7 +309,7 @@ export default async function Home({ params: { lang } }: Props) {
             ))}
           </Accordion>
         </VStack>
-      </Container>
+      </Container> */}
 
       <Box bg="gray.100" py={16}>
         <Container maxW="container.xl">

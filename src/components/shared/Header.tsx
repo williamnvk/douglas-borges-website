@@ -18,17 +18,18 @@ export const Header = async ({ lang }: { lang: LanguageType }) => {
       pos="fixed"
       left={0}
       top={0}
-      zIndex={1}
+      zIndex={100}
       bg="white"
     >
       <HStack gap={8}>
-        <h1>
-          <span>
-            <strong>Douglas</strong>
-          </span>
-          &nbsp;<span>Borges</span>
-        </h1>
-
+        <Link href="/">
+          <h1>
+            <span>
+              <strong>Douglas</strong>
+            </span>
+            &nbsp;<span>Borges</span>
+          </h1>
+        </Link>
         <HStack gap={4} border={1} borderRadius={4} borderColor="gray.100">
           <Button
             variant={!isCompany ? "solid" : "link"}
