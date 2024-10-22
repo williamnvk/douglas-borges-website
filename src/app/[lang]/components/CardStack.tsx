@@ -5,7 +5,7 @@ import { Heading, HStack, Text, VStack } from "@chakra-ui/react";
 
 const CardStack: FC<{
   cards: Array<{
-    icon: string;
+    bg: string;
     title: string;
     description: string;
     text: string;
