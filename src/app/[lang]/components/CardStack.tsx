@@ -12,38 +12,43 @@ const CardStack: FC<{
   }>;
 }> = ({ cards }) => {
   const [scrollY, setScrollY] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>();
 
-  const handleScroll = () => {
-    if (containerRef.current) {
-      const offsetTop = containerRef.current.offsetTop;
-      const newScrollY = window.scrollY - offsetTop;
-      setScrollY(newScrollY);
-    }
-    animationRef.current = requestAnimationFrame(handleScroll);
-  };
-
   useEffect(() => {
+    setWindowHeight(window.innerHeight);
+    const handleResize = () => setWindowHeight(window.innerHeight);
+    window.addEventListener('resize', handleResize);
+
+    const handleScroll = () => {
+      if (containerRef.current) {
+        const offsetTop = containerRef.current.offsetTop;
+        const newScrollY = window.scrollY - offsetTop;
+        setScrollY(newScrollY);
+      }
+      animationRef.current = requestAnimationFrame(handleScroll);
+    };
+
     animationRef.current = requestAnimationFrame(handleScroll);
+
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
+      window.removeEventListener('resize', handleResize);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const easeOutCubic = (t: number): number => 1 - Math.pow(1 - t, 3);
 
   const calculateTransform = useCallback(
     (index: number) => {
-      const progress =
-        (scrollY - index * window.innerHeight) / window.innerHeight;
+      const progress = (scrollY - index * windowHeight) / windowHeight;
       const easedProgress = easeOutCubic(Math.min(Math.max(progress, 0), 1));
 
       const scale =
-        index < Math.ceil(scrollY / window.innerHeight)
+        index < Math.ceil(scrollY / windowHeight)
           ? Math.max(0.75, 1 - easedProgress * 0.15)
           : 1;
       const translateY = Math.min(0, -easedProgress * 25);
@@ -53,7 +58,7 @@ const CardStack: FC<{
         opacity: 1 - easedProgress * 0.5,
       };
     },
-    [scrollY]
+    [scrollY, windowHeight]
   );
 
   return (
@@ -81,14 +86,14 @@ const CardStack: FC<{
           data-aos="fade-up"
         >
           <VStack flex={1} align="start" justify="center">
-            <Heading fontSize="7xl" data-aos="fade-left">
+            <Heading fontSize="7xl" data-aos="fade-up">
               {card.title}
             </Heading>
-            <Text fontSize="xl" data-aos="fade-left">
+            <Text fontSize="xl" data-aos="fade-up">
               {card.description}
             </Text>
           </VStack>
-          <Text flex={1} data-aos="fade-right">
+          <Text flex={1} data-aos="fade-up">
             {card.text}
           </Text>
         </HStack>

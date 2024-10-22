@@ -125,7 +125,7 @@ export default async function Home({ params: { lang } }: Props) {
         </Container>
       </Box>
 
-      <Container maxW="container.xl" mt={-8}>
+      <Container maxW="container.xl" mt={-8} pb={16}>
         <CardStack cards={intl.home.person.fellings} />
       </Container>
 
@@ -140,7 +140,7 @@ export default async function Home({ params: { lang } }: Props) {
           right: 0,
           height: "100%",
           backgroundImage:
-            "radial-gradient(circle at bottom center, #e0e0e0 0%, rgba(224, 224, 224, 0) 70%)",
+            "radial-gradient(circle at bottom center, #e0e0e0 0%, rgba(224, 224, 224, 0) 25%)",
           pointerEvents: "none",
           zIndex: 0,
         }}
