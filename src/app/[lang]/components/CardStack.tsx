@@ -77,7 +77,7 @@ const CardStack: FC<{
             ...calculateTransform(index),
             position: "sticky",
             top: "140px",
-            zIndex: 10 + index,
+            zIndex: 1 + index,
             transformOrigin: "center top",
             transition:
               "transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.3s ease-out",

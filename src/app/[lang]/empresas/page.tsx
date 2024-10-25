@@ -17,6 +17,8 @@ import {
 import { getDictionary, Locale } from "../dictionaries";
 import { WordTransition } from "../components/WordTransition";
 import Icon from "@/components/shared/DynamicIcon";
+import WorkLifeIdentification from "./components";
+import { FlagIcon, ScaleIcon } from "lucide-react";
 
 type Props = {
   params: {
@@ -31,19 +33,34 @@ export default async function Home({ params: { lang } }: Props) {
   return (
     <>
       <Box
-        pt={h}
         bg="#f9f8f6"
+        filter="grayscale(1)"
         display="flex"
+        h={`calc(100vh - ${h})`}
         alignContent="center"
         justifyContent="center"
         backgroundImage="url(/assets/hero/empresas.webp)"
         backgroundSize={`100% auto`}
         backgroundRepeat="no-repeat"
-        backgroundPosition="center center"
+        backgroundPosition={{
+          base: "center right",
+          md: "center center",
+          "2xl": "center right",
+        }}
         backgroundAttachment="fixed"
       >
-        <Container maxW="container.xl" my={32}>
-          <VStack w="container.md" align="flex-start" gap={0} mb={16}>
+        <Container
+          maxW="container.xl"
+          py={{ base: 4, md: 48, "2xl": 32 }}
+          px={{ base: 4, md: 16, "2xl": 32 }}
+        >
+          <VStack
+            w="container.sm"
+            align="flex-start"
+            justify="center"
+            gap={0}
+            mb={16}
+          >
             <Badge color="black" bg="white" data-aos="fade-up">
               Projeto
             </Badge>
@@ -59,54 +76,101 @@ export default async function Home({ params: { lang } }: Props) {
                 />
               </Heading>
             </HStack>
-            <Text
-              fontSize="xl"
+            <Box
+              as="span"
+              fontSize="3xl"
+              fontFamily="heading"
               fontWeight="light"
               color="white"
               data-aos="fade-up"
             >
-              Aplicação de método para equilibrar a vida profissional e pessoal
-              para profissionais de alto nível e alta performance.
-            </Text>
+              <strong>Equilibre Liderança e Vida Pessoal</strong>. Método
+              exclusivo para executivos e C-Levels desenvolverem alta
+              performance sustentável
+            </Box>
 
-            <SimpleGrid
-              gap={4}
-              w="full"
-              templateColumns="repeat(2, 1fr)"
-              mt={8}
+            <Button variant="outlineInverted" color="white" mt={8}>
+              Agende uma Consulta Estratégica
+            </Button>
+
+            <VStack
+              align="flex-start"
+              borderRadius={6}
+              w="200px"
+              bg="white"
+              pos="absolute"
+              top={100}
+              p={4}
+              right={140}
+              data-aos="fade-up"
+              data-aos-delay={1000}
             >
-              <VStack
-                align="flex-start"
-                p={4}
-                borderRadius={4}
-                bg="white"
-                data-aos="fade-up"
-                data-aos-delay={0}
-              >
-                <Heading letterSpacing={2} fontSize="4xl">
-                  equilíbrio entre suas vidas profissionais e pessoais
+              <HStack>
+                <Heading letterSpacing={2} fontSize="xl" flex={1}>
+                  Fé e Razão
                 </Heading>
-                <Text fontSize="x-small" textTransform="uppercase">
-                  sdsd
-                </Text>
-              </VStack>
+                <ScaleIcon size={32} />
+              </HStack>
 
-              <VStack
-                align="flex-start"
-                p={4}
-                borderRadius={4}
-                bg="white"
-                data-aos="fade-up"
-                data-aos-delay={200}
-              >
-                <Heading letterSpacing={2} fontSize="4xl">
-                  desafios da gestão corporativa com a qualidade de vida
+              <Text fontSize="x-small" textTransform="uppercase">
+                Descubra como princípios cristãos podem iluminar suas decisões
+                no mundo corporativo
+              </Text>
+            </VStack>
+
+            <VStack
+              align="flex-start"
+              borderRadius={6}
+              w="200px"
+              bg="white"
+              pos="absolute"
+              top={300}
+              p={4}
+              right={240}
+              data-aos="fade-up"
+              data-aos-delay={2000}
+            >
+              <HStack>
+                <Heading letterSpacing={2} fontSize="xl" flex={1}>
+                  Liderança com Empatia
                 </Heading>
-                <Text fontSize="x-small" textTransform="uppercase">
-                  sdsd
-                </Text>
-              </VStack>
-            </SimpleGrid>
+                <FlagIcon size={32} />
+              </HStack>
+
+              <Text fontSize="x-small" textTransform="uppercase">
+                Desenvolver líderes não é apenas sobre estratégia, mas também
+                sobre empatia e propósito. Vamos transformar sua abordagem à
+                liderança
+              </Text>
+            </VStack>
+
+            <VStack
+              align="flex-start"
+              borderRadius={6}
+              w="200px"
+              bg="black"
+              color="white"
+              pos="absolute"
+              top={260}
+              p={4}
+              right={4}
+              boxShadow="2xl"
+              border="1px solid"
+              borderColor="white"
+              data-aos="fade-up"
+              data-aos-delay={3000}
+            >
+              <HStack>
+                <Heading letterSpacing={2} fontSize="xl" flex={1}>
+                  O Poder da Mente
+                </Heading>
+                <FlagIcon size={32} />
+              </HStack>
+
+              <Text fontSize="x-small" textTransform="uppercase">
+                Vamos juntos cultivar um pensamento saudável e produtivo!
+              </Text>
+            </VStack>
           </VStack>
         </Container>
       </Box>
@@ -200,6 +264,31 @@ export default async function Home({ params: { lang } }: Props) {
           </HStack>
         </Container>
       </Box>
+
+      <WorkLifeIdentification />
+
+      <HStack>
+        <VStack flex={1}>
+          <Heading>Você se identifica?</Heading>
+
+          <Text>Solidão nas decisões difíceis</Text>
+          <Text>Pressão constante por resultados</Text>
+          <Text>Sacrifício da vida pessoal</Text>
+
+          <Text>Dificuldade em desconectar</Text>
+
+          <Text>Estresse crônico</Text>
+        </VStack>
+        <VStack flex={1}>
+          <Heading>O Método Work/Life oferece</Heading>
+
+          <Text>Equilíbrio sustentável</Text>
+          <Text>Decisões mais conscientes</Text>
+          <Text>Qualidade de vida preservada</Text>
+          <Text>Maior presença familiar</Text>
+          <Text>Performance otimizada</Text>
+        </VStack>
+      </HStack>
     </>
   );
 }

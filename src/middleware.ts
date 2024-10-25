@@ -11,10 +11,16 @@ function getLocale(request: NextRequest) {
   const headers = { "accept-language": acceptedLanguage };
   const languages = new Negotiator({ headers }).languages();
 
-  return match(languages, locales, defaultLocale); // -> 'en-US'
+  return match(languages, locales, defaultLocale);
 }
 
 export function middleware(request: NextRequest) {
+  // Check if the pathname is /instagram
+  if (request.nextUrl.pathname === '/instagram') {
+    // Skip locale handling for /instagram
+    return NextResponse.next();
+  }
+
   // Check if there is any supported locale in the pathname
   const pathname = request.nextUrl.pathname;
   const pathnameIsMissingLocale = locales.every(

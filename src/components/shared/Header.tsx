@@ -23,7 +23,7 @@ export const Header = async ({ intl, lang }: { intl: any; lang: any }) => {
       pos="fixed"
       left={0}
       top={0}
-      zIndex={1}
+      zIndex={100}
       bg="white"
     >
       <HStack gap={8}>

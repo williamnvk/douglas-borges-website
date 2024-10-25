@@ -35,6 +35,16 @@ const buttonTheme = defineStyleConfig({
         bg: mode("gray.900", "gray.50")(props),
       },
     }),
+    outlineInverted: (props) => ({
+      border: "2px solid",
+      borderColor: mode("white", "black")(props),
+      color: mode("white", "black")(props),
+      bg: "transparent",
+      _hover: {
+        color: mode("white", "black")(props),
+        bg: mode("gray.900", "black")(props),
+      },
+    }),
     solid: {
       bg: "brand.900",
       color: "brand.50",

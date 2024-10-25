@@ -32,7 +32,6 @@ const chunkArray = (arr: string | never[], size: number) => {
 
 export default async function Home({ params: { lang } }: Props) {
   const intl = await getDictionary(lang);
-  const h = "72px";
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
@@ -41,19 +40,19 @@ export default async function Home({ params: { lang } }: Props) {
   return (
     <>
       <Box
-        pt={h}
         bg="#f9f8f6"
+        filter="grayscale(1)"
         display="flex"
         alignContent="center"
         justifyContent="center"
         backgroundImage="url(/assets/hero/1.webp)"
-        backgroundSize={`auto 100vh`}
+        backgroundSize={`auto 100%`}
         backgroundRepeat="no-repeat"
-        backgroundPosition="center right"
+        backgroundPosition={{ base: "center right", md: "400px 50px", "2xl": "center right" }}
         backgroundAttachment="fixed"
       >
-        <Container maxW="container.xl" my={32}>
-          <VStack w="container.md" align="flex-start" gap={8} mb={16}>
+        <Container maxW="container.xl" my={{ base: 4, md: 8, "2xl": 32 }} py={0}>
+          <VStack w="container.md" align="flex-start" gap={8} mb={16} p={0}>
             <Heading fontSize="6xl" fontWeight="light">
               <WordTransition typewriter words={intl.home.firstWord} />
               <br />
@@ -140,7 +139,7 @@ export default async function Home({ params: { lang } }: Props) {
           zIndex: 0,
         }}
       >
-        <Container maxW="container.xl" position="relative" py={16}>
+        <Container maxW="container.xl" position="relative" py={{ base: 4, md: 8, "2xl": 16 }}>
           <VStack
             w="full"
             gap={16}
@@ -291,25 +290,6 @@ export default async function Home({ params: { lang } }: Props) {
           />
         </Container>
       </Box>
-
-      {/* <Container maxW="container.xl">
-        <VStack gap={8} w="full">
-          <Heading fontSize="xl">{intl.faq.title}</Heading>
-          <Accordion w="full">
-            {intl.faq.questions.map((q) => (
-              <AccordionItem key={`faq-q-${q.title}`}>
-                <AccordionButton>
-                  <Box as="span" flex="1" textAlign="left">
-                    {q.title}
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-                <AccordionPanel pb={4}>{q.description}</AccordionPanel>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </VStack>
-      </Container> */}
 
       <Box bg="gray.100" py={16}>
         <Container maxW="container.xl">
