@@ -12,7 +12,7 @@ import {
 import { getDictionary, Locale } from "./dictionaries";
 import { WordTransition } from "./components/WordTransition";
 import EmblaCarousel from "@/components/ui/Carousel/Carousel";
-import { PlusIcon, QuoteIcon } from "lucide-react";
+import { ArrowBigRight, PlusIcon, QuoteIcon } from "lucide-react";
 import CardStack from "./components/CardStack";
 import Icon from "@/components/shared/DynamicIcon";
 
@@ -48,10 +48,18 @@ export default async function Home({ params: { lang } }: Props) {
         backgroundImage="url(/assets/hero/1.webp)"
         backgroundSize={`auto 100%`}
         backgroundRepeat="no-repeat"
-        backgroundPosition={{ base: "center right", md: "400px 50px", "2xl": "center right" }}
+        backgroundPosition={{
+          base: "center right",
+          md: "400px 50px",
+          "2xl": "center right",
+        }}
         backgroundAttachment="fixed"
       >
-        <Container maxW="container.xl" my={{ base: 4, md: 8, "2xl": 32 }} py={0}>
+        <Container
+          maxW="container.xl"
+          my={{ base: 4, md: 8, "2xl": 32 }}
+          py={0}
+        >
           <VStack w="container.md" align="flex-start" gap={8} mb={16} p={0}>
             <Heading fontSize="6xl" fontWeight="light">
               <WordTransition typewriter words={intl.home.firstWord} />
@@ -66,7 +74,7 @@ export default async function Home({ params: { lang } }: Props) {
               {intl.home.subtitle}
             </Heading>
             <Button size="lg" data-aos="fade-up">
-              DE O PRIMEIRO PASSO
+              De o Primeiro Passo
             </Button>
             <Box position="relative" data-aos="fade-up">
               <QuoteIcon size={32} style={{ position: "absolute", right: 0 }} />
@@ -82,8 +90,8 @@ export default async function Home({ params: { lang } }: Props) {
                 <VStack
                   key={`home-counting-${i}`}
                   align="flex-start"
-                  p={4}
-                  borderRadius={4}
+                  p={6}
+                  borderRadius={20}
                   bg="white"
                   data-aos="fade-up"
                   data-aos-delay={i * 200}
@@ -92,16 +100,19 @@ export default async function Home({ params: { lang } }: Props) {
                     <PlusIcon style={{ display: "inline" }} />
                     {c.title}
                   </Heading>
-                  <Text fontSize="x-small" textTransform="uppercase">
+                  <Text fontSize="sm" color="gray.300">
                     {c.description}
                   </Text>
                 </VStack>
               ))}
             </SimpleGrid>
 
-            <Heading maxW="450px" fontSize="7xl" mt={`25vh`} data-aos="fade-up">
-              {intl.home.about.title}
-            </Heading>
+            <Box mt={`25vh`}>
+              <Tag>{intl.home.about.pre}</Tag>
+              <Heading maxW="450px" fontSize="7xl" data-aos="fade-up">
+                {intl.home.about.title}
+              </Heading>
+            </Box>
 
             {intl.home.about.description.map((p, i) => (
               <Text
@@ -139,7 +150,11 @@ export default async function Home({ params: { lang } }: Props) {
           zIndex: 0,
         }}
       >
-        <Container maxW="container.xl" position="relative" py={{ base: 4, md: 8, "2xl": 16 }}>
+        <Container
+          maxW="container.xl"
+          position="relative"
+          py={{ base: 4, md: 8, "2xl": 16 }}
+        >
           <VStack
             w="full"
             gap={16}
@@ -291,22 +306,19 @@ export default async function Home({ params: { lang } }: Props) {
         </Container>
       </Box>
 
-      <Box bg="gray.100" py={16}>
-        <Container maxW="container.xl">
-          <HStack w="full">
-            <VStack gap={2} flex={1} align="flex-start">
-              <Heading>
-                Como as mudanças que você quer vão realmente acontecer?
-              </Heading>
-              <Text>
-                Entre em contato agora conosco e crie uma parceria pela
-                construção de um novo caminho para sua carreira!
-              </Text>
-            </VStack>
-            <Button>Entrar em contato</Button>
-          </HStack>
-        </Container>
-      </Box>
+      <Container maxW="container.md" my={32}>
+        <VStack gap={2} flex={1} align="center" justify="center">
+          <ArrowBigRight size={48} />
+          <Heading textAlign="center">
+            Como as mudanças que você quer vão realmente acontecer?
+          </Heading>
+          <Text textAlign="center">
+            Entre em contato agora conosco e crie uma parceria pela construção
+            de um novo caminho para sua carreira!
+          </Text>
+          <Button size="lg">Entrar em contato</Button>
+        </VStack>
+      </Container>
     </>
   );
 }

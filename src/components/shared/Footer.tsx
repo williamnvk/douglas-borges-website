@@ -20,7 +20,7 @@ async function Footer({ lang }: { lang: LanguageType }) {
   const intl = await getDictionary(lang as never);
 
   return (
-    <Box as="footer" borderTopWidth="1px">
+    <Box as="footer">
       <Container maxW="container.xl" py={8} gap={16}>
         <Stack
           direction={{ base: "column", md: "row" }}
@@ -58,7 +58,6 @@ async function Footer({ lang }: { lang: LanguageType }) {
             </Flex>
           </VStack>
         </Stack>
-        <Divider />
         <Flex mt={8} w="full" justifyContent="space-between">
           <Text fontSize="xs">
             &copy; {new Date().getFullYear()} Douglas Borges. {intl.footer.copy}

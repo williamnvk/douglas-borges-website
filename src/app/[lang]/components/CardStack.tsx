@@ -69,7 +69,7 @@ const CardStack: FC<{
           key={card.title}
           p={16}
           gap={16}
-          borderRadius={16}
+          borderRadius={20}
           bg={card.bg}
           align="center"
           justify="center"
@@ -82,8 +82,6 @@ const CardStack: FC<{
             transition:
               "transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.3s ease-out",
           }}
-          borderWidth={4}
-          borderColor="white"
           data-aos="fade-up"
         >
           <Heading flex={2} fontSize="6xl" data-aos="fade-up">

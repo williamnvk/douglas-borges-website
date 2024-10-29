@@ -5,7 +5,7 @@ const buttonTheme = defineStyleConfig({
   baseStyle: {
     fontFamily: "heading",
     fontWeight: "bold",
-    borderRadius: "sm",
+    borderRadius: "40px",
   },
   sizes: {
     sm: {
@@ -20,7 +20,7 @@ const buttonTheme = defineStyleConfig({
     },
     lg: {
       fontSize: "lg",
-      px: 6,
+      px: 12,
       py: 6,
     },
   },
