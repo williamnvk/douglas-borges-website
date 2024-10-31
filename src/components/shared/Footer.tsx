@@ -3,7 +3,6 @@ import {
   Button,
   Checkbox,
   Container,
-  Divider,
   Flex,
   Input,
   Text,

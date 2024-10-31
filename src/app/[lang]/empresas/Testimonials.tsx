@@ -32,7 +32,7 @@ export default function Testimonials({
     <Box pos="relative">
       <Swiper
         modules={[Navigation]}
-        slidesPerView={4.5}
+        slidesPerView={2.5}
         centeredSlides={true}
         spaceBetween={24}
         loop={true}
@@ -52,8 +52,8 @@ export default function Testimonials({
                 key={t.name}
                 borderRadius={20}
                 bg="gray.800"
-                gap={8}
-                p={10}
+                gap={4}
+                p={8}
                 opacity={isActive ? 1 : 0.2}
                 transition="opacity 0.3s, transform 0.3s"
                 align="flex-start"
@@ -63,7 +63,7 @@ export default function Testimonials({
                   transform: "scale(1.05)",
                 }}
               >
-                <Box color="gray.800">
+                <Box color="gray.500">
                   <QuoteIcon />
                 </Box>
                 <VStack flex={1} gap={4}>
@@ -73,9 +73,7 @@ export default function Testimonials({
                     fontWeight="semibold"
                     color="gray.200"
                   >
-                    Equilibre Liderança e Vida Pessoal. Método exclusivo para
-                    executivos e C-Levels desenvolverem alta performance
-                    sustentável Slide 1
+                   {t.description.slice(0, 200)}...
                   </Heading>
                   <HStack w="full" align="center" justify="flex-start">
                     <Box
@@ -99,10 +97,10 @@ export default function Testimonials({
       </Swiper>
 
       <Container maxW="container.xl" mt={4} pos="relative" h="48px">
-        <Flex w="full" justify="flex-end">
+        <Flex w="full" justify="flex-end" gap={4}>
           <Button
             className="button__prev"
-            variant="ghost"
+            variant="icon"
             borderRadius="50%"
             w="48px"
             h="48px"
@@ -111,7 +109,7 @@ export default function Testimonials({
           </Button>
           <Button
             className="button__next"
-            variant="ghost"
+            variant="icon"
             borderRadius="50%"
             w="48px"
             h="48px"

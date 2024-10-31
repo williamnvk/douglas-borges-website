@@ -25,6 +25,18 @@ const buttonTheme = defineStyleConfig({
     },
   },
   variants: {
+    icon: (props) => ({
+      height: "48px",
+      width: "48px",
+      border: "none",
+      bg: mode("gray.800", "gray.200")(props),
+      color: mode("gray.200", "gray.500")(props),
+      borderRadius: "50%",
+      _hover: {
+        color: mode("gray.50", "gray.900")(props),
+        bg: mode("gray.900", "gray.50")(props),
+      },
+    }),
     outline: (props) => ({
       border: "2px solid",
       borderColor: mode("gray.900", "gray.50")(props),
@@ -51,7 +63,7 @@ const buttonTheme = defineStyleConfig({
       _hover: {
         bg: "brand.600",
       },
-    }
+    },
   },
   defaultProps: {
     size: "md",

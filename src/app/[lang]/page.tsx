@@ -14,7 +14,7 @@ import { WordTransition } from "./components/WordTransition";
 import EmblaCarousel from "@/components/ui/Carousel/Carousel";
 import { ArrowBigRight, PlusIcon, QuoteIcon } from "lucide-react";
 import CardStack from "./components/CardStack";
-import Icon from "@/components/shared/DynamicIcon";
+import Services from "./components/Services";
 
 type Props = {
   params: {
@@ -135,61 +135,26 @@ export default async function Home({ params: { lang } }: Props) {
         <CardStack cards={intl.home.person.fellings} />
       </Container>
 
-      <Box
-        pos="relative"
-        _after={{
-          content: '""',
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: "100%",
-          backgroundImage:
-            "radial-gradient(circle at bottom center, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 255, 0.3) 50%)",
-          pointerEvents: "none",
-          zIndex: 0,
-        }}
+      <Container
+        maxW="container.xl"
+        position="relative"
+        py={16}
+        color="gray.900"
       >
-        <Container
-          maxW="container.xl"
+        <VStack
+          w="full"
+          gap={16}
+          align="flex-start"
           position="relative"
-          py={{ base: 4, md: 8, "2xl": 16 }}
+          zIndex={1}
         >
-          <VStack
-            w="full"
-            gap={16}
-            align="flex-start"
-            position="relative"
-            zIndex={1}
-          >
-            <VStack gap={0} w="full" align="flex-start ">
-              <Heading fontSize="6xl">{intl.home.services.title}</Heading>
-              <Text>{intl.home.services.subtitle}</Text>
-            </VStack>
-            <SimpleGrid templateColumns="repeat(3, 1fr)" spacing={4}>
-              {intl.home.services.items.map((s, i) => (
-                <VStack
-                  key={`home-services-${i}`}
-                  w="full"
-                  align="flex-start"
-                  borderRadius={6}
-                  p={8}
-                  bg="white"
-                >
-                  <VStack flex={1} w="full" align="flex-start">
-                    <Icon size={32} name={s.icon as never} />
-                    <Heading fontSize="4xl">{s.title}</Heading>
-                    <Text color="gray.400" fontSize="small" my={4}>
-                      {s.description}
-                    </Text>
-                  </VStack>
-                  <Button variant="outline">Saiba +</Button>
-                </VStack>
-              ))}
-            </SimpleGrid>
+          <VStack gap={0} w="full" align="flex-start">
+            <Tag>{intl.home.services.title}</Tag>
+            <Heading fontSize="6xl">{intl.home.services.subtitle}</Heading>
           </VStack>
-        </Container>
-      </Box>
+        </VStack>
+      </Container>
+      <Services services={intl.home.services.items} isDark={false} />
 
       <Container maxW="container.xl" py={24}>
         <VStack w="full" gap={8} align="flex-start">
@@ -235,12 +200,14 @@ export default async function Home({ params: { lang } }: Props) {
           </SimpleGrid>
         </VStack>
       </Container>
-      <Box py={16} alignContent="center" bg="orange.100">
+      <Box py={16} alignContent="center" bg="gray.900">
         <Container maxW="container.xl">
           <VStack gap={0} w="full" mb={{ base: 4, md: 8 }}>
             <Tag>{intl.testimonials.span}</Tag>
-            <Heading fontSize="3xl">{intl.testimonials.title}</Heading>
-            <Text>{intl.testimonials.subtitle}</Text>
+            <Heading fontSize="5xl" color="gray.50">
+              {intl.testimonials.title}
+            </Heading>
+            <Text color="gray.50">{intl.testimonials.subtitle}</Text>
           </VStack>
 
           <EmblaCarousel
@@ -294,7 +261,9 @@ export default async function Home({ params: { lang } }: Props) {
                           backgroundPosition="center"
                           filter="grayscale(1)"
                         />
-                        <Text fontSize="smaller">{t.name}</Text>
+                        <Text fontSize="smaller" color="gray.50">
+                          {t.name}
+                        </Text>
                       </VStack>
                     ))}
                   </HStack>

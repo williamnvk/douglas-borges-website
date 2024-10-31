@@ -1,0 +1,18 @@
+.scroll-container {
+  height: 200vh; /* Duas vezes a altura da viewport */
+}
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.text {
+  text-align: center;
+} 

@@ -6,7 +6,6 @@ import {
   AccordionPanel,
   Badge,
   Box,
-  Button,
   Container,
   Heading,
   HStack,
@@ -16,9 +15,11 @@ import {
 } from "@chakra-ui/react";
 import { getDictionary, Locale } from "../dictionaries";
 import { WordTransition } from "../components/WordTransition";
-import Icon from "@/components/shared/DynamicIcon";
-import WorkLifeIdentification from "./components";
 import Testimonials from "./Testimonials";
+import { ClipboardPenIcon, LightbulbIcon, MedalIcon } from "lucide-react";
+import MotionText from "./MotionText";
+import ChallengesAndBenefits from "./ChallengesAndBenefits";
+import Services from "../components/Services";
 
 type Props = {
   params: {
@@ -28,45 +29,40 @@ type Props = {
 
 export default async function Home({ params: { lang } }: Props) {
   const intl = await getDictionary(lang);
-  const h = "72px";
+  // const h = "72px";
 
   const testimonials = intl.testimonials.items;
 
   return (
     <>
       <Box
-        bg="blue"
-        display="flex"
-        flexDir="column"
-        alignContent="center"
-        justifyContent="center"
-        filter="grayscale(1)"
-        backgroundImage="url(/assets/business-bg.jpg)"
-        backgroundBlendMode="multiply"
-        backgroundSize={`100% auto`}
-        backgroundRepeat="no-repeat"
-        backgroundPosition={{
-          base: "center right",
-          md: "center center",
-          "2xl": "center center",
-        }}
-        backgroundAttachment="fixed"
-        animation="scaling 30s infinite alternate ease-in-out"
-        sx={{
-          "@keyframes scaling": {
-            "0%": { backgroundSize: "100% auto" },
-            "100%": { backgroundSize: "300% auto" },
-          },
-        }}
+        bg="gray.900"
+        // bg="blue.800"
+        // display="flex"
+        // flexDir="column"
+        // alignContent="center"
+        // justifyContent="center"
+        // filter="grayscale(1)"
+        // backgroundImage="url(/assets/business-bg.jpg)"
+        // backgroundBlendMode="multiply"
+        // backgroundSize={`100% auto`}
+        // backgroundRepeat="no-repeat"
+        // backgroundPosition={{
+        //   base: "center right",
+        //   md: "center center",
+        //   "2xl": "center center",
+        // }}
+        // backgroundAttachment="fixed"
+        // animation="scaling 30s infinite alternate ease-in-out"
+        // sx={{
+        //   "@keyframes scaling": {
+        //     "0%": { backgroundSize: "100% auto" },
+        //     "100%": { backgroundSize: "300% auto" },
+        //   },
+        // }}
       >
-        <Container maxW="container.xl" py={{ base: 4, md: 48, "2xl": 32 }}>
-          <VStack
-            w="container.md"
-            align="flex-start"
-            justify="center"
-            gap={0}
-            mb={16}
-          >
+        <Container maxW="container.xl" py={{ base: 4, md: 16, "2xl": 24 }}>
+          <VStack w="container.md" align="flex-start" justify="center" gap={0}>
             <Badge color="black" bg="white" data-aos="fade-up">
               Projeto
             </Badge>
@@ -76,7 +72,7 @@ export default async function Home({ params: { lang } }: Props) {
               </Heading>
 
               <Heading fontSize="32px" fontWeight="light" color="white" mt="lg">
-                -
+                &
               </Heading>
               <Heading fontSize="80px" fontWeight="light" color="white" mt="lg">
                 <WordTransition
@@ -99,50 +95,70 @@ export default async function Home({ params: { lang } }: Props) {
         </Container>
         <Testimonials testimonials={testimonials} />
 
+        {/* <Heading>Um processo comprovado em 3 etapas</Heading> */}
+
+        <Box pos="relative" py={24}>
+          <MotionText />
+        </Box>
+
         <Container maxW="container.xl" py={16}>
-          <HStack>
-            <VStack flex={1}>
-              <Heading>Você se identifica?</Heading>
+          <ChallengesAndBenefits />
+        </Container>
 
-              <Text>Solidão nas decisões difíceis</Text>
-              <Text>Pressão constante por resultados</Text>
-              <Text>Sacrifício da vida pessoal</Text>
-
-              <Text>Dificuldade em desconectar</Text>
-
-              <Text>Estresse crônico</Text>
-            </VStack>
-            <VStack flex={1}>
-              <Heading>O Método Work/Life oferece</Heading>
-
-              <Text>Equilíbrio sustentável</Text>
-              <Text>Decisões mais conscientes</Text>
-              <Text>Qualidade de vida preservada</Text>
-              <Text>Maior presença familiar</Text>
-              <Text>Performance otimizada</Text>
+        <SimpleGrid
+          templateColumns="repeat(3, 1fr)"
+          spacing={4}
+          maxW="container.xl"
+          mx="auto"
+          color="white"
+          my={16}
+        >
+          <HStack align="flex-start" gap={6}>
+            <ClipboardPenIcon size={48} />
+            <VStack align="flex-start" flex={1} gap={4}>
+              <Heading fontSize="4xl">Análise Inicial</Heading>
+              <Text fontSize="sm" color="gray.200">
+                Começamos com uma entrevista aprofundada para entender os
+                desafios e objetivos específicos de cada cliente. A partir
+                disso, definimos metas claras e criamos um plano personalizado
+                que atenda tanto às necessidades profissionais quanto ao
+                equilíbrio pessoal.
+              </Text>
             </VStack>
           </HStack>
-        </Container>
-      </Box>
+          <HStack align="flex-start" gap={6}>
+            <LightbulbIcon size={48} />
+            <VStack align="flex-start" flex={1} gap={4}>
+              <Heading fontSize="4xl">Desenvolvimento</Heading>
+              <Text fontSize="sm" color="gray.200">
+                Em seguida, trabalhamos com 2 a 6 sessões estruturadas, com
+                exercícios práticos e um acompanhamento contínuo. A cada sessão,
+                focamos em construir habilidades e novos hábitos que ajudem o
+                cliente a lidar com as pressões do dia a dia e a melhorar seu
+                bem-estar geral.
+              </Text>
+            </VStack>
+          </HStack>
+          <HStack align="flex-start" gap={6}>
+            <MedalIcon size={48} />
+            <VStack align="flex-start" flex={1} gap={4}>
+              <Heading fontSize="4xl">Consolidação</Heading>
+              <Text fontSize="sm" color="gray.200">
+                Por fim, avaliamos os resultados obtidos e celebramos as
+                conquistas. Um plano de continuidade é criado para garantir que
+                os progressos alcançados sejam mantidos, fortalecendo o
+                equilíbrio entre a vida profissional e pessoal.
+              </Text>
+            </VStack>
+          </HStack>
+        </SimpleGrid>
 
-      <Box
-        pos="relative"
-        bg="black"
-        _after={{
-          content: '""',
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: "100%",
-          backgroundImage:
-            "radial-gradient(circle at top center, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.3) 50%)",
-          pointerEvents: "none",
-          zIndex: 0,
-        }}
-        color="white"
-      >
-        <Container maxW="container.xl" position="relative" py={16}>
+        <Container
+          maxW="container.xl"
+          position="relative"
+          py={16}
+          color="gray.50"
+        >
           <VStack
             w="full"
             gap={16}
@@ -154,49 +170,35 @@ export default async function Home({ params: { lang } }: Props) {
               <Heading fontSize="6xl">{intl.home.services.title}</Heading>
               <Text>{intl.home.services.subtitle}</Text>
             </VStack>
-            <SimpleGrid templateColumns="repeat(3, 1fr)" spacing={4}>
-              {intl.home.services.items.map((s, i) => (
-                <VStack
-                  key={`home-services-${i}`}
-                  w="full"
-                  align="flex-start"
-                  borderRadius={6}
-                  p={8}
-                  bg="black"
-                >
-                  <VStack flex={1} w="full" align="flex-start">
-                    <Icon size={32} name={s.icon as never} />
-                    <Heading fontSize="4xl">{s.title}</Heading>
-                    <Text color="gray.400" fontSize="small" my={4}>
-                      {s.description}
-                    </Text>
-                  </VStack>
-                  <Button variant="outline">Saiba +</Button>
-                </VStack>
+          </VStack>
+        </Container>
+
+        <Services services={intl.home.services.items} />
+
+        <Container
+          maxW="container.xl"
+          position="relative"
+          py={16}
+          color="gray.50"
+        >
+          <VStack gap={8} w="full">
+            <Heading fontSize="xl">{intl.faq.title}</Heading>
+            <Accordion w="full" variant="custom">
+              {intl.faq.questions.map((q) => (
+                <AccordionItem key={`faq-q-${q.title}`}>
+                  <AccordionButton>
+                    <Box as="span" flex="1" textAlign="left">
+                      {q.title}
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                  <AccordionPanel pb={4}>{q.description}</AccordionPanel>
+                </AccordionItem>
               ))}
-            </SimpleGrid>
+            </Accordion>
           </VStack>
         </Container>
       </Box>
-
-      <Container maxW="container.xl" py={16}>
-        <VStack gap={8} w="full">
-          <Heading fontSize="xl">{intl.faq.title}</Heading>
-          <Accordion w="full" variant="custom">
-            {intl.faq.questions.map((q) => (
-              <AccordionItem key={`faq-q-${q.title}`}>
-                <AccordionButton>
-                  <Box as="span" flex="1" textAlign="left">
-                    {q.title}
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-                <AccordionPanel pb={4}>{q.description}</AccordionPanel>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </VStack>
-      </Container>
     </>
   );
 }

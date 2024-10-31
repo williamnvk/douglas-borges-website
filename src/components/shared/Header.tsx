@@ -39,7 +39,7 @@ export const Header = async ({ intl, lang }: { intl: any; lang: any }) => {
           <Button
             variant={!isCompany ? "outline" : "link"}
             as={Link}
-            href="/voce"
+            href="/"
           >
             {intl.header.personal}
           </Button>
