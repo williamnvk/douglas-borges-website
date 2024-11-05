@@ -18,10 +18,12 @@ import Icon from "@/components/shared/DynamicIcon";
 import { useRef } from "react";
 
 export default function Services({
-  services,
+  slidesPerView = 3.5,
+  list,
   isDark = true,
 }: {
-  services: Array<{ icon: string; title: string; description: string }>;
+  slidesPerView?: number;
+  list: Array<{ icon: string; title: string; description: string }>;
   isDark?: boolean;
 }) {
   const swiperRef = useRef<SwiperRef>(null);
@@ -29,7 +31,7 @@ export default function Services({
     <>
       <Swiper
         ref={swiperRef}
-        slidesPerView={3.5}
+        slidesPerView={slidesPerView}
         centeredSlides={false}
         spaceBetween={24}
         loop={true}
@@ -43,8 +45,8 @@ export default function Services({
         modules={[Navigation]}
         style={{ overflow: "hidden" }}
       >
-        {services.map((s, i) => (
-          <SwiperSlide key={`home-services-${i}`}>
+        {list.map((s, i) => (
+          <SwiperSlide key={`list-${i}`}>
             <VStack
               align="flex-start"
               borderRadius={6}
@@ -54,7 +56,9 @@ export default function Services({
             >
               <VStack align="flex-start" color="gray.900">
                 <Icon size={32} name={s.icon as never} />
-                <Heading fontSize="4xl">{s.title}</Heading>
+                <Heading fontSize="3xl" w="full">
+                  {s.title}
+                </Heading>
                 <Text color="gray.800" fontSize="small" my={4}>
                   {s.description}
                 </Text>

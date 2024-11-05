@@ -136,6 +136,50 @@
       ]
     }
   },
+  "company": {
+    "method": [
+      {
+        "icon": "brain",
+        "title": "Self-Awareness",
+        "description": "Consulting can help you better understand your emotions, values, and motivations. This self-awareness is crucial for identifying what truly matters in your life and where to focus your efforts."
+      },
+      {
+        "icon": "alarm-clock",
+        "title": "Stress Management",
+        "description": "Techniques and strategies for managing stress can be taught, helping you deal with pressures at work and at home more effectively."
+      },
+      {
+        "icon": "megaphone",
+        "title": "Communication Skills Development",
+        "description": "Improving your communication skills can facilitate healthier and more productive interactions both in the workplace and at home, fostering stronger relationships."
+      },
+      {
+        "icon": "git-commit-horizontal",
+        "title": "Setting Boundaries",
+        "description": "Learning to establish and maintain clear boundaries between work and personal life can help prevent burnout and ensure you have time and energy for personal and family activities."
+      },
+      {
+        "icon": "sparkles",
+        "title": "Clarity of Purpose",
+        "description": "Consulting can help align your daily activities with your life purpose and values, making your choices more meaningful and satisfying."
+      },
+      {
+        "icon": "notebook-pen",
+        "title": "Planning and Priorities",
+        "description": "Working with a consultant can help you define clear priorities and develop a plan to achieve the desired balance, which may involve reorganizing your time and commitments."
+      },
+      {
+        "icon": "heart-handshake",
+        "title": "Emotional Support",
+        "description": "Having a safe space to discuss challenges and receive emotional support can be revitalizing and provide new perspectives on how to handle difficulties."
+      },
+      {
+        "icon": "shield",
+        "title": "Resilience Development",
+        "description": "Learning to be more resilient can help you face and recover from inevitable challenges and changes in work and personal life."
+      }
+    ]
+  },
   "footer": {
     "newsletter": {
       "title": "Receive Exclusive Tips for Leadership and Life Balance",

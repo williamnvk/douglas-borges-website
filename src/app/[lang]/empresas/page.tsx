@@ -6,6 +6,7 @@ import {
   AccordionPanel,
   Badge,
   Box,
+  Button,
   Container,
   Heading,
   HStack,
@@ -16,7 +17,12 @@ import {
 import { getDictionary, Locale } from "../dictionaries";
 import { WordTransition } from "../components/WordTransition";
 import Testimonials from "./Testimonials";
-import { ClipboardPenIcon, LightbulbIcon, MedalIcon } from "lucide-react";
+import {
+  ArrowBigRight,
+  ClipboardPenIcon,
+  LightbulbIcon,
+  MedalIcon,
+} from "lucide-react";
 import MotionText from "./MotionText";
 import ChallengesAndBenefits from "./ChallengesAndBenefits";
 import Services from "../components/Services";
@@ -153,27 +159,7 @@ export default async function Home({ params: { lang } }: Props) {
           </HStack>
         </SimpleGrid>
 
-        <Container
-          maxW="container.xl"
-          position="relative"
-          py={16}
-          color="gray.50"
-        >
-          <VStack
-            w="full"
-            gap={16}
-            align="flex-start"
-            position="relative"
-            zIndex={1}
-          >
-            <VStack gap={0} w="full" align="flex-start ">
-              <Heading fontSize="6xl">{intl.home.services.title}</Heading>
-              <Text>{intl.home.services.subtitle}</Text>
-            </VStack>
-          </VStack>
-        </Container>
-
-        <Services services={intl.home.services.items} />
+        <Services slidesPerView={5.5} list={intl.company.method} />
 
         <Container
           maxW="container.xl"
@@ -196,6 +182,26 @@ export default async function Home({ params: { lang } }: Props) {
                 </AccordionItem>
               ))}
             </Accordion>
+          </VStack>
+        </Container>
+
+        <Container maxW="container.md" py={32}>
+          <VStack
+            gap={2}
+            flex={1}
+            align="center"
+            justify="center"
+            color="gray.50"
+          >
+            <ArrowBigRight size={48} />
+            <Heading textAlign="center">
+              Como as mudanças que você quer vão realmente acontecer?
+            </Heading>
+            <Text textAlign="center">
+              Entre em contato agora conosco e crie uma parceria pela construção
+              de um novo caminho para sua carreira!
+            </Text>
+            <Button size="lg">Entrar em contato</Button>
           </VStack>
         </Container>
       </Box>

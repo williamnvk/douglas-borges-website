@@ -136,6 +136,50 @@
       ]
     }
   },
+  "company": {
+    "method": [
+      {
+        "icon": "brain",
+        "title": "Autoconhecimento",
+        "description": "A consultoria pode ajudar você a entender melhor suas emoções, valores e motivações. Esse autoconhecimento é crucial para identificar o que realmente importa em sua vida e onde concentrar seus esforços."
+      },
+      {
+        "icon": "alarm-clock",
+        "title": "Gestão do Estresse",
+        "description": "Técnicas e estratégias para gerenciar o estresse podem ser ensinadas, ajudando você a lidar com pressões no trabalho e em casa de maneira mais eficaz."
+      },
+      {
+        "icon": "megaphone",
+        "title": "Desenvolvimento de Habilidades de Comunicação",
+        "description": "Melhorar suas habilidades de comunicação pode facilitar interações mais saudáveis e produtivas tanto no ambiente de trabalho quanto em casa, promovendo relacionamentos mais fortes."
+      },
+      {
+        "icon": "git-commit-horizontal",
+        "title": "Estabelecimento de Limites",
+        "description": "Aprender a estabelecer e manter limites claros entre trabalho e vida pessoal pode ajudar a prevenir o esgotamento e a garantir que você tenha tempo e energia para atividades pessoais e familiares."
+      },
+      {
+        "icon": "sparkles",
+        "title": "Clareza de Propósito",
+        "description": "A consultoria pode ajudar a alinhar suas atividades diárias com seu propósito de vida e valores, tornando suas escolhas mais significativas e satisfatórias."
+      },
+      {
+        "icon": "notebook-pen",
+        "title": "Planejamento e Prioridades",
+        "description": "Trabalhar com um consultor pode ajudá-lo a definir prioridades claras e desenvolver um plano para alcançar o equilíbrio desejado, o que pode envolver reorganizar seu tempo e compromissos."
+      },
+      {
+        "icon": "heart-handshake",
+        "title": "Suporte Emocional",
+        "description": "Ter um espaço seguro para discutir desafios e receber apoio emocional pode ser revitalizante e proporcionar novas perspectivas sobre como lidar com dificuldades."
+      },
+      {
+        "icon": "shield",
+        "title": "Desenvolvimento de Resiliência",
+        "description": "Aprender a ser mais resiliente pode ajudá-lo a enfrentar e se recuperar de desafios e mudanças inevitáveis no trabalho e na vida pessoal."
+      }
+    ]
+  },
   "footer": {
     "newsletter": {
       "title": "Receba Dicas Exclusivas para Liderança e Equilíbrio de Vida",
@@ -149,17 +193,32 @@
       {
         "type": ["company", "person"],
         "title": "É pertinente trabalhar questões de trabalho e família com o mesmo profissional?",
-        "description": "Não só pertinente , mas indicado. Os princípios que mantêm relações saudáveis são os mesmos dentro de todos os sistemas que o indivíduo ocupa. Leis como ordem, hierarquia, equilíbrio entre dar e receber e pertencimento, estão presentes em todas as nossas relações com pequenas especificidades em relação à postura que o cliente deve apresentar. Geralmente a mudança da postura e a intervenção em qualquer dos 3 pilares citados anteriormente, influenciam os demais sistemas, sendo assim, uma fonte criadora de equilíbrio múltiplo em todas as áreas de sua visa."
+        "description": "Não só pertinente, mas indicado. Os princípios que mantêm relações saudáveis são os mesmos dentro de todos os sistemas que o indivíduo ocupa. Leis como ordem, hierarquia, equilíbrio entre dar e receber e pertencimento, estão presentes em todas as nossas relações com pequenas especificidades em relação à postura que o cliente deve apresentar. Geralmente a mudança da postura e a intervenção em qualquer dos 3 pilares citados anteriormente, influenciam os demais sistemas, sendo assim, uma fonte criadora de equilíbrio múltiplo em todas as áreas de sua visa."
       },
       {
         "type": ["company"],
-        "title": "Psicólogas(os) podem utilizar o coaching na atuação profissional?",
-        "description": "Segundo o CRP/PR- Conselho regional de psicologia, é possível que a(o) Psicóloga(o) utilize o Coaching em sua prática profissional. Contudo, esta técnica pode ser utilizada pela(o) Psicóloga(o) de forma complementar à atuação. Sendo assim, a(o) profissional deverá atuar de forma condizente aos Princípios Fundamentais e Artigos do Código de Ética Profissional do Psicólogo."
+        "title": "Como funciona a consultoria psicológica para executivos?",
+        "description": "A consultoria é focada em oferecer suporte emocional e estratégias práticas para ajudar líderes a equilibrarem suas responsabilidades empresariais com a vida pessoal e seu propósito. Durante as sessões, abordamos desafios específicos e desenvolvemos planos personalizados para uma liderança saudável e sustentável."
       },
       {
         "type": ["company"],
-        "title": "Como podemos definir o coaching e qual a linha entre psicoterapia e coaching?",
-        "description": "Segundo o CFP- Conselho federal de psicologia, enquanto um processo que se propõe a auxiliar o indivíduo a alcançar objetivos previamente definidos, o Coaching é uma técnica que transita entre campos de atuação que abordam o autoconhecimento e o desenvolvimento humano, que também são conteúdos da Psicologia.\nRessalta-se que a(o) Psicóloga(o) que utilizar esta técnica em sua atuação deverá fazê-lo de modo complementar à Psicologia, uma vez que sua atuação profissional é como Psicóloga(o)."
+        "title": "O que posso esperar na primeira sessão?",
+        "description": "Já na primeira sessão, você terá a oportunidade de explorar suas principais questões emocionais e receber uma clareza estratégica inicial para equilibrar os aspectos da sua vida profissional e pessoal. Muitos clientes percebem uma transformação imediata que impulsiona melhorias em sua performance."
+      },
+      {
+        "type": ["company"],
+        "title": "Quem pode se beneficiar dessa consultoria?",
+        "description": "A consultoria é especialmente indicada para executivos, líderes empresariais, CEOs e C-Levels que enfrentam pressões intensas e buscam equilíbrio emocional. É ideal para profissionais de alta demanda que desejam melhorar sua qualidade de vida sem sacrificar a performance."
+      },
+      {
+        "type": ["company"],
+        "title": "Como a fé cristã é integrada ao processo de consultoria?",
+        "description": "Para clientes que compartilham desses valores, o trabalho pode integrar princípios cristãos de forma respeitosa e inspiradora, visando alinhar propósito de vida e valores pessoais com suas responsabilidades profissionais."
+      },
+      {
+        "type": ["company"],
+        "title": "A consultoria é confidencial?",
+        "description": "Sim, toda a consultoria é conduzida com total confidencialidade e respeito à privacidade do cliente, garantindo um espaço seguro para a exploração de questões pessoais e profissionais."
       }
     ]
   },
@@ -171,32 +230,27 @@
       {
         "image": "/assets/testmonials/william_novak.png",
         "name": "William N",
-        "description": "A Patrícia tem me ajudado bastante a entender meus sentimentos e comportamentos perante os desafios que venho enfrentando, principalmente no âmbito profissional. Gosto muito de trabalhar com ela, pois sinto que sua experiencia previa no meio corporativo faz com que compreenda as dinâmicas e o cotidiano que trago nas consultas. Além disso, sempre me traz reflexões pertinentes, que em conjunto aos exercícios semanais, posso pôr em prática certas mudanças de comportamento ou visão de mundo. Só tenho a elogiar s2"
+        "description": "Desde a primeira sessão, senti uma clareza incrível sobre meus objetivos e uma paz que há tempos não experimentava. A consultoria me ajudou a reorganizar minhas prioridades e, pela primeira vez, consegui equilibrar meu trabalho com minha vida pessoal."
       },
       {
         "image": "/assets/testmonials/person_1.png",
         "name": "João Da Silva",
-        "description": "Recomendo o pacote completo da Pat para executivos. A Pat me ajuda no papel de coach, mentora e psicoterapeuta, com uma visão holística do pessoal e profissional, que afinal estão entrelaçados. Com sua rica experiência na área de RH, conselhos, atividades e indicações estou crescendo dentro da função de CEO da minha startup."
+        "description": "O suporte emocional e as ferramentas práticas que recebi foram essenciais para reduzir meu estresse e melhorar minha performance no trabalho. Hoje, sinto que tenho controle sobre minha vida profissional e familiar, o que me tornou um líder mais seguro e equilibrado."
       },
       {
         "image": "/assets/testmonials/person_2.png",
         "name": "Marina Helena, PORMADE",
-        "description": "Foi minha primeira experiência e gostei bastante. Uma conversa natural e ao mesmo tempo objetiva e acolhedora. A Patricia foi excelente e acredito que nossas próximas seções serão bastante proveitosas."
+        "description": "Antes, eu sentia que vivia em um ciclo interminável de pressão e cobranças. Com a consultoria, aprendi a gerenciar minhas emoções e a fortalecer meu propósito. Isso impactou não só a minha vida, mas também trouxe mais harmonia para minha equipe."
       },
       {
         "image": "/assets/testmonials/person_3.png",
         "name": "Fabio H. D. A.",
-        "description": "A Dra. Patricia simplesmente mudou minha vida! Temos uma conexão muito especial e ela sempre sabe o que fazer e como me aconselhar nas mais diversas ocasiões. Além disso, é uma mulher inteligente, sabe sobre diversos assuntos e abordagens, tornando seu tratamento ainda mais completo. Indico para todos que conheço porque sou outra pessoa hoje em dia."
+        "description": "A abordagem cristã da consultoria fez toda a diferença para mim. Encontrar alguém que entende meus valores e me ajuda a aplicá-los no dia a dia foi transformador. Hoje, tenho mais paz e confiança em minhas decisões como líder e como pai."
       },
       {
         "image": "/assets/testmonials/person_1.png",
         "name": "João Da Silva",
-        "description": "Recomendo o pacote completo da Pat para executivos. A Pat me ajuda no papel de coach, mentora e psicoterapeuta, com uma visão holística do pessoal e profissional, que afinal estão entrelaçados. Com sua rica experiência na área de RH, conselhos, atividades e indicações estou crescendo dentro da função de CEO da minha startup."
-      },
-      {
-        "image": "/assets/testmonials/person_2.png",
-        "name": "Marina Helena, PORMADE",
-        "description": "Foi minha primeira experiência e gostei bastante. Uma conversa natural e ao mesmo tempo objetiva e acolhedora. A Patricia foi excelente e acredito que nossas próximas seções serão bastante proveitosas."
+        "description": "Eu costumava ignorar os sinais de esgotamento até que comecei a ter problemas físicos. A consultoria me ajudou a resgatar meu bem-estar e a enxergar que, para ser um bom líder, preciso cuidar de mim mesmo primeiro. Minha produtividade e a qualidade do meu trabalho melhoraram muito"
       }
     ]
   },

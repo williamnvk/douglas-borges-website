@@ -154,7 +154,7 @@ export default async function Home({ params: { lang } }: Props) {
           </VStack>
         </VStack>
       </Container>
-      <Services services={intl.home.services.items} isDark={false} />
+      <Services slidesPerView={3.5} list={intl.home.services.items} isDark={false} />
 
       <Container maxW="container.xl" py={24}>
         <VStack w="full" gap={8} align="flex-start">
