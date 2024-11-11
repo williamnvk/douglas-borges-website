@@ -3,7 +3,6 @@ import Head from "next/head";
 import { Providers } from "../providers";
 import Footer from "@/components/shared/Footer";
 import { AOSInit } from "./components/AOS";
-import { HeaderWrapper } from "@/components/shared/HeaderWrapper";
 
 export const metaDataTitle = "Douglas Borges";
 export const metaDataDescription =
@@ -14,7 +13,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: "dark",
+  themeColor: "light",
   viewportFit: "auto",
 };
 
@@ -26,7 +25,8 @@ export const metadata: Metadata = {
   description: metaDataDescription,
   applicationName: metaDataTitle,
   referrer: "origin-when-cross-origin",
-  keywords: "nft,crypto,blockchain",
+  keywords:
+    "psicologo,uniao da vitoria,porto uniao,consultoria,empresas,cristao",
   publisher: metaDataTitle,
   robots: {
     index: true,
@@ -47,13 +47,16 @@ export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "pt" }];
 }
 
-export default function RootLayout({
-  children,
-  params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: { lang: string };
-}>) {
+export default async function RootLayout(
+  props: Readonly<{
+    children: React.ReactNode;
+    params: { lang: string };
+  }>
+) {
+  const params = await props.params;
+
+  const { children } = props;
+
   return (
     <html
       lang={params.lang}
@@ -85,7 +88,6 @@ export default function RootLayout({
       <body>
         <Providers>
           <AOSInit />
-          <HeaderWrapper lang={params.lang} />
           <main style={{ marginTop: "72px" }}>{children}</main>
           <Footer lang={params.lang} />
         </Providers>

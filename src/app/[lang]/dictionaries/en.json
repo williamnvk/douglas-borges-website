@@ -1,16 +1,4 @@
 {
-  "header": {
-    "personal": "For you",
-    "business": "For you company",
-    "cta": "Contact",
-    "nav": {
-      "home": "Home",
-      "services": "Services",
-      "about": "About",
-      "events": "Events",
-      "blog": "Blog"
-    }
-  },
   "home": {
     "firstWord": [
       "Developing",
@@ -31,12 +19,12 @@
       "content": "Blessed is the one who perseveres under trial because, having stood the test, that person will receive the crown of life that the Lord has promised to those who love him.",
       "verse": "James 1:12"
     },
+    "button": "Know the method Work & Life",
     "sayings": {
       "content": "Commit to the Lord whatever you do, and he will establish your plans.",
       "verse": "Proverbs 16:3"
     },
     "about": {
-      "pre": "About me",
       "title": "I help individuals to become their best version.",
       "subtitle": "Douglas Borges, Husband, Father, Christian, and Psychologist",
       "description": [
@@ -46,7 +34,7 @@
     },
     "services": {
       "title": "My services",
-      "subtitle":"Increase your team's cohesion and performance, promoting an ethical and balanced work environment.",
+      "subtitle": "Increase your team's cohesion and performance, promoting an ethical and balanced work environment.",
       "items": [
         {
           "icon": "user",
@@ -64,8 +52,8 @@
           "description": "Guidance for entrepreneurs who need to manage stress and maximize their performance."
         },
         {
-          "icon": "plus",	
-          "title": "In-Company Workshops",
+          "icon": "plus",
+          "title": "In-f Workshops",
           "description": "Practical training based on Christian values to empower leaders and teams in emotional intelligence, productivity, and conflict management."
         },
         {
@@ -81,16 +69,12 @@
         "description": "People served"
       },
       {
-        "title": "20",
-        "description": "Years of experience"
-      },
-      {
-        "title": "50",
-        "description": "Lectures"
-      },
-      {
-        "title": "20",
+        "title": "90",
         "description": "Companies served"
+      },
+      {
+        "title": "10",
+        "description": "Years of experience"
       }
     ],
     "person": {
@@ -134,9 +118,108 @@
           "text": "If any of these situations feel familiar, know that you are not alone. Many people face the same challenge, but few know the path to overcome it. Here is where Logotherapy can help."
         }
       ]
+    },
+    "cta": {
+      "title": "How will the changes you want really happen?",
+      "subtitle": "Get in touch with us now and create a partnership to build a new path for your career!",
+      "button": "Get in touch"
     }
   },
   "company": {
+    "title": "Business Psychological Consulting",
+    "subtitle": "Balance between business, family, and purpose!",
+    "description": "Exclusive method for executives and C-Levels to develop sustainable high performance",
+    "form": {
+      "title": "Do You Recognize Yourself?",
+      "subtitle": "Explore the challenges you face and see how the Work/Life method can transform your reality.",
+      "items": [
+        {
+          "challenge": "Loneliness in difficult decisions",
+          "benefit": "Confidence in choices, with emotional support and clarity in decisions"
+        },
+        {
+          "challenge": "Constant pressure for results",
+          "benefit": "More conscious decisions and balanced performance under pressure"
+        },
+        {
+          "challenge": "Sacrifice of personal life",
+          "benefit": "Sustainable balance between professional and personal life"
+        },
+        {
+          "challenge": "Difficulty disconnecting",
+          "benefit": "Preserved quality of life with real moments of rest"
+        },
+        {
+          "challenge": "Chronic stress",
+          "benefit": "Continuous well-being with emotional control techniques and stress management"
+        },
+        {
+          "challenge": "Overload of responsibilities",
+          "benefit": "Autonomy to delegate and prioritize, focusing on long-term goals"
+        },
+        {
+          "challenge": "Loss of connection with family",
+          "benefit": "Strengthened family presence and revitalized personal relationships"
+        },
+        {
+          "challenge": "Difficulty maintaining motivation",
+          "benefit": "Constant renewal of motivation, aligning purpose and performance"
+        }
+      ]
+    },
+    "services": {
+      "title": "Balance and Success",
+      "subtitle": "Personalized services to help you face challenges and find harmony between career and personal life",
+      "items": [
+        {
+          "icon": "scale",
+          "title": "Coaching for Difficult Decisions",
+          "subtitle": "Develop clarity and confidence to face important choices",
+          "description": "A coaching process that helps evaluate pros and cons, deal with loneliness in decisions, and build confidence for strategic choices, aligned with your values and goals."
+        },
+        {
+          "icon": "gauge",
+          "title": "Pressure Management and Realistic Goals",
+          "subtitle": "Transform pressure into sustainable progress",
+          "description": "Guidance to set motivating goals without overwhelming, with strategies to handle pressure for results and develop a growth mindset that values gradual progress."
+        },
+        {
+          "icon": "arrow-down-up",
+          "title": "Work-Life Balance",
+          "subtitle": "Regain time and attention for your personal life",
+          "description": "Tools and practices to harmonize professional and personal responsibilities, helping you establish healthy boundaries and prioritize well-being outside of work."
+        },
+        {
+          "icon": "battery-charging",
+          "title": "Disconnection and Recovery Techniques",
+          "subtitle": "Revitalize your energy and focus with mindful breaks",
+          "description": "Methods to disconnect from work and renew your motivation, alleviating chronic stress with mindfulness techniques and practices that promote real rest."
+        },
+        {
+          "icon": "school",
+          "title": "Strengthening Family Connections",
+          "subtitle": "Rebuild family ties through presence and empathy",
+          "description": "Guidance to improve the quality of family time, promoting deeper communication and greater emotional involvement, even amidst challenging schedules."
+        }
+      ]
+    },
+    "steps": [
+      {
+        "icon": "clipboard-pen",
+        "title": "Initial Analysis",
+        "content": "We start with a deep interview to understand the challenges and specific objectives of each client. From there, we define clear goals and create a personalized plan that meets both professional and personal needs."
+      },
+      {
+        "icon": "lightbulb",
+        "title": "Development",
+        "content": "Next, we work with 2 to 6 structured sessions, with practical exercises and continuous supervision. At each session, we focus on building skills and new habits that help the client manage daily pressures and improve overall well-being."
+      },
+      {
+        "icon": "medal",
+        "title": "Consolidation",
+        "content": "Finally, we evaluate the results and celebrate our achievements. A continuity plan is created to ensure that the progress made is maintained, strengthening the balance between professional and personal life."
+      }
+    ],
     "method": [
       {
         "icon": "brain",
@@ -178,7 +261,12 @@
         "title": "Resilience Development",
         "description": "Learning to be more resilient can help you face and recover from inevitable challenges and changes in work and personal life."
       }
-    ]
+    ],
+    "cta": {
+      "title": "Are you a committed leader to your own well-being?",
+      "subtitle": "Together, we can build a solid foundation for health and productivity.",
+      "button": "Schedule a Presentation"
+    }
   },
   "footer": {
     "newsletter": {
@@ -289,6 +377,8 @@
   },
   "topics": {
     "title": "Lectures",
+    "cta": "Hire",
+    "link": "More info",
     "items": [
       {
         "image": "/assets/ansiedade.jpg",

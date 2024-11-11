@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export const LanguageSelector = ({
   lang,
-  inline = false,
+  inline = false
 }: {
   lang: LanguageType;
   inline?: boolean;

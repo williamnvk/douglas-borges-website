@@ -12,14 +12,14 @@ const custom = definePartsStyle({
     border: "none",
     bg: "gray.700",
     mb: 4,
-    borderRadius: "6px",
+    borderRadius: "md",
     _dark: {
       bg: "gray.700",
     },
   },
   root: {
     border: "none",
-    borderRadius: "4px",
+    borderRadius: "md",
     overflow: "hidden",
   },
   panel: {

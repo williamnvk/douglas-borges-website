@@ -3,10 +3,9 @@
 import { extendTheme } from "@chakra-ui/react";
 import { colors } from "./colors";
 import { components } from "./components";
-import { config } from "./config";
+import { themeConfig } from "./config";
 import { fonts } from "./fonts";
-import "./global.css"
-
+import "./global.css";
 
 const customTheme = extendTheme({
   styles: {
@@ -39,10 +38,16 @@ const customTheme = extendTheme({
   },
   fonts,
   colors,
-  config,
+  config: themeConfig,
   components,
   container: {
     xl: "1440px",
+  },
+  radii: {
+    sm: "4px",
+    md: "8px",
+    lg: "16px",
+    xl: "24px",
   },
 });
 

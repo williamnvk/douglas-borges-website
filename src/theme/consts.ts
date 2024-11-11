@@ -1,0 +1,1 @@
+export const HEADER_NAVBAR_HEIGHT = "72px"

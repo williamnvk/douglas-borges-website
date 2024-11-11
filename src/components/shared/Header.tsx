@@ -1,18 +1,61 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { Button, HStack } from "@chakra-ui/react";
+import {
+  Button,
+  HStack,
+  IconButton,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerBody,
+  VStack,
+  useDisclosure,
+  Box,
+} from "@chakra-ui/react";
 import { LanguageSelector } from "./LanguageSelector";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useMemo } from "react";
+import { Locale } from "@/app/[lang]/dictionaries";
+import { MenuIcon } from "lucide-react";
 
-export const Header = async ({ intl, lang }: { intl: any; lang: any }) => {
-  const pathname = usePathname();
-  const isCompany = useMemo(
-    () => pathname?.includes("/empresas") || false,
-    [pathname]
-  );
+export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const intl: {
+    [key in Locale]: {
+      nav: {
+        [key: string]: string;
+      };
+      personal: string;
+      company: string;
+      cta: string;
+    };
+  } = {
+    pt: {
+      personal: "Para você",
+      company: "Para sua empresa",
+      cta: "Entre em contato",
+      nav: {
+        home: "Home",
+        services: "Serviços",
+        about: "Sobre",
+        events: "Eventos e Palestras",
+        blog: "Blog",
+      },
+    },
+    en: {
+      personal: "For you",
+      company: "For your company",
+      cta: "Contact",
+      nav: {
+        home: "Home",
+        services: "Services",
+        about: "About",
+        events: "Events",
+        blog: "Blog",
+      },
+    },
+  };
 
   return (
     <HStack
@@ -35,39 +78,131 @@ export const Header = async ({ intl, lang }: { intl: any; lang: any }) => {
             &nbsp;<span>Borges</span>
           </h1>
         </Link>
-        <HStack gap={4} border={1} borderRadius={4} borderColor="gray.100">
+        <HStack
+          display={{ base: "none", md: "flex" }}
+          gap={4}
+          border={1}
+          borderRadius={4}
+          borderColor="gray.100"
+        >
           <Button
-            variant={!isCompany ? "outline" : "link"}
+            variant={page === "home" ? "outline" : "link"}
             as={Link}
             href="/"
           >
-            {intl.header.personal}
+            {intl[lang].personal}
           </Button>
           <Button
-            variant={isCompany ? "outline" : "link"}
+            variant={page === "company" ? "outline" : "link"}
             as={Link}
             href="/empresas"
           >
-            {intl.header.business}
+            {intl[lang].company}
           </Button>
         </HStack>
       </HStack>
 
+      {/* Menu hamburguer para dispositivos móveis */}
       <HStack gap={8}>
-        <HStack gap={4}>
-          <Button variant="link">{intl.header.nav.home}</Button>
-          <Button variant="link">{intl.header.nav.services}</Button>
+        <IconButton
+          aria-label="Open menu"
+          icon={<MenuIcon />}
+          display={{ base: "flex", md: "none" }}
+          onClick={onOpen}
+        />
+        <HStack display={{ base: "none", md: "flex" }} gap={4}>
+          <Button variant="link">{intl[lang].nav.home}</Button>
+          <Button variant="link">{intl[lang].nav.services}</Button>
           <Button variant="link" as={Link} href="/sobre">
-            {intl.header.nav.about}
+            {intl[lang].nav.about}
           </Button>
-          <Button variant="link">{intl.header.nav.events}</Button>
-          <Button variant="link">{intl.header.nav.blog}</Button>
+          <Button variant="link">{intl[lang].nav.events}</Button>
+          <Button variant="link">{intl[lang].nav.blog}</Button>
         </HStack>
 
-        <Button>{intl.header.cta}</Button>
+        <Button display={{ base: "none", md: "inline-flex" }}>
+          {intl[lang].cta}
+        </Button>
 
-        <LanguageSelector lang={lang} />
+        <Box display={{ base: "none", md: "inline-flex" }}>
+          <LanguageSelector lang={lang} />
+        </Box>
       </HStack>
+
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerBody p={0}>
+            <VStack align="start" h="full" w="full">
+              <VStack align="start" spacing={4} flex={1} w="full" p={6}>
+                <h1>
+                  <span>
+                    <strong>Douglas</strong>
+                  </span>
+                  &nbsp;<span>Borges</span>
+                </h1>
+
+                <Button
+                  variant={page === "home" ? "outline" : "link"}
+                  as={Link}
+                  w="full"
+                  href="/"
+                >
+                  {intl[lang].personal}
+                </Button>
+                <Button
+                  variant={page === "company" ? "outline" : "link"}
+                  as={Link}
+                  w="full"
+                  href="/empresas"
+                >
+                  {intl[lang].company}
+                </Button>
+
+                <Button variant="link" as={Link} href="/" onClick={onClose}>
+                  {intl[lang].nav.home}
+                </Button>
+                <Button
+                  variant="link"
+                  as={Link}
+                  href="/services"
+                  onClick={onClose}
+                >
+                  {intl[lang].nav.services}
+                </Button>
+                <Button
+                  variant="link"
+                  as={Link}
+                  href="/sobre"
+                  onClick={onClose}
+                >
+                  {intl[lang].nav.about}
+                </Button>
+                <Button
+                  variant="link"
+                  as={Link}
+                  href="/events"
+                  onClick={onClose}
+                >
+                  {intl[lang].nav.events}
+                </Button>
+                <Button variant="link" as={Link} href="/blog" onClick={onClose}>
+                  {intl[lang].nav.blog}
+                </Button>
+                <Box>
+                  <LanguageSelector lang={lang} inline />
+                </Box>
+              </VStack>
+              <Box p={6} w="full">
+                <Button onClick={onClose} w="full">
+                  {intl[lang].cta}
+                </Button>
+              </Box>
+            </VStack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </HStack>
   );
 };

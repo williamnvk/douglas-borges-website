@@ -113,7 +113,9 @@ const RadialWorkLife = () => {
                 left={`calc(50% + ${pos.x}px - 3rem)`}
                 transform={activeSegment === index ? "scale(1.1)" : "scale(1)"}
                 boxShadow={activeSegment === index ? "lg" : "none"}
-                onMouseEnter={() => setActiveSegment(index as unknown as number)}
+                onMouseEnter={() =>
+                  setActiveSegment(index as unknown as number)
+                }
                 onMouseLeave={() => setActiveSegment(null as unknown as number)}
               >
                 <VStack p={2}>
@@ -174,7 +176,6 @@ const RadialWorkLife = () => {
         })}
       </Box>
 
-      {/* Description Box */}
       <VStack mt={8} maxW="md" mx="auto" textAlign="center">
         <Heading as="h3" fontSize="xl" fontWeight="semibold" mb={2}>
           {activeSegment !== null

@@ -2,12 +2,18 @@ import { Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import { getDictionary, Locale } from "../dictionaries";
 
 type Props = {
-  params: {
+  params: Promise<{
     lang: Locale;
-  };
+  }>;
 };
 
-export default async function About({ params: { lang } }: Props) {
+export default async function About(props: Props) {
+  const params = await props.params;
+
+  const {
+    lang
+  } = params;
+
   const intl = await getDictionary(lang);
   return (
     <>

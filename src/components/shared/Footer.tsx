@@ -39,7 +39,7 @@ async function Footer({ lang }: { lang: LanguageType }) {
           <VStack flex={1} align="flex-start">
             <Flex gap={4} align="center" w="full">
               <Input rounded={6} type="email" flex={1} />
-              <Button>Enviar</Button>
+              <Button variant="light">Enviar</Button>
             </Flex>
             <Flex gap={2}>
               <Checkbox />
@@ -57,8 +57,14 @@ async function Footer({ lang }: { lang: LanguageType }) {
             </Flex>
           </VStack>
         </Stack>
-        <Flex mt={8} w="full" justifyContent="space-between">
-          <Text fontSize="xs">
+        <Flex
+          flexDir={{ base: "column-reverse", md: "row" }}
+          mt={{ base: 4, md: 8 }}
+          w="full"
+          gap={2}
+          justifyContent={{ base: "flex-start", md: "space-between" }}
+        >
+          <Text fontSize="small">
             &copy; {new Date().getFullYear()} Douglas Borges. {intl.footer.copy}
           </Text>
           <Flex>
