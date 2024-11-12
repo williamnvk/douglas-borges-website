@@ -242,7 +242,13 @@ export default async function Home(props: Props) {
           <HStack w="full">
             <Heading flex={1}>{intl.topics.title}</Heading>
             <HStack gap={4}>
-              <Button as="a" href="/contato" variant="outline">
+              <Button
+                as="a"
+                target="_blank"
+                href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Estou%20interessado(a)%20em%20contratar%20uma%20das%20palestras%20do%20Douglas%20Borges."
+                referrerPolicy="no-referrer"
+                variant="outline"
+              >
                 {intl.topics.cta}
               </Button>
               <Button as="a" href="/palestras" variant="link">
@@ -327,6 +333,10 @@ export default async function Home(props: Props) {
             {intl.home.cta.subtitle}
           </Text>
           <Button
+            as="a"
+            href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges."
+            target="_blank"
+            referrerPolicy="no-referrer"
             variant="outline"
             size="lg"
             w={{ base: "full", md: "auto" }}

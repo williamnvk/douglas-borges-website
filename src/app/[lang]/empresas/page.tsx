@@ -302,6 +302,10 @@ export default async function Home(props: Props) {
               {intl.company.cta.subtitle}
             </Text>
             <Button
+              as="a"
+              href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Por%20gentileza%2C%20eu%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20a%20respeito%20do%20projeto%20%22Work%26Life%22%20"
+              target="_blank"
+              referrerPolicy="no-referrer"
               variant="outlineInverted"
               size="lg"
               w={{ base: "full", md: "auto" }}

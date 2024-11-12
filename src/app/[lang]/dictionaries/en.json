@@ -352,6 +352,17 @@
         }
       ]
     },
+    "specialty": {
+      "title": "Especialidade",
+      "description": "Psicoterapia Individual através da Terapia Cognitiva Comportamental"
+    },
+    "focus": {
+      "title": "Focus",
+      "description": [
+        "Através dos atendimentos individuais (online), ajudo jovens e adultos que buscam um estilo de vida saudável, equilibrado, mas se veem sabotados pelas mais diversas dificuldades emocionais - baixa autoestima, rejeição, ansiedade, falta de motivação, sentimento de incapacidade, entre outros.",
+        "A psicoterapia é um passo assertivo em direção a um estilo de vida saudável e com sentido, sendo sempre fiel a sua essência."
+      ]
+    },
     "approaches": {
       "title": "Abordagens de Trabalho",
       "entry": "Douglas utiliza uma variedade de métodos terapêuticos para atender às necessidades de seus clientes:",
@@ -372,7 +383,8 @@
     },
     "mission": {
       "title": "Missão",
-      "entry": "A missão de Douglas é proporcionar um espaço seguro onde seus clientes possam explorar seus desafios emocionais e encontrar soluções práticas para melhorar sua qualidade de vida. Ele enfatiza a importância do equilíbrio entre as demandas profissionais e pessoais, buscando sempre o bem-estar mental dos indivíduos que atende."
+      "subtitle": "Como cristão, minha missão é apoiar líderes a alcançarem equilíbrio emocional e a prosperarem em suas jornadas, capacitando-os a gerar empregos e garantir o sustento de inúmeras famílias.",
+      "description": "Ao promover ambientes de trabalho saudáveis e harmonizar suas próprias vidas pessoais, esses líderes inspiram futuras gerações a enxergarem a sucessão de forma positiva, leve e sustentável, moldando um legado de liderança saudável e comprometida com o futuro."
     }
   },
   "topics": {

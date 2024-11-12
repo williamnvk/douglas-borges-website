@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export const LanguageSelector = ({
   lang,
-  inline = false
+  inline = false,
 }: {
   lang: LanguageType;
   inline?: boolean;
@@ -38,7 +38,14 @@ export const LanguageSelector = ({
 
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<ChevronDownIcon />} variant="link">
+      <MenuButton
+        as={Button}
+        rightIcon={<ChevronDownIcon />}
+        variant="link"
+        _hover={{
+          textDecor: "none",
+        }}
+      >
         {LANGUAGES.find((l) => l.key === lang)?.name}
       </MenuButton>
       <MenuList>

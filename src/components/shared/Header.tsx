@@ -16,7 +16,7 @@ import {
 import { LanguageSelector } from "./LanguageSelector";
 import Link from "next/link";
 import { Locale } from "@/app/[lang]/dictionaries";
-import { MenuIcon } from "lucide-react";
+import { Building2Icon, MenuIcon, User2Icon } from "lucide-react";
 
 export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -69,7 +69,7 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
       zIndex={100}
       bg="white"
     >
-      <HStack gap={8}>
+      <HStack gap={4}>
         <Link href="/">
           <h1>
             <span>
@@ -103,8 +103,9 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
       </HStack>
 
       {/* Menu hamburguer para dispositivos móveis */}
-      <HStack gap={8}>
+      <HStack gap={4}>
         <IconButton
+          borderRadius="full"
           aria-label="Open menu"
           icon={<MenuIcon />}
           display={{ base: "flex", md: "none" }}
@@ -121,10 +122,16 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
             {intl[lang].nav.about}
           </Button>
           <Button variant="link">{intl[lang].nav.events}</Button>
-          <Button variant="link">{intl[lang].nav.blog}</Button>
+          {/* <Button variant="link">{intl[lang].nav.blog}</Button> */}
         </HStack>
 
-        <Button display={{ base: "none", md: "inline-flex" }}>
+        <Button
+          display={{ base: "none", md: "inline-flex" }}
+          as="a"
+          href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges."
+          target="_blank"
+          referrerPolicy="no-referrer"
+        >
           {intl[lang].cta}
         </Button>
 
@@ -148,18 +155,22 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
                 </h1>
 
                 <Button
-                  variant={page === "home" ? "outline" : "link"}
+                  variant="outline"
                   as={Link}
                   w="full"
+                  size="lg"
                   href="/"
+                  leftIcon={<User2Icon />}
                 >
                   {intl[lang].personal}
                 </Button>
                 <Button
-                  variant={page === "company" ? "outline" : "link"}
+                  variant={"outline"}
                   as={Link}
+                  size="lg"
                   w="full"
                   href="/empresas"
+                  leftIcon={<Building2Icon />}
                 >
                   {intl[lang].company}
                 </Button>
@@ -191,15 +202,21 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
                 >
                   {intl[lang].nav.events}
                 </Button>
-                <Button variant="link" as={Link} href="/blog" onClick={onClose}>
+                {/* <Button variant="link" as={Link} href="/blog" onClick={onClose}>
                   {intl[lang].nav.blog}
-                </Button>
-                <Box>
+                </Button> */}
+                <Box mt={4}>
                   <LanguageSelector lang={lang} inline />
                 </Box>
               </VStack>
               <Box p={6} w="full">
-                <Button onClick={onClose} w="full">
+                <Button
+                  onClick={onClose}
+                  w="full"
+                  size="lg"
+                  as="a"
+                  href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges."
+                >
                   {intl[lang].cta}
                 </Button>
               </Box>
