@@ -163,12 +163,12 @@
     "steps": [
       {
         "icon": "clipboard-pen",
-        "title": "Análise Inicial",
+        "title": "Assessment",
         "content": "Começamos com uma entrevista aprofundada para entender os desafios e objetivos específicos de cada cliente. A partir disso, definimos metas claras e criamos um plano personalizado que atenda tanto às necessidades profissionais quanto ao equilíbrio pessoal."
       },
       {
         "icon": "lightbulb",
-        "title": "Desenvolvimento",
+        "title": "Implementação",
         "content": "Em seguida, trabalhamos com 2 a 6 sessões estruturadas, com exercícios práticos e um acompanhamento contínuo. A cada sessão, focamos em construir habilidades e novos hábitos que ajudem o cliente a lidar com as pressões do dia a dia e a melhorar seu  bem-estar geral."
       },
       {

@@ -5,7 +5,6 @@ import { colors } from "./colors";
 import { components } from "./components";
 import { themeConfig } from "./config";
 import { fonts } from "./fonts";
-import "./global.css";
 
 const customTheme = extendTheme({
   styles: {
@@ -14,7 +13,7 @@ const customTheme = extendTheme({
         height: "100%",
       },
       body: {
-        bg: "gray.50",
+        bg: "white",
         _dark: {
           bg: "gray.800",
         },

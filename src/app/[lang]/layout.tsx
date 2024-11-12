@@ -88,7 +88,7 @@ export default async function RootLayout(
       <body>
         <Providers>
           <AOSInit />
-          <main style={{ marginTop: "72px" }}>{children}</main>
+          <main>{children}</main>
           <Footer lang={params.lang} />
         </Providers>
       </body>

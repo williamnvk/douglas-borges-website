@@ -18,8 +18,6 @@ import {
 import { getDictionary, Locale } from "../dictionaries";
 import { WordTransition } from "../components/WordTransition";
 import Testimonials from "./Testimonials";
-import { ArrowBigRight } from "lucide-react";
-// import MotionText from "./MotionText";
 import dynamic from "next/dynamic";
 import Icon from "@/components/shared/DynamicIcon";
 import { Header } from "@/components/shared/Header";
@@ -44,7 +42,6 @@ export default async function Home(props: Props) {
   const { lang } = params;
 
   const intl = await getDictionary(lang);
-  // const h = "72px";
 
   const testimonials = intl.testimonials.items;
 
@@ -52,6 +49,7 @@ export default async function Home(props: Props) {
     <>
       <Header lang={lang} page="company" />
       <Box
+        mt={HEADER_NAVBAR_HEIGHT}
         bg="gray.900"
         // bg="blue.800"
         // display="flex"
@@ -157,7 +155,6 @@ export default async function Home(props: Props) {
           </Stack>
         </Container>
         <Testimonials testimonials={testimonials} />
-
         <Container maxW="container.xl" py={{ base: 8, md: 16 }}>
           <DynamicChallengesAndBenefits
             title={intl.company.form.title}
@@ -165,7 +162,6 @@ export default async function Home(props: Props) {
             relations={intl.company.form.items}
           />
         </Container>
-
         <Container maxW="container.xl" py={{ base: 8, md: 16 }}>
           <SimpleGrid
             templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
@@ -192,7 +188,6 @@ export default async function Home(props: Props) {
             ))}
           </SimpleGrid>
         </Container>
-
         <Container maxW="container.xl">
           <VStack
             gap={0}
@@ -248,11 +243,10 @@ export default async function Home(props: Props) {
             </Box>
           </VStack>
         </Container>
-
         <Container
           maxW="container.xl"
           position="relative"
-          py={16}
+          py={{ base: 4, md: 12 }}
           color="gray.50"
         >
           <VStack
@@ -286,27 +280,25 @@ export default async function Home(props: Props) {
             </Accordion>
           </VStack>
         </Container>
-
-        <Container maxW="container.md" py={{ base: 8, md: 32 }}>
+        <Container
+          maxW="container.xl"
+          pb={{ base: 4, md: 12 }}
+          pt={{ base: 0, md: 12 }}
+        >
           <VStack
-            minH={`calc(50vh - ${HEADER_NAVBAR_HEIGHT})`}
+            mx={{ base: 0, md: "auto" }}
+            p={{ base: 8, md: 24 }}
+            maxW="container.xl"
+            bg="gray.800"
+            borderRadius="lg"
             flex={1}
-            align={{ base: "flex-start", md: "center" }}
-            justify={{ base: "center", md: "center" }}
+            align={{ base: "flex-start", md: "flex-start" }}
+            justify={{ base: "center", md: "flex-end" }}
           >
-            <ArrowBigRight size={48} color="white" />
-            <Heading
-              fontSize={{ base: "4xl", md: "6xl" }}
-              textAlign={{ base: "left", md: "center" }}
-              color="gray.50"
-            >
+            <Heading fontSize={{ base: "4xl", md: "6xl" }} color="gray.50">
               {intl.company.cta.title}
             </Heading>
-            <Text
-              textAlign={{ base: "left", md: "center" }}
-              fontSize={{ base: "sm", md: "xl" }}
-              color="gray.50"
-            >
+            <Text fontSize={{ base: "lg", md: "xl" }} color="gray.50" my={2}>
               {intl.company.cta.subtitle}
             </Text>
             <Button

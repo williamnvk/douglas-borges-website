@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FC, useCallback, useEffect, useRef, useState } from "react";
-import { Heading, Stack, Text, VStack } from "@chakra-ui/react";
+import { Badge, Heading, Text, VStack } from "@chakra-ui/react";
 
 const CardStack: FC<{
   cards: Array<{
@@ -67,42 +67,38 @@ const CardStack: FC<{
   return (
     <VStack ref={containerRef} w="full" pos="relative" gap={4} p={0} m={0}>
       {cards.map((card, index) => (
-        <Stack
-          flexDir={{ base: "column", md: "row" }}
+        <VStack
           w="full"
           key={card.title}
-          p={{ base: 6, md: 16 }}
-          gap={{ base: 4, md: 16 }}
+          p={{ base: 6, md: 12 }}
+          gap={2}
           bg="white"
           borderRadius={20}
-          align="center"
-          boxShadow="2xl"
-          justify="center"
+          align="flex-start"
+          borderWidth="5px"
+          borderColor="gray.50"
+          // boxShadow="2xl"
+          justify="flex-start"
           style={{
             ...calculateTransform(index),
             position: "sticky",
-            top: "140px",
+            top: "144px",
             zIndex: 1 + index,
             transformOrigin: "center top",
             transition:
               "transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.3s ease-out",
           }}
         >
-          <Heading
-            flex={2}
-            fontSize={{ base: "4xl", md: "6xl" }}
-            data-aos="fade-up"
-          >
+          <Badge borderRadius="md" fontWeight="light" data-aos="fade-up">
+            {card.title.toUpperCase()}
+          </Badge>
+          <Heading fontSize={{ base: "4xl", md: "4xl" }} data-aos="fade-up">
             {card.description}
           </Heading>
-
-          <VStack flex={1} align="start" justify="center" data-aos="fade-up">
-            <Text fontSize="large" fontWeight="light">
-              {card.title.toUpperCase()}
-            </Text>
-            <Text fontSize={{ base: "smaller", md: "sm" }}>{card.text}</Text>
-          </VStack>
-        </Stack>
+          <Text data-aos="fade-up" fontSize={{ base: "smaller", md: "sm" }}>
+            {card.text}
+          </Text>
+        </VStack>
       ))}
     </VStack>
   );
