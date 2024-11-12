@@ -113,7 +113,9 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
         />
         <HStack display={{ base: "none", md: "flex" }} gap={4}>
           <Button variant="link">{intl[lang].nav.home}</Button>
-          <Button variant="link">{intl[lang].nav.services}</Button>
+          <Button variant="link" as={Link} href="/servicos">
+            {intl[lang].nav.services}
+          </Button>
           <Button
             variant={page === "about" ? "outline" : "link"}
             as={Link}
@@ -181,7 +183,7 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
                 <Button
                   variant="link"
                   as={Link}
-                  href="/services"
+                  href="/servicos"
                   onClick={onClose}
                 >
                   {intl[lang].nav.services}

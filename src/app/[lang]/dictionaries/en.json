@@ -411,5 +411,113 @@
         "description": "In our lecture, we discuss the life of Tomé the fisherman, who was invited to follow Jesus. But he had a very strong personality."
       }
     ]
+  },
+  "services": {
+    "title": "Serviços",
+    "subtitle": "Fazer terapia é investir em você e na sua capacidade de lidar com os desafios. Com o suporte de um especialista, você pode construir um equilíbrio verdadeiro entre empresa, família e propósito. Independentemente do seu cargo ou responsabilidades, cuidar da sua saúde emocional traz impactos diretos na qualidade da sua vida e na maneira como você lidera.",
+    "hero": {
+      "title": "Supere o Estresse e Redescubra o Equilíbrio Entre Empresa, Família e Propósito!",
+      "subtitle": "A psicoterapia é uma jornada para redefinir sua perspectiva, criando novas soluções para os desafios de uma rotina intensa. Vamos juntos construir o caminho para uma vida equilibrada e produtiva.",
+      "button": "Qual modalidade você prefere?"
+    },
+    "presential": {
+      "title": "Sessões Presenciais",
+      "subtitle": "Imersão e Conexão Direta",
+      "description": "Uma experiência presencial focada para quem prefere um espaço reservado e profundo. Ideal para uma imersão em autoconhecimento e desenvolvimento de liderança.",
+      "items": [
+        "Conexão pessoal",
+        "Foco Total",
+        "Experiência Sensorial Completa",
+        "Ritmo mais Intenso"
+      ]
+    },
+    "online": {
+      "title": "Online",
+      "subtitle": ": Conveniência e Cuidado Onde Você Estiver",
+      "description": "Ela é ideal para quem busca um equilíbrio emocional sem complicações, podendo ser realizada onde você estiver. Sem deixar a rotina de lado, você ainda recebe o suporte necessário para lidar com o estresse, fortalecer sua autoconfiança e descobrir novas estratégias para ser um líder mais eficaz.",
+      "items": [
+        "Praticidade para encaixar o cuidado emocional na rotina",
+        "Conforto do Seu Espaço",
+        "Agilidade e Acesso Facilitado",
+        "Continuidade, Onde Estiver"
+      ]
+    },
+    "table": [
+      {
+        "aspect": "Conexão",
+        "benefits": {
+          "presential": "Conexão pessoal e acolhedora",
+          "online": "Conexão digital, mas com suporte total"
+        }
+      },
+      {
+        "aspect": "Praticidade",
+        "benefits": {
+          "presential": "Ambiente focado",
+          "online": "Flexibilidade para a sua rotina"
+        }
+      },
+      {
+        "aspect": "Profundidade",
+        "benefits": {
+          "presential": "Reflexões profundas",
+          "online": "Ferramentas práticas e aplicáveis"
+        }
+      },
+      {
+        "aspect": "Transformação",
+        "benefits": {
+          "presential": "Estratégias personalizadas",
+          "online": "Autogestão e equilíbrio emocional"
+        }
+      },
+      {
+        "aspect": "Impacto na Vida",
+        "benefits": {
+          "presential": "Aprendizados para uma vida plena",
+          "online": "Benefícios práticos e sustentáveis"
+        }
+      }
+    ],
+    "faq": {
+      "title": "Perguntas Frequentes",
+      "questions": [
+        {
+          "type": ["company", "person"],
+          "title": "Por que fazer terapia pode ajudar na minha carreira?",
+          "description": "A terapia ajuda você a desenvolver ferramentas emocionais para lidar com o estresse, tomar decisões mais claras e equilibrar as demandas da vida profissional e pessoal. Isso contribui diretamente para uma liderança mais eficaz e uma vida mais harmoniosa."
+        },
+        {
+          "type": ["company"],
+          "title": "Qual é a diferença entre o atendimento presencial e o online?",
+          "description": "No atendimento presencial, você tem um espaço físico dedicado para uma imersão mais profunda. Já o atendimento online oferece flexibilidade e praticidade, mantendo o foco no seu bem-estar, onde você estiver."
+        },
+        {
+          "type": ["company"],
+          "title": "Com que frequência devo fazer as sessões?",
+          "description": "A frequência recomendada depende dos seus objetivos. Para um desenvolvimento contínuo, sessões semanais são ideais, mas o ritmo pode ser ajustado conforme a necessidade e o progresso."
+        },
+        {
+          "type": ["company"],
+          "title": "Como posso ter certeza de que a terapia terá resultados?",
+          "description": "Cada pessoa responde à terapia de forma única, mas muitos clientes começam a notar mudanças logo nas primeiras sessões. Nosso foco é fornecer orientações práticas e aplicáveis para um impacto positivo e rápido."
+        },
+        {
+          "type": ["company"],
+          "title": "Qual é o valor da sessão individual?",
+          "description": "O valor de uma sessão individual é de R$ 500,00, com duração entre 50 minutos e 1 hora. Esse investimento reflete a experiência, dedicação e abordagem personalizada para ajudar você a alcançar equilíbrio emocional e clareza. Em relação ao período de tratamento existe a necessidade de avaliação caso a caso."
+        },
+        {
+          "type": ["company"],
+          "title": "As sessões são confidenciais?",
+          "description": "Sim, todas as sessões são totalmente confidenciais. A segurança e privacidade são uma prioridade para garantir que você se sinta confortável e seguro ao compartilhar suas experiências."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Pronto para dar o próximo passo?",
+      "subtitle": "Entre em contato para agendar sua sessão ou saber mais sobre como a terapia pode transformar sua vida.",
+      "button": "Agendar uma sessão"
+    }
   }
 }

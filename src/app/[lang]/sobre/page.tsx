@@ -173,10 +173,10 @@ export default async function Home(props: Props) {
             borderRadius="lg"
           >
             <Badge fontWeight="light">{intl.about.mission.title}</Badge>
-            <Heading fontSize="4xl" fontStyle="italic">
+            <Heading fontSize={{ base: "xl", md: "4xl" }} fontStyle="italic">
               {intl.about.mission.subtitle}
             </Heading>
-            <Text fontSize="2xl" fontStyle="italic">
+            <Text fontSize={{ base: "sm", md: "2xl" }} fontStyle="italic">
               {intl.about.mission.description}
             </Text>
           </VStack>
