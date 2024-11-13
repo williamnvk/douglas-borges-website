@@ -487,32 +487,30 @@
       "title": "Perguntas Frequentes",
       "questions": [
         {
-          "type": ["company", "person"],
           "title": "Por que fazer terapia pode ajudar na minha carreira?",
           "description": "A terapia ajuda você a desenvolver ferramentas emocionais para lidar com o estresse, tomar decisões mais claras e equilibrar as demandas da vida profissional e pessoal. Isso contribui diretamente para uma liderança mais eficaz e uma vida mais harmoniosa."
         },
         {
-          "type": ["company"],
           "title": "Qual é a diferença entre o atendimento presencial e o online?",
           "description": "No atendimento presencial, você tem um espaço físico dedicado para uma imersão mais profunda. Já o atendimento online oferece flexibilidade e praticidade, mantendo o foco no seu bem-estar, onde você estiver."
         },
         {
-          "type": ["company"],
           "title": "Com que frequência devo fazer as sessões?",
           "description": "A frequência recomendada depende dos seus objetivos. Para um desenvolvimento contínuo, sessões semanais são ideais, mas o ritmo pode ser ajustado conforme a necessidade e o progresso."
         },
         {
-          "type": ["company"],
           "title": "Como posso ter certeza de que a terapia terá resultados?",
           "description": "Cada pessoa responde à terapia de forma única, mas muitos clientes começam a notar mudanças logo nas primeiras sessões. Nosso foco é fornecer orientações práticas e aplicáveis para um impacto positivo e rápido."
         },
         {
-          "type": ["company"],
           "title": "Qual é o valor da sessão individual?",
           "description": "O valor de uma sessão individual é de R$ 500,00, com duração entre 50 minutos e 1 hora. Esse investimento reflete a experiência, dedicação e abordagem personalizada para ajudar você a alcançar equilíbrio emocional e clareza. Em relação ao período de tratamento existe a necessidade de avaliação caso a caso."
         },
         {
-          "type": ["company"],
+          "title": "Quais são as formas de pagamento aceitas?",
+          "description": "Aceito pagamentos via PIX, dinheiro e cartão de débito/crédito. Embora não trabalhe com convênios, forneço nota fiscal para reembolso em planos de saúde que oferecem essa cobertura para consultas psicológicas."
+        },
+        {
           "title": "As sessões são confidenciais?",
           "description": "Sim, todas as sessões são totalmente confidenciais. A segurança e privacidade são uma prioridade para garantir que você se sinta confortável e seguro ao compartilhar suas experiências."
         }

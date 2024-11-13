@@ -57,13 +57,12 @@ export default async function RootLayout(
 
   const { children } = props;
 
+  const lang = params.lang === "pt" ? "pt-BR" : "en-US";
+
   return (
-    <html
-      lang={params.lang}
-      suppressHydrationWarning
-      suppressContentEditableWarning
-    >
+    <html lang={lang} suppressHydrationWarning suppressContentEditableWarning>
       <Head>
+        <meta name="language" content={lang} />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link
