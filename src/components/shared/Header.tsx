@@ -27,7 +27,7 @@ export const Header = ({ page }: { page: string }) => {
       home: "Home",
       services: "Serviços",
       about: "Sobre",
-      events: "Eventos e Palestras",
+      events: "Palestras e Eventos",
       insights: "Insights",
     },
   };
@@ -96,7 +96,7 @@ export const Header = ({ page }: { page: string }) => {
           >
             {intl.nav.about}
           </Button>
-          <Button variant="link" as={Link} href="/palestras-e-evento">
+          <Button variant="link" as={Link} href="/palestras-e-eventos">
             {intl.nav.events}
           </Button>
           <Button
