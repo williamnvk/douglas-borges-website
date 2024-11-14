@@ -3,6 +3,7 @@ export const posts3 = [
     slug: "terapia-familiar-como-pode-ajudar",
     title: "Terapia famíliar: como pode ajudar?",
     timeToRead: "2",
+    tags: ["família"],
     content: [
       "Pais que não falam com filhos. Tias e tios com diferenças de opinião. Isso acontece em sua família? Saiba que a Terapia Familiar pode amenizar essas perturbações.",
       "A terapia familiar ajuda famílias que estão passando por momentos de conflitos ou de estresse a encontrarem a harmonia. Os conflitos podem não ter um motivo exato, como uma briga ou uma herança não recebida. E também podem surgir diferenças de personalidades e opiniões. A terapia então, tem como objetivo acalmar os conflitos, fazê-los enxergar seus comportamentos e identificar os pontos de atrito no relacionamento, apontando soluções.",
@@ -19,6 +20,7 @@ export const posts3 = [
     slug: "como-retomar-as-atividades",
     title: "Como retomar as atividades",
     timeToRead: "1",
+    tags: ["atividades"],
     content: [
       "Assim como em empresas, você já pensou em criar um plano de retomada de atividades?",
       "Com a chegada da vacina e as primeiras doses já pensamos em como será o nosso futuro. Já iniciamos listas, metas e fica a dúvida de como será.",
@@ -36,6 +38,7 @@ export const posts3 = [
     slug: "sera-que-eu-tenho-transtorno-de-ansiedade",
     title: "Será que eu tenho TRANSTORNO DE ANSIEDADE?",
     timeToRead: "3",
+    tags: ["ansiedade"],
     content: [
       "Se sentir aflito diante de algumas situações cotidianas pode se tornar comum para muitas pessoas. Você se sente assim com frequência? Se sim, continue lendo!",
       "As situações em que a ansiedade nos assombra são até nas mais cotidianas, desde um banho até uma ida ao banco. Não se sabe ao certo por que algumas pessoas são mais propensas à ansiedade do que outras. Alguns fatores podem estar envolvidos nisso, como a genética, ambiente, forma de ver o mundo, comorbidades de outras doenças etc.",
@@ -51,6 +54,7 @@ export const posts3 = [
     slug: "ansiedade-nos-relacionamentos-amorosos",
     title: "ANSIEDADE nos Relacionamentos Amorosos",
     timeToRead: "2",
+    tags: ["relacionamentos"],
     content: [
       "Você se sente ansiosa em seu relacionamento? As “paranóias” têm surgido com frequência em seus pensamentos ou de seu parceiro? Quem já se relacionou sabe que um namoro é propenso para pensamentos e sentimentos ansiosos, podendo surgir em qualquer fase do relacionamento. Se você se identifica, continue lendo este post.",
       "A ansiedade é caracterizada por um sentimento que causa medo e preocupação. Em um relacionamento pode te deixar preocupado com o que poderia acontecer e não ver o que está acontecendo de fato.",
@@ -64,6 +68,8 @@ export const posts3 = [
     slug: "ansiedade-nos-transtornos-alimentares",
     title: "ANSIEDADE nos Transtornos Alimentares",
     timeToRead: "2",
+    highlight: true,
+    tags: ["transtornos"],
     content: [
       "A ansiedade é uma emoção normal dos seres humanos, útil e fundamental para enfrentarmos nosso cotidiano. Mas, quando ela é excessiva e recorrente pode acarretar muitas preocupações e sofrimento.",
       "Nos Transtornos Alimentares, ela aparece na relação com o alimento e imagem corporal. A ansiedade é um dos fatores que apresentam relação direta com a compulsão alimentar, pois os estímulos ansiosos para a comida, aos poucos, tornam-se um hábito.",
@@ -77,6 +83,7 @@ export const posts3 = [
     title:
       "Como posso ajudar meus filhos com ANSIEDADE durante a pandemia/escola?",
     timeToRead: "3",
+    tags: ["crianças"],
     content: [
       "Os tempos estão cada vez mais ansiosos, esperança do fim da pandemia, esperança de tempos “normais” e esperança da vacinação. Isso acarreta um aumento na ansiedade de cada indivíduo, e nas crianças e jovens isso não é diferente.",
       "Como os pais podem ajudar seus filhos nesse momento? Se você gostaria de saber como continue lendo.",
@@ -100,6 +107,7 @@ export const posts3 = [
     slug: "quem-tem-depressao",
     title: "Quem tem depressão?",
     timeToRead: "2",
+    tags: ["depressão"],
     content: [
       "Ricos ou pobres, jovens ou idosos, estudantes ou empreendedores… Você acha que a depressão tem um rosto específico? Se pensa assim, você pode estar errado! A depressão não tem classe social, não tem endereço e não tem idade. Pode acontecer comigo, com você ou com alguém próximo.",
       "Ao contrário do que muitos imaginam, quem sofre de depressão pode não transparecer seus sentimentos em seus rostos. Podem estar felizes durante um fim de semana com a família e estar passando por momentos dolorosos sozinha.",
@@ -112,6 +120,7 @@ export const posts3 = [
     slug: "como-e-o-inicio-de-uma-depressao",
     title: "Como é o início de uma depressão?",
     timeToRead: "3",
+    tags: ["depressão"],
     content: [
       "Assim como outras doenças, a depressão ocorre em cada indivíduo de formas diferentes. Afetando mais de 350 milhões de pessoas no mundo (de acordo com a OMS), a depressão ainda carrega estigmas que dificultam o diagnóstico.",
       "Sendo confundida com sentimentos naturais do ser humano como tristeza, desânimo, preguiça, etc; muitas pessoas demoram para procurar ajuda, fazendo com que o quadro da doença se agrave.",
@@ -129,6 +138,7 @@ export const posts3 = [
     slug: "como-saber-se-voce-esta-com-depressao",
     title: "Como saber se você está com depressão?",
     timeToRead: "3",
+    tags: ["depressão"],
     content: [
       "Não tenha medo de falar sobre sua saúde mental! Esteja disposto a falar sobre seus sentimentos e angústias, procurar ajuda não significa ser fraco e sim forte para enfrentar qualquer situação que esteja passando. E se no caso, estiver pensando em um quadro de depressão?",
       "Os sintomas principais da depressão são o humor deprimido por mais de 2 semanas, perda de prazer em realizar atividades e sensação de fadiga. Existem vários níveis de depressão e apenas um psicólogo pode confirmar qual é o estágio do quadro:",
@@ -145,6 +155,7 @@ export const posts3 = [
     slug: "o-que-pode-causar-a-depressao",
     title: "O que pode causar a depressão?",
     timeToRead: "4",
+    tags: ["depressão"],
     content: [
       "Já falei sobre os sintomas, quem pode ter depressão e tratamento. Mas afinal, existem gatilhos que causam a depressão?",
       "A depressão pode tanto surgir sem motivo aparente, ou quanto a um evento importante que desencadeiam os sentimentos de tristeza, levando alguns casos a depressão. Separei alguns tópicos abaixo, com gatilhos da doença, confira:",
@@ -160,6 +171,7 @@ export const posts3 = [
     slug: "ansiedade-e-relacionamentos-uma-visao-analitica-sobre-o-tema",
     title: "Ansiedade e Relacionamentos: Uma visão analítica sobre o tema",
     timeToRead: "5",
+    tags: ["ansiedade"],
     content: [
       "Como uma pessoa considerada “inteligente” pode chegar a ações impulsivas e agressivas?",
       "Hoje, neste texto sobre a ansiedade em relacionamentos abusivos, vou lhe contar que a ansiedade disfuncional somada à falta de ponderação pode chegar/culminar em um relacionamento abusivo (neste exemplo, amoroso). Se você quiser entender melhor sobre isso, continue lendo este texto até o final.",
@@ -188,6 +200,7 @@ export const posts3 = [
     title:
       "O estresse é a consequência da energia vital mal utilizada: mas afinal, o que é energia vital?",
     timeToRead: "5",
+    tags: ["estresse"],
     content: [
       "Você sabia que normalmente o estresse é a causa de uma má administração da sua Energia Vital? Se você se sente estressado ou cansado mentalmente, continue lendo este texto até o final.",
       "O estresse normalmente está ligado a uma baixa de Energia Vital.",
@@ -243,6 +256,7 @@ export const posts3 = [
     slug: "voce-sabe-o-que-e-trauma",
     title: "Você sabe o que é trauma?",
     timeToRead: "4",
+    tags: ["trauma"],
     content: [
       "O trauma é algo subjetivo, o que para alguns seja um trauma, para outros talvez não seja. Para entender melhor o assunto, neste texto te explico exemplificando como um Sapo pode se tornar um trauma e angústia. Continue lendo este texto.",
       "O pequeno anfíbio que normalmente causa repulsa e medo entre muitas pessoas, é tomado como exemplo neste texto para um trauma. Porém, durante a leitura pense no sapo como um símbolo para todos os traumas possíveis, os mais comuns são:",
@@ -271,8 +285,9 @@ export const posts3 = [
   },
   {
     slug: "perfil-emocional",
-    title: "Perfil Emocional – Descubra como desenvolver sua QE",
+    title: "Perfil Emocional: Descubra como desenvolver sua QE",
     timeToRead: "3",
+    tags: ["inteligência emocional"],
     content: [
       "O que é Inteligência Emocional?",
       "Hoje, a Inteligência Emocional é um grande diferencial e se faz cada vez mais necessária tanto na vida pessoal quanto profissional.",
@@ -301,6 +316,8 @@ export const posts3 = [
     slug: "quais-os-seus-valores-e-como-lista-los",
     title: "Quais os seus valores e como listá-los?",
     timeToRead: "3",
+    highlight: true,
+    tags: ["inteligência emocional"],
     content: [
       "Anteriormente aqui no blog, eu contextualizei para vocês o significado de Energia Vital e como administrá-la. Se você leu, sabe que para poder viver com menos estresse e mais energia, é necessário listar os seus Valores conforme a prioridade pessoal. Eu, por exemplo, hoje, tenho os meus filhos como valor prioritário.",
       "Vamos começar com uma definição de valores pessoais.",
@@ -332,6 +349,7 @@ export const posts3 = [
     slug: "voce-esta-disposto-a-ser-uma-pessoa-melhor-neste-novo-ano",
     title: "Você está disposto a ser uma pessoa melhor neste novo ano?",
     timeToRead: "3",
+    tags: ["inteligência emocional"],
     content: [
       "O ano novo significa vida nova? Muitas pessoas nessa época fazem grandes listas de metas e objetivos para serem alcançados nos próximos 365 dias. Mas quantas delas esquecem dessas metas?",
       "Você deseja ter maior prosperidade no ano que se inicia?",
@@ -377,6 +395,7 @@ export const posts3 = [
     slug: "e-possivel-ter-depressao-e-ansiedade-ao-mesmo-tempo",
     title: "É possível ter depressão e ansiedade ao mesmo tempo?",
     timeToRead: "3",
+    tags: ["depressão", "ansiedade"],
     content: [
       "Depressão e ansiedade não são a mesma coisa, mas são transtornos mentais que podem ser apresentados ao mesmo tempo.",
       "Quem tem ansiedade tem depressão?",
@@ -427,10 +446,12 @@ export const posts3 = [
     slug: "a-analogia-do-bonequinho",
     title: "A analogia do bonequinho",
     timeToRead: "3",
+    highlight: true,
+    tags: ["ansiedade"],
     content: [
       "Imagine que dentro da sua cabeça existe um “bonequinho”.",
       "Ele fica em uma sala, sem portas e janelas, apenas observando uma pequena lâmpada e um grande botão vermelho.",
-      "O bonequinho é responsável por acionar esse botão vermelho quando a lâmpada acender. Uma simples tarefa. A lâmpada acendeu, o bonequinho aciona o botão vermelho.",
+      "O bonequinho é responsável por acionar esse botão vermelho quando a lâmpada acender. A lâmpada acendeu, o bonequinho aciona o botão vermelho.",
       "Esse botão vermelho é responsável por uma descarga de coquetel de hormônios como a adrenalina, por exemplo. Essa luz acende frente a um perigo iminente.",
       "Quando falo em perigo iminente, são aqueles que são um risco à sua vida.",
       "O bonequinho é responsável pela liberação dessa descarga de hormônios para que você esteja em alerta e pronto para a ação. O que chamamos de MECANISMO DE DEFESA, ataque ou fuga.",
@@ -455,6 +476,8 @@ export const posts3 = [
     slug: "analise-dos-pensamentos",
     title: "Análise dos pensamentos",
     timeToRead: "2",
+    highlight: true,
+    tags: ["ansiedade"],
     content: [
       "Uma das melhores formas de diminuir a ansiedade, a depressão e ter um melhor desenvolvimento emocional é identificar os padrões de pensamentos, principalmente os padrões de pensamentos negativos.",
       "Podemos criar o hábito de destrinchar esses pensamentos fazendo uma boa linha de raciocínio sobre eles.",

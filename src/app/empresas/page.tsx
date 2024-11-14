@@ -15,19 +15,13 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { getDictionary, Locale } from "../dictionaries";
 import { WordTransition } from "../components/WordTransition";
 import Testimonials from "./Testimonials";
 import dynamic from "next/dynamic";
 import Icon from "@/components/shared/DynamicIcon";
 import { Header } from "@/components/shared/Header";
 import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
-
-type Props = {
-  params: Promise<{
-    lang: Locale;
-  }>;
-};
+import language from "@/data/dictionaries";
 
 const DynamicChallengesAndBenefits = dynamic(
   () => import("./ChallengesAndBenefits"),
@@ -36,18 +30,14 @@ const DynamicChallengesAndBenefits = dynamic(
   }
 );
 
-export default async function Home(props: Props) {
-  const params = await props.params;
-
-  const { lang } = params;
-
-  const intl = await getDictionary(lang);
+export default async function Company() {
+  const intl = language;
 
   const testimonials = intl.testimonials.items;
 
   return (
     <>
-      <Header lang={lang} page="company" />
+      <Header page="company" />
       <Box
         mt={HEADER_NAVBAR_HEIGHT}
         bg="gray.900"
@@ -142,13 +132,14 @@ export default async function Home(props: Props) {
 
             <Box
               w={{ base: "full", md: "400px" }}
-              h={{ base: "400px", md: "auto" }}
+              h={{ base: "400px", md: "460px" }}
               mx={{ base: "auto", md: "0" }}
               borderRadius="lg"
               display="block"
               style={{
-                backgroundImage: "url(/assets/douglas-borges.png)",
+                backgroundImage: "url(/assets/em-pe.webp)",
                 backgroundRepeat: "no-repeat",
+                backgroundPosition: "center center",
                 backgroundSize: "100% auto",
               }}
             ></Box>

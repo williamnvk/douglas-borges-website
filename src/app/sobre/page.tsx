@@ -8,26 +8,16 @@ import {
   Badge,
   Stack,
 } from "@chakra-ui/react";
-import { getDictionary, Locale } from "../dictionaries";
 import { Header } from "@/components/shared/Header";
 import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
+import language from "@/data/dictionaries";
 
-type Props = {
-  params: Promise<{
-    lang: Locale;
-  }>;
-};
-
-export default async function Home(props: Props) {
-  const params = await props.params;
-
-  const { lang } = params;
-
-  const intl = await getDictionary(lang);
+export default function About() {
+  const intl = language;
 
   return (
     <>
-      <Header lang={lang} page="about" />
+      <Header page="about" />
       <Container maxW="container.xl" mt={HEADER_NAVBAR_HEIGHT}>
         <VStack gap={{ base: 4, md: 8 }} w="full">
           <Stack
@@ -37,13 +27,14 @@ export default async function Home(props: Props) {
           >
             <Box
               w={{ base: "full", md: "400px" }}
-              h={{ base: "400px", md: "400px" }}
+              h={{ base: "500px", md: "500px" }}
               mx={{ base: "auto", md: "0" }}
               borderRadius="lg"
               display="block"
               style={{
-                backgroundImage: "url(/assets/douglas-borges.png)",
+                backgroundImage: "url(/assets/perfil.webp)",
                 backgroundRepeat: "no-repeat",
+                backgroundPosition: "center center",
                 backgroundSize: "100% auto",
               }}
             ></Box>
@@ -57,8 +48,9 @@ export default async function Home(props: Props) {
               borderRadius="lg"
               justify="flex-end"
               color="gray.50"
+              pt={{ base: 12, md: 0 }}
             >
-              <Heading fontSize="6xl" fontWeight="bold">
+              <Heading fontSize={{ base: "4xl", md: "6xl" }} fontWeight="bold">
                 {intl.about.title}
               </Heading>
               <Text fontSize="smaller">{intl.about.entry}</Text>

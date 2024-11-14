@@ -6,10 +6,10 @@ import {
   Heading,
   HStack,
   SimpleGrid,
+  Stack,
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { getDictionary, Locale } from "./dictionaries";
 import { WordTransition } from "./components/WordTransition";
 import { PlusIcon, QuoteIcon } from "lucide-react";
 import { Header } from "@/components/shared/Header";
@@ -17,105 +17,128 @@ import CardStack from "./components/CardStack";
 import Testimonials from "./components/Testimonials";
 import Icon from "@/components/shared/DynamicIcon";
 import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
+import language from "@/data/dictionaries";
+import { INSIGHTS_HIGHLIGHTS } from "@/data";
+import Link from "next/link";
 
-type Props = {
-  params: Promise<{
-    lang: Locale;
-  }>;
-};
-
-export default async function Home(props: Props) {
-  const params = await props.params;
-
-  const { lang } = params;
-
-  const intl = await getDictionary(lang);
+export default function Home() {
+  const intl = language;
 
   return (
     <>
-      <Header lang={lang} page="home" />
-      <Box
-        bgGradient="linear(to-r, gray.50, gray.100)"
-        mt={HEADER_NAVBAR_HEIGHT}
-      >
+      <Header page="home" />
+      <Box bgGradient="linear(to-t, white, gray.100)" mt={HEADER_NAVBAR_HEIGHT}>
         <Container maxW="container.xl" py={0}>
-          <VStack
-            w={{ base: "full", md: "container.md" }}
+          <Stack
+            flexDir={{ base: "column", md: "row" }}
+            gap={{ base: 4, md: 16 }}
             align="center"
             justify="center"
-            gap={{ base: 4, md: 8 }}
-            h={`calc(100vh - ${HEADER_NAVBAR_HEIGHT})`}
           >
-            <Heading fontSize={{ base: "4xl", md: "6xl" }} fontWeight="normal">
-              <strong>
-                <WordTransition typewriter words={intl.home.firstWord} />
-              </strong>
-              <br />
-              <strong>
-                <WordTransition
-                  typewriter
-                  words={intl.home.secondWord}
-                  delay={5000}
-                />
-              </strong>{" "}
-              {intl.home.subtitle}
-            </Heading>
-
-            <Flex w="full" align="flex-start" my={{ base: 4, md: 0 }}>
-              <Button
-                as="a"
-                href="/empresas"
-                size="lg"
-                data-aos="fade-up"
-                w={{ base: "full", md: "auto" }}
-              >
-                {intl.home.button}
-              </Button>
-            </Flex>
-
-            <Box position="relative" data-aos="fade-up" mt={{ base: 2, md: 0 }}>
-              <QuoteIcon size={32} style={{ position: "absolute", right: 0 }} />
-              <Text
-                fontSize="sm"
-                fontStyle="italic"
-                fontWeight="light"
-                pr={16}
-                color="gray.800"
-              >
-                {intl.home.bible.content}
-              </Text>
-              <Text fontSize="smaller" fontStyle="italic" color="gray.400">
-                {intl.home.bible.verse}
-              </Text>
-            </Box>
-
-            <SimpleGrid
-              gap={4}
-              w="full"
-              templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
+            <VStack
+              flex={1}
+              align="flex-start"
+              justify="center"
+              gap={{ base: 4, md: 8 }}
+              h={`calc(100vh - ${HEADER_NAVBAR_HEIGHT})`}
             >
-              {intl.home.counting.map((c, i) => (
-                <VStack
-                  key={`home-counting-${i}`}
-                  align="flex-start"
-                  p={{ base: 4, md: 6 }}
-                  borderRadius="lg"
-                  bg="white"
+              <Heading
+                fontSize={{ base: "4xl", md: "6xl" }}
+                fontWeight="normal"
+              >
+                <strong>
+                  <WordTransition typewriter words={intl.home.firstWord} />
+                </strong>
+                <br />
+                <strong>
+                  <WordTransition
+                    typewriter
+                    words={intl.home.secondWord}
+                    delay={5000}
+                  />
+                </strong>{" "}
+                {intl.home.subtitle}
+              </Heading>
+
+              <Flex w="full" align="flex-start" my={{ base: 4, md: 0 }}>
+                <Button
+                  as="a"
+                  href="/empresas"
+                  size="lg"
                   data-aos="fade-up"
-                  data-aos-delay={i * 200}
-                  boxShadow="2xl"
+                  w={{ base: "full", md: "auto" }}
                 >
-                  <Heading letterSpacing={2} fontSize="4xl">
-                    <PlusIcon style={{ display: "inline" }} />
-                    {c.title}
-                  </Heading>
-                  <Text fontSize="sm" color="gray.300">
-                    {c.description}
-                  </Text>
-                </VStack>
-              ))}
-            </SimpleGrid>
-          </VStack>
+                  {intl.home.button}
+                </Button>
+              </Flex>
+
+              <Box
+                position="relative"
+                data-aos="fade-up"
+                mt={{ base: 2, md: 0 }}
+              >
+                <QuoteIcon
+                  size={32}
+                  style={{ position: "absolute", right: 0 }}
+                />
+                <Text
+                  fontSize="sm"
+                  fontStyle="italic"
+                  fontWeight="light"
+                  pr={16}
+                  color="gray.800"
+                >
+                  {intl.home.bible.content}
+                </Text>
+                <Text fontSize="smaller" fontStyle="italic" color="gray.400">
+                  {intl.home.bible.verse}
+                </Text>
+              </Box>
+
+              <SimpleGrid
+                gap={4}
+                w="full"
+                templateColumns={{
+                  base: "repeat(2, 1fr)",
+                  md: "repeat(3, 1fr)",
+                }}
+              >
+                {intl.home.counting.map((c, i) => (
+                  <VStack
+                    key={`home-counting-${i}`}
+                    align="flex-start"
+                    p={{ base: 4, md: 5 }}
+                    borderRadius="lg"
+                    bg="white"
+                    data-aos="fade-up"
+                    data-aos-delay={i * 200}
+                    boxShadow="2xl"
+                  >
+                    <Heading letterSpacing={2} fontSize="4xl">
+                      <PlusIcon style={{ display: "inline" }} />
+                      {c.title}
+                    </Heading>
+                    <Text fontSize="sm" color="gray.300">
+                      {c.description}
+                    </Text>
+                  </VStack>
+                ))}
+              </SimpleGrid>
+            </VStack>
+            <Box
+              w={{ base: "full", md: "400px" }}
+              h={{ base: "400px", md: "600px" }}
+              mx={{ base: "auto", md: "0" }}
+              borderRadius="lg"
+              display="block"
+              style={{
+                backgroundImage: "url(/assets/rindo.webp)",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center center",
+                backgroundSize: "100% auto",
+              }}
+            ></Box>
+          </Stack>
         </Container>
       </Box>
 
@@ -295,6 +318,59 @@ export default async function Home(props: Props) {
                   </Heading>
                   <Text fontSize="smaller">{s.description}</Text>
                 </VStack>
+              </VStack>
+            ))}
+          </SimpleGrid>
+        </VStack>
+      </Container>
+
+      <Container maxW="container.xl" py={{ base: 4, md: 12 }}>
+        <VStack w="full" align="flex-start" gap={8}>
+          <HStack w="full" justify="space-between" align="center">
+            <Heading fontSize={{ base: "2xl", md: "4xl" }}>
+              Insights e Reflexões
+            </Heading>
+            <Button
+              as="a"
+              href="/insights"
+              variant="ghost"
+              rightIcon={<PlusIcon size={16} />}
+            >
+              Ver todos
+            </Button>
+          </HStack>
+          <SimpleGrid
+            columns={{ base: 1, md: 3 }}
+            spacing={{ base: 4, md: 8 }}
+            w="full"
+          >
+            {INSIGHTS_HIGHLIGHTS.slice(0, 3).map((insight, index) => (
+              <VStack
+                key={`highlight-${index}`}
+                as="a"
+                href={`/${insight.slug}`}
+                align="flex-start"
+                p={8}
+                bg="gray.50"
+                borderRadius="lg"
+                transition="all 0.2s"
+                _hover={{ bg: "gray.100" }}
+              >
+                <Heading size="md" mb={2}>
+                  {insight.title}
+                </Heading>
+                <Text fontSize="sm" noOfLines={3}>
+                  {insight.content[0]}
+                </Text>
+                <HStack mt={4}>
+                  {insight.tags.map((tag: string) => (
+                    <Link key={tag} href={`/insights?tag=${tag}`}>
+                      <Text fontSize="xs" color="gray.500">
+                        #{tag}
+                      </Text>
+                    </Link>
+                  ))}
+                </HStack>
               </VStack>
             ))}
           </SimpleGrid>

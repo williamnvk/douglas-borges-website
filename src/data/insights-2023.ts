@@ -3,6 +3,7 @@ export const posts2 = [
     slug: "levantando-medalhas-como-aprender-com-as-vitorias-da-vida",
     title: "Levantando Medalhas – Como aprender com as vitórias da vida",
     timeToRead: "1",
+    tags: ["reflexões"],
     content: [
       "Na vida, tanto as vitórias como as derrotas não são eternas, sendo assim, não seja um sonhador daqueles que acham que jamais sofrerão uma derrota, seja sim um sonhador, mas realista, daqueles que sabem que um dia será derrotado, mas que corre diariamente atrás da melhora contínua, pois quando este dia da derrota chegar, a recuperação será tão rápida, que soará apenas como um acidente de percurso e que devia acontecer para você se tornar uma pessoa e um profissional melhor. Pois embora muitas pessoas achem que não, as vitórias também nos ensinam muitas coisas, como por exemplo, que aquela vitória ocorrida naquele momento não nos credencia a ser sempre o vencedor.",
       "Ao conquistar uma vitória, é muito importante comemorar, afinal você e/ou sua empresa lutou muito para conseguir este resultado, mas não perca o foco junto aos concorrentes e nunca deixe de aprimorar o que você já faz muito bem, e nem de criar novas coisas, pois quem sofre uma derrota, vai olhar para o vencedor, e analisar onde ele foi melhor para poder superá-lo mais na frente, e se você não se aprimorar, não inovar, não criar, será com certeza derrotado no futuro.",
@@ -14,6 +15,7 @@ export const posts2 = [
     slug: "como-diminuir-a-ansiedade-nos-estudos",
     title: "Como Diminuir a Ansiedade nos Estudos",
     timeToRead: "2",
+    tags: ["ansiedade", "estudos"],
     content: [
       "O transtorno de ansiedade é um estado emocional que compromete diretamente o desempenho das pessoas. Existe a ansiedade funcional, que é aquela que nós deixa proativos e existe a ansiedade disfuncional, que é aquela que nos atrapalha e bloqueia. A não solução de problemas financeiros e de relacionamento, pressão no trabalho, nos estudos e tantos outros, fazem parte do desencadeamento deste transtorno de ansiedade disfuncional. Acontecimentos que, para muitas pessoas, são banais, para outras podem se tornar extremamente ameaçadores. Mas como evitar a ansiedade nos estudos?",
       "1. Faça um plano de estudos\nEstudar todo o conteúdo de uma vez não é saudável. Por isso, crie um esquema de estudos com pausas para descanso e alterne as matérias. O ideal é não ultrapassar uma hora em cada disciplina.",
@@ -28,6 +30,7 @@ export const posts2 = [
     slug: "home-office-como-se-adaptar-a-esta-nova-forma-de-trabalho",
     title: "Home Office – Como se adaptar a esta nova forma de trabalho",
     timeToRead: "3",
+    tags: ["home office", "trabalho"],
     content: [
       "Com a recomendação do distanciamento social para minimizar os efeitos do coronavírus (COVID-19), muitas pessoas aderiram ao trabalho remoto. Mas em momentos assim, qual é a melhor maneira de maximizar a produtividade, manter uma boa saúde e manter a produtividade no home office durante a quarentena?",
       "O importante é fazer as pausas, seguindo sempre um padrão, por mais difícil que seja, pois, estando em casa, tudo tem a tendência de nos distrair.",
@@ -43,6 +46,7 @@ export const posts2 = [
     slug: "o-efeito-da-musica-na-saude-mental",
     title: "O Efeito da Música na Saúde Mental",
     timeToRead: "2",
+    tags: ["música", "saúde mental"],
     content: [
       "A música está tão presente na vida humana que a maioria das pessoas possui trilha sonora específica para cada momento vivenciado: desde as músicas cantadas para bebês e crianças, passando por aquelas da adolescência, as músicas dos casais apaixonados, as músicas dos momentos de tristeza, as músicas das comemorações, da formatura, do casamento, das despedidas, dos reencontros…",
       "Infinitas são as emoções despertadas pelo universo sonoro-musical. Mas como nossa saúde mental pode beneficiar-se da música? Simples: ao cantar, expressamos conteúdos e emoções que nosso mundo interno às vezes nem consegue nomear. Aliviamos, esvaziamos, contemos e resinificamos dores, angústias, medos, paixões e alegrias.",
@@ -55,6 +59,7 @@ export const posts2 = [
     slug: "ansiedade-o-que-e-sintomas-tratamento-e-dicas",
     title: "Ansiedade: O que é, Sintomas, Tratamento e Dicas",
     timeToRead: "2",
+    tags: ["ansiedade", "tratamento"],
     content: [
       "A ansiedade é uma reação que todo indivíduo experimenta diante de algumas situações do dia a dia, como falar em público, expectativa para datas importantes, entrevistas de emprego, vésperas de provas, exames de saúde entre outras.",
 
@@ -78,6 +83,7 @@ export const posts2 = [
     title:
       "Dependência Emocional – Você pode conhecer alguém com este transtorno",
     timeToRead: "2",
+    tags: ["dependência emocional", "relacionamentos"],
     content: [
       "A dependência emocional é um transtorno psicológico que afeta não só quem o possui como também a pessoas com quem há o relacionamento. Esta condição comportamental e emocional afeta a capacidade do indivíduo de se relacionar.",
 
@@ -94,6 +100,7 @@ export const posts2 = [
     slug: "saude-mental-da-crianca",
     title: "Saúde Mental da Criança",
     timeToRead: "2",
+    tags: ["crianças", "saúde mental"],
     content: [
       "Nossas avós repetiam à exaustão: aproveite a infância, a melhor fase da vida. Entretanto, a realidade – ao menos a atual – é um pouco diferente. Estima-se que, no mundo, uma em cada quatro a cinco crianças e adolescentes tenha algum transtorno mental.",
 
@@ -108,6 +115,7 @@ export const posts2 = [
     slug: "a-analogia-do-urso-polar",
     title: "A Analogia do Urso Polar",
     timeToRead: "2",
+    tags: ["pensamentos"],
     content: [
       "Daniel Wegner foi um psicólogo social que criou a teoria do processo irônico. Ele descobriu que quanto mais tentamos reprimir nossos pensamentos mais eles tendem a aparecer em um efeito rebote.",
 
@@ -126,6 +134,7 @@ export const posts2 = [
     slug: "ansiedade-nos-estudos",
     title: "Ansiedade nos Estudos",
     timeToRead: "2",
+    tags: ["ansiedade", "estudos"],
     content: [
       "Desde que a OMS decretou a pandemia do coronavírus, passamos a conviver com sentimentos de medo e dúvida. O distanciamento social também aumenta nossos níveis de angústia. Como então lidar com a ansiedade e estudos nessa quarentena?",
 
@@ -146,6 +155,7 @@ export const posts2 = [
     slug: "beneficios-do-exercicio-fisico-para-a-saude-mental",
     title: "Benefícios do exercício físico para a saúde mental",
     timeToRead: "2",
+    tags: ["exercício", "saúde mental"],
     content: [
       "Todo mundo sabe que o exercício praticado com regularidade é bom para o corpo. Mas o exercício também é uma das maneiras mais eficazes para melhorar sua saúde mental.",
 
@@ -162,6 +172,7 @@ export const posts2 = [
     slug: "como-resolver-problemas-aparentemente-sem-solucao",
     title: "Como resolver problemas (aparentemente) sem solução",
     timeToRead: "2",
+    tags: ["problemas", "soluções"],
     content: [
       "É normal que todos já tenham passado por um problema no qual parecia não haver soluções possíveis. Este bloqueio ocorre de forma natural, pois quanto mais pensamos e ruminamos sobre o problema que enfrentamos e todas as dificuldades para resolvê-lo, criamos um padrão de pensamento negativo. Assim, fica difícil para o nosso cérebro quebrar este padrão e alterar para um modelo de pensamento voltado à solução do problema.",
 
@@ -180,6 +191,7 @@ export const posts2 = [
     slug: "prevencao-ao-suicidio",
     title: "Prevenção ao Suicídio",
     timeToRead: "2",
+    tags: ["suicídio", "prevenção"],
     content: [
       "O tema é complexo, delicado e cheio de tabus, mas não pode ser ignorado pela sociedade.",
 
@@ -206,6 +218,7 @@ export const posts2 = [
     slug: "bipolaridade-entendendo-os-sintomas",
     title: "Bipolaridade: entendendo os sintomas",
     timeToRead: "2",
+    tags: ["bipolaridade", "sintomas"],
     content: [
       "O transtorno bipolar atinge cerca de 4% das pessoas em idade adulta. O número de pessoas diagnosticadas com este quadro pode chegar a 6 milhões de pessoas no Brasil.",
 
@@ -236,6 +249,7 @@ export const posts2 = [
     slug: "consumismo-e-um-disturbio-psicologico",
     title: "Consumismo é um distúrbio psicológico?",
     timeToRead: "2",
+    tags: ["consumismo", "compulsão"],
     content: [
       "A Compulsão é uma característica de determinados comportamentos que são aprendidos e geralmente tem um vínculo ao alívio de ansiedade. É comum dizer que comportamentos compulsivos são mal adaptados, ou seja, em termos de desenvolvimento, esses comportamentos atrapalham a vida dos indivíduos.",
 
@@ -252,6 +266,7 @@ export const posts2 = [
     slug: "relacionamento-saudavel",
     title: "Relacionamento Saudável",
     timeToRead: "2",
+    tags: ["relacionamento"],
     content: [
       "Encontrar um grande amor já é um desafio e tanto nos dias de hoje, mas manter a chama acesa também não é tarefa das mais simples: nutrir a relação requer dedicação, paciência e respeito. Os melhores tipos de relacionamento que existem são aqueles que têm essa base sólida.",
 
@@ -273,6 +288,7 @@ export const posts2 = [
     title:
       "Dependência digital e a influência da tecnologia em nossas formas de relacionamento",
     timeToRead: "2",
+    tags: ["tecnologia", "relacionamento"],
     content: [
       "A modernização e tecnologia entrelaçam as pessoas umas com as outras. As informações despencam sobre nós, instantaneamente e continuadamente. E à medida que novas tecnologias entram em uso, as pessoas ficam cada vez menos convencidas da importância da autoexpressão.",
 
@@ -295,6 +311,7 @@ export const posts2 = [
     slug: "psicoterapia-para-idosos",
     title: "Psicoterapia para IDOSOS",
     timeToRead: "3",
+    tags: ["idosos", "psicoterapia"],
     content: [
       "Atenção para os Transtornos de depressão e ansiedade em idosos.",
 
@@ -341,6 +358,7 @@ export const posts2 = [
     slug: "cyberbullying",
     title: "Cyberbullying",
     timeToRead: "2",
+    tags: ["cyberbullying"],
     content: [
       "Com o avanço da tecnologia, surgiu uma nova forma de expressão do bullying, o cyberbullying. Neste sentido, trata-se de violência contra alguém por meio virtual, ou seja, uma manifestação de agressão ou assédio moral, que ocorre por meio de recursos tecnológicos modernos, especificamente, telefones celulares ou pela internet.",
 
@@ -368,6 +386,7 @@ export const posts2 = [
     slug: "o-que-e-um-problema",
     title: "O que é um problema?",
     timeToRead: "2",
+    tags: ["problemas"],
     content: [
       "De acordo com a psicologia cognitiva, um problema pode ser definido como uma questão ou situação que envolve uma dificuldade, incerteza ou dúvida. Assim, existe todo um processo mental quando se trata de um problema. Seja para percebê-lo e/ou para resolvê-lo. O mais importante de tudo é saber que para ser chamado de problema, obrigatoriamente ele tem que ter solução. Senão não pode ser chamado de problema.",
 
@@ -399,6 +418,7 @@ export const posts2 = [
     slug: "paz-e-sentimentos",
     title: "Paz e Sentimentos",
     timeToRead: "1",
+    tags: ["reflexão"],
     content: [
       "A paz é um estado de espírito, uma sensação de tranquilidade e leveza de estar de bem consigo mesmo, com as pessoas ao nosso redor e com o universo. Viver em paz internamente é procurar na nossa mente e nos nossos sentimentos a compreensão para o medo, que pode se tornar violento. É aprender a se aceitar e amar aquilo que você realmente é, por fora e por dentro. Já a paz exterior é vivermos em paz com os que nos cercam, apesar de todas as diferenças que encontramos, seja no campo religioso, cultural ou político.",
 
@@ -415,6 +435,7 @@ export const posts2 = [
     slug: "estou-triste-ou-estou-com-depressao",
     title: "Estou TRISTE ou estou com DEPRESSÃO?",
     timeToRead: "2",
+    tags: ["tristeza", "depressão"],
     content: [
       "A tristeza é um estado mental passageiro. Uma EMOÇÃO causada por uma situação que nos magoa. Já a depressão é um TRANSTORNO PSICOLÓGICO.",
 
@@ -455,6 +476,7 @@ export const posts2 = [
     slug: "dicas-para-vencer-a-glossofobia",
     title: "Dicas para vencer a Glossofobia (Medo de falar em público).",
     timeToRead: "5",
+    tags: ["medo"],
     content: [
       "Muita gente já engole seco só de pensar em falar em público. O nome disso é Glossofobia e darei agora algumas dicas para superar esse medo. Continue lendo!",
 
@@ -548,6 +570,7 @@ export const posts2 = [
     slug: "como-lidar-com-a-ansiedade-disfuncional",
     title: "Como lidar com a ansiedade disfuncional?",
     timeToRead: "3",
+    tags: ["ansiedade"],
     content: [
       "Existem duas formas de ansiedade, a Ansiedade Funcional e a Ansiedade Disfuncional.",
 
@@ -582,6 +605,7 @@ export const posts2 = [
     slug: "7-verdades-sobre-a-depressao-que-ninguem-te-conta",
     title: "7 verdades sobre a Depressão que ninguém te conta",
     timeToRead: "3",
+    tags: ["depressão"],
     content: [
       "Junto com sua complexidade, a Depressão vem repleta de mitos e verdades profundas que são frequentemente julgadas e mal analisadas por inúmeras pessoas. O desconhecimento sobre o que o indivíduo passa durante as crises da doença gera muitos preconceitos, que inclusive afetam diretamente na melhora do mesmo.",
 
@@ -611,6 +635,7 @@ export const posts2 = [
     slug: "voce-sabe-o-que-e-inteligencia-emocional",
     title: "Você sabe o que é INTELIGÊNCIA EMOCIONAL?",
     timeToRead: "3",
+    tags: ["inteligência emocional"],
     content: [
       "Entender que somos movidos principalmente pela emoção é o primeiro passo para começar a desenvolver Inteligência Emocional.",
 
@@ -637,6 +662,7 @@ export const posts2 = [
     slug: "como-surgiu-a-inteligencia-emocional",
     title: "Como surgiu a Inteligência Emocional?",
     timeToRead: "3",
+    tags: ["inteligência emocional"],
     content: [
       "O conceito de Inteligência Emocional (IE) surgiu primeiramente com Charles Darwin, que notou a importância da expressão emocional para a sobrevivência e adaptação das espécies.",
 
@@ -655,6 +681,7 @@ export const posts2 = [
     slug: "a-depressao-e-os-aspectos-quimicos",
     title: "A Depressão e os aspectos químicos",
     timeToRead: "4",
+    tags: ["depressão"],
     content: [
       "Já está comprovado que a depressão está diretamente ligada a um desequilíbrio químico no cérebro.",
 
@@ -682,6 +709,7 @@ export const posts2 = [
     slug: "voce-acredita-em-voce",
     title: "Você acredita em você?",
     timeToRead: "5",
+    tags: ["autoconfiança"],
     content: [
       "Se você não fizer isso, ninguém vai fazer por você. Porque se alguém fizer, a possibilidade dessa pessoa não conseguir te convencer é grande.",
 
@@ -727,6 +755,7 @@ export const posts2 = [
     slug: "sua-maior-responsabilidade-voce",
     title: "Sua maior responsabilidade: você!",
     timeToRead: "2",
+    tags: ["autocuidado"],
     content: [
       "Dificilmente nos colocamos em primeiro lugar. Pensamos que os atos que fazemos ao outro podem estar refletindo em nosso bem-estar, porém o autocuidado é mais que isso. Em suas duas últimas semanas, o que fez por você mesmo?",
 
@@ -752,6 +781,7 @@ export const posts2 = [
     slug: "porque-temos-medo-de-nos-sentirmos-sozinhos",
     title: "Poruqe temos medo de nos sentirmos sozinhos",
     timeToRead: "1",
+    tags: ["medo"],
     content: [
       "Desde os primórdios, somos seres sociáveis. Amamos, gostamos e odiamos. Todas essas interações são importantes ao nosso bem-estar emocional. Sendo assim, muitas pessoas acabam tendo medo de se sentir sozinhas e, por vezes, acabam aceitando o pouco de outras pessoas devido a isso.",
 
@@ -768,6 +798,7 @@ export const posts2 = [
     slug: "transtorno-de-personalidade-borderline",
     title: "Transtorno de personalidade borderline",
     timeToRead: "3",
+    tags: ["transtornos"],
     content: [
       "Síndrome de Borderline ou transtorno de personalidade borderline é um transtorno mental grave caracterizado por um padrão de instabilidade contínua no humor e comportamento. A Síndrome de Borderline também pode ser chamada de Transtorno de Personalidade Limítrofe.",
 
@@ -792,6 +823,7 @@ export const posts2 = [
     slug: "padroes-familiares",
     title: "Padrões Famíliares",
     timeToRead: "2",
+    tags: ["familia"],
     content: [
       "Todas as famílias estão sujeitas a crises ao longo de sua história. Mas não necessariamente estas crises precisam causar danos aos membros da família.",
 
@@ -810,6 +842,7 @@ export const posts2 = [
     slug: "transtorno-alimentar-noturno",
     title: "Transtorno alimentar noturno",
     timeToRead: "3",
+    tags: ["transtornos"],
     content: [
       "A Síndrome do Comer Noturno, também conhecida como Transtorno Alimentar Noturno, se caracteriza por 3 pontos principais:",
 

@@ -1,4 +1,3 @@
-import { LanguageType } from "@/consts/langs";
 import {
   Button,
   Checkbox,
@@ -12,11 +11,10 @@ import {
 } from "@chakra-ui/react";
 import { MailIcon } from "lucide-react";
 import Link from "next/link";
-import { LanguageSelector } from "./LanguageSelector";
-import { getDictionary } from "@/app/[lang]/dictionaries";
+import language from "@/data/dictionaries";
 
-async function Footer({ lang }: { lang: LanguageType }) {
-  const intl = await getDictionary(lang as never);
+function Footer() {
+  const intl = language;
 
   return (
     <Box as="footer">
@@ -67,9 +65,6 @@ async function Footer({ lang }: { lang: LanguageType }) {
           <Text fontSize="small">
             &copy; {new Date().getFullYear()} Douglas Borges. {intl.footer.copy}
           </Text>
-          <Flex>
-            <LanguageSelector inline lang={lang} />
-          </Flex>
         </Flex>
       </Container>
     </Box>

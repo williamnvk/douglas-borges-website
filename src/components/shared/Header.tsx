@@ -13,47 +13,22 @@ import {
   useDisclosure,
   Box,
 } from "@chakra-ui/react";
-import { LanguageSelector } from "./LanguageSelector";
 import Link from "next/link";
-import { Locale } from "@/app/[lang]/dictionaries";
 import { Building2Icon, MenuIcon, User2Icon } from "lucide-react";
 
-export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
+export const Header = ({ page }: { page: string }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const intl: {
-    [key in Locale]: {
-      nav: {
-        [key: string]: string;
-      };
-      personal: string;
-      company: string;
-      cta: string;
-    };
-  } = {
-    pt: {
-      personal: "Para você",
-      company: "Para sua empresa",
-      cta: "Entre em contato",
-      nav: {
-        home: "Home",
-        services: "Serviços",
-        about: "Sobre",
-        events: "Eventos e Palestras",
-        blog: "Blog",
-      },
-    },
-    en: {
-      personal: "For you",
-      company: "For your company",
-      cta: "Contact",
-      nav: {
-        home: "Home",
-        services: "Services",
-        about: "About",
-        events: "Events",
-        blog: "Blog",
-      },
+  const intl = {
+    personal: "Para você",
+    company: "Para sua empresa",
+    cta: "Entre em contato",
+    nav: {
+      home: "Home",
+      services: "Serviços",
+      about: "Sobre",
+      events: "Eventos e Palestras",
+      insights: "Insights",
     },
   };
 
@@ -90,19 +65,18 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
             as={Link}
             href="/"
           >
-            {intl[lang].personal}
+            {intl.personal}
           </Button>
           <Button
             variant={page === "company" ? "outline" : "link"}
             as={Link}
             href="/empresas"
           >
-            {intl[lang].company}
+            {intl.company}
           </Button>
         </HStack>
       </HStack>
 
-      {/* Menu hamburguer para dispositivos móveis */}
       <HStack gap={4}>
         <IconButton
           borderRadius="full"
@@ -112,19 +86,26 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
           onClick={onOpen}
         />
         <HStack display={{ base: "none", md: "flex" }} gap={4}>
-          <Button variant="link">{intl[lang].nav.home}</Button>
           <Button variant="link" as={Link} href="/servicos">
-            {intl[lang].nav.services}
+            {intl.nav.services}
           </Button>
           <Button
             variant={page === "about" ? "outline" : "link"}
             as={Link}
             href="/sobre"
           >
-            {intl[lang].nav.about}
+            {intl.nav.about}
           </Button>
-          <Button variant="link">{intl[lang].nav.events}</Button>
-          {/* <Button variant="link">{intl[lang].nav.blog}</Button> */}
+          <Button variant="link" as={Link} href="/palestras-e-evento">
+            {intl.nav.events}
+          </Button>
+          <Button
+            variant={page === "insights" ? "outline" : "insights"}
+            as={Link}
+            href="/insights"
+          >
+            {intl.nav.insights}
+          </Button>
         </HStack>
 
         <Button
@@ -134,12 +115,8 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
           target="_blank"
           referrerPolicy="no-referrer"
         >
-          {intl[lang].cta}
+          {intl.cta}
         </Button>
-
-        <Box display={{ base: "none", md: "inline-flex" }}>
-          <LanguageSelector lang={lang} />
-        </Box>
       </HStack>
 
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
@@ -164,7 +141,7 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
                   href="/"
                   leftIcon={<User2Icon />}
                 >
-                  {intl[lang].personal}
+                  {intl.personal}
                 </Button>
                 <Button
                   variant={"outline"}
@@ -174,11 +151,11 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
                   href="/empresas"
                   leftIcon={<Building2Icon />}
                 >
-                  {intl[lang].company}
+                  {intl.company}
                 </Button>
 
                 <Button variant="link" as={Link} href="/" onClick={onClose}>
-                  {intl[lang].nav.home}
+                  {intl.nav.home}
                 </Button>
                 <Button
                   variant="link"
@@ -186,7 +163,7 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
                   href="/servicos"
                   onClick={onClose}
                 >
-                  {intl[lang].nav.services}
+                  {intl.nav.services}
                 </Button>
                 <Button
                   variant="link"
@@ -194,7 +171,7 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
                   href="/sobre"
                   onClick={onClose}
                 >
-                  {intl[lang].nav.about}
+                  {intl.nav.about}
                 </Button>
                 <Button
                   variant="link"
@@ -202,14 +179,16 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
                   href="/events"
                   onClick={onClose}
                 >
-                  {intl[lang].nav.events}
+                  {intl.nav.events}
                 </Button>
-                {/* <Button variant="link" as={Link} href="/blog" onClick={onClose}>
-                  {intl[lang].nav.blog}
-                </Button> */}
-                <Box mt={4}>
-                  <LanguageSelector lang={lang} inline />
-                </Box>
+                <Button
+                  variant="link"
+                  as={Link}
+                  href="/insights"
+                  onClick={onClose}
+                >
+                  {intl.nav.insights}
+                </Button>
               </VStack>
               <Box p={6} w="full">
                 <Button
@@ -219,7 +198,7 @@ export const Header = ({ page, lang }: { page: string; lang: Locale }) => {
                   as="a"
                   href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges."
                 >
-                  {intl[lang].cta}
+                  {intl.cta}
                 </Button>
               </Box>
             </VStack>

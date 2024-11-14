@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Head from "next/head";
-import { Providers } from "../providers";
+import { Providers } from "./providers";
 import Footer from "@/components/shared/Footer";
 import { AOSInit } from "./components/AOS";
 
@@ -43,21 +43,14 @@ export const metadata: Metadata = {
   },
 };
 
-export async function generateStaticParams() {
-  return [{ lang: "en" }, { lang: "pt" }];
-}
-
-export default async function RootLayout(
+export default function RootLayout(
   props: Readonly<{
     children: React.ReactNode;
-    params: { lang: string };
   }>
 ) {
-  const params = await props.params;
-
   const { children } = props;
 
-  const lang = params.lang === "pt" ? "pt-BR" : "en-US";
+  const lang = "pt-BR";
 
   return (
     <html lang={lang} suppressHydrationWarning suppressContentEditableWarning>
@@ -88,7 +81,7 @@ export default async function RootLayout(
         <Providers>
           <AOSInit />
           <main>{children}</main>
-          <Footer lang={params.lang} />
+          <Footer />
         </Providers>
       </body>
     </html>

@@ -16,26 +16,16 @@ import {
   Button,
   Stack,
 } from "@chakra-ui/react";
-import { getDictionary, Locale } from "../dictionaries";
 import { Header } from "@/components/shared/Header";
 import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
+import language from "@/data/dictionaries";
 
-type Props = {
-  params: Promise<{
-    lang: Locale;
-  }>;
-};
-
-export default async function Services(props: Props) {
-  const params = await props.params;
-
-  const { lang } = params;
-
-  const intl = await getDictionary(lang);
+export default function Services() {
+  const intl = language;
 
   return (
     <>
-      <Header lang={lang} page="services" />
+      <Header page="services" />
       <Container
         maxW={{ base: "full", md: "container.xl" }}
         mt={HEADER_NAVBAR_HEIGHT}
@@ -45,9 +35,9 @@ export default async function Services(props: Props) {
           <Stack
             flexDir={{ base: "column-reverse", md: "row" }}
             w="full"
-            gap={{ base: 2, md: 32 }}
-            align="center"
-            minH={{ base: "auto", md: `calc(100vh - ${HEADER_NAVBAR_HEIGHT})` }}
+            gap={{ base: 2, md: 16 }}
+            align="stretch"
+            justify="stretch"
           >
             <VStack gap={2} flex={1} align="flex-start">
               <Badge fontWeight="light">{intl.services.title}</Badge>
@@ -73,21 +63,21 @@ export default async function Services(props: Props) {
                 variant="outline"
                 size="lg"
                 w={{ base: "full", md: "auto" }}
-                data-aos="fade-up"
               >
                 {intl.services.hero.button}
               </Button>
             </VStack>
             <Box
-              w={{ base: "full", md: "400px" }}
-              h={{ base: "400px", md: "450px" }}
+              w={{ base: "full", md: "640px" }}
+              h={{ base: "400px", md: "auto" }}
               mx={{ base: "auto", md: "0" }}
               borderRadius="lg"
               display="block"
               style={{
-                backgroundImage: "url(/assets/douglas-borges.png)",
+                backgroundImage: "url(/assets/desktop.webp)",
                 backgroundRepeat: "no-repeat",
-                backgroundSize: "100% auto",
+                backgroundSize: "auto 100%",
+                backgroundPosition: "center center",
               }}
             ></Box>
           </Stack>

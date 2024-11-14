@@ -40,6 +40,13 @@ const customTheme = extendTheme({
   config: themeConfig,
   components,
   container: {
+    lg: "1280px",
+    xl: "1440px",
+  },
+  breakpoints: {
+    base: "0em",
+    md: "768px",
+    lg: "1366px",
     xl: "1440px",
   },
   radii: {
