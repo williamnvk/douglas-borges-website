@@ -10,7 +10,9 @@ export const INSIGHTS = [
 
 export const INSIGHTS_SLUGS = INSIGHTS.map((p) => p.slug);
 
-export const INSIGHTS_HIGHLIGHTS = INSIGHTS.filter((p) => p.highlight);
+export const INSIGHTS_HIGHLIGHTS = INSIGHTS.filter((p) =>
+  "highlight" in p ? p.highlight || false : false
+);
 
 export interface Post {
   slug: string;
