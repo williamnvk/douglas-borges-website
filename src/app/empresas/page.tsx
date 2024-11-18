@@ -37,7 +37,7 @@ export default async function Company() {
 
   return (
     <>
-      <Header page="company" />
+      <Header page="company" isDark />
       <Box mt={HEADER_NAVBAR_HEIGHT} bg="gray.900">
         <Container maxW="container.xl" py={{ base: 4, md: 16, "2xl": 24 }}>
           <Stack

@@ -64,6 +64,23 @@ const buttonTheme = defineStyleConfig({
         bg: "brand.600",
       },
     },
+    linkInverted: (props) => ({
+      px: 0,
+      color: mode("white", "black")(props),
+      bg: "transparent",
+      _hover: {
+        color: mode("gray.200", "gray.900")(props),
+        textDecoration: "underline",
+      },
+    }),
+    solidInverted: {
+      bg: "brand.50",
+      color: "brand.900",
+      _hover: {
+        bg: "brand.600",
+        color: "white",
+      },
+    },
   },
   defaultProps: {
     size: "md",
