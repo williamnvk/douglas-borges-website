@@ -7,7 +7,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, User2Icon } from "lucide-react";
 import {
   Button,
   Flex,
@@ -21,7 +21,12 @@ import {
 import { useRef } from "react";
 
 const Testimonials: FC<{
-  items: Array<{ name: string; image: string; description: string }>;
+  items: Array<{
+    name: string;
+    image: string | null;
+    description: string;
+    city: string;
+  }>;
 }> = ({ items }) => {
   const [isMobile] = useMediaQuery("(max-width: 1024px)");
   const swiperRef = useRef<SwiperRef>(null);
@@ -60,9 +65,9 @@ const Testimonials: FC<{
                 borderRadius="lg"
                 boxShadow="lg"
                 _after={{
-                  content: '""', // Pseudo-elemento para o triângulo
+                  content: '""',
                   position: "absolute",
-                  bottom: "56px", // Posiciona logo abaixo do Text
+                  bottom: "56px",
                   left: "50%",
                   transform: "translateX(-50%)",
                   borderWidth: "12px",
@@ -73,20 +78,44 @@ const Testimonials: FC<{
                 {t.description}
               </Text>
               <HStack align="center" justify="center" gap={4}>
-                <Box
-                  borderRadius="50%"
-                  overflow="hidden"
-                  w="64px"
-                  h="64px"
-                  backgroundImage={`url(${t.image})`}
-                  backgroundSize="auto 100%"
-                  backgroundRepeat="no-repeat"
-                  backgroundPosition="center"
-                  filter="grayscale(1)"
-                />
-                <Text fontSize="smaller" color="gray.50">
-                  {t.name}
-                </Text>
+                {t.image ? (
+                  <Box
+                    borderRadius="50%"
+                    overflow="hidden"
+                    w="64px"
+                    h="64px"
+                    backgroundImage={`url(${t.image})`}
+                    backgroundSize="auto 100%"
+                    backgroundRepeat="no-repeat"
+                    backgroundPosition="center"
+                    filter="grayscale(1)"
+                    border="2px solid"
+                    borderColor="gray.500"
+                  />
+                ) : (
+                  <Flex
+                    borderRadius="50%"
+                    overflow="hidden"
+                    w="64px"
+                    h="64px"
+                    color="gray.500"
+                    justify="center"
+                    align="center"
+                    bg="gray.800"
+                    border="2px solid"
+                    borderColor="gray.500"
+                  >
+                    <User2Icon size={32} />
+                  </Flex>
+                )}
+                <VStack align="flex-start" gap={0}>
+                  <Text fontSize="smaller" color="gray.50">
+                    {t.name}
+                  </Text>
+                  <Text fontSize="x-small" color="gray.200">
+                    {t.city}
+                  </Text>
+                </VStack>
               </HStack>
             </VStack>
           </SwiperSlide>

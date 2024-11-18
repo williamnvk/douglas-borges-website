@@ -1,20 +1,22 @@
 export const language = {
   home: {
-    firstWord: [
+    how: [
       "Desenvolvendo",
       "Aconselhando",
       "Ajudando",
       "Encorajando",
       "Incentivando",
     ],
-    secondWord: [
+    who: [
       "empresários",
       "executivos",
       "líderes",
       "profissionais",
       "empreendedores",
     ],
-    subtitle: "de sucesso com equilíbrio entre negócios, família e propósito",
+    where: ["empresa", "trabalho", "negócios"],
+    subtitle: "de com equilíbrio entre ",
+    rest: ", família e propósito",
     bible: {
       content:
         "Bem-aventurado o homem que suporta a provação; porque, depois de aprovado, receberá a coroa da vida, que o Senhor prometeu aos que o amam.",
@@ -35,37 +37,43 @@ export const language = {
       ],
     },
     services: {
-      title: "Juntos, podemos criar um mundo mais saudável e equilibrado.",
+      title: "Juntos, podemos criar um ambiente mais saudável e equilibrado.",
       items: [
         {
           icon: "handshake",
           title: "Programas de Inteligência Emocional para Equipes",
           description:
-            "Aumente a coesão e o desempenho da sua equipe, promovendo um ambiente de trabalho ético e equilibrado.",
+            "Fortaleça a coesão e o desempenho da sua equipe, promovendo um ambiente de trabalho mais ético, colaborativo e equilibrado.",
         },
         {
           icon: "quote",
           title: "Aconselhamento para Alta Performance Pessoal e Profissional",
           description:
-            "Um acompanhamento para empresários que precisam gerenciar o estresse e maximizar seu desempenho.",
+            "Um acompanhamento focado para empresários que buscam gerenciar o estresse, aprimorar seu desempenho e manter uma visão de longo prazo.",
         },
         {
           icon: "plus",
           title: "Workshops In-Company",
           description:
-            " Treinamentos práticos e baseados em valores cristãos para capacitar líderes e equipes em inteligência emocional, produtividade e gestão de conflitos.",
+            "Capacite líderes e equipes com treinamentos práticos, fundamentados em valores cristãos, em temas como inteligência emocional, produtividade e gestão de conflitos.",
         },
         {
           icon: "scale",
           title: "Consultoria para o Equilíbrio Vida-Trabalho",
           description:
-            "Apoio na criação de uma cultura organizacional onde o bem-estar pessoal, familiar e empresarial se alinham para melhorar o desempenho a longo prazo.",
+            "Apoio na construção de uma cultura organizacional onde o bem-estar pessoal, familiar e profissional caminham juntos, maximizando o desempenho a longo prazo.",
         },
         {
           icon: "user",
           title: "Coaching Executivo",
           description:
-            "Desenvolvimento de liderança com base em princípios bíblicos, fortalecendo decisões empresariais com propósito e resiliência.",
+            "Desenvolvimento de liderança fundamentado em princípios bíblicos, aprimorando a tomada de decisões empresariais com propósito e resiliência.",
+        },
+        {
+          icon: "lightbulb",
+          title: "Mentoria para Planejamento de Carreira com Propósito",
+          description:
+            "Ajuda a alinhar suas metas profissionais com seu propósito de vida, para alcançar uma carreira significativa e equilibrada.",
         },
       ],
     },
@@ -349,35 +357,45 @@ export const language = {
   },
   testimonials: {
     title: "Resultados que ajudei a criar",
-    subtitle: "Ouça o que meus clientes dizem sobre mim.",
+    subtitle: "Ouça o que meus clientes dizem sobre mim",
     items: [
       {
-        image: "/assets/testmonials/william_novak.png",
+        type: ["company"],
+        image: "/assets/testmonials/william-n.webp",
         name: "William N",
+        city: "União da Vitória, PR",
         description:
           "Desde a primeira sessão, senti uma clareza incrível sobre meus objetivos e uma paz que há tempos não experimentava. A consultoria me ajudou a reorganizar minhas prioridades e, pela primeira vez, consegui equilibrar meu trabalho com minha vida pessoal.",
       },
       {
-        image: "/assets/testmonials/person_1.png",
-        name: "João Da Silva",
-        description:
-          "O suporte emocional e as ferramentas práticas que recebi foram essenciais para reduzir meu estresse e melhorar minha performance no trabalho. Hoje, sinto que tenho controle sobre minha vida profissional e familiar, o que me tornou um líder mais seguro e equilibrado.",
-      },
-      {
-        image: "/assets/testmonials/person_2.png",
-        name: "Marina Helena, PORMADE",
-        description:
-          "Antes, eu sentia que vivia em um ciclo interminável de pressão e cobranças. Com a consultoria, aprendi a gerenciar minhas emoções e a fortalecer meu propósito. Isso impactou não só a minha vida, mas também trouxe mais harmonia para minha equipe.",
-      },
-      {
-        image: "/assets/testmonials/person_3.png",
-        name: "Fabio H. D. A.",
+        type: ["company"],
+        image: "/assets/testmonials/thyago-b-de-lima.webp",
+        name: "Thyago B. de Lima",
+        city: "Curitiba, PR",
         description:
           "A abordagem cristã da consultoria fez toda a diferença para mim. Encontrar alguém que entende meus valores e me ajuda a aplicá-los no dia a dia foi transformador. Hoje, tenho mais paz e confiança em minhas decisões como líder e como pai.",
       },
       {
-        image: "/assets/testmonials/person_1.png",
-        name: "João Da Silva",
+        ype: ["company"],
+        image: null,
+        name: "Empresário",
+        city: "União da Vitória, PR",
+        description:
+          "Antes, eu sentia que vivia em um ciclo interminável de pressão e cobranças. Com a consultoria, aprendi a gerenciar minhas emoções e a fortalecer meu propósito. Isso impactou não só a minha vida, mas também trouxe mais harmonia para minha equipe.",
+      },
+      {
+        ype: ["company"],
+        image: null,
+        name: "Empresário",
+        city: "Porto União, SC",
+        description:
+          "A abordagem cristã da consultoria fez toda a diferença para mim. Encontrar alguém que entende meus valores e me ajuda a aplicá-los no dia a dia foi transformador. Hoje, tenho mais paz e confiança em minhas decisões como líder e como pai.",
+      },
+      {
+        ype: ["company"],
+        image: null,
+        name: "Empresário",
+        city: "Mafra, SC",
         description:
           "Eu costumava ignorar os sinais de esgotamento até que comecei a ter problemas físicos. A consultoria me ajudou a resgatar meu bem-estar e a enxergar que, para ser um bom líder, preciso cuidar de mim mesmo primeiro. Minha produtividade e a qualidade do meu trabalho melhoraram muito",
       },
@@ -445,8 +463,14 @@ export const language = {
     },
   },
   topics: {
-    title: "Palestras",
-    cta: "Contrate",
+    title: "Palestras e Eventos",
+    subtitle: "Conteúdo especializado para transformar sua organização",
+    cta: {
+      title: "Interessado em uma palestra?",
+      subtitle:
+        "Entre em contato para mais informações sobre valores e disponibilidade.",
+      button: "Agendar Palestra",
+    },
     link: "Saiba mais",
     items: [
       {
@@ -456,6 +480,8 @@ export const language = {
           "Ensinando a Ensinar, Aprendendo a Aprender e Aprendendo a Ensinar",
         description:
           "Explora métodos práticos para desenvolver habilidades de ensino e aprendizado contínuo, fortalecendo a troca de conhecimento.",
+        duration: "1h",
+        format: "Presencial ou Online",
       },
       {
         image: "/assets/palestras/ansiedade.jpg",
@@ -463,6 +489,8 @@ export const language = {
         title: "Como controlar a ansiedade",
         description:
           "Combinando conteúdos práticos e ferramentas exclusivas usadas em orientações psicológicas, conheça às técnicas para controlar a Ansiedade.",
+        duration: "2h",
+        format: "Presencial",
       },
       {
         image: "/assets/palestras/problema.webp",
@@ -470,6 +498,8 @@ export const language = {
         title: "O que eu faço com um PROBLEMA",
         description:
           "Existe todo um processo mental quando se trata de um problema. Seja para percebê-lo e/ou para resolvê-lo. O mais importante de tudo é saber que para ser chamado de problema!",
+        duration: "1h30m",
+        format: "Presencial ou Online",
       },
       {
         image: "/assets/palestras/protocolos-comportamentais.jpg",
@@ -477,6 +507,8 @@ export const language = {
         title: "Novos Protocolos Comportamentais",
         description:
           "apresenta uma abordagem inovadora para aprimorar a comunicação interpessoal, focada em empatia, clareza e compreensão mútua.",
+        duration: "1h",
+        format: "Presencial ou Online",
       },
     ],
   },
@@ -599,5 +631,24 @@ export const language = {
         "Entre em contato para agendar sua sessão ou saber mais sobre como a terapia pode transformar sua vida.",
       button: "Agendar uma sessão",
     },
+  },
+  contact: {
+    title: "Entre em Contato",
+    subtitle:
+      "Atendo em todo o Brasil, oferecendo consultas online e presenciais. Embora minha base esteja localizada em União da Vitória - PR, estou disponível para atender clientes de qualquer lugar do país. Se você precisar de assistência, não hesite em entrar em contato!",
+    contactInfoTitle: "Informações de Contato",
+    messageTitle: "Envie uma mensagem",
+    address: [
+      "Clínica Iluminary",
+      "Rua Germano Unger, 20",
+      "Esquina com Rua Lauro Muller",
+      "Cidade Nova",
+      "Porto União · SC",
+    ],
+    maps: "https://goo.gl/maps/CeckryQb4Z6s6rRr7",
+    whatsapp: "5542988381261",
+    email: "contato@douglasborgespsicologo.com.br",
+    instagram: "douglasborgespsicologo",
+    linkedin: "douglasborgespsicologo",
   },
 };

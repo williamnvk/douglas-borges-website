@@ -10,13 +10,31 @@ import {
 } from "@chakra-ui/react";
 import { Header } from "@/components/shared/Header";
 import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
-import language from "@/data/dictionaries";
+import language, { siteDescription, siteUrl } from "@/data/dictionaries";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sobre",
+  description: siteDescription,
+  openGraph: {
+    title: "Sobre",
+    description: siteDescription,
+    images: ["/assets/perfil.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: siteUrl + "/sobre",
+  },
+};
 
 export default function About() {
   const intl = language;
 
   return (
-    <>
+    <main>
       <Header page="about" />
       <Container maxW="container.xl" mt={HEADER_NAVBAR_HEIGHT}>
         <VStack gap={{ base: 4, md: 8 }} w="full">
@@ -26,6 +44,7 @@ export default function About() {
             align="stretch"
           >
             <Box
+              as="section"
               w={{ base: "full", md: "400px" }}
               h={{ base: "500px", md: "500px" }}
               mx={{ base: "auto", md: "0" }}
@@ -33,10 +52,9 @@ export default function About() {
               display="block"
               style={{
                 backgroundImage: "url(/assets/perfil.webp)",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center center",
-                backgroundSize: "100% auto",
               }}
+              role="img"
+              aria-label={"Foto de perfil"}
             ></Box>
 
             <VStack
@@ -174,6 +192,6 @@ export default function About() {
           </VStack>
         </VStack>
       </Container>
-    </>
+    </main>
   );
 }

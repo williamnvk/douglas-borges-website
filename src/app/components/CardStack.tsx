@@ -89,7 +89,13 @@ const CardStack: FC<{
               "transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.3s ease-out",
           }}
         >
-          <Badge borderRadius="md" fontWeight="light" data-aos="fade-up">
+          <Badge
+            borderRadius="md"
+            bg="gray.900"
+            color="gray.50"
+            fontWeight="light"
+            data-aos="fade-up"
+          >
             {card.title.toUpperCase()}
           </Badge>
           <Heading fontSize={{ base: "4xl", md: "4xl" }} data-aos="fade-up">

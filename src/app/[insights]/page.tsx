@@ -15,6 +15,7 @@ import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
 import Link from "next/link";
 import { Metadata } from "next";
 import { ClockIcon } from "lucide-react";
+import { siteUrl } from "@/data/dictionaries";
 
 interface Props {
   params: {
@@ -28,27 +29,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!current) {
     return {
-      title: "Insight Not Found",
+      title: "Insight não encontrado",
     };
   }
 
+  const title = `${current.title} | Insights e Reflexões`;
+  const description = current.content[0].substring(0, 155);
+
   return {
-    title: `${current.title} | Your Site Name`,
-    description: current.content[0].substring(0, 155), // First paragraph as description, truncated
+    title,
+    description,
     openGraph: {
-      title: current.title,
-      description: current.content[0].substring(0, 155),
+      title,
+      description,
       type: "article",
       publishedTime: current.publishedAt,
       authors: "Douglas Borges",
     },
     twitter: {
       card: "summary_large_image",
-      title: current.title,
-      description: current.content[0].substring(0, 155),
+      title,
+      description,
     },
     alternates: {
-      canonical: `https://yoursite.com/insights/${params.insights}`,
+      canonical: `${siteUrl}/insights/${params.insights}`,
     },
   };
 }
@@ -78,7 +82,12 @@ export default function InsightPage({ params }: Props) {
         as="article"
       >
         <Box borderRadius="lg" bg={randomColor} p={{ base: 4, md: 32 }}>
-          <Heading as="h1" size={{ base: "2xl", md: "4xl" 	}} fontWeight="light" mb={8}>
+          <Heading
+            as="h1"
+            size={{ base: "2xl", md: "4xl" }}
+            fontWeight="light"
+            mb={8}
+          >
             {current.title}
           </Heading>
           <HStack justify="center" align="center" gap={4}>
@@ -100,7 +109,15 @@ export default function InsightPage({ params }: Props) {
                 </HStack>
               </Tooltip>
             </Box>
-            <HStack gap={2} flex={1} align="flex-start" justify="flex-start">
+            <HStack
+              gap={2}
+              flex={1}
+              align="flex-start"
+              justify="flex-start"
+              borderLeft="solid 1px"
+              borderLeftColor="gray.100"
+              pl={2}
+            >
               {current.tags.map((tag) => (
                 <Link key={tag} href={`/insights?tag=${tag}`}>
                   <Text
@@ -146,7 +163,7 @@ export default function InsightPage({ params }: Props) {
           ))}
         </VStack>
       </Container>
-      <Container maxW="container.lg" py={{ base: 4, md: 8 }}>
+      <Container maxW="container.lg" py={{ base: 4, md: 8 }} mb={8}>
         <Heading as="h2" size="lg" mb={4}>
           Leia também
         </Heading>

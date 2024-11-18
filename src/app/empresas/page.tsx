@@ -38,33 +38,7 @@ export default async function Company() {
   return (
     <>
       <Header page="company" />
-      <Box
-        mt={HEADER_NAVBAR_HEIGHT}
-        bg="gray.900"
-        // bg="blue.800"
-        // display="flex"
-        // flexDir="column"
-        // alignContent="center"
-        // justifyContent="center"
-        // filter="grayscale(1)"
-        // backgroundImage="url(/assets/business-bg.jpg)"
-        // backgroundBlendMode="multiply"
-        // backgroundSize={`100% auto`}
-        // backgroundRepeat="no-repeat"
-        // backgroundPosition={{
-        //   base: "center right",
-        //   md: "center center",
-        //   "2xl": "center center",
-        // }}
-        // backgroundAttachment="fixed"
-        // animation="scaling 30s infinite alternate ease-in-out"
-        // sx={{
-        //   "@keyframes scaling": {
-        //     "0%": { backgroundSize: "100% auto" },
-        //     "100%": { backgroundSize: "300% auto" },
-        //   },
-        // }}
-      >
+      <Box mt={HEADER_NAVBAR_HEIGHT} bg="gray.900">
         <Container maxW="container.xl" py={{ base: 4, md: 16, "2xl": 24 }}>
           <Stack
             w="full"
@@ -137,7 +111,7 @@ export default async function Company() {
               borderRadius="lg"
               display="block"
               style={{
-                backgroundImage: "url(/assets/em-pe.webp)",
+                backgroundImage: "url(/assets/douglas-borges-em-pe.webp)",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center center",
                 backgroundSize: "100% auto",

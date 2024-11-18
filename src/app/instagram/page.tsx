@@ -211,7 +211,9 @@ export default function DynamicCard() {
                 <Box
                   fontSize="24px"
                   fontFamily="heading"
-                  style={{ lineHeight: 1.1 }}
+                  style={{ lineHeight: 1.1 }} borderRadius="lg"
+                  p={8}
+                  bg="whiteAlpha.200"
                 >
                   <span
                     dangerouslySetInnerHTML={{
@@ -233,22 +235,27 @@ export default function DynamicCard() {
                   fontFamily="heading"
                   gap={8}
                   align="center"
+                 
                 >
                   <Box
                     style={{
-                      borderRadius: "50%",
-                      backgroundImage: `url(/assets/instagram.jpg)`,
+                      backgroundImage: `url(/assets/douglas-borges-face.jpg)`,
                       backgroundPosition: "center",
                       backgroundSize: "auto 100%",
                     }}
                     w="64px"
                     h="64px"
+                    borderRadius="full"
+                    borderColor="white"
+                    borderWidth={2}
                   ></Box>
                   <VStack align="flex-start" gap={0} flex={1}>
-                    <span>
-                      Douglas <strong>Borges</strong>
-                    </span>
-                    <span>@douglasborges</span>
+                    <Text as="span" fontFamily="heading">
+                      Douglas <strong>Borges</strong> | Psicólogo
+                    </Text>
+                    <Text fontSize="smaller" fontFamily="body" as="span">
+                      @douglasborgespsicologo
+                    </Text>
                   </VStack>
                 </HStack>
               </VStack>

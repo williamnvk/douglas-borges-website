@@ -16,14 +16,15 @@ import {
   useMediaQuery,
   VStack,
 } from "@chakra-ui/react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, User2Icon } from "lucide-react";
 import QuoteIcon from "../components/QuoteIcon";
 
 export default function Testimonials({
   testimonials,
 }: {
   testimonials: Array<{
-    image: string;
+    image: string | null;
+    city: string;
     name: string;
     description: string;
   }>;
@@ -34,9 +35,9 @@ export default function Testimonials({
     <Box pos="relative">
       <Swiper
         modules={[Navigation]}
-        slidesPerView={isMobile ? 1.4 : 2.5}
+        slidesPerView={isMobile ? 1.4 : 2.4}
         centeredSlides={true}
-        spaceBetween={isMobile ? 4 : 24}
+        spaceBetween={isMobile ? 4 : 16}
         loop={true}
         navigation={{
           prevEl: ".button__prev",
@@ -84,23 +85,44 @@ export default function Testimonials({
                     {t.description}
                   </Heading>
                   <HStack w="full" align="center" justify="flex-start">
-                    <Box
-                      borderRadius="50%"
-                      overflow="hidden"
-                      w="48px"
-                      h="48px"
-                      backgroundImage={`url(${t.image})`}
-                      backgroundSize="auto 100%"
-                      backgroundRepeat="no-repeat"
-                      backgroundPosition="center"
-                      filter="grayscale(1)"
-                    />
-                    <Text
-                      color="gray.200"
-                      fontSize={{ base: "smaller", md: "sm" }}
-                    >
-                      {t.name}
-                    </Text>
+                    {t.image ? (
+                      <Box
+                        borderRadius="50%"
+                        overflow="hidden"
+                        w="64px"
+                        h="64px"
+                        backgroundImage={`url(${t.image})`}
+                        backgroundSize="auto 100%"
+                        backgroundRepeat="no-repeat"
+                        backgroundPosition="center"
+                        filter="grayscale(1)"
+                        border="2px solid"
+                        borderColor="gray.500"
+                      />
+                    ) : (
+                      <Flex
+                        borderRadius="50%"
+                        overflow="hidden"
+                        w="64px"
+                        h="64px"
+                        color="gray.500"
+                        justify="center"
+                        align="center"
+                        bg="gray.800"
+                        border="2px solid"
+                        borderColor="gray.500"
+                      >
+                        <User2Icon size={32} />
+                      </Flex>
+                    )}
+                    <VStack align="flex-start" gap={0}>
+                      <Text fontSize="smaller" color="gray.50">
+                        {t.name}
+                      </Text>
+                      <Text fontSize="x-small" color="gray.200">
+                        {t.city}
+                      </Text>
+                    </VStack>
                   </HStack>
                 </VStack>
               </HStack>

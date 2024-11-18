@@ -1,5 +1,15 @@
 import Head from "next/head";
 import { Providers } from "../providers";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Instagram",
+  description: "Gerador de cards para Instagram",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function RootLayout({
   children,

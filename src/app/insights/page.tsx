@@ -136,7 +136,12 @@ export default function InsightsPage({ searchParams }: Props) {
                         </HStack>
                       </Tooltip>
                     </Box>
-                    <HStack flex={1}>
+                    <HStack
+                      flex={1}
+                      borderLeft="solid 1px"
+                      borderLeftColor="gray.100"
+                      pl={2}
+                    >
                       {post.tags.map((tag: string) => (
                         <Link key={tag} href={`/insights?tag=${tag}`}>
                           <Text

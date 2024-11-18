@@ -29,6 +29,7 @@ export const Header = ({ page }: { page: string }) => {
       about: "Sobre",
       events: "Palestras e Eventos",
       insights: "Insights",
+      contact: "Contato",
     },
   };
 
@@ -100,11 +101,18 @@ export const Header = ({ page }: { page: string }) => {
             {intl.nav.events}
           </Button>
           <Button
-            variant={page === "insights" ? "outline" : "insights"}
+            variant={page === "insights" ? "outline" : "link"}
             as={Link}
             href="/insights"
           >
             {intl.nav.insights}
+          </Button>
+          <Button
+            variant={page === "contact" ? "outline" : "link"}
+            as={Link}
+            href="/contato"
+          >
+            {intl.nav.contact}
           </Button>
         </HStack>
 
@@ -176,7 +184,7 @@ export const Header = ({ page }: { page: string }) => {
                 <Button
                   variant="link"
                   as={Link}
-                  href="/events"
+                  href="/palestras-e-eventos"
                   onClick={onClose}
                 >
                   {intl.nav.events}
@@ -188,6 +196,14 @@ export const Header = ({ page }: { page: string }) => {
                   onClick={onClose}
                 >
                   {intl.nav.insights}
+                </Button>
+                <Button
+                  variant="link"
+                  as={Link}
+                  href="/contato"
+                  onClick={onClose}
+                >
+                  {intl.nav.contact}
                 </Button>
               </VStack>
               <Box p={6} w="full">

@@ -18,7 +18,20 @@ import {
 } from "@chakra-ui/react";
 import { Header } from "@/components/shared/Header";
 import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
-import language from "@/data/dictionaries";
+import language, { siteUrl } from "@/data/dictionaries";
+
+export const metadata = {
+  title: language.services.title,
+  description: language.services.subtitle,
+  openGraph: {
+    title: language.services.title,
+    description: language.contact.subtitle,
+    type: "website",
+  },
+  alternates: {
+    canonical: `${siteUrl}/servicos`,
+  },
+};
 
 export default function Services() {
   const intl = language;
