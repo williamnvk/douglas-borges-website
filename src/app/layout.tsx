@@ -3,10 +3,12 @@ import Head from "next/head";
 import { Providers } from "./providers";
 import Footer from "@/components/shared/Footer";
 import { AOSInit } from "./components/AOS";
-
-const title = "Douglas Borges | Psicólogo";
-const description =
-  "Consultor de Inteligência Emocional para Liderança | Produtividade | Equilíbrio entre Empresa, Família e Propósito Vida";
+import {
+  siteTitle,
+  siteDescription,
+  siteImage,
+  siteUrl,
+} from "@/data/dictionaries";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -17,24 +19,25 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: title,
-    template: `%s | ${title}`,
+    default: siteTitle,
+    template: `%s | ${siteTitle}`,
   },
-  description: description,
-  applicationName: title,
+  description: siteDescription,
+  applicationName: siteTitle,
   referrer: "origin-when-cross-origin",
   keywords:
     "psicologo,uniao da vitoria,porto uniao,consultoria,empresas,cristao,douglas borges,produtividade,inteligencia emocional,equilíbrio,empresa,familia,propósito,vida",
-  publisher: title,
+  publisher: "Douglas Borges",
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title,
-    description: description,
-    url: process.env.NEXT_PUBLIC_APP_URL,
-    siteName: title,
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
+    siteName: siteTitle,
+    images: [siteImage],
     locale: "pt_BR",
     type: "website",
   },

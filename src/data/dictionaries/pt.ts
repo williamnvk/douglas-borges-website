@@ -362,6 +362,14 @@ export const language = {
       {
         type: ["company"],
         image: "/assets/testmonials/william-n.webp",
+        name: "Dr. Gustavo Coronel, CEO da Clinica Yluma",
+        city: "União da Vitória, PR",
+        description:
+          "Meu maior ganho foi a clareza. Cheguei aos encontros de consultoria com problemas acumulados, me sentindo sempre em débito com todos. Hoje, sei onde quero chegar e como quero viver, e cada decisão tem sido mais consciente. Esse equilíbrio que encontrei reflete diretamente nos resultados do meu trabalho e com a família.",
+      },
+      {
+        type: ["company"],
+        image: "/assets/testmonials/william-n.webp",
         name: "William N",
         city: "União da Vitória, PR",
         description:
@@ -370,7 +378,7 @@ export const language = {
       {
         type: ["company"],
         image: "/assets/testmonials/thyago-b-de-lima.webp",
-        name: "Thyago B. de Lima",
+        name: "Thyago B. de Lima, Empresário e Palestrante",
         city: "Curitiba, PR",
         description:
           "A abordagem cristã da consultoria fez toda a diferença para mim. Encontrar alguém que entende meus valores e me ajuda a aplicá-los no dia a dia foi transformador. Hoje, tenho mais paz e confiança em minhas decisões como líder e como pai.",
