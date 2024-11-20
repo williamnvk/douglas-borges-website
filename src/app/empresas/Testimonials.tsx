@@ -35,9 +35,9 @@ export default function Testimonials({
     <Box pos="relative">
       <Swiper
         modules={[Navigation]}
-        slidesPerView={isMobile ? 1.4 : 2.4}
+        slidesPerView={isMobile ? 1.2 : 2.4}
         centeredSlides={true}
-        spaceBetween={isMobile ? 4 : 16}
+        spaceBetween={isMobile ? 2 : 16}
         loop={true}
         autoplay={{
           delay: 5000,
@@ -80,15 +80,15 @@ export default function Testimonials({
                 >
                   <QuoteIcon />
                 </Box>
-                <VStack flex={1} gap={4} zIndex={10}>
-                  <Heading
+                <VStack flex={1} gap={4} zIndex={10} w="full">
+                  <Text
                     as="blockquote"
                     fontSize={{ base: "sm", md: "2xl" }}
                     fontWeight="semibold"
                     color="gray.200"
                   >
                     {t.description}
-                  </Heading>
+                  </Text>
                   <HStack w="full" align="center" justify="flex-start">
                     {t.image ? (
                       <Box
@@ -120,7 +120,7 @@ export default function Testimonials({
                         <User2Icon size={32} />
                       </Flex>
                     )}
-                    <VStack align="flex-start" gap={0}>
+                    <VStack align="flex-start" gap={0} flex={1}>
                       <Text fontSize="smaller" color="gray.50">
                         {t.name}
                       </Text>

@@ -46,12 +46,14 @@ export default function About() {
             <Box
               as="section"
               w={{ base: "full", md: "400px" }}
-              h={{ base: "500px", md: "500px" }}
+              h={{ base: "300px", md: "500px" }}
               mx={{ base: "auto", md: "0" }}
               borderRadius="lg"
               display="block"
               style={{
                 backgroundImage: "url(/assets/perfil.webp)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
               role="img"
               aria-label={"Foto de perfil"}

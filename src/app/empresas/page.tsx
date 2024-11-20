@@ -7,6 +7,7 @@ import {
   Box,
   Button,
   Container,
+  Flex,
   Heading,
   HStack,
   SimpleGrid,
@@ -110,7 +111,7 @@ export default async function Company() {
 
             <Box
               w={{ base: "full", md: "400px" }}
-              h={{ base: "400px", md: "460px" }}
+              h={{ base: "300px", md: "460px" }}
               mx={{ base: "auto", md: "0" }}
               borderRadius="lg"
               display="block"
@@ -176,7 +177,7 @@ export default async function Company() {
             <Text color="gray.50">{intl.company.services.subtitle}</Text>
             <Box w="full" mt={{ base: 4, md: 16 }}>
               <SimpleGrid
-                gap={{ base: 2, md: 6 }}
+                gap={{ base: 2, md: 4 }}
                 w="full"
                 templateColumns={{
                   base: "repeat(1, 1fr)",
@@ -188,7 +189,7 @@ export default async function Company() {
                     key={`slider-list-${i}`}
                     align="flex-start"
                     borderRadius="lg"
-                    p={{ base: 6, md: 8 }}
+                    p={{ base: 4, md: 6 }}
                     bg="white"
                     minH={{ base: "auto", md: "260px" }}
                     boxShadow="md"
@@ -198,10 +199,12 @@ export default async function Company() {
                       color="gray.900"
                       gap={{ base: 0, md: 2 }}
                     >
-                      <Icon size={32} name={s.icon as never} />
-                      <Heading fontSize={{ base: "2xl", md: "3xl" }} w="full">
-                        {s.title}
-                      </Heading>
+                      <Flex w="full" justify="center" align="center" gap={4}>
+                        <Icon size={32} name={s.icon as never} />
+                        <Heading fontSize={{ base: "2xl", md: "3xl" }} w="full">
+                          {s.title}
+                        </Heading>
+                      </Flex>
                       <Text color="gray.800" fontSize="small" my={4}>
                         {s.description}
                       </Text>

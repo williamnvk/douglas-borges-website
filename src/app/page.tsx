@@ -101,7 +101,7 @@ export default function Home() {
               <Heading
                 fontSize={{ base: "4xl", md: "6xl" }}
                 fontWeight="normal"
-                h={{ base: "auto", md: "288px" }}
+                h={{ base: "242px", md: "288px" }}
               >
                 <strong style={{ fontWeight: "bold", height: "72px" }}>
                   <WordTransition typewriter words={intl.home.how} />
@@ -489,7 +489,7 @@ export default function Home() {
       <Container
         maxW="container.xl"
         pb={{ base: 4, md: 12 }}
-        pt={{ base: 0, md: 12 }}
+        pt={{ base: 4, md: 12 }}
       >
         <VStack
           mx={{ base: 0, md: "auto" }}
