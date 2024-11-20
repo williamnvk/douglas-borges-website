@@ -10,7 +10,6 @@ import {
   Button,
   Container,
   Flex,
-  Heading,
   HStack,
   Text,
   useMediaQuery,
