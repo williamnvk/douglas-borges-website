@@ -95,7 +95,7 @@ function Footer() {
           >
             <PhoneIcon size={24} />
             <Text fontSize="smaller" color="gray.400">
-              {intl.contact.whatsapp}
+              +55 (42) 98838-1261
             </Text>
           </HStack>
 

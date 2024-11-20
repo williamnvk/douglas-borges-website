@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const insights = INSIGHTS_SLUGS.map((slug) => ({
     url: `${siteUrl}/${slug}`,
     lastModified: new Date(),
-    priority: 0.3,
+    priority: 0.2,
   }));
 
   return [
@@ -51,6 +51,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.4,
+    },
+    {
+      url: `${siteUrl}/links`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
     ...insights.map((insight) => ({
       ...insight,
