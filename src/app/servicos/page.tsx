@@ -219,34 +219,55 @@ export default function Services() {
           </VStack>
         </VStack>
 
-        <VStack
+        <HStack
           mt={{ base: 4, md: 8 }}
           gap={8}
           w="full"
-          align={{ base: "flex-start", md: "flex-start" }}
+          align="stretch"
+          justify="stretch"
+          flexDir={{ base: "column", md: "row" }}
         >
-          <Heading fontSize="xl">{intl.services.faq.title}</Heading>
-          <Accordion w="full" variant="light">
-            {intl.services.faq.questions.map((q) => (
-              <AccordionItem key={`faq-q-${q.title}`}>
-                <AccordionButton>
-                  <Box
-                    as="span"
-                    pr={{ base: 4, md: 8 }}
-                    flex="1"
-                    textAlign="left"
+          <VStack
+            flex={1}
+            align={{ base: "flex-start", md: "flex-start" }}
+            p={{ base: 4, md: 8 }}
+            borderWidth={4}
+            borderColor="gray.900"
+            borderRadius="lg"
+            justify="flex-end"
+          >
+            <Text fontSize="md">{intl.services.try.title}</Text>
+            <Heading fontSize="4xl">{intl.services.try.subtitle}</Heading>
+            <Text fontSize="sm">{intl.services.try.description}</Text>
+          </VStack>
+          <VStack flex={{ base: 1, md: 2 }} align="flex-start" gap={4}>
+            <Heading fontSize="xl">{intl.services.faq.title}</Heading>
+
+            <Accordion w="full" variant="light">
+              {intl.services.faq.questions.map((q) => (
+                <AccordionItem key={`faq-q-${q.title}`}>
+                  <AccordionButton>
+                    <Box
+                      as="span"
+                      pr={{ base: 4, md: 8 }}
+                      flex="1"
+                      textAlign="left"
+                    >
+                      {q.title}
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                  <AccordionPanel
+                    pb={4}
+                    fontSize={{ base: "smaller", md: "sm" }}
                   >
-                    {q.title}
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-                <AccordionPanel pb={4} fontSize={{ base: "smaller", md: "sm" }}>
-                  {q.description}
-                </AccordionPanel>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </VStack>
+                    {q.description}
+                  </AccordionPanel>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </VStack>
+        </HStack>
       </Container>
 
       <Container

@@ -633,10 +633,16 @@ export const language = {
         },
       ],
     },
+    try: {
+      title: "Alguns Benefícios da psicoterapia",
+      subtitle: "Ambiente seguro, respeitoso, sigiloso e livre de julgamentos",
+      description:
+        "A psicoterapia proporciona ao paciente o alcance de inúmeros benefícios, tais como; controle das emoções, melhora nas relações interpessoais, diminuição da agressividade e entre outros.",
+    },
     cta: {
       title: "Pronto para dar o próximo passo?",
       subtitle:
-        "Entre em contato para agendar sua sessão ou saber mais sobre como a terapia pode transformar sua vida.",
+        "Experimente uma sessão! Agende sua primeira sessão comigo e comece a trilhar o caminho para um equilíbrio emocional mais saudável e uma vida mais produtiva.",
       button: "Agendar uma sessão",
     },
   },
