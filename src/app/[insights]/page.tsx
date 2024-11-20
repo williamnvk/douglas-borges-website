@@ -81,7 +81,7 @@ export default function InsightPage({ params }: Props) {
         py={{ base: 4, md: 16, "2xl": 24 }}
         as="article"
       >
-        <Box borderRadius="lg" bg={randomColor} p={{ base: 4, md: 32 }}>
+        <Box borderRadius="lg" bg={randomColor} p={{ base: 4, md: 16, xl: 32 }}>
           <Heading
             as="h1"
             size={{ base: "2xl", md: "4xl" }}

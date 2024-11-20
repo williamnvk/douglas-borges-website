@@ -82,7 +82,7 @@ export default function Testimonials({
                 <VStack flex={1} gap={4} zIndex={10} w="full">
                   <Text
                     as="blockquote"
-                    fontSize={{ base: "sm", md: "2xl" }}
+                    fontSize={{ base: "sm", md: "xl", xl: "2xl" }}
                     fontWeight="semibold"
                     color="gray.200"
                   >

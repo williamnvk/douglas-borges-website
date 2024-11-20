@@ -162,7 +162,6 @@ export default async function Company() {
           <VStack
             gap={0}
             w="full"
-            minH={`calc(100vh - ${HEADER_NAVBAR_HEIGHT})`}
             py={{ base: 6, md: 12 }}
             align={{ base: "flex-start", md: "flex-start" }}
             justify={{ base: "center", md: "center" }}

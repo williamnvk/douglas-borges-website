@@ -77,12 +77,7 @@ export default function Home() {
       />
 
       <Header page="home" />
-      <Box
-        as="main"
-        bg="gray.50"
-        // bgGradient={{ base: "none", md: "linear(to-t, white, gray.100)" }}
-        mt={HEADER_NAVBAR_HEIGHT}
-      >
+      <Box as="main" bg="gray.50" mt={HEADER_NAVBAR_HEIGHT}>
         <Container maxW="container.xl" py={0}>
           <Stack
             flexDir={{ base: "column", md: "row" }}
@@ -94,30 +89,30 @@ export default function Home() {
               flex={1}
               align="flex-start"
               justify="center"
-              gap={{ base: 4, md: 8 }}
+              gap={{ base: 4, md: 3, xl: 8 }}
               h={{ base: "auto", md: `calc(100vh - ${HEADER_NAVBAR_HEIGHT})` }}
               py={{ base: 8, md: 0 }}
             >
               <Heading
-                fontSize={{ base: "4xl", md: "6xl" }}
+                fontSize={{ base: "4xl", md: "5xl", xl: "6xl" }}
                 fontWeight="normal"
-                h={{ base: "242px", md: "288px" }}
+                h={{ base: "242px", md: "214px", xl: "288px" }}
               >
-                <strong style={{ fontWeight: "bold", height: "72px" }}>
+                <Box as="strong" h={{ base: "auto", md: "58px", xl: "72px" }}>
                   <WordTransition typewriter words={intl.home.how} />
-                </strong>
+                </Box>
                 <br />
-                <strong style={{ fontWeight: "bold", height: "72px" }}>
+                <Box as="strong" h={{ base: "auto", md: "58px", xl: "72px" }}>
                   <WordTransition
                     typewriter
                     words={intl.home.who}
                     delay={5000}
                   />
-                </strong>{" "}
+                </Box>{" "}
                 {intl.home.subtitle}
-                <strong style={{ fontWeight: "bold", height: "72px" }}>
+                <Box as="strong" h={{ base: "auto", md: "58px", xl: "72px" }}>
                   <WordTransition typewriter words={intl.home.where} />
-                </strong>
+                </Box>
                 {intl.home.rest}
               </Heading>
 
@@ -189,7 +184,7 @@ export default function Home() {
             </VStack>
             <Box
               w={{ base: "full", md: "400px" }}
-              h={{ base: "400px", md: "600px" }}
+              h={{ base: "400px", md: "478px", xl: "600px" }}
               mx={{ base: "auto", md: "0" }}
               borderRadius="lg"
               display="block"
@@ -237,7 +232,7 @@ export default function Home() {
             gap={0}
             w="full"
             minH={{ base: "auto", md: `calc(100vh - ${HEADER_NAVBAR_HEIGHT})` }}
-            py={{ base: 8, md: 16 }}
+            py={{ base: 8, md: 8, xl: 16 }}
             align={{ base: "flex-start", md: "flex-start" }}
             justify={{ base: "center", md: "center" }}
           >
@@ -250,7 +245,7 @@ export default function Home() {
             </Heading>
             <SimpleGrid
               gap={{ base: 2, md: 6 }}
-              mt={{ base: 8, md: 16 }}
+              mt={{ base: 8, md: 8, xl: 16 }}
               w="full"
               templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
             >
@@ -302,14 +297,19 @@ export default function Home() {
       </Box>
 
       <Box as="section" id="testimonials" role="complementary">
-        <Box alignContent="center" bg="gray.900" py={{ base: 12, md: 0 }}>
+        <Box
+          alignContent="center"
+          bg="gray.900"
+          py={{ base: 12, md: 8, xl: 0 }}
+        >
           <Container maxW="container.xl">
             <VStack
               gap={0}
               w="full"
               minH={{
                 base: "auto",
-                md: `calc(100vh - ${HEADER_NAVBAR_HEIGHT})`,
+                md: `auto`,
+                xl: `calc(100vh - ${HEADER_NAVBAR_HEIGHT})`,
               }}
               align={{ base: "flex-start", md: "flex-start" }}
               justify={{ base: "center", md: "center" }}
@@ -322,7 +322,7 @@ export default function Home() {
                 {intl.testimonials.title}
               </Heading>
               <Text color="gray.50">{intl.testimonials.subtitle}</Text>
-              <Box w="full" mt={{ base: 4, md: 16 }}>
+              <Box w="full" mt={{ base: 4, md: 8, xl: 16 }}>
                 <Testimonials items={intl.testimonials.items} />
               </Box>
             </VStack>

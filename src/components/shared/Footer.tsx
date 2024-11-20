@@ -83,7 +83,7 @@ function Footer() {
           flexDir={{ base: "column", md: "row" }}
           w="full"
           py={4}
-          gap={{ base: 2, md: 8 }}
+          gap={{ base: 2, md: 4, xl: 8 }}
         >
           <HStack
             as={Link}
@@ -155,7 +155,7 @@ function Footer() {
             <MapPin size={28} />
             <address>
               {intl.contact.address.map((item) => (
-                <Text key={item} fontSize="smaller" color="gray.400">
+                <Text key={item} fontSize="smaller" color="gray.400" lineHeight={1.1}>
                   {item}
                 </Text>
               ))}
