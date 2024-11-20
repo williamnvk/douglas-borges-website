@@ -1,6 +1,10 @@
 import { Header } from "@/components/shared/Header";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import language from "@/data/dictionaries";
+import language, {
+  siteDescription,
+  siteImage,
+  siteUrl,
+} from "@/data/dictionaries";
 import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
 import { Container, HStack, Text, VStack, Link, Box } from "@chakra-ui/react";
 import {
@@ -10,6 +14,25 @@ import {
   MailIcon,
   MapPinIcon,
 } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Links",
+  description: siteDescription,
+  openGraph: {
+    title: "Links",
+    description: siteDescription,
+    type: "website",
+    images: [siteImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: siteUrl + "/links",
+  },
+};
 
 export default function LinksPage() {
   return (

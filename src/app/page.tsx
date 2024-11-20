@@ -44,6 +44,10 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [siteImage],
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
   alternates: {
     canonical: siteUrl + "/",
   },

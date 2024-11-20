@@ -15,7 +15,7 @@ import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
 import Link from "next/link";
 import { Metadata } from "next";
 import { ClockIcon } from "lucide-react";
-import { siteUrl } from "@/data/dictionaries";
+import { siteImage, siteUrl } from "@/data/dictionaries";
 
 interface Props {
   params: {
@@ -45,14 +45,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: current.publishedAt,
       authors: "Douglas Borges",
+      images: [siteImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [siteImage],
     },
     alternates: {
-      canonical: `${siteUrl}/insights/${params.insights}`,
+      canonical: `${siteUrl}/${params.insights}`,
     },
   };
 }

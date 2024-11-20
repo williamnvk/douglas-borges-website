@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sobre",
     description: siteDescription,
-    images: ["/assets/perfil.webp"],
+    images: [siteUrl],
   },
   robots: {
     index: true,

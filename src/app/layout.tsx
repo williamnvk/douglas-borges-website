@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     type: "website",
   },
+  metadataBase: new URL(siteUrl),
 };
 
 export default function RootLayout(
@@ -59,6 +60,7 @@ export default function RootLayout(
       <GoogleTagManager gtmId="GTM-N8DHV67" />
       <GoogleAnalytics gaId="G-5QM28K26ND" />
       <Head>
+        <meta name="developer" content="William Novak <williamnvk@gmail.com" />
         <meta name="language" content={lang} />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />

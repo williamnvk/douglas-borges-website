@@ -20,6 +20,10 @@ export const metadata = {
     description: language.contact.subtitle,
     type: "website",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
   alternates: {
     canonical: `${siteUrl}/palestras-e-eventos`,
   },

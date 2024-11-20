@@ -12,15 +12,21 @@ import { Header } from "@/components/shared/Header";
 import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
 import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import MessageForm from "./MessageForm";
-import language, { siteUrl } from "@/data/dictionaries";
+import language, { siteImage, siteUrl } from "@/data/dictionaries";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Contato",
   description: language.contact.subtitle,
   openGraph: {
     title: "Contato | Douglas Borges",
     description: language.contact.subtitle,
+    images: [siteImage],
     type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   alternates: {
     canonical: `${siteUrl}/contato`,

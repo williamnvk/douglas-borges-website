@@ -16,6 +16,7 @@ import { INSIGHTS } from "@/data";
 import { ClockIcon } from "lucide-react";
 import Link from "next/link";
 import { Header } from "@/components/shared/Header";
+import { siteImage, siteUrl } from "@/data/dictionaries";
 
 interface Props {
   searchParams: {
@@ -24,17 +25,24 @@ interface Props {
   };
 }
 
-const title = "Insights e Reflexões | Douglas Borges";
 const description =
   "Reflexões inspiradoras, insights práticos sobre inteligência emocional, liderança estratégica com propósito e como alcançar equilíbrio entre sua vida pessoal, familiar e empresarial";
 
 export const metadata: Metadata = {
-  title,
+  title: "Insights e Reflexões",
   description,
   openGraph: {
-    title,
+    title: "Insights e Reflexões | Douglas Borges",
     description,
     type: "website",
+    images: [siteImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: siteUrl + "/insights",
   },
 };
 
@@ -58,7 +66,7 @@ export default function InsightsPage({ searchParams }: Props) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: title,
+    name: "Insights e Reflexões | Douglas Borges",
     description: description,
     blogPost: currentPosts.map((post) => ({
       "@type": "BlogPosting",
