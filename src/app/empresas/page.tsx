@@ -56,7 +56,11 @@ export default async function Company() {
               >
                 {intl.company.title}
               </Heading>
-              <HStack align="center" justify="center">
+              <HStack
+                align="center"
+                justify="center"
+                minH={{ base: "auto", md: "264px" }}
+              >
                 <Heading
                   fontSize={{ base: "88px", md: "220px" }}
                   fontWeight="extrabold"
@@ -79,8 +83,8 @@ export default async function Company() {
                   color="white"
                 >
                   <WordTransition
-                    words={["Work", "Life"]}
-                    delay={2000}
+                    words={["Life", "Work", "Life"]}
+                    delay={5000}
                     typewriter
                   />
                 </Heading>

@@ -163,7 +163,7 @@ export const Header = ({
           href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges."
           target="_blank"
           referrerPolicy="no-referrer"
-          variant="solidInverted"
+          variant={isDark ? "solidInverted" : "solid"}
         >
           {intl.cta}
         </Button>

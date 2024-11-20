@@ -39,6 +39,9 @@ export default function Testimonials({
         centeredSlides={true}
         spaceBetween={isMobile ? 4 : 16}
         loop={true}
+        autoplay={{
+          delay: 5000,
+        }}
         navigation={{
           prevEl: ".button__prev",
           nextEl: ".button__next",
@@ -58,14 +61,16 @@ export default function Testimonials({
                 gap={4}
                 p={{ base: 6, md: 8 }}
                 opacity={isActive ? 1 : 0.2}
-                transition="opacity 0.3s, transform 0.3s"
+                transition="opacity 0.3s, transform 0.3s, background 0.5s"
                 align="flex-start"
                 _hover={{
                   cursor: "default",
                   opacity: 1,
                   transform: "scale(1.05)",
+                  bg: "gray.700",
                 }}
                 pos="relative"
+                boxShadow="2xl"
               >
                 <Box
                   color="gray.600"

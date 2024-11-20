@@ -9,6 +9,7 @@ import {
   siteImage,
   siteUrl,
 } from "@/data/dictionaries";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -54,6 +55,8 @@ export default function RootLayout(
 
   return (
     <html lang={lang} suppressHydrationWarning suppressContentEditableWarning>
+      <GoogleTagManager gtmId="GTM-N8DHV67" />
+      <GoogleAnalytics gaId="G-5QM28K26ND" />
       <Head>
         <meta name="language" content={lang} />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />

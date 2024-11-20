@@ -362,18 +362,18 @@ export const language = {
       {
         type: ["company"],
         image: "/assets/testmonials/william-n.webp",
+        name: "William Novak",
+        city: "União da Vitória, PR",
+        description:
+          "Desde a primeira sessão, senti uma clareza incrível sobre meus objetivos e uma paz que há tempos não experimentava. A consultoria me ajudou a reorganizar minhas prioridades e, pela primeira vez, consegui equilibrar meu trabalho com minha vida pessoal.",
+      },
+      {
+        type: ["company"],
+        image: null,
         name: "Dr. Gustavo Coronel, CEO da Clinica Yluma",
         city: "União da Vitória, PR",
         description:
           "Meu maior ganho foi a clareza. Cheguei aos encontros de consultoria com problemas acumulados, me sentindo sempre em débito com todos. Hoje, sei onde quero chegar e como quero viver, e cada decisão tem sido mais consciente. Esse equilíbrio que encontrei reflete diretamente nos resultados do meu trabalho e com a família.",
-      },
-      {
-        type: ["company"],
-        image: "/assets/testmonials/william-n.webp",
-        name: "William N",
-        city: "União da Vitória, PR",
-        description:
-          "Desde a primeira sessão, senti uma clareza incrível sobre meus objetivos e uma paz que há tempos não experimentava. A consultoria me ajudou a reorganizar minhas prioridades e, pela primeira vez, consegui equilibrar meu trabalho com minha vida pessoal.",
       },
       {
         type: ["company"],
