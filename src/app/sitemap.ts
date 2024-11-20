@@ -1,7 +1,14 @@
+import { INSIGHTS_SLUGS } from "@/data";
 import { siteUrl } from "@/data/dictionaries";
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const insights = INSIGHTS_SLUGS.map((slug) => ({
+    url: `${siteUrl}/${slug}`,
+    lastModified: new Date(),
+    priority: 0.3,
+  }));
+
   return [
     {
       url: siteUrl,
@@ -45,5 +52,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.4,
     },
+    ...insights.map((insight) => ({
+      ...insight,
+      changeFrequency: "monthly" as const,
+    })),
   ];
 }
