@@ -10,6 +10,7 @@ import {
   siteUrl,
 } from "@/data/dictionaries";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -85,6 +86,7 @@ export default function RootLayout(
           <AOSInit />
           {children}
           <Footer />
+          <SpeedInsights />
         </Providers>
       </body>
     </html>

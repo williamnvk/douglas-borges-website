@@ -15,6 +15,7 @@ import {
   PhoneIcon,
 } from "lucide-react";
 import language from "@/data/dictionaries";
+import GoToTop from "./GoToTop";
 
 function Footer() {
   const intl = language;
@@ -22,6 +23,22 @@ function Footer() {
   return (
     <Box as="footer">
       <Container maxW="container.xl" py={8}>
+        <Text
+          fontSize="smaller"
+          w="full"
+          borderBottom="4px solid"
+          borderColor="gray.50"
+          pb={4}
+          fontStyle="italic"
+          color="gray.400"
+          aria-label="Frase do Douglas Borges"
+        >
+          &quot;A terapia e a consultoria são ferramentas valiosas que podem te
+          ajudar a aprimorar comportamentos, hábitos e pensamentos. Elas
+          permitem conhecer melhor seus limites, compreender suas emoções e
+          promovem um maior autoconhecimento e inteligência emocional.&quot;
+          <br />- Douglas Borges
+        </Text>
         {/* <Stack
           direction={{ base: "column", md: "row" }}
           align="center"
@@ -65,7 +82,7 @@ function Footer() {
         <Stack
           flexDir={{ base: "column", md: "row" }}
           w="full"
-          pb={4}
+          py={4}
           gap={{ base: 2, md: 8 }}
         >
           <HStack
@@ -74,6 +91,7 @@ function Footer() {
             gap={4}
             align="center"
             justify="flex-start"
+            aria-label="WhatsApp"
           >
             <PhoneIcon size={24} />
             <Text fontSize="smaller" color="gray.400">
@@ -87,6 +105,7 @@ function Footer() {
             gap={4}
             align="center"
             justify="flex-start"
+            aria-label="E-mail"
           >
             <MailIcon size={28} />
             <Text fontSize="smaller" color="gray.400">
@@ -101,6 +120,7 @@ function Footer() {
             isExternal
             align="center"
             justify="flex-start"
+            aria-label="Instagram"
           >
             <InstagramIcon size={28} />
             <Text fontSize="smaller" color="gray.400">
@@ -115,6 +135,7 @@ function Footer() {
             isExternal
             align="center"
             justify="flex-start"
+            aria-label="LinkedIn"
           >
             <Linkedin size={28} />
             <Text fontSize="smaller" color="gray.400">
@@ -129,6 +150,7 @@ function Footer() {
             as={Link}
             href={language.contact.maps}
             isExternal
+            aria-label="Endereço"
           >
             <MapPin size={28} />
             <address>
@@ -141,7 +163,7 @@ function Footer() {
           </HStack>
         </Stack>
         <Flex
-          flexDir={{ base: "column-reverse", md: "row" }}
+          flexDir={{ base: "column", md: "row" }}
           w="full"
           gap={2}
           borderTop="4px solid"
@@ -149,9 +171,21 @@ function Footer() {
           pt={4}
           justifyContent={{ base: "flex-start", md: "space-between" }}
         >
-          <Text fontSize="small" color="gray.400">
+          <Text
+            fontSize="small"
+            color="gray.400"
+            aria-label="Copyright"
+            flex={1}
+          >
             &copy; {new Date().getFullYear()} Douglas Borges. {intl.footer.copy}
           </Text>
+          <Flex
+            flex={1}
+            align="center"
+            justify={{ base: "center", md: "flex-end" }}
+          >
+            <GoToTop />
+          </Flex>
         </Flex>
       </Container>
     </Box>

@@ -45,7 +45,7 @@ export default function Contact() {
               <Heading as="h1" size="2xl">
                 {intl.contact.title}
               </Heading>
-              <Text fontSize="lg" color="gray.600">
+              <Text fontSize="md" color="gray.600">
                 {intl.contact.subtitle}
               </Text>
             </VStack>
@@ -63,6 +63,8 @@ export default function Contact() {
                   <Link
                     href={`https://wa.me/${intl.contact.whatsapp}`}
                     isExternal
+                    aria-label="WhatsApp"
+                    fontSize="sm"
                   >
                     +55 (42) 98838-1261
                   </Link>
@@ -70,7 +72,7 @@ export default function Contact() {
 
                 <HStack gap={4} align="center" justify="center">
                   <Mail size={28} />
-                  <Link href={`mailto:${intl.contact.email}`}>
+                  <Link href={`mailto:${intl.contact.email}`} fontSize="sm">
                     {intl.contact.email}
                   </Link>
                 </HStack>
@@ -90,12 +92,19 @@ export default function Contact() {
                   <Link
                     href={`https://linkedin.com/in/${intl.contact.linkedin}`}
                     isExternal
+                    fontSize="sm"
                   >
                     Douglas Borges
                   </Link>
                 </HStack>
 
-                <HStack gap={4} align="center" justify="center">
+                <HStack
+                  gap={4}
+                  align="center"
+                  justify="center"
+                  aria-label="Endereço"
+                  fontSize="sm"
+                >
                   <MapPin size={28} />
                   <address>
                     {intl.contact.address.map((item) => (
@@ -110,7 +119,7 @@ export default function Contact() {
                   align="stretch"
                   spacing={6}
                   bg="white"
-                  p={8}
+                  p={{ base: 4, md: 8 }}
                   borderRadius="lg"
                   boxShadow="md"
                 >
