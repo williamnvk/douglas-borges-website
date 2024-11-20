@@ -1,17 +1,19 @@
 import {
-  Button,
-  Checkbox,
   Container,
   Flex,
-  Input,
   Text,
-  VStack,
   Box,
   Stack,
   HStack,
+  Link,
 } from "@chakra-ui/react";
-import { MailIcon } from "lucide-react";
-import Link from "next/link";
+import {
+  InstagramIcon,
+  Linkedin,
+  MailIcon,
+  MapPin,
+  PhoneIcon,
+} from "lucide-react";
 import language from "@/data/dictionaries";
 
 function Footer() {
@@ -19,8 +21,8 @@ function Footer() {
 
   return (
     <Box as="footer">
-      <Container maxW="container.xl" py={8} gap={16}>
-        <Stack
+      <Container maxW="container.xl" py={8}>
+        {/* <Stack
           direction={{ base: "column", md: "row" }}
           align="center"
           justifyContent="flex-start"
@@ -59,15 +61,95 @@ function Footer() {
               </Text>
             </Flex>
           </VStack>
+        </Stack> */}
+        <Stack
+          flexDir={{ base: "column", md: "row" }}
+          w="full"
+          pb={4}
+          gap={{ base: 2, md: 8 }}
+        >
+          <HStack
+            as={Link}
+            href={`tel:${intl.contact.whatsapp}`}
+            gap={4}
+            align="center"
+            justify="flex-start"
+          >
+            <PhoneIcon size={24} />
+            <Text fontSize="smaller" color="gray.400">
+              {intl.contact.whatsapp}
+            </Text>
+          </HStack>
+
+          <HStack
+            as={Link}
+            href={`mailto:${intl.contact.email}`}
+            gap={4}
+            align="center"
+            justify="flex-start"
+          >
+            <MailIcon size={28} />
+            <Text fontSize="smaller" color="gray.400">
+              {intl.contact.email}
+            </Text>
+          </HStack>
+
+          <HStack
+            gap={4}
+            as={Link}
+            href={`https://instagram.com/${intl.contact.instagram}`}
+            isExternal
+            align="center"
+            justify="flex-start"
+          >
+            <InstagramIcon size={28} />
+            <Text fontSize="smaller" color="gray.400">
+              @{intl.contact.instagram}
+            </Text>
+          </HStack>
+
+          <HStack
+            gap={4}
+            as={Link}
+            href={`https://linkedin.com/in/${intl.contact.linkedin}`}
+            isExternal
+            align="center"
+            justify="flex-start"
+          >
+            <Linkedin size={28} />
+            <Text fontSize="smaller" color="gray.400">
+              Douglas Borges
+            </Text>
+          </HStack>
+
+          <HStack
+            gap={4}
+            align="center"
+            justify="flex-start"
+            as={Link}
+            href={language.contact.maps}
+            isExternal
+          >
+            <MapPin size={28} />
+            <address>
+              {intl.contact.address.map((item) => (
+                <Text key={item} fontSize="smaller" color="gray.400">
+                  {item}
+                </Text>
+              ))}
+            </address>
+          </HStack>
         </Stack>
         <Flex
           flexDir={{ base: "column-reverse", md: "row" }}
-          mt={{ base: 4, md: 8 }}
           w="full"
           gap={2}
+          borderTop="4px solid"
+          borderColor="gray.50"
+          pt={4}
           justifyContent={{ base: "flex-start", md: "space-between" }}
         >
-          <Text fontSize="small">
+          <Text fontSize="small" color="gray.400">
             &copy; {new Date().getFullYear()} Douglas Borges. {intl.footer.copy}
           </Text>
         </Flex>

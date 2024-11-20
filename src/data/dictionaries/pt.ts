@@ -648,9 +648,7 @@ export const language = {
     messageTitle: "Envie uma mensagem",
     address: [
       "Clínica Iluminary",
-      "Rua Germano Unger, 20",
-      "Esquina com Rua Lauro Muller",
-      "Cidade Nova",
+      "Rua Germano Unger, 20, Cidade Nova",
       "Porto União · SC",
     ],
     maps: "https://goo.gl/maps/CeckryQb4Z6s6rRr7",
