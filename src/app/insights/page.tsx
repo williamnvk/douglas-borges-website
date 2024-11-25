@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Metadata } from "next";
 import {
   Container,
-  SimpleGrid,
   Box,
   Text,
   HStack,
@@ -121,12 +119,10 @@ export default function InsightsPage({ searchParams }: Props) {
                   _hover={{ bg: "gray.100" }}
                   transition="background 0.2s"
                 >
-                  {/** @ts-ignore */}
-                  {post?.cover && (
+                  {post && post?.cover && (
                     <Box w="full" borderRadius="lg" overflow="hidden">
                       <Image
-                       {/** @ts-ignore */}
-                        src={post.cover}
+                        src={post?.cover || ""}
                         alt={post.title}
                         width={1000}
                         height={1000}

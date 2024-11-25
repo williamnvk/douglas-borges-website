@@ -3,7 +3,7 @@ import { posts2 } from "./insights-2023";
 import { posts3 } from "./insights-2024";
 import { newInsights } from "./insights-new";
 
-export const INSIGHTS = [
+export const INSIGHTS: Array<Post> = [
   ...posts.map((p) => ({ ...p, publishedAt: "2022-01-01" })),
   ...posts2.map((p) => ({ ...p, publishedAt: "2023-01-01" })),
   ...posts3.map((p) => ({ ...p, publishedAt: "2024-01-01" })),
