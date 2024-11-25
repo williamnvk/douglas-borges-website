@@ -13,11 +13,11 @@ import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
 import language, { siteUrl } from "@/data/dictionaries";
 
 export const metadata = {
-  title: language.services.title,
-  description: language.services.subtitle,
+  title: language.topics.title,
+  description: language.topics.subtitle,
   openGraph: {
-    title: language.services.title,
-    description: language.contact.subtitle,
+    title: language.topics.title,
+    description: language.topics.subtitle,
     type: "website",
   },
   robots: {

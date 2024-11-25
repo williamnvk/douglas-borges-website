@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Metadata } from "next";
 import {
   Container,
@@ -10,6 +11,7 @@ import {
   VStack,
   Tooltip,
   Tag,
+  Grid,
 } from "@chakra-ui/react";
 import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
 import { INSIGHTS } from "@/data";
@@ -17,6 +19,7 @@ import { ClockIcon } from "lucide-react";
 import Link from "next/link";
 import { Header } from "@/components/shared/Header";
 import { siteImage, siteUrl } from "@/data/dictionaries";
+import Image from "next/image";
 
 interface Props {
   searchParams: {
@@ -100,10 +103,10 @@ export default function InsightsPage({ searchParams }: Props) {
             </Tag>
           )}
 
-          <SimpleGrid
+          <Grid
             as="section"
-            columns={{ base: 1, md: 2 }}
-            spacing={6}
+            templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+            gap={6}
             aria-label="Blog posts grid"
           >
             {currentPosts.map((post) => (
@@ -118,6 +121,19 @@ export default function InsightsPage({ searchParams }: Props) {
                   _hover={{ bg: "gray.100" }}
                   transition="background 0.2s"
                 >
+                  {/** @ts-ignore */}
+                  {post?.cover && (
+                    <Box w="full" borderRadius="lg" overflow="hidden">
+                      <Image
+                       {/** @ts-ignore */}
+                        src={post.cover}
+                        alt={post.title}
+                        width={1000}
+                        height={1000}
+                        style={{ width: "100%", height: "auto" }}
+                      />
+                    </Box>
+                  )}
                   <Text
                     fontSize={{ base: "xl", md: "2xl" }}
                     fontWeight="light"
@@ -149,6 +165,8 @@ export default function InsightsPage({ searchParams }: Props) {
                       borderLeft="solid 1px"
                       borderLeftColor="gray.100"
                       pl={2}
+                      gap={0}
+                      flexWrap="wrap"
                     >
                       {post.tags.map((tag: string) => (
                         <Link key={tag} href={`/insights?tag=${tag}`}>
@@ -156,6 +174,7 @@ export default function InsightsPage({ searchParams }: Props) {
                             fontSize="sm"
                             color="gray.300"
                             _hover={{ color: "gray.500" }}
+                            mr={2}
                           >
                             #{tag}
                           </Text>
@@ -166,7 +185,7 @@ export default function InsightsPage({ searchParams }: Props) {
                 </VStack>
               </article>
             ))}
-          </SimpleGrid>
+          </Grid>
 
           {totalPages > 1 && (
             <nav role="navigation" aria-label="Pagination">

@@ -1,11 +1,13 @@
 import { posts } from "./insights-2022";
 import { posts2 } from "./insights-2023";
 import { posts3 } from "./insights-2024";
+import { newInsights } from "./insights-new";
 
 export const INSIGHTS = [
   ...posts.map((p) => ({ ...p, publishedAt: "2022-01-01" })),
   ...posts2.map((p) => ({ ...p, publishedAt: "2023-01-01" })),
   ...posts3.map((p) => ({ ...p, publishedAt: "2024-01-01" })),
+  ...newInsights.map((p) => ({ ...p, publishedAt: "2024-11-25" })),
 ].reverse();
 
 export const INSIGHTS_SLUGS = INSIGHTS.map((p) => p.slug);
@@ -21,6 +23,7 @@ export interface Post {
   publishedAt: string;
   highlight?: boolean;
   tags: string[];
+  cover?: string;
   content: Array<string>;
 }
 

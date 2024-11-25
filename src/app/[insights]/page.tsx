@@ -16,6 +16,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { ClockIcon } from "lucide-react";
 import { siteImage, siteUrl } from "@/data/dictionaries";
+import Image from "next/image";
 
 interface Props {
   params: {
@@ -45,13 +46,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: current.publishedAt,
       authors: "Douglas Borges",
-      images: [siteImage],
+      images: [current.cover || siteImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [siteImage],
+      images: [current.cover || siteImage],
     },
     alternates: {
       canonical: `${siteUrl}/${params.insights}`,
@@ -83,7 +84,7 @@ export default function InsightPage({ params }: Props) {
         py={{ base: 4, md: 16, "2xl": 24 }}
         as="article"
       >
-        <Box borderRadius="lg" bg={randomColor} p={{ base: 4, md: 16, xl: 32 }}>
+        <Box borderRadius="lg" bg={randomColor} p={{ base: 4, md: 8, xl: 16 }}>
           <Heading
             as="h1"
             size={{ base: "2xl", md: "4xl" }}
@@ -147,6 +148,18 @@ export default function InsightPage({ params }: Props) {
             }),
           }}
         />
+
+        {current.cover && (
+          <Box w="full" mt={8} borderRadius="lg" overflow="hidden">
+            <Image
+              src={current.cover}
+              alt={current.title}
+              width={1000}
+              height={1000}
+              style={{ width: "100%", height: "auto" }}
+            />
+          </Box>
+        )}
 
         <VStack
           gap={{ base: 2, md: 4 }}
