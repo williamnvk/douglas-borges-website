@@ -15,7 +15,7 @@ export const language = {
       "empreendedores",
     ],
     where: ["empresa", "trabalho", "negócios"],
-    subtitle: "de com equilíbrio entre ",
+    subtitle: "com equilíbrio entre ",
     rest: ", família e propósito",
     bible: {
       content:

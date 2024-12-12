@@ -149,12 +149,12 @@ export default async function Company() {
               borderRadius="lg"
               display="block"
               style={{
-                backgroundImage: "url(/assets/douglas-borges-em-pe.webp)",
+                backgroundImage: "url(/assets/desktop.webp)",
                 backgroundRepeat: "no-repeat",
-                backgroundPosition: "center center",
-                backgroundSize: "100% auto",
               }}
+              bgPosition={{ base: "center -120px", md: "center -20px" }}
               role="img"
+              filter="grayscale(1)"
               aria-label="Douglas Borges - Consultor Empresarial"
             ></Box>
           </Stack>

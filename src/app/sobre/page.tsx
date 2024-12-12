@@ -52,9 +52,10 @@ export default function About() {
               display="block"
               style={{
                 backgroundImage: "url(/assets/perfil.webp)",
-                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
               }}
+              bgSize={{ base: "110% auto", md: "150% auto" }}
               role="img"
               aria-label={"Foto de perfil"}
             ></Box>
