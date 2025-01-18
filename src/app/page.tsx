@@ -187,9 +187,7 @@ export default function Home() {
               <Image
                 src="/assets/douglas-borges-atendimento.webp"
                 alt="Douglas Borges em atendimento"
-                fill
                 style={{ objectFit: "cover" }}
-                priority
                 sizes="(max-width: 768px) 100vw, 500px"
               />
             </Box>

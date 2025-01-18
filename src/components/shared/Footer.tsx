@@ -3,11 +3,9 @@ import {
   Flex,
   Text,
   Box,
-  Stack,
   HStack,
   Link,
   VStack,
-  Divider,
   Button,
   SimpleGrid,
   Heading,
@@ -20,7 +18,6 @@ import {
   PhoneIcon,
   HeartIcon,
   CalendarIcon,
-  GlobeIcon,
 } from "lucide-react";
 import language from "@/data/dictionaries";
 import GoToTop from "./GoToTop";
