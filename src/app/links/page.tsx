@@ -69,7 +69,7 @@ export default function LinksPage() {
 
           <HStack
             as={Link}
-            href="https://api.whatsapp.com/send/?phone=5542988381261&text=Ol%C3%A1%21+Vim+atrav%C3%A9s+do+site+do+Douglas+Borges.&type=phone_number&app_absent=0"
+            href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
             w="full"
             p={4}
             gap={4}
@@ -107,7 +107,6 @@ export default function LinksPage() {
               <Text fontSize="sm" fontWeight="bold">
                 Página Inicial do Site
               </Text>
-              <Text fontSize="x-small">Novidades no site</Text>
             </VStack>
           </HStack>
 

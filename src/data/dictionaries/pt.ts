@@ -657,7 +657,13 @@ export const language = {
       "Rua Germano Unger, 20, Cidade Nova",
       "Porto União · SC",
     ],
+    addressCuritiba: [
+      "Nex Coworking | Casa de Pedra",
+      "Alameda Pres. Taunay, 130, Batel",
+      "Curitiba · PR",
+    ],
     maps: "https://goo.gl/maps/CeckryQb4Z6s6rRr7",
+    mapsCuritiba: "https://maps.app.goo.gl/X3jS4dC17Q1TtKC86",
     whatsapp: "5542988381261",
     email: "contato@douglasborgespsicologo.com.br",
     instagram: "douglasborgespsicologo",

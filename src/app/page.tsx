@@ -346,7 +346,7 @@ export default function Home() {
               <Button
                 as="a"
                 target="_blank"
-                href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Estou%20interessado(a)%20em%20contratar%20uma%20das%20palestras%20do%20Douglas%20Borges."
+                href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Estou%20interessado(a)%20em%20contratar%20uma%20das%20palestras%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
                 referrerPolicy="no-referrer"
                 variant="outline"
               >
@@ -523,7 +523,7 @@ export default function Home() {
           </Text>
           <Button
             as="a"
-            href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges."
+            href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
             target="_blank"
             referrerPolicy="no-referrer"
             variant="outline"

@@ -58,7 +58,8 @@ export const Header = ({
             <span>
               <strong>Douglas</strong>
             </span>
-            &nbsp;<span>Borges</span>
+            &nbsp;<span>Borges</span>{' | '}
+            <span>Psicólogo</span>
           </h1>
         </Link>
         <HStack
@@ -160,7 +161,7 @@ export const Header = ({
         <Button
           display={{ base: "none", md: "inline-flex" }}
           as="a"
-          href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges."
+          href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
           target="_blank"
           referrerPolicy="no-referrer"
           variant={isDark ? "solidInverted" : "solid"}
@@ -183,7 +184,8 @@ export const Header = ({
                   <span>
                     <strong>Douglas</strong>
                   </span>
-                  &nbsp;<span>Borges</span>
+                  &nbsp;<span>Borges</span>{' | '}
+                  <span>Psicólogo</span>
                 </h1>
 
                 <Button
@@ -263,7 +265,7 @@ export const Header = ({
                   size="lg"
                   variant={isDark ? "solidInverted" : "solid"}
                   as="a"
-                  href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges."
+                  href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
                 >
                   {intl.cta}
                 </Button>

@@ -142,7 +142,14 @@ function Footer() {
               Douglas Borges
             </Text>
           </HStack>
+        </Stack>
 
+        <HStack
+          flexDir={{ base: "column", md: "row" }}
+          w="full"
+          gap={4}
+          py={{ base: 2, md: 4 }}
+        >
           <HStack
             gap={4}
             align="center"
@@ -155,13 +162,42 @@ function Footer() {
             <MapPin size={28} />
             <address>
               {intl.contact.address.map((item) => (
-                <Text key={item} fontSize="smaller" color="gray.400" lineHeight={1.1}>
+                <Text
+                  key={item}
+                  fontSize="smaller"
+                  color="gray.400"
+                  lineHeight={1.1}
+                >
                   {item}
                 </Text>
               ))}
             </address>
           </HStack>
-        </Stack>
+
+          <HStack
+            gap={4}
+            align="center"
+            justify="flex-start"
+            as={Link}
+            href={language.contact.mapsCuritiba}
+            isExternal
+            aria-label="Endereço"
+          >
+            <MapPin size={28} />
+            <address>
+              {intl.contact.addressCuritiba.map((item) => (
+                <Text
+                  key={item}
+                  fontSize="smaller"
+                  color="gray.400"
+                  lineHeight={1.1}
+                >
+                  {item}
+                </Text>
+              ))}
+            </address>
+          </HStack>
+        </HStack>
         <Flex
           flexDir={{ base: "column", md: "row" }}
           w="full"
@@ -170,6 +206,7 @@ function Footer() {
           borderColor="gray.50"
           pt={4}
           justifyContent={{ base: "flex-start", md: "space-between" }}
+          alignItems={{ base: "flex-start", md: "center" }}
         >
           <Text
             fontSize="small"
