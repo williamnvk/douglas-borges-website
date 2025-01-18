@@ -10,6 +10,7 @@ import {
   Text,
   Tooltip,
   VStack,
+  Image,
 } from "@chakra-ui/react";
 import { WordTransition } from "./components/WordTransition";
 import { ClockIcon, PlusIcon, QuoteIcon } from "lucide-react";
@@ -37,6 +38,7 @@ export const metadata: Metadata = {
     images: [siteImage],
     type: "website",
     locale: "pt_BR",
+    siteName: siteTitle,
   },
   twitter: {
     card: "summary_large_image",
@@ -51,6 +53,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl + "/",
   },
+  keywords: [
+    "psicólogo",
+    "terapia",
+    "saúde mental",
+    "atendimento psicológico",
+    "ansiedade",
+  ],
 };
 
 export default function Home() {
@@ -81,26 +90,30 @@ export default function Home() {
       />
 
       <Header page="home" />
-      <Box as="main" bg="gray.50" mt={HEADER_NAVBAR_HEIGHT}>
-        <Container maxW="container.xl" py={0}>
+      <Box
+        as="main"
+        mt={HEADER_NAVBAR_HEIGHT}
+        role="main"
+        aria-labelledby="hero-title"
+      >
+        <Container maxW="container.xl" py={{ base: 8, md: 16 }}>
           <Stack
             flexDir={{ base: "column", md: "row" }}
-            gap={{ base: 4, md: 16 }}
+            gap={{ base: 8, md: 16 }}
             align="center"
-            justify="center"
+            justify="space-between"
           >
             <VStack
               flex={1}
               align="flex-start"
-              justify="center"
-              gap={{ base: 4, md: 3, xl: 8 }}
-              h={{ base: "auto", md: `calc(100vh - ${HEADER_NAVBAR_HEIGHT})` }}
-              py={{ base: 8, md: 0 }}
+              spacing={{ base: 6, md: 8 }}
+              maxW={{ base: "full", md: "600px" }}
             >
               <Heading
-                fontSize={{ base: "4xl", md: "5xl", xl: "6xl" }}
-                fontWeight="normal"
-                h={{ base: "242px", md: "214px", xl: "288px" }}
+                id="hero-title"
+                fontSize={{ base: "3xl", md: "5xl", xl: "6xl" }}
+                lineHeight="1.2"
+                fontWeight="100"
               >
                 <Box as="strong" h={{ base: "auto", md: "58px", xl: "72px" }}>
                   <WordTransition typewriter words={intl.home.how} />
@@ -120,86 +133,146 @@ export default function Home() {
                 {intl.home.rest}
               </Heading>
 
-              <Flex w="full" align="flex-start" my={{ base: 4, md: 0 }}>
-                <Button
-                  as="a"
-                  href="/empresas"
-                  size="lg"
-                  data-aos="fade-up"
-                  w={{ base: "full", md: "auto" }}
-                  aria-label="Saiba mais sobre nossos serviços para empresas"
-                >
-                  {intl.home.button}
-                </Button>
-              </Flex>
-
-              <Box
-                position="relative"
-                data-aos="fade-up"
-                mt={{ base: 2, md: 0 }}
+              <Button
+                as="a"
+                href="/empresas"
+                size="lg"
+                w={{ base: "full", md: "auto" }}
+                colorScheme="blue"
+                fontSize="lg"
+                py={7}
+                px={8}
+                _hover={{ transform: "translateY(-2px)" }}
+                transition="all 0.2s"
               >
+                {intl.home.button}
+              </Button>
+
+              <Box position="relative" pr={16}>
                 <QuoteIcon
-                  size={32}
-                  style={{ position: "absolute", right: 0 }}
+                  size={24}
+                  style={{
+                    position: "absolute",
+                    top: -12,
+                    right: 6,
+                    color: "#718096",
+                  }}
                 />
                 <Text
-                  fontSize="sm"
+                  fontSize={{ base: "xs", md: "lg" }}
                   fontStyle="italic"
-                  fontWeight="light"
-                  pr={16}
-                  color="gray.800"
+                  color="gray.700"
+                  mb={3}
                 >
                   {intl.home.bible.content}
                 </Text>
-                <Text fontSize="smaller" fontStyle="italic" color="gray.400">
+                <Text
+                  fontSize={{ base: "xs", md: "lg" }}
+                  color="gray.500"
+                  fontWeight="medium"
+                >
                   {intl.home.bible.verse}
                 </Text>
               </Box>
-
-              <SimpleGrid
-                gap={4}
-                w="full"
-                templateColumns={{
-                  base: "repeat(2, 1fr)",
-                  md: "repeat(3, 1fr)",
-                }}
-              >
-                {intl.home.counting.map((c, i) => (
-                  <VStack
-                    key={`home-counting-${i}`}
-                    align="flex-start"
-                    p={{ base: 4, md: 5 }}
-                    borderRadius="lg"
-                    bg="white"
-                    data-aos="fade-up"
-                    data-aos-delay={i * 200}
-                    boxShadow="2xl"
-                  >
-                    <Heading letterSpacing={2} fontSize="4xl">
-                      <PlusIcon style={{ display: "inline" }} />
-                      {c.title}
-                    </Heading>
-                    <Text fontSize="sm" color="gray.300">
-                      {c.description}
-                    </Text>
-                  </VStack>
-                ))}
-              </SimpleGrid>
             </VStack>
+
             <Box
-              w={{ base: "full", md: "400px" }}
-              h={{ base: "400px", md: "478px", xl: "600px" }}
-              mx={{ base: "auto", md: "0" }}
-              borderRadius="lg"
-              display="block"
-              style={{
-                backgroundImage: "url(/assets/douglas-borges-atendimento.webp)",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center center",
-                backgroundSize: "100% auto",
-              }}
-            ></Box>
+              w={{ base: "full", md: "500px" }}
+              h={{ base: "400px", md: "600px" }}
+              position="relative"
+              borderRadius="2xl"
+              overflow="hidden"
+              boxShadow="2xl"
+            >
+              <Image
+                src="/assets/douglas-borges-atendimento.webp"
+                alt="Douglas Borges em atendimento"
+                fill
+                style={{ objectFit: "cover" }}
+                priority
+                sizes="(max-width: 768px) 100vw, 500px"
+              />
+            </Box>
           </Stack>
+        </Container>
+      </Box>
+
+      <Container maxW="container.xl" py={{ base: 12, md: 20 }}>
+        <SimpleGrid
+          columns={{ base: 1, md: 3 }}
+          spacing={{ base: 2, md: 8 }}
+          w="full"
+        >
+          {intl.home.counting.map((stat, i) => (
+            <VStack
+              key={`stat-${i}`}
+              p={8}
+              gap={0}
+              borderRadius="lg"
+              borderWidth={2}
+              align="flex-end"
+              justify="flex-end"
+              borderColor="gray.900"
+              transition="all 0.2s"
+              _hover={{ transform: "translateY(-4px)" }}
+            >
+              <Heading
+                fontSize="5xl"
+                display="flex"
+                alignItems="center"
+                gap={2}
+                fontWeight="bold"
+                lineHeight="1"
+              >
+                <PlusIcon />
+                {stat.title}
+              </Heading>
+              <Text fontSize="lg" color="gray.600" textAlign="center">
+                {stat.description}
+              </Text>
+            </VStack>
+          ))}
+        </SimpleGrid>
+      </Container>
+
+      <Box as="section" bg="gray.50" py={{ base: 12, md: 20 }}>
+        <Container maxW="container.xl">
+          <Heading
+            fontSize={{ base: "3xl", md: "4xl" }}
+            mb={12}
+            textAlign={{ base: "left", md: "center" }}
+            data-aos="fade-up"
+            maxW={{ base: "full", md: "600px" }}
+            mx="auto"
+          >
+            {intl.home.services.title}
+          </Heading>
+          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
+            {intl.home.services.items.map((service, i) => (
+              <VStack
+                key={`service-${i}`}
+                bg="white"
+                align="flex-start"
+                justify="flex-start"
+                p={8}
+                borderRadius="lg"
+                // boxShadow="lg"
+                transition="all 0.2s"
+                _hover={{ transform: "translateY(-4px)" }}
+                spacing={6}
+                data-aos="fade-up"
+                data-aos-delay={i * 100}
+              >
+                <Icon name={service.icon as never} size={40} color="#000" />
+                <Heading fontSize={{ base: "xl", md: "2xl" }} textAlign="left">
+                  {service.title}
+                </Heading>
+                <Text color="gray.600" textAlign="left">
+                  {service.description}
+                </Text>
+              </VStack>
+            ))}
+          </SimpleGrid>
         </Container>
       </Box>
 
@@ -211,7 +284,14 @@ export default function Home() {
             gap={{ base: 4, md: 8 }}
             py={{ base: 4, md: 32 }}
           >
-            <Heading fontSize={{ base: "4xl", md: "7xl" }} data-aos="fade-up">
+            <Heading
+              fontSize={{ base: "5xl", md: "6xl" }}
+              mb={12}
+              textAlign={{ base: "left", md: "center" }}
+              data-aos="fade-up"
+              maxW={{ base: "full", md: "600px" }}
+              mx="auto"
+            >
               {intl.home.about.title}
             </Heading>
 
@@ -220,12 +300,16 @@ export default function Home() {
                 fontSize={{ base: "sm", md: "larger" }}
                 key={`home-about-${i}`}
                 data-aos="fade-up"
+                data-aos-delay={i * 100}
               >
                 {p}
               </Text>
             ))}
-            <Text data-aos="fade-up">{intl.home.about.subtitle}</Text>
-            <Text fontSize="small" data-aos="fade-up">
+
+            <Text data-aos="fade-up" data-aos-delay={100}>
+              {intl.home.about.subtitle}
+            </Text>
+            <Text fontSize="small" data-aos="fade-up" data-aos-delay={150}>
               CRP/PR 08-21013 · CRP/SC 12-13884
             </Text>
           </VStack>
@@ -241,9 +325,12 @@ export default function Home() {
             justify={{ base: "center", md: "center" }}
           >
             <Heading
-              color="gray.900"
-              fontSize={{ base: "2xl", md: "4xl" }}
+              fontSize={{ base: "3xl", md: "4xl" }}
+              mb={12}
+              textAlign={{ base: "left", md: "center" }}
               data-aos="fade-up"
+              maxW={{ base: "full", md: "600px" }}
+              mx="auto"
             >
               {intl.home.services.title}
             </Heading>
@@ -319,13 +406,26 @@ export default function Home() {
               justify={{ base: "center", md: "center" }}
             >
               <Heading
-                fontSize={{ base: "4xl", md: "5xl" }}
-                color="gray.50"
-                pr={{ base: 12, md: "0" }}
+                fontSize={{ base: "3xl", md: "4xl" }}
+                textAlign={{ base: "left", md: "center" }}
+                data-aos="fade-up"
+                maxW={{ base: "full", md: "600px" }}
+                mx="auto"
+                color="white"
               >
                 {intl.testimonials.title}
               </Heading>
-              <Text color="gray.50">{intl.testimonials.subtitle}</Text>
+              <Text
+                fontSize={{ base: "sm", md: "lg" }}
+                color="gray.50"
+                textAlign={{ base: "left", md: "center" }}
+                maxW={{ base: "full", md: "600px" }}
+                data-aos="fade-up"
+                mx="auto"
+                data-aos-delay={100}
+              >
+                {intl.testimonials.subtitle}
+              </Text>
               <Box w="full" mt={{ base: 4, md: 8, xl: 16 }}>
                 <Testimonials items={intl.testimonials.items} />
               </Box>
