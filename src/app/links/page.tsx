@@ -6,7 +6,15 @@ import language, {
   siteUrl,
 } from "@/data/dictionaries";
 import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
-import { Container, HStack, Text, VStack, Link, Box } from "@chakra-ui/react";
+import {
+  Container,
+  HStack,
+  Text,
+  VStack,
+  Link,
+  Box,
+  Heading,
+} from "@chakra-ui/react";
 import {
   HomeIcon,
   InstagramIcon,
@@ -53,7 +61,7 @@ export default function LinksPage() {
             h={{ base: "160px", md: "320px" }}
             mx={{ base: "auto", md: "0" }}
             display="block"
-            borderRadius="lg"
+            borderRadius="md"
             backgroundPosition={{
               base: "center -252px",
               md: "center -540px",
@@ -65,7 +73,24 @@ export default function LinksPage() {
             }}
             role="img"
             aria-label={"Foto de perfil"}
-          ></Box>
+            position="relative"
+          >
+            <Heading
+              fontSize="md"
+              py={2}
+              textAlign="left"
+              fontWeight="400"
+              bg="white"
+              color="gray.900"
+              borderRadius="md"
+              px={2}
+              position="absolute"
+              bottom={2}
+              left={2}
+            >
+              Atendimento <strong>presencial e online</strong>
+            </Heading>
+          </Box>
 
           <HStack
             as={Link}
@@ -112,7 +137,7 @@ export default function LinksPage() {
 
           <HStack
             as={Link}
-            href={`mailto:${language.contact.email}`}
+            href={language.contact.mapsCuritiba}
             w="full"
             p={4}
             gap={4}
@@ -120,14 +145,22 @@ export default function LinksPage() {
             justify="center"
             bg="gray.50"
             borderRadius="md"
-            aria-label="Enviar um e-mail"
+            aria-label="Veja meu endereço no mapa"
             role="link"
+            isExternal
           >
-            <MailIcon size={22} />
+            <MapPinIcon size={22} />
             <VStack flex={1} align="start" gap={0}>
-              <Text fontWeight="bold">Enviar um e-mail</Text>
-
-              <Text fontSize="x-small">{language.contact.email}</Text>
+              <Text fontWeight="bold" flex={1}>
+                Curitiba - PR
+              </Text>
+              <address>
+                {language.contact.addressCuritiba.map((item) => (
+                  <Text key={item} fontSize="x-small">
+                    {item}
+                  </Text>
+                ))}
+              </address>
             </VStack>
           </HStack>
 
@@ -147,7 +180,11 @@ export default function LinksPage() {
           >
             <MapPinIcon size={22} />
             <VStack flex={1} align="start" gap={0}>
-              <Text fontWeight="bold">Localização</Text>
+              <Text fontWeight="bold" lineHeight="1">
+                União da Vitória,
+                <br />
+                Porto União e Região
+              </Text>
               <address>
                 {language.contact.address.map((item) => (
                   <Text key={item} fontSize="x-small">
@@ -155,6 +192,27 @@ export default function LinksPage() {
                   </Text>
                 ))}
               </address>
+            </VStack>
+          </HStack>
+
+          <HStack
+            as={Link}
+            href={`mailto:${language.contact.email}`}
+            w="full"
+            p={4}
+            gap={4}
+            align="center"
+            justify="center"
+            bg="gray.50"
+            borderRadius="md"
+            aria-label="Enviar um e-mail"
+            role="link"
+          >
+            <MailIcon size={22} />
+            <VStack flex={1} align="start" gap={0}>
+              <Text fontWeight="bold">Enviar um e-mail</Text>
+
+              <Text fontSize="x-small">{language.contact.email}</Text>
             </VStack>
           </HStack>
 
