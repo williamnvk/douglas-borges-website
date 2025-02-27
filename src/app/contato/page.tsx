@@ -113,6 +113,21 @@ export default function Contact() {
                 >
                   <MapPin size={28} />
                   <address>
+                    {intl.contact.addressCuritiba.map((item) => (
+                      <Text key={item}>{item}</Text>
+                    ))}
+                  </address>
+                </HStack>
+
+                <HStack
+                  gap={4}
+                  align="center"
+                  justify="center"
+                  aria-label="Endereço"
+                  fontSize="sm"
+                >
+                  <MapPin size={28} />
+                  <address>
                     {intl.contact.address.map((item) => (
                       <Text key={item}>{item}</Text>
                     ))}
