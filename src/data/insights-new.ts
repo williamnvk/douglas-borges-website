@@ -1,4 +1,6 @@
-export const newInsights = [
+import { Post } from "./types";
+
+export const newInsights: Post[]  = [
   {
     slug: "como-executivos-e-lideres-podem-enfrentar-desafios-e-construir-uma-lideranca-equilibrada",
     title:
@@ -25,5 +27,6 @@ export const newInsights = [
       "Liderança que Transforma Liderar é, acima de tudo, inspirar e guiar. Mas para isso, é essencial estar emocionalmente preparado e alinhado com o propósito que dá sentido à sua jornada. Buscar o equilíbrio não é um luxo, mas uma necessidade para liderar de forma sustentável e significativa.",
       "Você está pronto para transformar as pressões da liderança em forças que promovem bem-estar e crescimento? O primeiro passo é reconhecer que mudar é possível e necessário.",
     ],
+    publishedAt: "2025-02-27",
   },
 ];

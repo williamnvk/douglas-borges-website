@@ -1,14 +1,17 @@
 import { posts } from "./insights-2022";
 import { posts2 } from "./insights-2023";
 import { posts3 } from "./insights-2024";
+import { posts4 } from "./insights-2025";
 import { newInsights } from "./insights-new";
+import { Post } from "./types";
 
 export const INSIGHTS: Array<Post> = [
   ...posts.map((p) => ({ ...p, publishedAt: "2022-01-01" })),
   ...posts2.map((p) => ({ ...p, publishedAt: "2023-01-01" })),
   ...posts3.map((p) => ({ ...p, publishedAt: "2024-01-01" })),
   ...newInsights.map((p) => ({ ...p, publishedAt: "2024-11-25" })),
-].reverse();
+  ...posts4,
+].reverse() as Array<Post>;
 
 export const INSIGHTS_SLUGS = INSIGHTS.map((p) => p.slug);
 
@@ -16,16 +19,7 @@ export const INSIGHTS_HIGHLIGHTS = INSIGHTS.filter((p) =>
   "highlight" in p ? p.highlight || false : false
 );
 
-export interface Post {
-  slug: string;
-  title: string;
-  timeToRead: string;
-  publishedAt: string;
-  highlight?: boolean;
-  tags: string[];
-  cover?: string;
-  content: Array<string>;
-}
+
 
 export const INSIGHTS_TAGS = INSIGHTS.map((p) => p.tags).flat();
 
