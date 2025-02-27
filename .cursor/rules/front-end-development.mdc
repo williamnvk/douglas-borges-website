@@ -1,3 +1,8 @@
+---
+description: Rules for Frontend Development
+globs: 
+alwaysApply: false
+---
 # Cursor Rules for Frontend Development
 
 ## Core Development Principles
@@ -14,7 +19,6 @@
 2. Leverage Chakra's built-in component composition
 3. Utilize native accessibility features
 4. Apply semantic HTML using the 'as' prop
-5. Support dark/light modes with useColorMode
 6. Build responsive layouts with Chakra's responsive syntax
 7. Follow performance best practices (lazy loading, memoization)
 8. Use Chakra's responsive syntax for responsive layouts
