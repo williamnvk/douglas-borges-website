@@ -118,7 +118,7 @@ export default function EventsPage() {
           </Text>
           <Button
             as="a"
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             href="https://wa.me/5542988381261?text=Olá!%20Estou%20interessado(a)%20em%20contratar%20uma%20das%20palestras%20do%20Douglas%20Borges."
             target="_blank"
             referrerPolicy="no-referrer"

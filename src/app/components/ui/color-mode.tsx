@@ -3,17 +3,18 @@
 import type { IconButtonProps } from "@chakra-ui/react";
 import { ClientOnly, IconButton, Skeleton } from "@chakra-ui/react";
 import { ThemeProvider, useTheme } from "next-themes";
-import type { ThemeProviderProps } from "next-themes";
 import * as React from "react";
 import { SunIcon, MoonIcon } from "lucide-react";
 
-export interface ColorModeProviderProps extends ThemeProviderProps {}
+// ThemeProviderProps is not exported from next-themes, so we define our own type
+export type ColorModeProviderProps = React.ComponentProps<typeof ThemeProvider>;
 
 export function ColorModeProvider(props: ColorModeProviderProps) {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="system"
+      defaultTheme="light"
+      forcedTheme="light"
       enableSystem
       disableTransitionOnChange
       {...props}
@@ -43,7 +44,7 @@ export function ColorModeIcon() {
   return colorMode === "light" ? <SunIcon /> : <MoonIcon />;
 }
 
-interface ColorModeButtonProps extends Omit<IconButtonProps, "aria-label"> {}
+type ColorModeButtonProps = Omit<IconButtonProps, "aria-label">;
 
 export const ColorModeButton = React.forwardRef<
   HTMLButtonElement,

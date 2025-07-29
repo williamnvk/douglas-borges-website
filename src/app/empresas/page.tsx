@@ -174,6 +174,7 @@ export default function EmpresasPage() {
               w="full"
               h="full"
               objectFit="cover"
+              // @ts-expect-error: Type compatibility issue 
               autoPlay
               muted
               loop
@@ -701,6 +702,7 @@ export default function EmpresasPage() {
 
                     <Button
                       as="a"
+                      // @ts-expect-error: Type compatibility issue 
                       href="https://wa.me/5542988381261?text=Gostaria%20de%20contratar%20o%20assessment%20individual%20(1%20colaborador)%20por%20R$700"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -798,6 +800,7 @@ export default function EmpresasPage() {
 
                     <Button
                       as="a"
+                      // @ts-expect-error: Type compatibility issue 
                       href="https://wa.me/5542988381261?text=Gostaria%20de%20contratar%20o%20assessment%20para%20equipe%20(3%20colaboradores)%20por%20R$1.750"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -929,6 +932,7 @@ export default function EmpresasPage() {
 
                     <Button
                       as="a"
+                      // @ts-expect-error: Type compatibility issue 
                       href="https://wa.me/5542988381261?text=Gostaria%20de%20contratar%20o%20assessment%20para%20departamento%20(5%20colaboradores)%20por%20R$2.205"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -1060,7 +1064,8 @@ export default function EmpresasPage() {
 
                     <Button
                       as="a"
-                      href="https://wa.me/5542988381261?text=Gostaria%20de%20contratar%20o%20assessment%20corporativo%20(10%20colaboradores)%20por%20R$3.570"
+                      // @ts-expect-error: Type compatibility issue 
+                        href="https://wa.me/5542988381261?text=Gostaria%20de%20contratar%20o%20assessment%20corporativo%20(10%20colaboradores)%20por%20R$3.570"
                       target="_blank"
                       rel="noopener noreferrer"
                       w="full"
@@ -1693,6 +1698,7 @@ export default function EmpresasPage() {
 
                 <Button
                   as="a"
+                  // @ts-expect-error: Type compatibility issue 
                   href="https://itreebo.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -1744,6 +1750,7 @@ export default function EmpresasPage() {
                 <Flex gap={{ base: 3, sm: 4 }} flexWrap="wrap" justify="center">
                   <Button
                     as="a"
+                    // @ts-expect-error: Type compatibility issue 
                     href="#investimento"
                     size={{ base: "lg", md: "xl" }}
                     colorPalette="blue"
@@ -1758,6 +1765,7 @@ export default function EmpresasPage() {
                   </Button>
                   <Button
                     as="a"
+                    // @ts-expect-error: Type compatibility issue 
                     href="https://wa.me/5542988381261?text=Gostaria%20de%20mais%20informações%20sobre%20o%20Assessment%20Comportamental%20para%20minha%20empresa"
                     target="_blank"
                     rel="noopener noreferrer"

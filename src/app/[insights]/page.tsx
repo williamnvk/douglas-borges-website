@@ -188,7 +188,7 @@ export default function InsightPage({ params }: Props) {
           {previous && (
             <Box
               as={Link}
-              // @ts-ignore
+              // @ts-expect-error: Type compatibility issue
               href={`/${previous.slug}`}
               rel="prev"
               bg="bg.subtle"
@@ -212,7 +212,7 @@ export default function InsightPage({ params }: Props) {
           {next && (
             <Box
               as={Link}
-              // @ts-ignore
+              // @ts-expect-error: Type compatibility issue
               href={`/${next.slug}`}
               rel="next"
               bg="bg.subtle"

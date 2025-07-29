@@ -28,7 +28,7 @@ const Testimonials: FC<{
     city: string;
   }>;
 }> = ({ items }) => {
-  const [isMobile] = useMediaQuery("(max-width: 1024px)");
+  const [isMobile] = useMediaQuery(["(max-width: 1024px)"]);
   const swiperRef = useRef<SwiperRef>(null);
 
   return (
@@ -126,7 +126,7 @@ const Testimonials: FC<{
           <Button
             title="<"
             className="button__prev"
-            variant="outlineInverted"
+            variant="outline"
             borderRadius="50%"
             w="48px"
             h="48px"
@@ -135,7 +135,7 @@ const Testimonials: FC<{
           </Button>
           <Button
             className="button__next"
-            variant="outlineInverted"
+            variant="outline"
             borderRadius="50%"
             w="48px"
             h="48px"

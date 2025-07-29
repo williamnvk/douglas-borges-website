@@ -63,7 +63,7 @@ function Footer() {
             </VStack>
             <Button
               as={Link}
-              // @ts-ignore
+              // @ts-expect-error: Type compatibility issue
               href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo%20e%20gostaria%20de%20agendar%20um%20atendimento."
               leftIcon={<CalendarIcon size={20} />}
               colorPalette="blue"

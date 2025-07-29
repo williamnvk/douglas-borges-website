@@ -112,7 +112,7 @@ export default function InsightsPage({ searchParams }: Props) {
                 <VStack
                   align="flex-start"
                   as={Link}
-                  // @ts-ignore
+                  // @ts-expect-error: Type compatibility issue
                   href={`/${post.slug}`}
                   p={6}
                   borderRadius="lg"
@@ -187,7 +187,7 @@ export default function InsightsPage({ searchParams }: Props) {
                     <Button
                       key={pageNum}
                       as={Link}
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       href={`/insights?pagina=${pageNum}${
                         selectedTag ? `&tag=${selectedTag}` : ""
                       }`}

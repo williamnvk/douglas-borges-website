@@ -17,12 +17,8 @@ import {
   ClockIcon,
   PlusIcon,
   ArrowRightIcon,
-  CheckIcon,
-  StarIcon,
-  TrendingUpIcon,
 } from "lucide-react";
 import Icon from "@/components/shared/DynamicIcon";
-import QuoteIcon from "./components/QuoteIcon";
 import { Header } from "@/components/shared/Header";
 import Testimonials from "./components/Testimonials";
 import { HEADER_NAVBAR_HEIGHT } from "../theme/consts";
@@ -567,6 +563,7 @@ export default function Home() {
               <HStack gap={4}>
                 <Button
                   as="a"
+                  // @ts-expect-error: Type compatibility issue
                   href="https://wa.me/5542988381261?text=Olá!%20Estou%20interessado(a)%20em%20contratar%20uma%20das%20palestras%20do%20Douglas%20Borges."
                   target="_blank"
                   colorPalette="blue"
@@ -776,6 +773,7 @@ export default function Home() {
 
             <Button
               as="a"
+              // @ts-expect-error: Type compatibility issue
               href="https://wa.me/5542988381261?text=Olá!%20Vim%20através%20do%20site%20do%20Douglas%20Borges."
               target="_blank"
               size="lg"

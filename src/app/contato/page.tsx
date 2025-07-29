@@ -68,7 +68,8 @@ export default function Contact() {
                   <Phone size={28} />
                   <Link
                     href={`https://wa.me/${intl.contact.whatsapp}`}
-                    isExternal
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="WhatsApp"
                     fontSize="sm"
                   >
@@ -87,7 +88,8 @@ export default function Contact() {
                   <Instagram size={28} />
                   <Link
                     href={`https://instagram.com/${intl.contact.instagram}`}
-                    isExternal
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     @{intl.contact.instagram}
                   </Link>
@@ -97,7 +99,8 @@ export default function Contact() {
                   <Linkedin size={28} />
                   <Link
                     href={`https://linkedin.com/in/${intl.contact.linkedin}`}
-                    isExternal
+                    target="_blank"
+                    rel="noopener noreferrer"
                     fontSize="sm"
                   >
                     Douglas Borges

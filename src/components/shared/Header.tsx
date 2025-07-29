@@ -86,9 +86,9 @@ export const Header = () => {
           borderColor="gray.100"
         >
           <Button
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             as={Link}
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             href="/"
             variant={isCurrentPage("personal") ? "outline" : "ghost"}
           >
@@ -96,9 +96,9 @@ export const Header = () => {
           </Button>
           <Button
             variant={isCurrentPage("company") ? "outline" : "ghost"}
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             as={Link}
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             href="/empresas"
           >
             {intl.company}
@@ -118,49 +118,49 @@ export const Header = () => {
         <HStack display={{ base: "none", md: "flex" }} gap={4}>
           <Button
             variant={isCurrentPage("services") ? "outline" : "ghost"}
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             as={Link}
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             href="/servicos"
           >
             {intl.nav.services}
           </Button>
           <Button
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             variant={isCurrentPage("about") ? "outline" : "ghost"}
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             as={Link}
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             href="/sobre"
           >
             {intl.nav.about}
           </Button>
           <Button
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             variant={isCurrentPage("events") ? "outline" : "ghost"}
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             as={Link}
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             href="/palestras-e-eventos"
           >
             {intl.nav.events}
           </Button>
           <Button
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             variant={isCurrentPage("insights") ? "outline" : "ghost"}
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             as={Link}
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             href="/insights"
           >
             {intl.nav.insights}
           </Button>
           <Button
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             variant={isCurrentPage("contact") ? "outline" : "ghost"}
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             as={Link}
-            // @ts-ignore
+            // @ts-expect-error: Type compatibility issue
             href="/contato"
           >
             {intl.nav.contact}
@@ -169,13 +169,13 @@ export const Header = () => {
 
         <Button
           display={{ base: "none", md: "inline-flex" }}
-          // @ts-ignore
+          // @ts-expect-error: Type compatibility issue
           as="a"
-          // @ts-ignore
+          // @ts-expect-error: Type compatibility issue
           href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
-          // @ts-ignore
+          // @ts-expect-error: Type compatibility issue
           target="_blank"
-          // @ts-ignore
+          // @ts-expect-error: Type compatibility issue
           referrerPolicy="no-referrer"
           colorPalette="blue"
           variant="solid"
@@ -202,7 +202,7 @@ export const Header = () => {
               <VStack align="start" h="full" w="full" justify="space-between">
                 <VStack align="start" gap={6} flex={1} w="full" p={6} pt={12}>
                   <Heading as="h1" size="2xl" fontWeight="light">
-                    <Heading as="h1" size="2xl" as="span" fontWeight="strong">
+                    <Heading as="span" size="2xl" fontWeight="strong">
                       Douglas
                     </Heading>
                     &nbsp;<span>Borges</span>
@@ -214,11 +214,11 @@ export const Header = () => {
                   <VStack align="start" gap={3} w="full">
                     <Button
                       variant={isCurrentPage("personal") ? "solid" : "ghost"}
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       as={Link}
                       w="full"
                       size="lg"
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       href="/"
                       leftIcon={<User2Icon />}
                       onClick={onClose}
@@ -229,11 +229,11 @@ export const Header = () => {
                     </Button>
                     <Button
                       variant={isCurrentPage("company") ? "solid" : "ghost"}
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       as={Link}
                       size="lg"
                       w="full"
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       href="/empresas"
                       leftIcon={<Building2Icon />}
                       onClick={onClose}
@@ -250,13 +250,13 @@ export const Header = () => {
                   {/* Menu de Navegação */}
                   <VStack align="start" gap={2} w="full">
                     <Button
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       variant={isCurrentPage("services") ? "solid" : "ghost"}
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       as={Link}
                       w="full"
                       size="md"
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       href="/servicos"
                       onClick={onClose}
                       colorPalette={isCurrentPage("services") ? "blue" : "gray"}
@@ -265,13 +265,13 @@ export const Header = () => {
                       {intl.nav.services}
                     </Button>
                     <Button
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       variant={isCurrentPage("about") ? "solid" : "ghost"}
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       as={Link}
                       w="full"
                       size="md"
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       href="/sobre"
                       onClick={onClose}
                       colorPalette={isCurrentPage("about") ? "blue" : "gray"}
@@ -280,13 +280,13 @@ export const Header = () => {
                       {intl.nav.about}
                     </Button>
                     <Button
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       variant={isCurrentPage("events") ? "solid" : "ghost"}
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       as={Link}
                       w="full"
                       size="md"
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       href="/palestras-e-eventos"
                       onClick={onClose}
                       colorPalette={isCurrentPage("events") ? "blue" : "gray"}
@@ -295,13 +295,13 @@ export const Header = () => {
                       {intl.nav.events}
                     </Button>
                     <Button
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       variant={isCurrentPage("insights") ? "solid" : "ghost"}
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       as={Link}
                       w="full"
                       size="md"
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       href="/insights"
                       onClick={onClose}
                       colorPalette={isCurrentPage("insights") ? "blue" : "gray"}
@@ -310,13 +310,13 @@ export const Header = () => {
                       {intl.nav.insights}
                     </Button>
                     <Button
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       variant={isCurrentPage("contact") ? "solid" : "ghost"}
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       as={Link}
                       w="full"
                       size="md"
-                      // @ts-ignore
+                      // @ts-expect-error: Type compatibility issue
                       href="/contato"
                       onClick={onClose}
                       colorPalette={isCurrentPage("contact") ? "blue" : "gray"}
@@ -336,7 +336,7 @@ export const Header = () => {
                     variant="solid"
                     colorPalette="blue"
                     as="a"
-                    // @ts-ignore
+                    // @ts-expect-error: Type compatibility issue
                     href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
                     target="_blank"
                     referrerPolicy="no-referrer"

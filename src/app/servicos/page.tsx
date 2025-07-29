@@ -161,7 +161,6 @@ export default function Services() {
               align="flex-start"
               bg="white"
               borderWidth={4}
-              border
               p={{ base: 4, md: 16 }}
               borderRadius="lg"
               justify="flex-end"
@@ -270,7 +269,6 @@ export default function Services() {
             align={{ base: "flex-start", md: "flex-start" }}
             p={{ base: 4, md: 8 }}
             borderWidth={4}
-            border
             borderRadius="lg"
             justify="flex-end"
           >
