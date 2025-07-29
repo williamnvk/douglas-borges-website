@@ -13,7 +13,7 @@ export default function GlobalError({
   console.log(error);
   return (
     <>
-      <Header page="404" />
+      <Header />
       <Container maxW="8xl" mt={HEADER_NAVBAR_HEIGHT}>
         <VStack
           align="center"

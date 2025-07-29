@@ -35,7 +35,7 @@ export default function EventsPage() {
 
   return (
     <>
-      <Header page="events" />
+      <Header />
 
       <Container
         maxW="8xl"

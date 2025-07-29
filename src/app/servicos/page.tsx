@@ -51,7 +51,7 @@ export default function Services() {
 
   return (
     <main>
-      <Header page="services" />
+      <Header />
       <Container
         as="section"
         maxW={{ base: "full", md: "8xl" }}

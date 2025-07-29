@@ -144,7 +144,7 @@ export default function EmpresasPage() {
 
   return (
     <main>
-      <Header page="empresas" />
+      <Header />
       <Container
         as="section"
         maxW={{ base: "full", md: "full" }}

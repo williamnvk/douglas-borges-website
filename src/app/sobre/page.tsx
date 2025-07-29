@@ -35,7 +35,7 @@ export default function About() {
 
   return (
     <main>
-      <Header page="about" />
+      <Header />
       <Container maxW="8xl" mt={HEADER_NAVBAR_HEIGHT}>
         <VStack gap={{ base: 4, md: 8 }} w="full">
           <Stack

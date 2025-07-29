@@ -77,7 +77,7 @@ export default function InsightPage({ params }: Props) {
 
   return (
     <>
-      <Header page="insights" />
+      <Header />
       <Container
         maxW="container.lg"
         mt={HEADER_NAVBAR_HEIGHT}

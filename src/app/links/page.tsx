@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 export default function LinksPage() {
   return (
     <>
-      <Header page="links" />
+      <Header />
 
       <Container maxW="container.md">
         <VStack

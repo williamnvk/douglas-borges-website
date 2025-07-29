@@ -10,15 +10,22 @@ import {
   Text,
   VStack,
   Image,
+  Badge,
 } from "@chakra-ui/react";
 import { WordTransition } from "./components/WordTransition";
-import { ClockIcon, PlusIcon } from "lucide-react";
+import {
+  ClockIcon,
+  PlusIcon,
+  ArrowRightIcon,
+  CheckIcon,
+  StarIcon,
+  TrendingUpIcon,
+} from "lucide-react";
+import Icon from "@/components/shared/DynamicIcon";
 import QuoteIcon from "./components/QuoteIcon";
 import { Header } from "@/components/shared/Header";
 import Testimonials from "./components/Testimonials";
-import Icon from "@/components/shared/DynamicIcon";
 import { HEADER_NAVBAR_HEIGHT } from "../theme/consts";
-import { Tooltip } from "./components/ui/tooltip";
 
 import language, {
   siteDescription,
@@ -90,106 +97,402 @@ export default function Home() {
         }}
       />
 
-      <Header page="home" />
+      <Header />
+
+      {/* Hero Section */}
       <Box
         as="main"
         mt={HEADER_NAVBAR_HEIGHT}
         role="main"
         aria-labelledby="hero-title"
+        bgGradient="linear(to-br, gray.50, white)"
+        position="relative"
+        overflow="hidden"
       >
-        <Container maxW="8xl" py={{ base: 8, md: 16 }}>
+        {/* Background decoration */}
+        <Box
+          position="absolute"
+          top="0"
+          right="0"
+          w="50%"
+          h="100%"
+          bgGradient="linear(45deg, blue.50, transparent)"
+          opacity="0.3"
+          zIndex="0"
+        />
+
+        <Container
+          maxW="8xl"
+          py={{ base: 16, md: 24 }}
+          position="relative"
+          zIndex="1"
+        >
           <Stack
-            flexDir={{ base: "column", md: "row" }}
-            gap={{ base: 8, md: 16 }}
+            flexDir={{ base: "column", lg: "row" }}
+            gap={{ base: 12, lg: 20 }}
             align="center"
             justify="space-between"
+            minH={{ base: "auto", lg: "70vh" }}
           >
             <VStack
               flex={1}
               align="flex-start"
-              gap={{ base: 6, md: 8 }}
-              maxW={{ base: "full", md: "600px" }}
+              gap={8}
+              maxW={{ base: "full", lg: "600px" }}
             >
+              {/* Badge/Tag */}
+              <Badge
+                bg="blue.50"
+                color="blue.600"
+                px={4}
+                py={2}
+                fontSize="sm"
+                fontWeight="medium"
+                border="1px solid"
+                borderColor="blue.200"
+              >
+                Consultoria Psicológica Empresarial
+              </Badge>
+
               <Heading
                 id="hero-title"
-                fontSize={{ base: "3xl", md: "5xl", xl: "6xl" }}
-                lineHeight="1.2"
-                fontWeight="100"
+                fontSize={{ base: "4xl", md: "6xl", xl: "7xl" }}
+                lineHeight="1"
+                fontWeight="800"
               >
-                <Box as="strong" h={{ base: "auto", md: "58px", xl: "72px" }}>
+                <Box as="span" display="block" mb={2} lineHeight="1">
                   <WordTransition typewriter words={intl.home.how} />
                 </Box>
-                <br />
-                <Box as="strong" h={{ base: "auto", md: "58px", xl: "72px" }}>
+                <Box
+                  as="span"
+                  display="block"
+                  mb={2}
+                  color="blue.600"
+                  lineHeight="1"
+                >
                   <WordTransition
                     typewriter
                     words={intl.home.who}
                     delay={5000}
                   />
-                </Box>{" "}
-                {intl.home.subtitle}
-                <Box as="strong" h={{ base: "auto", md: "58px", xl: "72px" }}>
-                  <WordTransition typewriter words={intl.home.where} />
                 </Box>
-                {intl.home.rest}
+                <Box
+                  as="span"
+                  fontSize={{ base: "2xl", md: "4xl", xl: "5xl" }}
+                  lineHeight="1"
+                >
+                  a encontrar equilíbrio entre{" "}
+                  <Box as="span" lineHeight="1">
+                    <WordTransition typewriter words={intl.home.where} />
+                  </Box>
+                  , família e propósito
+                </Box>
               </Heading>
 
-              <Button
-                as={Link}
-                // @ts-ignore
-                href="/empresas"
-                size="lg"
-                w={{ base: "full", md: "auto" }}
-                colorPalette="blue"
-                fontSize="lg"
-                py={7}
-                px={8}
-                _hover={{ transform: "translateY(-2px)" }}
-                transition="all 0.2s"
+              <Text
+                fontSize={{ base: "lg", md: "xl" }}
+                color="gray.600"
+                maxW="500px"
+                lineHeight="1.6"
               >
-                {intl.home.button}
-              </Button>
+                Transforme a pressão em performance sustentável. Há mais de 10
+                anos ajudando líderes a prosperarem sem sacrificar o que
+                realmente importa.
+              </Text>
 
-              <Box position="relative" pr={16}>
-                <QuoteIcon
-                  width={24}
-                  height={24}
-                  style={{
-                    position: "absolute",
-                    top: -12,
-                    right: 6,
-                    color: "#718096",
-                  }}
-                />
-                <Text
-                  fontSize={{ base: "xs", md: "lg" }}
-                  fontStyle="italic"
-                  color="gray.700"
-                  mb={3}
-                >
-                  {intl.home.bible.content}
+              <Stack direction={{ base: "column", sm: "row" }} gap={4} w="full">
+                <Link href="/empresas">
+                  <Button
+                    size="lg"
+                    colorPalette="blue"
+                    px={8}
+                    py={6}
+                    fontSize="lg"
+                    _hover={{ transform: "translateY(-2px)", shadow: "xl" }}
+                    transition="all 0.3s"
+                    w="full"
+                  >
+                    Conhecer o Método Work & Life →
+                  </Button>
+                </Link>
+
+                <Link href="/contato">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    px={8}
+                    py={6}
+                    fontSize="lg"
+                    _hover={{ bg: "gray.50" }}
+                    transition="all 0.3s"
+                    w="full"
+                  >
+                    Agendar Conversa
+                  </Button>
+                </Link>
+              </Stack>
+
+              {/* Social Proof */}
+              <HStack gap={6} flexWrap="wrap">
+                <Text fontSize="sm" color="gray.600" fontWeight="medium">
+                  +1000 pessoas transformadas
                 </Text>
-                <Text
-                  fontSize={{ base: "xs", md: "lg" }}
-                  color="fg.muted"
-                  fontWeight="medium"
-                >
-                  {intl.home.bible.verse}
+                <Text fontSize="sm" color="gray.600" fontWeight="medium">
+                  +90 empresas atendidas
                 </Text>
-              </Box>
+              </HStack>
             </VStack>
 
             <Box
-              w={{ base: "full", md: "500px" }}
-              h={{ base: "400px", md: "600px" }}
+              w={{ base: "full", lg: "550px" }}
+              h={{ base: "400px", lg: "650px" }}
               position="relative"
-              borderRadius="2xl"
+              borderRadius="3xl"
               overflow="hidden"
               boxShadow="2xl"
+              transform={{ base: "none", lg: "rotate(2deg)" }}
+              _hover={{ transform: { base: "none", lg: "rotate(0deg)" } }}
+              transition="transform 0.5s ease"
             >
               <Image
                 src="/assets/douglas-borges-atendimento.webp"
                 alt="Douglas Borges em atendimento"
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, 550px"
+              />
+
+              {/* Floating card */}
+              <Box
+                position="absolute"
+                bottom={6}
+                left={6}
+                right={6}
+                bg="rgba(255, 255, 255, 0.9)"
+                backdropFilter="blur(10px)"
+                borderRadius="xl"
+                boxShadow="lg"
+                p={4}
+              >
+                <HStack justify="space-between">
+                  <VStack align="start" gap={1}>
+                    <Text fontSize="sm" fontWeight="bold" >
+                      Douglas Borges
+                    </Text>
+                    <Text fontSize="xs" color="gray.600">
+                      Psicólogo • CRP/PR 08-21013
+                    </Text>
+                  </VStack>
+                  <Box
+                    bg="green.100"
+                    color="green.700"
+                    px={2}
+                    py={1}
+                    borderRadius="md"
+                    fontSize="xs"
+                  >
+                    ✓ Disponível
+                  </Box>
+                </HStack>
+              </Box>
+            </Box>
+          </Stack>
+        </Container>
+      </Box>
+
+      {/* Stats Section */}
+      <Box bg="white" py={{ base: 16, md: 20 }}>
+        <Container maxW="8xl">
+          <VStack gap={12}>
+            <VStack gap={4} textAlign="center">
+              <Heading fontSize={{ base: "3xl", md: "4xl" }} >
+                Resultados que falam por si
+              </Heading>
+              <Text fontSize="lg" color="gray.600" maxW="600px">
+                Uma década dedicada a transformar a vida de líderes e
+                organizações
+              </Text>
+            </VStack>
+
+            <SimpleGrid columns={{ base: 1, md: 3 }} gap={8} w="full">
+              {intl.home.counting.map((stat, i) => (
+                <Box
+                  key={`stat-${i}`}
+                  p={8}
+                  borderRadius="lg"
+                  boxShadow="lg"
+                  border="1px solid"
+                  borderColor="gray.100"
+                  textAlign="center"
+                  _hover={{ transform: "translateY(-4px)", shadow: "xl" }}
+                  transition="all 0.3s"
+                >
+                  <VStack gap={4}>
+                    <Heading
+                      fontSize="6xl"
+                      fontWeight="800"
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                      gap={2}
+                    >
+                      <PlusIcon size={40} />
+                      {stat.title}
+                    </Heading>
+                    <Text fontSize="xl" color="gray.600" fontWeight="medium">
+                      {stat.description}
+                    </Text>
+                  </VStack>
+                </Box>
+              ))}
+            </SimpleGrid>
+          </VStack>
+        </Container>
+      </Box>
+
+      {/* Services Section */}
+      <Box bg="gray.50" py={{ base: 16, md: 24 }}>
+        <Container maxW="8xl">
+          <VStack gap={16}>
+            <VStack gap={6} textAlign="center" maxW="800px" mx="auto">
+              <Box
+                bg="blue.50"
+                color="blue.600"
+                px={4}
+                py={2}
+                borderRadius="full"
+                fontSize="sm"
+                fontWeight="medium"
+                border="1px solid"
+                borderColor="blue.200"
+              >
+                Nossos Serviços
+              </Box>
+              <Heading fontSize={{ base: "4xl", md: "5xl" }}  lineHeight="1.2">
+                {intl.home.services.title}
+              </Heading>
+              <Text fontSize="lg" color="gray.600" lineHeight="1.7">
+                Soluções personalizadas para desenvolver liderança equilibrada e
+                sustentável
+              </Text>
+            </VStack>
+
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={8}>
+              {intl.home.services.items.slice(0, 6).map((service, i) => (
+                <Box
+                  key={`service-${i}`}
+                  bg="white"
+                  p={8}
+                  borderRadius="lg"
+                  boxShadow="lg"
+                  border="1px solid"
+                  borderColor="gray.100"
+                  h="full"
+                >
+                  <VStack align="start" gap={6} h="full">
+                    <Flex
+                      w={16}
+                      h={16}
+                      borderRadius="xl"
+                      bg="blue.500"
+                      align="center"
+                      justify="center"
+                      color="white"
+                    >
+                      <Icon name={service.icon as never} size={32} />
+                    </Flex>
+
+                    <VStack align="start" gap={3} flex={1}>
+                      <Heading fontSize="xl"  lineHeight="1.3">
+                        {service.title}
+                      </Heading>
+                      <Text color="gray.600" lineHeight="1.6">
+                        {service.description}
+                      </Text>
+                    </VStack>
+                  </VStack>
+                </Box>
+              ))}
+            </SimpleGrid>
+          </VStack>
+        </Container>
+      </Box>
+
+      {/* About Section */}
+      <Box as="section" id="about" py={{ base: 16, md: 24 }}>
+        <Container maxW="8xl">
+          <Stack
+            direction={{ base: "column", lg: "row" }}
+            gap={{ base: 12, lg: 20 }}
+            align="center"
+          >
+            <VStack flex={1} align="start" gap={8}>
+              <VStack align="start" gap={4}>
+                <Box
+                  bg="blue.50"
+                  color="blue.600"
+                  px={4}
+                  py={2}
+                  borderRadius="full"
+                  fontSize="sm"
+                  fontWeight="medium"
+                  border="1px solid"
+                  borderColor="blue.200"
+                >
+                  Sobre Douglas Borges
+                </Box>
+                <Heading
+                  fontSize={{ base: "4xl", md: "5xl" }}
+                  
+                  lineHeight="1.2"
+                >
+                  {intl.home.about.title}
+                </Heading>
+              </VStack>
+
+              <VStack align="start" gap={6}>
+                {intl.home.about.description.map((p, i) => (
+                  <Text
+                    fontSize={{ base: "lg", md: "xl" }}
+                    color="gray.600"
+                    lineHeight="1.7"
+                    key={`home-about-${i}`}
+                  >
+                    {p}
+                  </Text>
+                ))}
+              </VStack>
+
+              <VStack align="start" gap={3}>
+                <Text fontSize="lg" fontWeight="medium" >
+                  {intl.home.about.subtitle}
+                </Text>
+                <Text fontSize="sm" color="gray.500" fontWeight="medium">
+                  CRP/PR 08-21013 · CRP/SC 12-13884
+                </Text>
+              </VStack>
+
+              <Button
+                as="a"
+                href="/sobre"
+                variant="outline"
+                size="lg"
+                rightIcon={<ArrowRightIcon size={20} />}
+              >
+                Conheça minha história
+              </Button>
+            </VStack>
+
+            <Box
+              w={{ base: "full", lg: "500px" }}
+              h={{ base: "400px", lg: "600px" }}
+              position="relative"
+              borderRadius="2xl"
+              overflow="hidden"
+              boxShadow="xl"
+            >
+              <Image
+                src="/assets/douglas-borges-em-pe.webp"
+                alt="Douglas Borges"
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 768px) 100vw, 500px"
               />
@@ -198,424 +501,286 @@ export default function Home() {
         </Container>
       </Box>
 
-      <Container maxW="8xl" py={{ base: 12, md: 20 }}>
-        <SimpleGrid
-          columns={{ base: 1, md: 3 }}
-          gap={{ base: 2, md: 8 }}
-          w="full"
-        >
-          {intl.home.counting.map((stat, i) => (
-            <VStack
-              key={`stat-${i}`}
-              p={8}
-              gap={0}
-              borderRadius="lg"
-              borderWidth={2}
-              align="flex-end"
-              justify="flex-end"
-              transition="all 0.2s"
-              _hover={{ transform: "translateY(-4px)" }}
-            >
-              <Heading
-                fontSize="5xl"
-                display="flex"
-                alignItems="center"
-                gap={2}
-                fontWeight="bold"
-                lineHeight="1"
+      {/* Testimonials Section */}
+      <Box
+        as="section"
+        id="testimonials"
+        bg="gray.900"
+        py={{ base: 16, md: 24 }}
+      >
+        <Container maxW="8xl">
+          <VStack gap={16}>
+            <VStack gap={6} textAlign="center">
+              <Box
+                bg="blue.500"
+                color="white"
+                px={4}
+                py={2}
+                borderRadius="full"
+                fontSize="sm"
+                fontWeight="medium"
               >
-                <PlusIcon />
-                {stat.title}
+                Depoimentos
+              </Box>
+              <Heading fontSize={{ base: "4xl", md: "5xl" }} color="white">
+                {intl.testimonials.title}
               </Heading>
-              <Text fontSize="lg" color="fg.muted" textAlign="center">
-                {stat.description}
+              <Text fontSize="lg" color="gray.300" maxW="600px">
+                {intl.testimonials.subtitle}
               </Text>
             </VStack>
-          ))}
-        </SimpleGrid>
-      </Container>
 
-      <Box as="section" bg="bg.subtle" py={{ base: 12, md: 20 }}>
-        <Container maxW="8xl">
-          <Heading
-            fontSize={{ base: "3xl", md: "4xl" }}
-            mb={12}
-            textAlign={{ base: "left", md: "center" }}
-            maxW={{ base: "full", md: "600px" }}
-            mx="auto"
-          >
-            {intl.home.services.title}
-          </Heading>
-          <SimpleGrid columns={{ base: 1, md: 3 }} gap={8}>
-            {intl.home.services.items.map((service, i) => (
-              <VStack
-                key={`service-${i}`}
-                bg="white"
-                align="flex-start"
-                justify="flex-start"
-                p={8}
-                borderRadius="lg"
-                // boxShadow="lg"
-                transition="all 0.2s"
-                _hover={{ transform: "translateY(-4px)" }}
-                gap={6}
-              >
-                <Icon name={service.icon as never} size={40} color="#000" />
-                <Heading fontSize={{ base: "xl", md: "2xl" }} textAlign="left">
-                  {service.title}
-                </Heading>
-                <Text color="fg.muted" textAlign="left">
-                  {service.description}
-                </Text>
-              </VStack>
-            ))}
-          </SimpleGrid>
+            <Box w="full">
+              <Testimonials items={intl.testimonials.items} />
+            </Box>
+          </VStack>
         </Container>
       </Box>
 
-      <Box as="section" id="about">
+      {/* Topics/Lectures Section */}
+      <Box py={{ base: 16, md: 20 }}>
         <Container maxW="8xl">
-          <VStack
-            w={{ base: "full", md: "full" }}
-            align="flex-start"
-            gap={{ base: 4, md: 8 }}
-            py={{ base: 4, md: 32 }}
-          >
-            <Heading
-              fontSize={{ base: "5xl", md: "6xl" }}
-              lineHeight="1.2"
-              mb={12}
-              textAlign={{ base: "left", md: "center" }}
-              maxW={{ base: "full", md: "600px" }}
-              mx="auto"
-            >
-              {intl.home.about.title}
-            </Heading>
-
-            {intl.home.about.description.map((p, i) => (
-              <Text
-                fontSize={{ base: "sm", md: "larger" }}
-                key={`home-about-${i}`}
-              >
-                {p}
-              </Text>
-            ))}
-
-            <Text>{intl.home.about.subtitle}</Text>
-            <Text fontSize="small">CRP/PR 08-21013 · CRP/SC 12-13884</Text>
-          </VStack>
-
-          <VStack
-            gap={0}
-            w="full"
-            minH={{ base: "auto", md: `calc(100vh - ${HEADER_NAVBAR_HEIGHT})` }}
-            py={{ base: 8, md: 8, xl: 16 }}
-            align={{ base: "flex-start", md: "flex-start" }}
-            justify={{ base: "center", md: "center" }}
-          >
-            <Heading
-              fontSize={{ base: "3xl", md: "4xl" }}
-              mb={12}
-              textAlign={{ base: "left", md: "center" }}
-              maxW={{ base: "full", md: "600px" }}
-              mx="auto"
-            >
-              {intl.home.services.title}
-            </Heading>
-            <SimpleGrid
-              gap={{ base: 2, md: 6 }}
-              mt={{ base: 8, md: 8, xl: 16 }}
+          <VStack gap={12}>
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              justify="space-between"
+              align={{ base: "start", md: "center" }}
               w="full"
-              templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
+              gap={6}
             >
-              {intl.home.services.items.map((s, i) => (
-                <VStack
-                  key={`slider-list-${i}`}
-                  align="flex-start"
-                  borderRadius="lg"
-                  p={{ base: 4, md: 8 }}
-                  // bg="bg.subtle"
-                  // boxShadow="2xl"
-                  borderWidth={2}
-                  borderColor={`gray.${900 - 100 * i}`}
+              <VStack align="start" gap={2}>
+                <Heading fontSize={{ base: "3xl", md: "4xl" }} >
+                  {intl.topics.title}
+                </Heading>
+                <Text fontSize="lg" color="gray.600">
+                  Conteúdo especializado para transformar sua organização
+                </Text>
+              </VStack>
+
+              <HStack gap={4}>
+                <Button
+                  as="a"
+                  href="https://wa.me/5542988381261?text=Olá!%20Estou%20interessado(a)%20em%20contratar%20uma%20das%20palestras%20do%20Douglas%20Borges."
+                  target="_blank"
+                  colorPalette="blue"
+                  size="lg"
                 >
-                  <VStack align="flex-start" color={`gray.${900 - 100 * i}`}>
-                    <HStack align="center" justify="center" gap={4}>
-                      <Flex
-                        borderRadius="full"
-                        w="64px"
-                        h="64px"
-                        mx="auto"
-                        bg={`gray.${900 - 100 * i}`}
-                        align="center"
-                        justify="center"
-                        color="white"
-                        // boxShadow="xl"
-                      >
-                        <Icon size={32} name={s.icon as never} />
-                      </Flex>
-                      <Heading fontSize={{ base: "xl", md: "2xl" }} flex={1}>
-                        {s.title}
+                  {intl.topics.cta.button}
+                </Button>
+                <Button
+                  as="a"
+                  href="/palestras-e-eventos"
+                  variant="outline"
+                  size="lg"
+                >
+                  {intl.topics.link}
+                </Button>
+              </HStack>
+            </Stack>
+
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} gap={8}>
+              {intl.topics.items.map((topic, i) => (
+                <Box
+                  key={`topic-${i}`}
+                  as="a"
+                  href="/palestras-e-eventos"
+                  bg="white"
+                  borderRadius="lg"
+                  overflow="hidden"
+                  boxShadow="lg"
+                  _hover={{ transform: "translateY(-4px)", shadow: "xl" }}
+                  transition="all 0.3s"
+                  h="full"
+                  textDecoration="none"
+                  _focus={{ outline: "none" }}
+                >
+                  <Box
+                    h="200px"
+                    bgImage={`url(${topic.image})`}
+                    bgPosition="center"
+                    bgSize="cover"
+                    filter="grayscale(0.3)"
+                    _hover={{ filter: "grayscale(0)" }}
+                    transition="filter 0.3s"
+                  />
+                  <Box p={6}>
+                    <VStack align="start" gap={3}>
+                      <Heading fontSize="lg"  noOfLines={2}>
+                        {topic.title}
                       </Heading>
-                    </HStack>
-                    <Text
-                      color={`gray.${900 - 100 * i}`}
-                      fontSize="small"
-                      my={{ base: 0, md: 4 }}
-                    >
-                      {s.description}
-                    </Text>
-                  </VStack>
-                </VStack>
+                      <Text fontSize="sm" color="gray.600" noOfLines={3}>
+                        {topic.description}
+                      </Text>
+                      <HStack gap={2}>
+                        <Box
+                          bg="blue.100"
+                          color="blue.800"
+                          px={2}
+                          py={1}
+                          borderRadius="md"
+                          fontSize="xs"
+                        >
+                          {topic.duration}
+                        </Box>
+                        <Box
+                          bg="gray.100"
+                          color="gray.700"
+                          px={2}
+                          py={1}
+                          borderRadius="md"
+                          fontSize="xs"
+                        >
+                          {topic.format}
+                        </Box>
+                      </HStack>
+                    </VStack>
+                  </Box>
+                </Box>
               ))}
             </SimpleGrid>
           </VStack>
         </Container>
       </Box>
 
-      <Box as="section" id="testimonials" role="complementary">
-        <Box
-          alignContent="center"
-          bg="gray.900"
-          py={{ base: 12, md: 8, xl: 0 }}
-        >
-          <Container maxW="8xl">
-            <VStack
-              gap={0}
+      {/* Insights Section */}
+      <Box bg="gray.50" py={{ base: 16, md: 20 }}>
+        <Container maxW="8xl">
+          <VStack gap={12}>
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              justify="space-between"
+              align={{ base: "start", md: "center" }}
               w="full"
-              minH={{
-                base: "auto",
-                md: `auto`,
-                xl: `calc(100vh - ${HEADER_NAVBAR_HEIGHT})`,
-              }}
-              align={{ base: "flex-start", md: "flex-start" }}
-              justify={{ base: "center", md: "center" }}
+              gap={6}
             >
-              <Heading
-                fontSize={{ base: "3xl", md: "4xl" }}
-                textAlign={{ base: "left", md: "center" }}
-                maxW={{ base: "full", md: "600px" }}
-                mx="auto"
-                color="white"
+              <VStack align="start" gap={2}>
+                <Heading fontSize={{ base: "3xl", md: "4xl" }} >
+                  Insights e Reflexões
+                </Heading>
+                <Text fontSize="lg" color="gray.600">
+                  Conteúdo exclusivo sobre liderança e equilíbrio de vida
+                </Text>
+              </VStack>
+
+              <Button
+                as="a"
+                href="/insights"
+                variant="outline"
+                size="lg"
+                rightIcon={<ArrowRightIcon size={16} />}
               >
-                {intl.testimonials.title}
-              </Heading>
-              <Text
-                fontSize={{ base: "sm", md: "lg" }}
-                color="bg.subtle"
-                textAlign={{ base: "left", md: "center" }}
-                maxW={{ base: "full", md: "600px" }}
-                mx="auto"
-              >
-                {intl.testimonials.subtitle}
-              </Text>
-              <Box w="full" mt={{ base: 4, md: 8, xl: 16 }}>
-                <Testimonials items={intl.testimonials.items} />
-              </Box>
-            </VStack>
-          </Container>
-        </Box>
+                Ver todos
+              </Button>
+            </Stack>
+
+            <SimpleGrid columns={{ base: 1, md: 3 }} gap={8}>
+              {INSIGHTS_HIGHLIGHTS.slice(0, 3).map((insight, index) => (
+                <Box
+                  key={`highlight-${index}`}
+                  as="a"
+                  href={`/${insight.slug}`}
+                  bg="white"
+                  p={8}
+                  borderRadius="lg"
+                  boxShadow="lg"
+                  _hover={{ transform: "translateY(-4px)", shadow: "xl" }}
+                  transition="all 0.3s"
+                  h="full"
+                  textDecoration="none"
+                  _focus={{ outline: "none" }}
+                >
+                  <VStack align="start" gap={6} h="full">
+                    <VStack align="start" gap={3} flex={1}>
+                      <Heading fontSize="xl"  noOfLines={2}>
+                        {insight.title}
+                      </Heading>
+                      <Text color="gray.600" noOfLines={4} lineHeight="1.6">
+                        {insight.content[0]}
+                      </Text>
+                    </VStack>
+
+                    <HStack
+                      justify="space-between"
+                      w="full"
+                      pt={4}
+                      borderTop="1px"
+                      borderColor="gray.100"
+                    >
+                      <HStack gap={2}>
+                        <ClockIcon size={16} color="#9CA3AF" />
+                        <Text fontSize="sm" color="gray.500">
+                          {insight.timeToRead}
+                        </Text>
+                      </HStack>
+                      <HStack gap={2}>
+                        {insight.tags.slice(0, 2).map((tag: string) => (
+                          <Box
+                            key={tag}
+                            bg="blue.100"
+                            color="blue.800"
+                            px={2}
+                            py={1}
+                            borderRadius="md"
+                            fontSize="xs"
+                          >
+                            #{tag}
+                          </Box>
+                        ))}
+                      </HStack>
+                    </HStack>
+                  </VStack>
+                </Box>
+              ))}
+            </SimpleGrid>
+          </VStack>
+        </Container>
       </Box>
 
-      <Container maxW="8xl" py={{ base: 8, md: 16 }}>
-        <VStack w="full" gap={8} align="flex-start">
-          <Stack
-            w="full"
-            justify="space-between"
-            direction={{ base: "column", md: "row" }}
-          >
-            <Heading flex={1}>{intl.topics.title}</Heading>
-            <HStack gap={4}>
-              <Button
-                as={Link}
-                // @ts-ignore
-                target="_blank"
-                href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Estou%20interessado(a)%20em%20contratar%20uma%20das%20palestras%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
-                referrerPolicy="no-referrer"
-                variant="outline"
-              >
-                {intl.topics.cta.button}
-              </Button>
-              <Button
-                as={Link}
-                // @ts-ignore
-                href="/palestras-e-eventos"
-                variant="ghost"
-              >
-                {intl.topics.link}
-              </Button>
-            </HStack>
-          </Stack>
-          <SimpleGrid columns={{ base: 2, md: 4 }} gap={{ base: 4, md: 8 }}>
-            {intl.topics.items.map((s, i) => (
-              <VStack
-                as={Link}
-                // @ts-ignore
-                href="/"
-                key={`home-topics-${i}`}
-                w="full"
-                align="flex-start"
-                justify="flex-start"
-                gap={4}
-              >
-                <VStack flex={1} w="full" align="flex-start">
-                  <Box
-                    w="full"
-                    borderRadius="lg"
-                    h={{ base: "110px", md: "200px" }}
-                    role="img"
-                    aria-label={s.title}
-                    style={{
-                      backgroundImage: `url(${s.image})`,
-                      backgroundPosition: "center center",
-                      backgroundRepeat: "no-repeat",
-                      transition: "all 0.3s ease-in-out",
-                    }}
-                    backgroundSize={{ base: "100% auto", md: "auto 100%" }}
-                    filter="grayscale(1)"
-                    _hover={{
-                      filter: "grayscale(0)",
-                    }}
-                  />
-                  <Heading
-                    fontSize={{ base: "medium", md: "2xl" }}
-                    h={{ base: "auto", md: "90x" }}
-                  >
-                    {s.title}
-                  </Heading>
-                  <Text
-                    fontSize="smaller"
-                    display={{ base: "none", md: "block" }}
-                  >
-                    {s.description}
-                  </Text>
-                </VStack>
-              </VStack>
-            ))}
-          </SimpleGrid>
-        </VStack>
-      </Container>
-
-      <Container maxW="8xl" py={{ base: 4, md: 12 }}>
-        <VStack w="full" align="flex-start" gap={8}>
-          <HStack w="full" justify="space-between" align="center">
-            <Heading fontSize={{ base: "2xl", md: "4xl" }}>
-              Insights e Reflexões
-            </Heading>
-            <Button
-              as={Link}
-              // @ts-ignore
-              href="/insights"
-              variant="ghost"
-              rightIcon={<PlusIcon size={16} />}
-            >
-              Ver todos
-            </Button>
-          </HStack>
-          <SimpleGrid
-            columns={{ base: 1, md: 3 }}
-            gap={{ base: 4, md: 8 }}
-            w="full"
-          >
-            {INSIGHTS_HIGHLIGHTS.slice(0, 3).map((insight, index) => (
-              <VStack
-                key={`highlight-${index}`}
-                as={Link}
-                // @ts-ignore
-                href={`/${insight.slug}`}
-                align="flex-start"
-              >
-                <Heading size="md" mb={{ base: 2, md: 4 }}>
-                  {insight.title}
-                </Heading>
-                <Text
-                  fontSize={{ base: "smaller", md: "sm" }}
-                  minH={{ base: "auto", md: "64px" }}
-                >
-                  {insight.content[0]}
-                </Text>
-                <HStack
-                  mt={{ base: 2, md: 4 }}
-                  align="center"
-                  justify="center"
-                  w="full"
-                >
-                  <Box>
-                    <Tooltip content="Tempo de leitura">
-                      <HStack
-                        w="full"
-                        align="center"
-                        justify="flex-start"
-                        color="gray.300"
-                      >
-                        <ClockIcon size={22} />
-                        <Text fontSize="small">{insight.timeToRead}</Text>
-                      </HStack>
-                    </Tooltip>
-                  </Box>
-                  <HStack
-                    flex={1}
-                    align="center"
-                    justify="flex-start"
-                    borderLeft="solid 1px"
-                    borderLeftColor="gray.100"
-                    pl={2}
-                  >
-                    {insight.tags.map((tag: string) => (
-                      <Link key={tag} href={`/insights?tag=${tag}`}>
-                        <Text fontSize="xs" color="fg.muted">
-                          #{tag}
-                        </Text>
-                      </Link>
-                    ))}
-                  </HStack>
-                </HStack>
-              </VStack>
-            ))}
-          </SimpleGrid>
-        </VStack>
-      </Container>
-
-      <Container maxW="8xl" pb={{ base: 4, md: 12 }} pt={{ base: 4, md: 12 }}>
-        <VStack
-          mx={{ base: 0, md: "auto" }}
-          p={{ base: 8, md: 24 }}
-          maxW="8xl"
-          bg="bg.subtle"
-          borderRadius="lg"
-          flex={1}
-          align={{ base: "flex-start", md: "flex-start" }}
-          justify={{ base: "center", md: "flex-end" }}
-          data-aos="fade-up"
+      <Container maxW="8xl" mt={{ base: 4, md: 8, lg: 16 }}>
+        <Box
+          bgGradient="linear-gradient(135deg, {colors.blue.600}, {colors.blue.500})"
+          color="white"
+          borderRadius="xl"
+          p={{ base: 8, md: 16 }}
+          textAlign="center"
         >
-          <Heading fontSize={{ base: "4xl", md: "6xl" }}>
-            {intl.home.cta.title}
-          </Heading>
-          <Text
-            fontSize={{ base: "lg", md: "xl" }}
-            color="fg.muted"
-            my={2}
-            data-aos="fade-up"
-          >
-            {intl.home.cta.subtitle}
-          </Text>
-          <Button
-            as="a"
-            asChild
-            variant="outline"
-            size="lg"
-            w={{ base: "full", md: "auto" }}
-          >
-            <Link
-              // @ts-ignore
-              href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
+          <VStack gap={8} maxW="600px" mx="auto">
+            <VStack gap={4}>
+              <Heading
+                fontSize={{ base: "4xl", md: "5xl" }}
+                fontWeight="800"
+                lineHeight="1.2"
+              >
+                {intl.home.cta.title}
+              </Heading>
+              <Text
+                fontSize={{ base: "lg", md: "xl" }}
+                opacity="0.9"
+                lineHeight="1.6"
+              >
+                {intl.home.cta.subtitle}
+              </Text>
+            </VStack>
+
+            <Button
+              as="a"
+              href="https://wa.me/5542988381261?text=Olá!%20Vim%20através%20do%20site%20do%20Douglas%20Borges."
               target="_blank"
-              rel="noopener noreferrer"
+              size="lg"
+              bg="white"
+              color="blue.600"
+              px={8}
+              py={6}
+              fontSize="lg"
+              fontWeight="bold"
+              _hover={{ bg: "gray.50", transform: "translateY(-2px)" }}
+              transition="all 0.3s"
+              rightIcon={<ArrowRightIcon size={20} />}
             >
               {intl.home.cta.button}
-            </Link>
-          </Button>
-        </VStack>
+            </Button>
+          </VStack>
+        </Box>
       </Container>
     </>
   );

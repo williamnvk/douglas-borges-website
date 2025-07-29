@@ -80,7 +80,7 @@ export default function InsightsPage({ searchParams }: Props) {
 
   return (
     <>
-      <Header page="insights" />
+      <Header />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

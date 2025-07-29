@@ -124,17 +124,6 @@ export const buttonRecipe = defineRecipe({
         },
       },
 
-      solidInverted: {
-        bg: "colorPalette.solid",
-        color: "colorPalette.contrast",
-        _hover: {
-          bg: "colorPalette.solid/90",
-        },
-        _expanded: {
-          bg: "colorPalette.solid/90",
-        },
-      },
-
       subtle: {
         bg: "colorPalette.subtle",
         color: "colorPalette.fg",
@@ -171,32 +160,8 @@ export const buttonRecipe = defineRecipe({
         },
       },
 
-
-      outlineInverted: {
-        color: "colorPalette.fg",
-        borderColor: "colorPalette.fg",
-        _hover: {
-          bg: "colorPalette.subtle",
-        },
-        _expanded: {
-          bg: "colorPalette.subtle",
-        },
-      },  
-
-
       ghost: {
         color: "colorPalette.fg",
-        _hover: {
-          bg: "colorPalette.subtle",
-        },
-        _expanded: {
-          bg: "colorPalette.subtle",
-        },
-      },
-
-      linkInverted: {
-        color: "colorPalette.fg",
-        borderColor: "colorPalette.fg",
         _hover: {
           bg: "colorPalette.subtle",
         },
@@ -215,4 +180,4 @@ export const buttonRecipe = defineRecipe({
     size: "md",
     variant: "solid",
   },
-})
+});

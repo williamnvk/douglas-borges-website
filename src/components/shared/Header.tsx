@@ -11,16 +11,28 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Building2Icon, MenuIcon, User2Icon } from "lucide-react";
 
-export const Header = ({
-  page,
-  isDark,
-}: {
-  page: string;
-  isDark?: boolean;
-}) => {
+// Function to determine the current page based on pathname
+const getCurrentPage = (pathname: string): string => {
+  if (pathname === "/") return "home";
+  if (pathname === "/empresas") return "company";
+  if (pathname === "/servicos") return "services";
+  if (pathname === "/sobre") return "about";
+  if (pathname === "/palestras-e-eventos") return "events";
+  if (pathname === "/insights") return "insights";
+  if (pathname === "/contato") return "contact";
+  if (pathname === "/links") return "links";
+  // For dynamic insight pages (individual insight posts)
+  if (pathname.match(/^\/[^\/]+$/) && pathname !== "/") return "insights";
+  return "";
+};
+
+export const Header = () => {
   const { open, onOpen, onClose, onToggle } = useDisclosure();
+  const pathname = usePathname();
+  const currentPage = getCurrentPage(pathname);
 
   const intl = {
     personal: "Para você",
@@ -46,8 +58,8 @@ export const Header = ({
       left={0}
       top={0}
       zIndex={100}
-      bg={isDark ? "black" : "white"}
-      color={isDark ? "white" : "black"}
+      bg="white"
+      color="black"
     >
       <HStack gap={4}>
         <Link href="/">
@@ -65,18 +77,14 @@ export const Header = ({
           gap={4}
           border={1}
           borderRadius={4}
-          borderColor={isDark ? "whiteAlpha.200" : "gray.100"}
+          borderColor="gray.100"
         >
           <Button
             // @ts-ignore
             variant={
-              page === "home"
-                ? isDark
-                  ? "outlinedInverted"
-                  : "outline"
-                : isDark
-                  ? "linkInverted"
-                  : "link"
+              currentPage === "personal"
+                ? "solid"
+                : "link"
             }
             as={Link}
             href="/"
@@ -86,13 +94,9 @@ export const Header = ({
           <Button
             // @ts-ignore
             variant={
-              page === "company"
-                ? isDark
-                  ? "outlineInverted"
-                  : "outline"
-                : isDark
-                  ? "linkInverted"
-                  : "link"
+              currentPage === "company"
+                ? "solid"
+                : "link"
             }
             as={Link}
             href="/empresas"
@@ -115,7 +119,7 @@ export const Header = ({
           <Button
             // @ts-ignore
             variant={
-              page === "services" ? "outline" : isDark ? "linkInverted" : "link"
+              currentPage === "services" ? "outline" : "link"
             }
             as={Link}
             href="/servicos"
@@ -125,7 +129,7 @@ export const Header = ({
           <Button
             // @ts-ignore
             variant={
-              page === "about" ? "outline" : isDark ? "linkInverted" : "link"
+              currentPage === "about" ? "outline" : "link"
             }
             as={Link}
             href="/sobre"
@@ -135,7 +139,7 @@ export const Header = ({
           <Button
             // @ts-ignore
             variant={
-              page === "events" ? "outline" : isDark ? "linkInverted" : "link"
+              currentPage === "events" ? "outline" : "link"
             }
             as={Link}
             href="/palestras-e-eventos"
@@ -145,7 +149,7 @@ export const Header = ({
           <Button
             // @ts-ignore
             variant={
-              page === "insights" ? "outline" : isDark ? "linkInverted" : "link"
+              currentPage === "insights" ? "outline" : "link"
             }
             as={Link}
             href="/insights"
@@ -155,7 +159,7 @@ export const Header = ({
           <Button
             // @ts-ignore
             variant={
-              page === "contact" ? "outline" : isDark ? "linkInverted" : "link"
+              currentPage === "contact" ? "outline" : "link"
             }
             as={Link}
             href="/contato"
@@ -171,7 +175,7 @@ export const Header = ({
           target="_blank"
           referrerPolicy="no-referrer"
           // @ts-ignore
-          variant={isDark ? "solidInverted" : "solid"}
+          variant="solid"
         >
           {intl.cta}
         </Button>
@@ -180,8 +184,8 @@ export const Header = ({
       <Drawer.Root open={open} onOpenChange={onToggle}>
         <Drawer.Backdrop />
         <Drawer.Content
-          bg={isDark ? "black" : "white"}
-          color={isDark ? "white" : "black"}
+          bg="white"
+          color="black"
         >
           <Drawer.CloseTrigger aria-label="Close menu" />
           <Drawer.Body p={0}>
@@ -198,10 +202,16 @@ export const Header = ({
 
                 <Button
                   // @ts-ignore
-                  variant={isDark ? "outlineInverted" : "outline"}
+                  variant={
+                    currentPage === "home"
+                      ? "solid"
+                      : "outline"
+                  }
+                  // @ts-ignore
                   as={Link}
                   w="full"
                   size="lg"
+                  // @ts-ignore
                   href="/"
                   leftIcon={<User2Icon />}
                 >
@@ -209,10 +219,16 @@ export const Header = ({
                 </Button>
                 <Button
                   // @ts-ignore
-                  variant={isDark ? "outlineInverted" : "outline"}
+                  variant={
+                    currentPage === "company"
+                      ? "solid"
+                      : "outline"
+                  }
+                  // @ts-ignore
                   as={Link}
                   size="lg"
                   w="full"
+                  // @ts-ignore
                   href="/empresas"
                   leftIcon={<Building2Icon />}
                 >
@@ -221,8 +237,14 @@ export const Header = ({
 
                 <Button
                   // @ts-ignore
-                  variant={isDark ? "linkInverted" : "link"}
+                  variant={
+                    currentPage === "home"
+                      ? "solid"
+                      : "link"
+                  }
+                  // @ts-ignore
                   as={Link}
+                  // @ts-ignore
                   href="/"
                   onClick={onClose}
                 >
@@ -230,8 +252,14 @@ export const Header = ({
                 </Button>
                 <Button
                   // @ts-ignore
-                  variant={isDark ? "linkInverted" : "outline"}
+                  variant={
+                    currentPage === "services"
+                      ? "solid"
+                      : "outline"
+                  }
+                  // @ts-ignore
                   as={Link}
+                  // @ts-ignore
                   href="/servicos"
                   onClick={onClose}
                 >
@@ -239,8 +267,14 @@ export const Header = ({
                 </Button>
                 <Button
                   // @ts-ignore
-                  variant={isDark ? "linkInverted" : "outline"}
+                  variant={
+                    currentPage === "about"
+                      ? "solid"
+                      : "outline"
+                  }
+                  // @ts-ignore
                   as={Link}
+                  // @ts-ignore
                   href="/sobre"
                   onClick={onClose}
                 >
@@ -248,8 +282,14 @@ export const Header = ({
                 </Button>
                 <Button
                   // @ts-ignore
-                  variant={isDark ? "linkInverted" : "outline"}
+                  variant={
+                    currentPage === "events"
+                      ? "solid"
+                      : "outline"
+                  }
+                  // @ts-ignore
                   as={Link}
+                  // @ts-ignore
                   href="/palestras-e-eventos"
                   onClick={onClose}
                 >
@@ -257,8 +297,14 @@ export const Header = ({
                 </Button>
                 <Button
                   // @ts-ignore
-                  variant={isDark ? "linkInverted" : "outline"}
+                  variant={
+                    currentPage === "insights"
+                      ? "solid"
+                      : "outline"
+                  }
+                  // @ts-ignore
                   as={Link}
+                  // @ts-ignore
                   href="/insights"
                   onClick={onClose}
                 >
@@ -266,8 +312,14 @@ export const Header = ({
                 </Button>
                 <Button
                   // @ts-ignore
-                  variant={isDark ? "linkInverted" : "outline"}
+                  variant={
+                    currentPage === "contact"
+                      ? "solid"
+                      : "outline"
+                  }
+                  // @ts-ignore
                   as={Link}
+                  // @ts-ignore
                   href="/contato"
                   onClick={onClose}
                 >
@@ -280,7 +332,7 @@ export const Header = ({
                   w="full"
                   size="lg"
                   // @ts-ignore
-                  variant={isDark ? "solidInverted" : "solid"}
+                  variant="solid"
                   as="a"
                   href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
                 >

@@ -38,7 +38,7 @@ export default function Contact() {
 
   return (
     <>
-      <Header page="contact" />
+      <Header />
       <Box as="main" mt={HEADER_NAVBAR_HEIGHT} bg="bg.subtle" minH="100vh">
         <Container
           maxW="8xl"
