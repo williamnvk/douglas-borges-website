@@ -193,7 +193,7 @@ export default function Home() {
                 fontSize={{ base: "lg", md: "xl" }}
                 color="gray.600"
                 maxW="500px"
-                lineHeight="1.6"
+                lineHeight="1.4"
               >
                 Transforme a pressão em performance sustentável. Há mais de 10
                 anos ajudando líderes a prosperarem sem sacrificar o que
@@ -212,7 +212,7 @@ export default function Home() {
                     transition="all 0.3s"
                     w="full"
                   >
-                    Conhecer o Método Work & Life →
+                    Atendimento para minha empresa →
                   </Button>
                 </Link>
 
@@ -248,10 +248,7 @@ export default function Home() {
               h={{ base: "400px", lg: "650px" }}
               position="relative"
               borderRadius="3xl"
-              overflow="hidden"
               boxShadow="2xl"
-              transform={{ base: "none", lg: "rotate(2deg)" }}
-              _hover={{ transform: { base: "none", lg: "rotate(0deg)" } }}
               transition="transform 0.5s ease"
             >
               <Image
@@ -259,23 +256,79 @@ export default function Home() {
                 alt="Douglas Borges em atendimento"
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 768px) 100vw, 550px"
+                rounded="3xl"
               />
 
-              {/* Floating card */}
+              {/* Balões de contagem aleatórios sobre a foto */}
+              {/* Os balões são posicionados absolutamente sobre a imagem */}
+              {intl.home.counting.map((stat, i) => {
+                // Array de posições predefinidas para os balões (top, left)
+                // Ajuste os valores conforme necessário para melhor visual
+                const positions = [
+                  { top: '160px', left: '40px' },
+                  { top: '190px', right: '-40px' },
+                  { bottom: '140px', left: '-40px' },
+                  { bottom: '80px', right: '80px' }
+                ];
+                // Garante que sempre haja uma posição para cada balão
+                const pos = positions[i % positions.length];
+                return (
+                  <Box
+                    key={`stat-bubble-${i}`}
+                    position="absolute"
+                    zIndex={2}
+                    {...pos}
+                    bg="white"
+                    borderRadius="2xl"
+                    boxShadow="2xl"
+                    border="2px solid"
+                    borderColor="blue.500"
+                    px={{ base: 2, md: 4}}
+                    py={{ base: 2, md: 6}}
+                    textAlign="center"
+                    _hover={{ transform: "scale(1.07)", shadow: "3xl" }}
+                    transition="all 0.3s"
+                  >
+                    <VStack gap={2}>
+                      <Heading
+                        fontSize="3xl"
+                        fontWeight="900"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        gap={1}
+                        color="blue.600"
+                      >
+                        <PlusIcon size={28} />
+                        {stat.title}
+                      </Heading>
+                      <Text
+                        fontSize="sm"
+                        fontWeight="medium"
+                      >
+                        {stat.description}
+                      </Text>
+                    </VStack>
+                  </Box>
+                );
+              })}
+
+              {/* Card flutuante fixo na base da imagem */}
               <Box
                 position="absolute"
-                bottom={6}
+                top={8}
                 left={6}
                 right={6}
                 bg="rgba(255, 255, 255, 0.9)"
                 backdropFilter="blur(10px)"
                 borderRadius="xl"
-                boxShadow="lg"
+                boxShadow="xl"
                 p={4}
+                zIndex={3}
               >
                 <HStack justify="space-between">
                   <VStack align="start" gap={1}>
-                    <Text fontSize="sm" fontWeight="bold" >
+                    <Text fontSize="sm" fontWeight="bold">
                       Douglas Borges
                     </Text>
                     <Text fontSize="xs" color="gray.600">
@@ -299,56 +352,6 @@ export default function Home() {
         </Container>
       </Box>
 
-      {/* Stats Section */}
-      <Box bg="white" py={{ base: 16, md: 20 }}>
-        <Container maxW="8xl">
-          <VStack gap={12}>
-            <VStack gap={4} textAlign="center">
-              <Heading fontSize={{ base: "3xl", md: "4xl" }} >
-                Resultados que falam por si
-              </Heading>
-              <Text fontSize="lg" color="gray.600" maxW="600px">
-                Uma década dedicada a transformar a vida de líderes e
-                organizações
-              </Text>
-            </VStack>
-
-            <SimpleGrid columns={{ base: 1, md: 3 }} gap={8} w="full">
-              {intl.home.counting.map((stat, i) => (
-                <Box
-                  key={`stat-${i}`}
-                  p={8}
-                  borderRadius="lg"
-                  boxShadow="lg"
-                  border="1px solid"
-                  borderColor="gray.100"
-                  textAlign="center"
-                  _hover={{ transform: "translateY(-4px)", shadow: "xl" }}
-                  transition="all 0.3s"
-                >
-                  <VStack gap={4}>
-                    <Heading
-                      fontSize="6xl"
-                      fontWeight="800"
-                      display="flex"
-                      alignItems="center"
-                      justifyContent="center"
-                      gap={2}
-                    >
-                      <PlusIcon size={40} />
-                      {stat.title}
-                    </Heading>
-                    <Text fontSize="xl" color="gray.600" fontWeight="medium">
-                      {stat.description}
-                    </Text>
-                  </VStack>
-                </Box>
-              ))}
-            </SimpleGrid>
-          </VStack>
-        </Container>
-      </Box>
-
       {/* Services Section */}
       <Box bg="gray.50" py={{ base: 16, md: 24 }}>
         <Container maxW="8xl">
@@ -367,7 +370,7 @@ export default function Home() {
               >
                 Nossos Serviços
               </Box>
-              <Heading fontSize={{ base: "4xl", md: "5xl" }}  lineHeight="1.2">
+              <Heading fontSize={{ base: "4xl", md: "5xl" }} lineHeight="1.2">
                 {intl.home.services.title}
               </Heading>
               <Text fontSize="lg" color="gray.600" lineHeight="1.7">
@@ -402,7 +405,7 @@ export default function Home() {
                     </Flex>
 
                     <VStack align="start" gap={3} flex={1}>
-                      <Heading fontSize="xl"  lineHeight="1.3">
+                      <Heading fontSize="xl" lineHeight="1.3">
                         {service.title}
                       </Heading>
                       <Text color="gray.600" lineHeight="1.6">
@@ -440,11 +443,7 @@ export default function Home() {
                 >
                   Sobre Douglas Borges
                 </Box>
-                <Heading
-                  fontSize={{ base: "4xl", md: "5xl" }}
-                  
-                  lineHeight="1.2"
-                >
+                <Heading fontSize={{ base: "4xl", md: "5xl" }} lineHeight="1.2">
                   {intl.home.about.title}
                 </Heading>
               </VStack>
@@ -463,7 +462,7 @@ export default function Home() {
               </VStack>
 
               <VStack align="start" gap={3}>
-                <Text fontSize="lg" fontWeight="medium" >
+                <Text fontSize="lg" fontWeight="medium">
                   {intl.home.about.subtitle}
                 </Text>
                 <Text fontSize="sm" color="gray.500" fontWeight="medium">
@@ -549,7 +548,7 @@ export default function Home() {
               gap={6}
             >
               <VStack align="start" gap={2}>
-                <Heading fontSize={{ base: "3xl", md: "4xl" }} >
+                <Heading fontSize={{ base: "3xl", md: "4xl" }}>
                   {intl.topics.title}
                 </Heading>
                 <Text fontSize="lg" color="gray.600">
@@ -605,7 +604,7 @@ export default function Home() {
                   />
                   <Box p={6}>
                     <VStack align="start" gap={3}>
-                      <Heading fontSize="lg"  noOfLines={2}>
+                      <Heading fontSize="lg" noOfLines={2}>
                         {topic.title}
                       </Heading>
                       <Text fontSize="sm" color="gray.600" noOfLines={3}>
@@ -654,7 +653,7 @@ export default function Home() {
               gap={6}
             >
               <VStack align="start" gap={2}>
-                <Heading fontSize={{ base: "3xl", md: "4xl" }} >
+                <Heading fontSize={{ base: "3xl", md: "4xl" }}>
                   Insights e Reflexões
                 </Heading>
                 <Text fontSize="lg" color="gray.600">
@@ -691,7 +690,7 @@ export default function Home() {
                 >
                   <VStack align="start" gap={6} h="full">
                     <VStack align="start" gap={3} flex={1}>
-                      <Heading fontSize="xl"  noOfLines={2}>
+                      <Heading fontSize="xl" noOfLines={2}>
                         {insight.title}
                       </Heading>
                       <Text color="gray.600" noOfLines={4} lineHeight="1.6">
