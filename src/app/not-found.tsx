@@ -1,7 +1,7 @@
 "use client";
 
 import { Header } from "@/components/shared/Header";
-import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
+import { HEADER_NAVBAR_HEIGHT } from "../theme/consts";
 import { Button, Container, Heading, Text, VStack } from "@chakra-ui/react";
 import Link from "next/link";
 
@@ -14,7 +14,7 @@ export default function GlobalError({
   return (
     <>
       <Header page="404" />
-      <Container maxW="container.xl" mt={HEADER_NAVBAR_HEIGHT}>
+      <Container maxW="8xl" mt={HEADER_NAVBAR_HEIGHT}>
         <VStack
           align="center"
           justify="center"

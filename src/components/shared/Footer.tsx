@@ -24,14 +24,14 @@ import GoToTop from "./GoToTop";
 
 function Footer() {
   const intl = language;
-  const bgColor = "gray.50";
-  const textColor = "gray.600";
-  const quoteColor = "gray.500";
+  const bgColor = "bg.subtle";
+  const textColor = "fg.muted";
+  const quoteColor = "fg.muted";
 
   return (
     <Box as="footer" bg={bgColor} mt={16} role="contentinfo">
       <Container maxW="container.xl" py={{ base: 8, md: 12 }}>
-        <VStack spacing={{ base: 6, md: 8 }} align="stretch">
+        <VStack gap={{ base: 6, md: 8 }} align="stretch">
           {/* Appointment Section */}
 
           <HStack
@@ -63,9 +63,10 @@ function Footer() {
             </VStack>
             <Button
               as={Link}
+              // @ts-ignore
               href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo%20e%20gostaria%20de%20agendar%20um%20atendimento."
               leftIcon={<CalendarIcon size={20} />}
-              colorScheme="blue"
+              colorPalette="blue"
               size="lg"
               w={{ base: "full", md: "auto" }}
               _hover={{ transform: "translateY(-2px)" }}
@@ -80,7 +81,7 @@ function Footer() {
           {/* Contact Grid */}
           <SimpleGrid
             columns={{ base: 1, md: 3 }}
-            spacing={{ base: 8, md: 12 }}
+            gap={{ base: 8, md: 12 }}
             py={{ base: 6, md: 8 }}
           >
             <Text
@@ -100,7 +101,7 @@ function Footer() {
               </Text>
             </Text>
             {/* Social Links */}
-            <VStack align="flex-start" spacing={4} flex={1}>
+            <VStack align="flex-start" gap={4} flex={1}>
               <Text
                 fontWeight="bold"
                 fontSize={{ base: "xl", md: "lg" }}
@@ -113,7 +114,7 @@ function Footer() {
                 as={Link}
                 href={`https://instagram.com/${intl.contact.instagram}`}
                 isExternal
-                spacing={3}
+                gap={3}
                 color={textColor}
                 _hover={{ color: "blue.500", transform: "translateX(4px)" }}
                 transition="all 0.2s"
@@ -127,7 +128,7 @@ function Footer() {
                 as={Link}
                 href={`https://linkedin.com/in/${intl.contact.linkedin}`}
                 isExternal
-                spacing={3}
+                gap={3}
                 color={textColor}
                 _hover={{ color: "blue.500", transform: "translateX(4px)" }}
                 transition="all 0.2s"
@@ -151,7 +152,7 @@ function Footer() {
                 as={Link}
                 href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
                 isExternal
-                spacing={3}
+                gap={3}
                 color={textColor}
                 _hover={{ color: "blue.500", transform: "translateX(4px)" }}
                 transition="all 0.2s"
@@ -165,7 +166,7 @@ function Footer() {
                 as={Link}
                 href={`mailto:${intl.contact.email}`}
                 isExternal
-                spacing={3}
+                gap={3}
                 color={textColor}
                 _hover={{ color: "blue.500", transform: "translateX(4px)" }}
                 transition="all 0.2s"
@@ -177,7 +178,7 @@ function Footer() {
             </VStack>
 
             {/* Addresses */}
-            <VStack align="flex-start" spacing={4} flex={1}>
+            <VStack align="flex-start" gap={4} flex={1}>
               <Text
                 fontWeight="bold"
                 fontSize={{ base: "xl", md: "lg" }}
@@ -191,7 +192,7 @@ function Footer() {
                 href={language.contact.mapsCuritiba}
                 isExternal
                 align="flex-start"
-                spacing={2}
+                gap={2}
                 p={4}
                 bg="white"
                 borderRadius="md"
@@ -220,7 +221,7 @@ function Footer() {
                 href={language.contact.maps}
                 isExternal
                 align="flex-start"
-                spacing={2}
+                gap={2}
                 p={{ base: 4, md: 6 }}
                 bg="white"
                 borderRadius="md"

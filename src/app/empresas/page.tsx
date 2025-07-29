@@ -8,28 +8,23 @@ import {
   Badge,
   HStack,
   Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionIcon,
-  AccordionPanel,
   Button,
   Stack,
   Alert,
-  AlertIcon,
   Flex,
 } from "@chakra-ui/react";
 import { Header } from "@/components/shared/Header";
-import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
+import { HEADER_NAVBAR_HEIGHT } from "../../theme/consts";
 import { siteUrl } from "@/data/dictionaries";
 import { Metadata } from "next";
 import {
+  BarChartIcon,
   Brain,
-  ChartBarIcon,
-  ChartLineIcon,
   CheckIcon,
   ClockIcon,
   FlagIcon,
   GraduationCapIcon,
+  LineChartIcon,
   PaletteIcon,
   XIcon,
 } from "lucide-react";
@@ -230,7 +225,7 @@ export default function EmpresasPage() {
                 maxW={{ base: "full", md: "800px" }}
               >
                 <Badge
-                  colorScheme="blue"
+                  colorPalette="blue"
                   fontSize={{ base: "xs", sm: "sm" }}
                   px={3}
                   py={1}
@@ -250,7 +245,6 @@ export default function EmpresasPage() {
                   color="white"
                   lineHeight="0.9"
                   fontWeight="800"
-                  data-aos="fade-up"
                 >
                   Decisões Estratégicas{" "}
                   <Box as="span" color="blue.400" display="block">
@@ -263,8 +257,6 @@ export default function EmpresasPage() {
                   color="gray.200"
                   fontWeight="400"
                   lineHeight="1.25"
-                  data-aos="fade-up"
-                  data-aos-delay={100}
                 >
                   Assessment comportamental que oferece uma análise científica e
                   objetiva do perfil psicológico dos seus colaboradores,
@@ -274,7 +266,7 @@ export default function EmpresasPage() {
                 <HStack gap={{ base: 2, sm: 4 }} flexWrap="wrap" w="full">
                   <Button
                     as="a"
-                    href="#investimento"
+                    asChild
                     size={{ base: "lg", md: "xl" }}
                     variant="solid"
                     px={{ base: 6, sm: 8 }}
@@ -289,18 +281,13 @@ export default function EmpresasPage() {
                       boxShadow: "2xl",
                     }}
                     transition="all 0.3s"
-                    data-aos="fade-up"
                   >
-                    Ver Planos e Investimento
+                    <a href="#investimento">Ver Planos e Investimento</a>
                   </Button>
                   <Button
                     as="a"
-                    href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20um%20exemplo%20de%20relatório%20do%20Assessment%20Comportamental."
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    asChild
                     variant="outline"
-                    data-aos="fade-up"
-                    data-aos-delay={400}
                     w={{ base: "full", md: "fit-content" }}
                     px={{ base: 6, sm: 8 }}
                     py={{ base: 3, sm: 4 }}
@@ -309,7 +296,13 @@ export default function EmpresasPage() {
                     color="white"
                     fontSize={{ base: "sm", sm: "md", md: "lg" }}
                   >
-                    Exemplo de Relatório
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20um%20exemplo%20de%20relatório%20do%20Assessment%20Comportamental."
+                    >
+                      Exemplo de Relatório
+                    </a>
                   </Button>
                 </HStack>
 
@@ -343,7 +336,7 @@ export default function EmpresasPage() {
             </Stack>
           </Box>
 
-          <Container as="section" maxW={{ base: "full", md: "container.xl" }}>
+          <Container as="section" maxW={{ base: "full", md: "8xl" }}>
             <Box
               as="section"
               w="full"
@@ -351,16 +344,16 @@ export default function EmpresasPage() {
               overflow="hidden"
               borderWidth={2}
               borderColor="gray.200"
-              bgGradient="linear(to-br, red.50 0%, green.50 100%)"
+             
               p={0}
             >
               <SimpleGrid columns={{ base: 1, md: 2 }} w="full" gap={0}>
                 {/* Lado A: Sem Assessment */}
                 <VStack
                   align="stretch"
-                  bgGradient="linear(to-br, red.100 60%, transparent 100%)"
+                  bgGradient="linear-gradient(190deg, transparent, {colors.red.100})"
                   p={{ base: 4, sm: 6, md: 12 }}
-                  spacing={{ base: 4, sm: 6, md: 8 }}
+                  gap={{ base: 4, sm: 6, md: 8 }}
                   h="100%"
                   minH={{ base: "auto", md: "420px" }}
                   position="relative"
@@ -387,12 +380,9 @@ export default function EmpresasPage() {
                       Gestão Tradicional
                     </Heading>
                   </HStack>
-                  <VStack
-                    align="flex-start"
-                    spacing={{ base: 3, sm: 4, md: 5 }}
-                  >
+                  <VStack align="flex-start" gap={{ base: 3, sm: 4, md: 5 }}>
                     {commonChallenges.map((challenge, index) => (
-                      <HStack key={index} align="flex-start" spacing={3}>
+                      <HStack key={index} align="flex-start" gap={3}>
                         <Box
                           fontSize={{ base: "lg", md: "xl" }}
                           color="red.400"
@@ -411,15 +401,15 @@ export default function EmpresasPage() {
                       </HStack>
                     ))}
                   </VStack>
-                  <Alert
+                  <Alert.Root
                     status="error"
                     borderRadius={{ base: "lg", md: "xl" }}
                     p={{ base: 3, sm: 4, md: 5 }}
-                    bgGradient="linear(to-br, red.100, red.200)"
+                    bgGradient="linear-gradient(190deg, {colors.red.100}, {colors.red.200})"
                     alignItems="flex-start"
                   >
-                    <AlertIcon boxSize={{ base: 5, md: 7 }} color="red.400" />
-                    <VStack align="flex-start" spacing={1}>
+                    <Alert.Indicator color="red.400" />
+                    <VStack align="flex-start" gap={1}>
                       <Text
                         fontWeight="bold"
                         fontSize={{ base: "sm", sm: "md", md: "lg" }}
@@ -439,7 +429,7 @@ export default function EmpresasPage() {
                         pesam no orçamento.
                       </Text>
                     </VStack>
-                  </Alert>
+                  </Alert.Root>
                   <Box
                     position="absolute"
                     display={{ base: "none", md: "block" }}
@@ -462,9 +452,9 @@ export default function EmpresasPage() {
                 {/* Lado B: Com Assessment */}
                 <VStack
                   align="stretch"
-                  bgGradient="linear(to-br, green.100 60%, transparent 100%)"
+                   bgGradient="linear-gradient(190deg, transparent, {colors.green.100})"
                   p={{ base: 4, sm: 6, md: 12 }}
-                  spacing={{ base: 4, sm: 6, md: 8 }}
+                  gap={{ base: 4, sm: 6, md: 8 }}
                   h="100%"
                   minH={{ base: "auto", md: "420px" }}
                   position="relative"
@@ -491,12 +481,9 @@ export default function EmpresasPage() {
                       Gestão com Assessment
                     </Heading>
                   </HStack>
-                  <VStack
-                    align="flex-start"
-                    spacing={{ base: 3, sm: 4, md: 5 }}
-                  >
+                  <VStack align="flex-start" gap={{ base: 3, sm: 4, md: 5 }}>
                     {expectedResults.map((result, index) => (
-                      <HStack key={index} align="flex-start" spacing={3}>
+                      <HStack key={index} align="flex-start" gap={3}>
                         <Box
                           fontSize={{ base: "lg", md: "xl" }}
                           color="green.400"
@@ -526,20 +513,16 @@ export default function EmpresasPage() {
                       </HStack>
                     ))}
                   </VStack>
-                  <Alert
+                  <Alert.Root
                     status="success"
                     borderRadius={{ base: "lg", md: "xl" }}
                     p={{ base: 3, sm: 4, md: 5 }}
-                    bgGradient="linear(to-br, green.100, green.200)"
+                    bgGradient="linear-gradient(190deg, {colors.green.100}, {colors.green.300})"
                     boxShadow="md"
                     alignItems="flex-start"
                   >
-                    <AlertIcon
-                      boxSize={{ base: 5, md: 7 }}
-                      color="green.400"
-                      mt={1}
-                    />
-                    <VStack align="flex-start" spacing={1}>
+                    <Alert.Indicator color="green.400" />
+                    <VStack align="flex-start" gap={1}>
                       <Text
                         fontWeight="bold"
                         fontSize={{ base: "sm", sm: "md", md: "lg" }}
@@ -560,10 +543,10 @@ export default function EmpresasPage() {
                         resultados concretos.
                       </Text>
                     </VStack>
-                  </Alert>
+                  </Alert.Root>
                   <Box
                     position="absolute"
-                    display={{base: "none", md: "block"}}
+                    display={{ base: "none", md: "block" }}
                     top={{ base: 2, md: 4 }}
                     right={{ base: 2, md: 4 }}
                     bg="green.200"
@@ -602,7 +585,7 @@ export default function EmpresasPage() {
               <VStack gap={{ base: 8, sm: 10, md: 12 }}>
                 <VStack gap={{ base: 4, sm: 6 }} textAlign="center">
                   <Badge
-                    colorScheme="blue"
+                    colorPalette="blue"
                     fontSize={{ base: "sm", md: "md" }}
                     py={2}
                     px={4}
@@ -615,7 +598,6 @@ export default function EmpresasPage() {
                   <Heading
                     as="h2"
                     fontSize={{ base: "3xl", sm: "4xl", md: "5xl" }}
-                    color="gray.900"
                     fontWeight="700"
                   >
                     Escolha o Plano Adequado às{" "}
@@ -625,7 +607,7 @@ export default function EmpresasPage() {
                   </Heading>
                   <Text
                     fontSize={{ base: "sm", sm: "md", md: "xl" }}
-                    color="gray.600"
+                    color="fg.muted"
                     maxW="2xl"
                     fontWeight="400"
                   >
@@ -644,7 +626,7 @@ export default function EmpresasPage() {
                     p={{ base: 8, sm: 6, md: 4, lg: 8 }}
                     borderWidth={2}
                     borderColor="gray.100"
-                    bg="gray.50"
+                    bg="bg.subtle"
                     borderRadius={{ base: "xl", md: "2xl" }}
                     position="relative"
                     _hover={{
@@ -657,7 +639,6 @@ export default function EmpresasPage() {
                   >
                     <Heading
                       fontSize={{ base: "2xl", sm: "3xl" }}
-                      color="gray.900"
                       fontWeight="700"
                     >
                       Individual
@@ -724,7 +705,7 @@ export default function EmpresasPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       w="full"
-                      colorScheme="blue"
+                      colorPalette="blue"
                       size={{ base: "md", sm: "lg" }}
                       borderRadius="xl"
                       fontWeight="700"
@@ -742,7 +723,7 @@ export default function EmpresasPage() {
                     p={{ base: 8, sm: 6, md: 4, lg: 8 }}
                     borderWidth={2}
                     borderColor="gray.100"
-                    bg="gray.50"
+                    bg="bg.subtle"
                     borderRadius={{ base: "xl", md: "2xl" }}
                     position="relative"
                     _hover={{
@@ -755,7 +736,6 @@ export default function EmpresasPage() {
                   >
                     <Heading
                       fontSize={{ base: "2xl", sm: "3xl" }}
-                      color="gray.900"
                       fontWeight="700"
                     >
                       Equipe
@@ -822,7 +802,7 @@ export default function EmpresasPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       w="full"
-                      colorScheme="blue"
+                      colorPalette="blue"
                       size={{ base: "md", sm: "lg" }}
                       borderRadius="xl"
                       fontWeight="700"
@@ -854,7 +834,7 @@ export default function EmpresasPage() {
                     <Badge
                       position="absolute"
                       top={{ base: "-12px", md: "-15px" }}
-                      colorScheme="green"
+                      colorPalette="green"
                       fontSize={{ base: "xs", sm: "sm" }}
                       px={{ base: 4, sm: 6 }}
                       py={2}
@@ -868,7 +848,6 @@ export default function EmpresasPage() {
 
                     <Heading
                       fontSize={{ base: "2xl", sm: "3xl" }}
-                      color="gray.900"
                       fontWeight="700"
                       mt={2}
                     >
@@ -877,7 +856,7 @@ export default function EmpresasPage() {
                     <VStack gap={1}>
                       <Text
                         fontSize={{ base: "md", sm: "lg" }}
-                        color="gray.500"
+                        color="fg.muted"
                         textDecoration="line-through"
                         fontWeight="500"
                       >
@@ -891,7 +870,7 @@ export default function EmpresasPage() {
                         R$ 2.205
                       </Text>
                       <Badge
-                        colorScheme="green"
+                        colorPalette="green"
                         fontSize={{ base: "xs", sm: "sm" }}
                         fontWeight="600"
                       >
@@ -954,7 +933,7 @@ export default function EmpresasPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       w="full"
-                      colorScheme="green"
+                      colorPalette="green"
                       size={{ base: "md", sm: "lg" }}
                       borderRadius="xl"
                       fontWeight="700"
@@ -986,7 +965,7 @@ export default function EmpresasPage() {
                     <Badge
                       position="absolute"
                       top={{ base: "-12px", md: "-15px" }}
-                      colorScheme="blue"
+                      colorPalette="blue"
                       fontSize={{ base: "xs", sm: "sm" }}
                       px={{ base: 4, sm: 6 }}
                       py={2}
@@ -1000,7 +979,6 @@ export default function EmpresasPage() {
 
                     <Heading
                       fontSize={{ base: "2xl", sm: "3xl" }}
-                      color="gray.900"
                       fontWeight="700"
                       mt={2}
                     >
@@ -1009,7 +987,7 @@ export default function EmpresasPage() {
                     <VStack gap={1} flex={1}>
                       <Text
                         fontSize={{ base: "md", sm: "lg" }}
-                        color="gray.500"
+                        color="fg.muted"
                         textDecoration="line-through"
                         fontWeight="500"
                       >
@@ -1023,7 +1001,7 @@ export default function EmpresasPage() {
                         R$ 3.570
                       </Text>
                       <Badge
-                        colorScheme="blue"
+                        colorPalette="blue"
                         fontSize={{ base: "xs", sm: "sm" }}
                         fontWeight="600"
                       >
@@ -1086,7 +1064,7 @@ export default function EmpresasPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       w="full"
-                      colorScheme="blue"
+                      colorPalette="blue"
                       size={{ base: "md", sm: "lg" }}
                       borderRadius="xl"
                       fontWeight="700"
@@ -1109,12 +1087,11 @@ export default function EmpresasPage() {
                     <Heading
                       fontSize={{ base: "sm", sm: "md" }}
                       fontWeight="700"
-                      color="gray.900"
                     >
                       Prazo de Entrega
                     </Heading>
                     <Text
-                      color="gray.600"
+                      color="fg.muted"
                       fontSize={{ base: "xs", sm: "sm" }}
                       lineHeight="1.4"
                     >
@@ -1125,12 +1102,11 @@ export default function EmpresasPage() {
                     <Heading
                       fontSize={{ base: "sm", sm: "md" }}
                       fontWeight="700"
-                      color="gray.900"
                     >
                       Forma de Pagamento
                     </Heading>
                     <Text
-                      color="gray.600"
+                      color="fg.muted"
                       fontSize={{ base: "xs", sm: "sm" }}
                       lineHeight="1.4"
                     >
@@ -1141,12 +1117,11 @@ export default function EmpresasPage() {
                     <Heading
                       fontSize={{ base: "sm", sm: "md" }}
                       fontWeight="700"
-                      color="gray.900"
                     >
                       Confidencialidade
                     </Heading>
                     <Text
-                      color="gray.600"
+                      color="fg.muted"
                       fontSize={{ base: "xs", sm: "sm" }}
                       lineHeight="1.4"
                     >
@@ -1169,7 +1144,6 @@ export default function EmpresasPage() {
                 <Heading
                   as="h2"
                   fontSize={{ base: "2xl", sm: "3xl", md: "5xl" }}
-                  color="gray.900"
                   fontWeight="800"
                   lineHeight="1.1"
                 >
@@ -1180,7 +1154,7 @@ export default function EmpresasPage() {
                 </Heading>
                 <Text
                   fontSize={{ base: "sm", sm: "md", md: "xl" }}
-                  color="gray.600"
+                  color="fg.muted"
                 >
                   Cada assessment inclui todos estes elementos sem custo
                   adicional:
@@ -1216,7 +1190,7 @@ export default function EmpresasPage() {
             {/* Metodologia Científica */}
             <HStack
               as="section"
-              bg={{base: "transparent", md: "gray.50"}}
+              bg={{ base: "transparent", md: "bg.subtle" }}
               p={{ base: 0, sm: 6, md: 12 }}
               borderRadius={{ base: "xl", md: "2xl" }}
               w="full"
@@ -1228,13 +1202,12 @@ export default function EmpresasPage() {
                 <Heading
                   as="h2"
                   fontSize={{ base: "2xl", sm: "2xl", md: "4xl" }}
-                  color="gray.900"
                 >
                   Base Científica das Avaliações
                 </Heading>
                 <Text
                   fontSize={{ base: "sm", sm: "md", md: "lg", lg: "xl" }}
-                  color="gray.600"
+                  color="fg.muted"
                 >
                   Utilizamos{" "}
                   <strong>5 metodologias reconhecidas mundialmente</strong> para
@@ -1256,7 +1229,7 @@ export default function EmpresasPage() {
                   <VStack
                     key={index}
                     p={{ base: 4, sm: 4, md: 4, lg: 8 }}
-                    bg={{base: "gray.50", md: "white"}}
+                    bg={{ base: "bg.subtle", md: "white" }}
                     borderRadius={{ base: "lg", md: "md" }}
                     gap={0}
                     align="stretch"
@@ -1268,7 +1241,7 @@ export default function EmpresasPage() {
                     >
                       {method.name}
                     </Text>
-                    <Text fontSize={{ base: "xs", sm: "xs" }} color="gray.600">
+                    <Text fontSize={{ base: "xs", sm: "xs" }} color="fg.muted">
                       {method.desc}
                     </Text>
                   </VStack>
@@ -1288,13 +1261,12 @@ export default function EmpresasPage() {
                 <Heading
                   as="h2"
                   fontSize={{ base: "xl", sm: "2xl", md: "4xl" }}
-                  color="gray.900"
                 >
                   Etapas do Processo
                 </Heading>
                 <Text
                   fontSize={{ base: "sm", sm: "md", md: "lg" }}
-                  color="gray.600"
+                  color="fg.muted"
                 >
                   Nosso processo estruturado garante resultados precisos e úteis
                   para sua tomada de decisão:
@@ -1367,7 +1339,7 @@ export default function EmpresasPage() {
                     <VStack align="flex-start" gap={{ base: 2, sm: 3, md: 4 }}>
                       <HStack flexWrap="wrap" gap={{ base: 2, md: 3 }}>
                         <Badge
-                          colorScheme={index === 0 ? "blue" : "gray"}
+                          colorPalette={index === 0 ? "blue" : "gray"}
                           fontSize={{ base: "xs", sm: "sm" }}
                           px={3}
                           py={1}
@@ -1383,7 +1355,6 @@ export default function EmpresasPage() {
                             md: "lg",
                             lg: "xl",
                           }}
-                          color="gray.900"
                         >
                           {etapa.title}
                         </Heading>
@@ -1446,11 +1417,7 @@ export default function EmpresasPage() {
               gap={{ base: 4, sm: 6 }}
               py={{ base: 4, sm: 6, md: 8 }}
             >
-              <Heading
-                as="h2"
-                fontSize={{ base: "xl", sm: "2xl", md: "4xl" }}
-                color="gray.900"
-              >
+              <Heading as="h2" fontSize={{ base: "xl", sm: "2xl", md: "4xl" }}>
                 Perguntas Frequentes
               </Heading>
 
@@ -1461,15 +1428,16 @@ export default function EmpresasPage() {
                 borderColor="gray.100"
                 w="full"
               >
-                <Accordion w="full" allowToggle>
+                <Accordion.Root w="full">
                   {faqData.map((faq, index) => (
-                    <AccordionItem
+                    <Accordion.Item
                       key={index}
                       borderColor="gray.200"
                       border="none"
+                      value={faq.question}
                     >
                       <h3>
-                        <AccordionButton
+                        <Accordion.ItemTrigger
                           py={{ base: 4, sm: 6 }}
                           px={{ base: 4, sm: 6 }}
                         >
@@ -1479,25 +1447,26 @@ export default function EmpresasPage() {
                             textAlign="left"
                             fontWeight="600"
                             fontSize={{ base: "sm", sm: "md", md: "lg" }}
-                            color="gray.900"
                           >
                             {faq.question}
                           </Box>
-                          <AccordionIcon />
-                        </AccordionButton>
+                          <Accordion.ItemIndicator />
+                        </Accordion.ItemTrigger>
                       </h3>
-                      <AccordionPanel
-                        pb={{ base: 4, sm: 6 }}
-                        px={{ base: 4, sm: 6 }}
-                        fontSize={{ base: "xs", sm: "sm", md: "md" }}
-                        color="gray.700"
-                        lineHeight="1.6"
-                      >
-                        {faq.answer}
-                      </AccordionPanel>
-                    </AccordionItem>
+                      <Accordion.ItemContent>
+                        <Accordion.ItemBody
+                          pb={{ base: 4, sm: 6 }}
+                          px={{ base: 4, sm: 6 }}
+                          fontSize={{ base: "xs", sm: "sm", md: "md" }}
+                          color="gray.700"
+                          lineHeight="1.6"
+                        >
+                          {faq.answer}
+                        </Accordion.ItemBody>
+                      </Accordion.ItemContent>
+                    </Accordion.Item>
                   ))}
-                </Accordion>
+                </Accordion.Root>
               </Box>
             </VStack>
 
@@ -1540,7 +1509,7 @@ export default function EmpresasPage() {
                   gap={{ base: 4, sm: 6, md: 8 }}
                   w="full"
                 >
-                  <VStack spacing={{ base: 2, sm: 3 }}>
+                  <VStack gap={{ base: 2, sm: 3 }}>
                     <GraduationCapIcon width={24} height={24} />
                     <Text
                       fontWeight="bold"
@@ -1559,8 +1528,8 @@ export default function EmpresasPage() {
                     </Text>
                   </VStack>
 
-                  <VStack spacing={{ base: 2, sm: 3 }}>
-                    <ChartBarIcon width={24} height={24} />
+                  <VStack gap={{ base: 2, sm: 3 }}>
+                    <BarChartIcon width={24} height={24} />
                     <Text
                       fontWeight="bold"
                       fontSize={{ base: "md", sm: "lg" }}
@@ -1578,7 +1547,7 @@ export default function EmpresasPage() {
                     </Text>
                   </VStack>
 
-                  <VStack spacing={{ base: 2, sm: 3 }}>
+                  <VStack gap={{ base: 2, sm: 3 }}>
                     <ClockIcon width={24} height={24} />
                     <Text
                       fontWeight="bold"
@@ -1615,7 +1584,6 @@ export default function EmpresasPage() {
                 <Heading
                   as="h2"
                   fontSize={{ base: "xl", sm: "2xl", md: "4xl" }}
-                  color="gray.900"
                   textAlign="center"
                 >
                   Sobre a i‑Treebo
@@ -1650,13 +1618,12 @@ export default function EmpresasPage() {
                   w="full"
                   maxW="700px"
                 >
-                  <VStack spacing={{ base: 2, sm: 3 }}>
+                  <VStack gap={{ base: 2, sm: 3 }}>
                     <Box p={3} bg="blue.50" borderRadius="full">
                       <Brain width={24} height={24} />
                     </Box>
                     <Text
                       fontWeight="bold"
-                      color="gray.900"
                       textAlign="center"
                       fontSize={{ base: "sm", sm: "md" }}
                     >
@@ -1664,20 +1631,19 @@ export default function EmpresasPage() {
                     </Text>
                     <Text
                       fontSize={{ base: "xs", sm: "sm" }}
-                      color="gray.600"
+                      color="fg.muted"
                       textAlign="center"
                     >
                       Psicólogo Empresarial
                     </Text>
                   </VStack>
 
-                  <VStack spacing={{ base: 2, sm: 3 }}>
+                  <VStack gap={{ base: 2, sm: 3 }}>
                     <Box p={3} bg="green.50" borderRadius="full">
-                      <ChartLineIcon width={24} height={24} />
+                      <LineChartIcon width={24} height={24} />
                     </Box>
                     <Text
                       fontWeight="bold"
-                      color="gray.900"
                       textAlign="center"
                       fontSize={{ base: "sm", sm: "md" }}
                     >
@@ -1685,20 +1651,19 @@ export default function EmpresasPage() {
                     </Text>
                     <Text
                       fontSize={{ base: "xs", sm: "sm" }}
-                      color="gray.600"
+                      color="fg.muted"
                       textAlign="center"
                     >
                       Alta Performance Comercial
                     </Text>
                   </VStack>
 
-                  <VStack spacing={{ base: 2, sm: 3 }}>
+                  <VStack gap={{ base: 2, sm: 3 }}>
                     <Box p={3} bg="purple.50" borderRadius="full">
                       <PaletteIcon width={24} height={24} />
                     </Box>
                     <Text
                       fontWeight="bold"
-                      color="gray.900"
                       textAlign="center"
                       fontSize={{ base: "sm", sm: "md" }}
                     >
@@ -1706,7 +1671,7 @@ export default function EmpresasPage() {
                     </Text>
                     <Text
                       fontSize={{ base: "xs", sm: "sm" }}
-                      color="gray.600"
+                      color="fg.muted"
                       textAlign="center"
                     >
                       Branding e Marketing
@@ -1732,7 +1697,7 @@ export default function EmpresasPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="outline"
-                  colorScheme="blue"
+                  colorPalette="blue"
                   size={{ base: "md", sm: "lg" }}
                   fontSize={{ base: "sm", sm: "md" }}
                   py={{ base: 4, sm: 6 }}
@@ -1781,7 +1746,7 @@ export default function EmpresasPage() {
                     as="a"
                     href="#investimento"
                     size={{ base: "lg", md: "xl" }}
-                    colorScheme="blue"
+                    colorPalette="blue"
                     fontSize={{ base: "md", sm: "lg", md: "xl" }}
                     py={{ base: 4, md: 8, xl: 8 }}
                     px={{ base: 4, md: 8, xl: 12 }}
@@ -1798,7 +1763,7 @@ export default function EmpresasPage() {
                     rel="noopener noreferrer"
                     size={{ base: "lg", md: "xl" }}
                     variant="outline"
-                    colorScheme="blue"
+                    colorPalette="blue"
                     fontSize={{ base: "sm", sm: "md", md: "lg" }}
                     py={{ base: 4, md: 8 }}
                     px={{ base: 4, md: 8 }}
@@ -1808,7 +1773,7 @@ export default function EmpresasPage() {
                   </Button>
                 </Flex>
 
-                <Text fontSize={{ base: "xs", sm: "sm" }} color="gray.500">
+                <Text fontSize={{ base: "xs", sm: "sm" }} color="fg.muted">
                   <strong>Validade da proposta:</strong> 10 dias úteis |
                   <strong> Pagamento:</strong> PIX ou boleto à vista |
                   <strong> Sigilo:</strong> Confidencialidade total

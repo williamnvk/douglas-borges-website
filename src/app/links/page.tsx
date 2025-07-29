@@ -5,7 +5,7 @@ import language, {
   siteImage,
   siteUrl,
 } from "@/data/dictionaries";
-import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
+import { HEADER_NAVBAR_HEIGHT } from "../../theme/consts";
 import {
   Container,
   HStack,
@@ -81,7 +81,7 @@ export default function LinksPage() {
               textAlign="left"
               fontWeight="400"
               bg="white"
-              color="gray.900"
+              
               borderRadius="md"
               px={2}
               position="absolute"
@@ -94,7 +94,10 @@ export default function LinksPage() {
 
           <HStack
             as={Link}
+            // @ts-ignore
             href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
+            target="_blank"
+            rel="noopener noreferrer"
             w="full"
             p={4}
             gap={4}
@@ -117,12 +120,13 @@ export default function LinksPage() {
 
           <HStack
             as={Link}
+            // @ts-ignore
             href="/"
             w="full"
             p={4}
             align="center"
             gap={4}
-            bg="gray.50"
+            bg="bg.subtle"
             borderRadius="md"
             aria-label="Página Inicial do Site"
             role="link"
@@ -137,13 +141,14 @@ export default function LinksPage() {
 
           <HStack
             as={Link}
+            // @ts-ignore
             href={language.contact.mapsCuritiba}
             w="full"
             p={4}
             gap={4}
             align="center"
             justify="center"
-            bg="gray.50"
+            bg="bg.subtle"
             borderRadius="md"
             aria-label="Veja meu endereço no mapa"
             role="link"
@@ -166,13 +171,14 @@ export default function LinksPage() {
 
           <HStack
             as={Link}
+            // @ts-ignore
             href={language.contact.maps}
             w="full"
             p={4}
             gap={4}
             align="center"
             justify="center"
-            bg="gray.50"
+            bg="bg.subtle"
             borderRadius="md"
             aria-label="Veja meu endereço no mapa"
             role="link"
@@ -197,13 +203,14 @@ export default function LinksPage() {
 
           <HStack
             as={Link}
+            // @ts-ignore
             href={`mailto:${language.contact.email}`}
             w="full"
             p={4}
             gap={4}
             align="center"
             justify="center"
-            bg="gray.50"
+            bg="bg.subtle"
             borderRadius="md"
             aria-label="Enviar um e-mail"
             role="link"
@@ -218,13 +225,14 @@ export default function LinksPage() {
 
           <HStack
             as={Link}
+            // @ts-ignore
             href={language.contact.linkedin}
             w="full"
             p={4}
             gap={4}
             align="center"
             justify="center"
-            bg="gray.50"
+            bg="bg.subtle"
             borderRadius="md"
             aria-label="Acessar meu perfil no LinkedIn"
             role="link"
@@ -239,13 +247,14 @@ export default function LinksPage() {
 
           <HStack
             as={Link}
+            // @ts-ignore
             href={language.contact.instagram}
             w="full"
             p={4}
             gap={4}
             align="center"
             justify="center"
-            bg="gray.50"
+            bg="bg.subtle"
             borderRadius="md"
             aria-label="Acessar meu perfil no Instagram"
             role="link"

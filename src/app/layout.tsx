@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import Head from "next/head";
-import { Providers } from "./providers";
+import { Provider } from "@/app/components/ui/provider";
 import Footer from "@/components/shared/Footer";
 import { AOSInit } from "./components/AOS";
 import {
@@ -44,6 +43,20 @@ export const metadata: Metadata = {
     type: "website",
   },
   metadataBase: new URL(siteUrl),
+  other: {
+    developer: "William Novak <williamnvk@gmail.com>",
+    language: "pt-BR",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180" },
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout(
@@ -59,37 +72,13 @@ export default function RootLayout(
     <html lang={lang} suppressHydrationWarning suppressContentEditableWarning>
       <GoogleTagManager gtmId="GTM-N8DHV67" />
       <GoogleAnalytics gaId="G-5QM28K26ND" />
-      <Head>
-        <meta name="developer" content="William Novak <williamnvk@gmail.com" />
-        <meta name="language" content={lang} />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-      </Head>
       <body>
-        <Providers>
+        <Provider>
           <AOSInit />
           {children}
           <Footer />
           <SpeedInsights />
-        </Providers>
+        </Provider>
       </body>
     </html>
   );

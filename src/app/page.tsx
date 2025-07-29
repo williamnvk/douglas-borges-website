@@ -8,17 +8,18 @@ import {
   SimpleGrid,
   Stack,
   Text,
-  Tooltip,
   VStack,
   Image,
 } from "@chakra-ui/react";
 import { WordTransition } from "./components/WordTransition";
-import { ClockIcon, PlusIcon, QuoteIcon } from "lucide-react";
+import { ClockIcon, PlusIcon } from "lucide-react";
+import QuoteIcon from "./components/QuoteIcon";
 import { Header } from "@/components/shared/Header";
-import CardStack from "./components/CardStack";
 import Testimonials from "./components/Testimonials";
 import Icon from "@/components/shared/DynamicIcon";
-import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
+import { HEADER_NAVBAR_HEIGHT } from "../theme/consts";
+import { Tooltip } from "./components/ui/tooltip";
+
 import language, {
   siteDescription,
   siteTitle,
@@ -96,7 +97,7 @@ export default function Home() {
         role="main"
         aria-labelledby="hero-title"
       >
-        <Container maxW="container.xl" py={{ base: 8, md: 16 }}>
+        <Container maxW="8xl" py={{ base: 8, md: 16 }}>
           <Stack
             flexDir={{ base: "column", md: "row" }}
             gap={{ base: 8, md: 16 }}
@@ -106,7 +107,7 @@ export default function Home() {
             <VStack
               flex={1}
               align="flex-start"
-              spacing={{ base: 6, md: 8 }}
+              gap={{ base: 6, md: 8 }}
               maxW={{ base: "full", md: "600px" }}
             >
               <Heading
@@ -134,11 +135,12 @@ export default function Home() {
               </Heading>
 
               <Button
-                as="a"
+                as={Link}
+                // @ts-ignore
                 href="/empresas"
                 size="lg"
                 w={{ base: "full", md: "auto" }}
-                colorScheme="blue"
+                colorPalette="blue"
                 fontSize="lg"
                 py={7}
                 px={8}
@@ -150,7 +152,8 @@ export default function Home() {
 
               <Box position="relative" pr={16}>
                 <QuoteIcon
-                  size={24}
+                  width={24}
+                  height={24}
                   style={{
                     position: "absolute",
                     top: -12,
@@ -168,7 +171,7 @@ export default function Home() {
                 </Text>
                 <Text
                   fontSize={{ base: "xs", md: "lg" }}
-                  color="gray.500"
+                  color="fg.muted"
                   fontWeight="medium"
                 >
                   {intl.home.bible.verse}
@@ -195,10 +198,10 @@ export default function Home() {
         </Container>
       </Box>
 
-      <Container maxW="container.xl" py={{ base: 12, md: 20 }}>
+      <Container maxW="8xl" py={{ base: 12, md: 20 }}>
         <SimpleGrid
           columns={{ base: 1, md: 3 }}
-          spacing={{ base: 2, md: 8 }}
+          gap={{ base: 2, md: 8 }}
           w="full"
         >
           {intl.home.counting.map((stat, i) => (
@@ -210,7 +213,6 @@ export default function Home() {
               borderWidth={2}
               align="flex-end"
               justify="flex-end"
-              borderColor="gray.900"
               transition="all 0.2s"
               _hover={{ transform: "translateY(-4px)" }}
             >
@@ -225,7 +227,7 @@ export default function Home() {
                 <PlusIcon />
                 {stat.title}
               </Heading>
-              <Text fontSize="lg" color="gray.600" textAlign="center">
+              <Text fontSize="lg" color="fg.muted" textAlign="center">
                 {stat.description}
               </Text>
             </VStack>
@@ -233,19 +235,18 @@ export default function Home() {
         </SimpleGrid>
       </Container>
 
-      <Box as="section" bg="gray.50" py={{ base: 12, md: 20 }}>
-        <Container maxW="container.xl">
+      <Box as="section" bg="bg.subtle" py={{ base: 12, md: 20 }}>
+        <Container maxW="8xl">
           <Heading
             fontSize={{ base: "3xl", md: "4xl" }}
             mb={12}
             textAlign={{ base: "left", md: "center" }}
-            data-aos="fade-up"
             maxW={{ base: "full", md: "600px" }}
             mx="auto"
           >
             {intl.home.services.title}
           </Heading>
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
+          <SimpleGrid columns={{ base: 1, md: 3 }} gap={8}>
             {intl.home.services.items.map((service, i) => (
               <VStack
                 key={`service-${i}`}
@@ -257,15 +258,13 @@ export default function Home() {
                 // boxShadow="lg"
                 transition="all 0.2s"
                 _hover={{ transform: "translateY(-4px)" }}
-                spacing={6}
-                data-aos="fade-up"
-                data-aos-delay={i * 100}
+                gap={6}
               >
                 <Icon name={service.icon as never} size={40} color="#000" />
                 <Heading fontSize={{ base: "xl", md: "2xl" }} textAlign="left">
                   {service.title}
                 </Heading>
-                <Text color="gray.600" textAlign="left">
+                <Text color="fg.muted" textAlign="left">
                   {service.description}
                 </Text>
               </VStack>
@@ -275,7 +274,7 @@ export default function Home() {
       </Box>
 
       <Box as="section" id="about">
-        <Container maxW="container.xl">
+        <Container maxW="8xl">
           <VStack
             w={{ base: "full", md: "full" }}
             align="flex-start"
@@ -284,9 +283,9 @@ export default function Home() {
           >
             <Heading
               fontSize={{ base: "5xl", md: "6xl" }}
+              lineHeight="1.2"
               mb={12}
               textAlign={{ base: "left", md: "center" }}
-              data-aos="fade-up"
               maxW={{ base: "full", md: "600px" }}
               mx="auto"
             >
@@ -297,22 +296,14 @@ export default function Home() {
               <Text
                 fontSize={{ base: "sm", md: "larger" }}
                 key={`home-about-${i}`}
-                data-aos="fade-up"
-                data-aos-delay={i * 100}
               >
                 {p}
               </Text>
             ))}
 
-            <Text data-aos="fade-up" data-aos-delay={100}>
-              {intl.home.about.subtitle}
-            </Text>
-            <Text fontSize="small" data-aos="fade-up" data-aos-delay={150}>
-              CRP/PR 08-21013 · CRP/SC 12-13884
-            </Text>
+            <Text>{intl.home.about.subtitle}</Text>
+            <Text fontSize="small">CRP/PR 08-21013 · CRP/SC 12-13884</Text>
           </VStack>
-
-          <CardStack cards={intl.home.person.fellings} />
 
           <VStack
             gap={0}
@@ -326,7 +317,6 @@ export default function Home() {
               fontSize={{ base: "3xl", md: "4xl" }}
               mb={12}
               textAlign={{ base: "left", md: "center" }}
-              data-aos="fade-up"
               maxW={{ base: "full", md: "600px" }}
               mx="auto"
             >
@@ -344,12 +334,10 @@ export default function Home() {
                   align="flex-start"
                   borderRadius="lg"
                   p={{ base: 4, md: 8 }}
-                  // bg="gray.50"
+                  // bg="bg.subtle"
                   // boxShadow="2xl"
                   borderWidth={2}
                   borderColor={`gray.${900 - 100 * i}`}
-                  data-aos="fade-up"
-                  data-aos-delay={i * 100}
                 >
                   <VStack align="flex-start" color={`gray.${900 - 100 * i}`}>
                     <HStack align="center" justify="center" gap={4}>
@@ -391,7 +379,7 @@ export default function Home() {
           bg="gray.900"
           py={{ base: 12, md: 8, xl: 0 }}
         >
-          <Container maxW="container.xl">
+          <Container maxW="8xl">
             <VStack
               gap={0}
               w="full"
@@ -406,7 +394,6 @@ export default function Home() {
               <Heading
                 fontSize={{ base: "3xl", md: "4xl" }}
                 textAlign={{ base: "left", md: "center" }}
-                data-aos="fade-up"
                 maxW={{ base: "full", md: "600px" }}
                 mx="auto"
                 color="white"
@@ -415,12 +402,10 @@ export default function Home() {
               </Heading>
               <Text
                 fontSize={{ base: "sm", md: "lg" }}
-                color="gray.50"
+                color="bg.subtle"
                 textAlign={{ base: "left", md: "center" }}
                 maxW={{ base: "full", md: "600px" }}
-                data-aos="fade-up"
                 mx="auto"
-                data-aos-delay={100}
               >
                 {intl.testimonials.subtitle}
               </Text>
@@ -432,7 +417,7 @@ export default function Home() {
         </Box>
       </Box>
 
-      <Container maxW="container.xl" py={{ base: 8, md: 16 }}>
+      <Container maxW="8xl" py={{ base: 8, md: 16 }}>
         <VStack w="full" gap={8} align="flex-start">
           <Stack
             w="full"
@@ -442,7 +427,8 @@ export default function Home() {
             <Heading flex={1}>{intl.topics.title}</Heading>
             <HStack gap={4}>
               <Button
-                as="a"
+                as={Link}
+                // @ts-ignore
                 target="_blank"
                 href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Estou%20interessado(a)%20em%20contratar%20uma%20das%20palestras%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
                 referrerPolicy="no-referrer"
@@ -450,15 +436,21 @@ export default function Home() {
               >
                 {intl.topics.cta.button}
               </Button>
-              <Button as="a" href="/palestras-e-eventos" variant="link">
+              <Button
+                as={Link}
+                // @ts-ignore
+                href="/palestras-e-eventos"
+                variant="ghost"
+              >
                 {intl.topics.link}
               </Button>
             </HStack>
           </Stack>
-          <SimpleGrid columns={{ base: 2, md: 4 }} spacing={{ base: 4, md: 8 }}>
+          <SimpleGrid columns={{ base: 2, md: 4 }} gap={{ base: 4, md: 8 }}>
             {intl.topics.items.map((s, i) => (
               <VStack
-                as="a"
+                as={Link}
+                // @ts-ignore
                 href="/"
                 key={`home-topics-${i}`}
                 w="full"
@@ -504,14 +496,15 @@ export default function Home() {
         </VStack>
       </Container>
 
-      <Container maxW="container.xl" py={{ base: 4, md: 12 }}>
+      <Container maxW="8xl" py={{ base: 4, md: 12 }}>
         <VStack w="full" align="flex-start" gap={8}>
           <HStack w="full" justify="space-between" align="center">
             <Heading fontSize={{ base: "2xl", md: "4xl" }}>
               Insights e Reflexões
             </Heading>
             <Button
-              as="a"
+              as={Link}
+              // @ts-ignore
               href="/insights"
               variant="ghost"
               rightIcon={<PlusIcon size={16} />}
@@ -521,13 +514,14 @@ export default function Home() {
           </HStack>
           <SimpleGrid
             columns={{ base: 1, md: 3 }}
-            spacing={{ base: 4, md: 8 }}
+            gap={{ base: 4, md: 8 }}
             w="full"
           >
             {INSIGHTS_HIGHLIGHTS.slice(0, 3).map((insight, index) => (
               <VStack
                 key={`highlight-${index}`}
-                as="a"
+                as={Link}
+                // @ts-ignore
                 href={`/${insight.slug}`}
                 align="flex-start"
               >
@@ -536,7 +530,6 @@ export default function Home() {
                 </Heading>
                 <Text
                   fontSize={{ base: "smaller", md: "sm" }}
-                  noOfLines={3}
                   minH={{ base: "auto", md: "64px" }}
                 >
                   {insight.content[0]}
@@ -548,12 +541,7 @@ export default function Home() {
                   w="full"
                 >
                   <Box>
-                    <Tooltip
-                      label="Tempo de leitura"
-                      gutter={16}
-                      hasArrow
-                      placement="left"
-                    >
+                    <Tooltip content="Tempo de leitura">
                       <HStack
                         w="full"
                         align="center"
@@ -575,7 +563,7 @@ export default function Home() {
                   >
                     {insight.tags.map((tag: string) => (
                       <Link key={tag} href={`/insights?tag=${tag}`}>
-                        <Text fontSize="xs" color="gray.500">
+                        <Text fontSize="xs" color="fg.muted">
                           #{tag}
                         </Text>
                       </Link>
@@ -588,32 +576,24 @@ export default function Home() {
         </VStack>
       </Container>
 
-      <Container
-        maxW="container.xl"
-        pb={{ base: 4, md: 12 }}
-        pt={{ base: 4, md: 12 }}
-      >
+      <Container maxW="8xl" pb={{ base: 4, md: 12 }} pt={{ base: 4, md: 12 }}>
         <VStack
           mx={{ base: 0, md: "auto" }}
           p={{ base: 8, md: 24 }}
-          maxW="container.xl"
-          bg="gray.50"
+          maxW="8xl"
+          bg="bg.subtle"
           borderRadius="lg"
           flex={1}
           align={{ base: "flex-start", md: "flex-start" }}
           justify={{ base: "center", md: "flex-end" }}
           data-aos="fade-up"
         >
-          <Heading
-            fontSize={{ base: "4xl", md: "6xl" }}
-            color="gray.900"
-            data-aos="fade-up"
-          >
+          <Heading fontSize={{ base: "4xl", md: "6xl" }}>
             {intl.home.cta.title}
           </Heading>
           <Text
             fontSize={{ base: "lg", md: "xl" }}
-            color="gray.600"
+            color="fg.muted"
             my={2}
             data-aos="fade-up"
           >
@@ -621,15 +601,19 @@ export default function Home() {
           </Text>
           <Button
             as="a"
-            href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
-            target="_blank"
-            referrerPolicy="no-referrer"
+            asChild
             variant="outline"
             size="lg"
             w={{ base: "full", md: "auto" }}
-            data-aos="fade-up"
           >
-            {intl.home.cta.button}
+            <Link
+              // @ts-ignore
+              href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {intl.home.cta.button}
+            </Link>
           </Button>
         </VStack>
       </Container>

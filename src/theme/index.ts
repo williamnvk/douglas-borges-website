@@ -1,60 +1,38 @@
-"use client";
+import {
+  createSystem,
+  defaultBaseConfig,
+  defineConfig,
+} from "@chakra-ui/react";
 
-import { extendTheme } from "@chakra-ui/react";
-import { colors } from "./colors";
-import { components } from "./components";
-import { themeConfig } from "./config";
-import { fonts } from "./fonts";
+import { breakpoints } from "./breakpoints";
+import { globalCss } from "./global-css";
+import { layerStyles } from "./layer-styles";
+import { animationStyles } from "./motion-styles";
+import { recipes } from "./recipes";
+import { semanticTokens } from "./semantic-tokens";
+import { slotRecipes } from "./slot-recipes";
+import { textStyles } from "./text-styles";
+import { keyframes } from "./tokens/keyframes";
+import { tokens } from "./tokens";
+import "@fontsource/urbanist";
+import "@fontsource/work-sans";
 
-const customTheme = extendTheme({
-  styles: {
-    global: {
-      "html, body": {
-        height: "100%",
-      },
-      body: {
-        bg: "white",
-        _dark: {
-          bg: "gray.800",
-        },
-      },
-      "::-webkit-scrollbar": {
-        width: "6px",
-        bg: "rgba(0, 0, 0, .1)",
-      },
-      "::-webkit-scrollbar-track": {
-        width: "8px",
-        bg: "rgba(0, 0, 0, .2)",
-      },
-      "::-webkit-scrollbar-thumb": {
-        bg: "gray.500",
-        _dark: {
-          bg: "red",
-        },
-        borderRadius: "8px",
-      },
-    },
-  },
-  fonts,
-  colors,
-  config: themeConfig,
-  components,
-  container: {
-    lg: "1280px",
-    xl: "1440px",
-  },
-  breakpoints: {
-    base: "0em",
-    md: "768px",
-    lg: "1366px",
-    xl: "1440px",
-  },
-  radii: {
-    sm: "4px",
-    md: "8px",
-    lg: "16px",
-    xl: "24px",
+export const defaultThemeConfig = defineConfig({
+  preflight: true,
+  cssVarsPrefix: "db",
+  cssVarsRoot: ":where(html, .chakra-theme)",
+  globalCss: globalCss,
+  theme: {
+    breakpoints: breakpoints,
+    keyframes: keyframes,
+    tokens,
+    semanticTokens,
+    recipes: recipes,
+    slotRecipes: slotRecipes,
+    textStyles: textStyles,
+    layerStyles: layerStyles,
+    animationStyles: animationStyles,
   },
 });
 
-export default customTheme;
+export const system = createSystem(defaultBaseConfig, defaultThemeConfig);

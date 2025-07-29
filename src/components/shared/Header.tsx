@@ -5,13 +5,10 @@ import {
   HStack,
   IconButton,
   Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerBody,
   VStack,
   useDisclosure,
   Box,
+  Icon,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { Building2Icon, MenuIcon, User2Icon } from "lucide-react";
@@ -23,7 +20,7 @@ export const Header = ({
   page: string;
   isDark?: boolean;
 }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { open, onOpen, onClose, onToggle } = useDisclosure();
 
   const intl = {
     personal: "Para você",
@@ -58,7 +55,8 @@ export const Header = ({
             <span>
               <strong>Douglas</strong>
             </span>
-            &nbsp;<span>Borges</span>{' | '}
+            &nbsp;<span>Borges</span>
+            {" | "}
             <span>Psicólogo</span>
           </h1>
         </Link>
@@ -70,14 +68,15 @@ export const Header = ({
           borderColor={isDark ? "whiteAlpha.200" : "gray.100"}
         >
           <Button
+            // @ts-ignore
             variant={
               page === "home"
                 ? isDark
                   ? "outlinedInverted"
                   : "outline"
                 : isDark
-                ? "linkInverted"
-                : "link"
+                  ? "linkInverted"
+                  : "link"
             }
             as={Link}
             href="/"
@@ -85,14 +84,15 @@ export const Header = ({
             {intl.personal}
           </Button>
           <Button
+            // @ts-ignore
             variant={
               page === "company"
                 ? isDark
                   ? "outlineInverted"
                   : "outline"
                 : isDark
-                ? "linkInverted"
-                : "link"
+                  ? "linkInverted"
+                  : "link"
             }
             as={Link}
             href="/empresas"
@@ -106,12 +106,14 @@ export const Header = ({
         <IconButton
           borderRadius="full"
           aria-label="Open menu"
-          icon={<MenuIcon />}
           display={{ base: "flex", md: "none" }}
           onClick={onOpen}
-        />
+        >
+          <Icon as={MenuIcon} />
+        </IconButton>
         <HStack display={{ base: "none", md: "flex" }} gap={4}>
           <Button
+            // @ts-ignore
             variant={
               page === "services" ? "outline" : isDark ? "linkInverted" : "link"
             }
@@ -121,6 +123,7 @@ export const Header = ({
             {intl.nav.services}
           </Button>
           <Button
+            // @ts-ignore
             variant={
               page === "about" ? "outline" : isDark ? "linkInverted" : "link"
             }
@@ -130,6 +133,7 @@ export const Header = ({
             {intl.nav.about}
           </Button>
           <Button
+            // @ts-ignore
             variant={
               page === "events" ? "outline" : isDark ? "linkInverted" : "link"
             }
@@ -139,6 +143,7 @@ export const Header = ({
             {intl.nav.events}
           </Button>
           <Button
+            // @ts-ignore
             variant={
               page === "insights" ? "outline" : isDark ? "linkInverted" : "link"
             }
@@ -148,6 +153,7 @@ export const Header = ({
             {intl.nav.insights}
           </Button>
           <Button
+            // @ts-ignore
             variant={
               page === "contact" ? "outline" : isDark ? "linkInverted" : "link"
             }
@@ -164,31 +170,34 @@ export const Header = ({
           href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
           target="_blank"
           referrerPolicy="no-referrer"
+          // @ts-ignore
           variant={isDark ? "solidInverted" : "solid"}
         >
           {intl.cta}
         </Button>
       </HStack>
 
-      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
-        <DrawerOverlay />
-        <DrawerContent
+      <Drawer.Root open={open} onOpenChange={onToggle}>
+        <Drawer.Backdrop />
+        <Drawer.Content
           bg={isDark ? "black" : "white"}
           color={isDark ? "white" : "black"}
         >
-          <DrawerCloseButton />
-          <DrawerBody p={0}>
+          <Drawer.CloseTrigger aria-label="Close menu" />
+          <Drawer.Body p={0}>
             <VStack align="start" h="full" w="full">
-              <VStack align="start" spacing={4} flex={1} w="full" p={6}>
+              <VStack align="start" gap={4} flex={1} w="full" p={6}>
                 <h1>
                   <span>
                     <strong>Douglas</strong>
                   </span>
-                  &nbsp;<span>Borges</span>{' | '}
+                  &nbsp;<span>Borges</span>
+                  {" | "}
                   <span>Psicólogo</span>
                 </h1>
 
                 <Button
+                  // @ts-ignore
                   variant={isDark ? "outlineInverted" : "outline"}
                   as={Link}
                   w="full"
@@ -199,6 +208,7 @@ export const Header = ({
                   {intl.personal}
                 </Button>
                 <Button
+                  // @ts-ignore
                   variant={isDark ? "outlineInverted" : "outline"}
                   as={Link}
                   size="lg"
@@ -210,6 +220,7 @@ export const Header = ({
                 </Button>
 
                 <Button
+                  // @ts-ignore
                   variant={isDark ? "linkInverted" : "link"}
                   as={Link}
                   href="/"
@@ -218,7 +229,8 @@ export const Header = ({
                   {intl.nav.home}
                 </Button>
                 <Button
-                  variant={isDark ? "linkInverted" : "link"}
+                  // @ts-ignore
+                  variant={isDark ? "linkInverted" : "outline"}
                   as={Link}
                   href="/servicos"
                   onClick={onClose}
@@ -226,7 +238,8 @@ export const Header = ({
                   {intl.nav.services}
                 </Button>
                 <Button
-                  variant={isDark ? "linkInverted" : "link"}
+                  // @ts-ignore
+                  variant={isDark ? "linkInverted" : "outline"}
                   as={Link}
                   href="/sobre"
                   onClick={onClose}
@@ -234,7 +247,8 @@ export const Header = ({
                   {intl.nav.about}
                 </Button>
                 <Button
-                  variant={isDark ? "linkInverted" : "link"}
+                  // @ts-ignore
+                  variant={isDark ? "linkInverted" : "outline"}
                   as={Link}
                   href="/palestras-e-eventos"
                   onClick={onClose}
@@ -242,7 +256,8 @@ export const Header = ({
                   {intl.nav.events}
                 </Button>
                 <Button
-                  variant={isDark ? "linkInverted" : "link"}
+                  // @ts-ignore
+                  variant={isDark ? "linkInverted" : "outline"}
                   as={Link}
                   href="/insights"
                   onClick={onClose}
@@ -250,7 +265,8 @@ export const Header = ({
                   {intl.nav.insights}
                 </Button>
                 <Button
-                  variant={isDark ? "linkInverted" : "link"}
+                  // @ts-ignore
+                  variant={isDark ? "linkInverted" : "outline"}
                   as={Link}
                   href="/contato"
                   onClick={onClose}
@@ -263,6 +279,7 @@ export const Header = ({
                   onClick={onClose}
                   w="full"
                   size="lg"
+                  // @ts-ignore
                   variant={isDark ? "solidInverted" : "solid"}
                   as="a"
                   href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
@@ -271,9 +288,9 @@ export const Header = ({
                 </Button>
               </Box>
             </VStack>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
+          </Drawer.Body>
+        </Drawer.Content>
+      </Drawer.Root>
     </HStack>
   );
 };

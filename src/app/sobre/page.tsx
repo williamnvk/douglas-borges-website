@@ -9,7 +9,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { Header } from "@/components/shared/Header";
-import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
+import { HEADER_NAVBAR_HEIGHT } from "../../theme/consts";
 import language, { siteDescription, siteUrl } from "@/data/dictionaries";
 import { Metadata } from "next";
 
@@ -36,7 +36,7 @@ export default function About() {
   return (
     <main>
       <Header page="about" />
-      <Container maxW="container.xl" mt={HEADER_NAVBAR_HEIGHT}>
+      <Container maxW="8xl" mt={HEADER_NAVBAR_HEIGHT}>
         <VStack gap={{ base: 4, md: 8 }} w="full">
           <Stack
             flexDir={{ base: "column", md: "row" }}
@@ -68,7 +68,7 @@ export default function About() {
               p={{ base: 4, md: 16 }}
               borderRadius="lg"
               justify="flex-end"
-              color="gray.50"
+              color="bg.subtle"
               pt={{ base: 12, md: 0 }}
             >
               <Heading fontSize={{ base: "4xl", md: "6xl" }} fontWeight="bold">
@@ -92,12 +92,12 @@ export default function About() {
                 w="full"
                 align="flex-start"
                 bg="white"
-                borderColor="gray.900"
+                border
                 borderWidth={4}
                 p={{ base: 4, md: 8 }}
                 borderRadius="lg"
                 justify="flex-end"
-                color="gray.900"
+                
               >
                 <Heading
                   fontWeight="bold"
@@ -127,12 +127,12 @@ export default function About() {
             {intl.about.approaches.items.map((a) => (
               <VStack
                 key={`about-approaches-${a.title}`}
-                bg="gray.50"
+                bg="bg.subtle"
                 p={{ base: 4, md: 8 }}
                 align="flex-start"
                 borderRadius="lg"
                 justify="flex-end"
-                color="gray.500"
+                color="fg.muted"
               >
                 <Heading
                   fontWeight="bold"
@@ -149,12 +149,12 @@ export default function About() {
           <VStack
             gap={2}
             w="full"
-            bg="gray.50"
+            bg="bg.subtle"
             p={{ base: 4, md: 8 }}
             align="flex-start"
             borderRadius="lg"
             justify="flex-end"
-            color="gray.500"
+            color="fg.muted"
           >
             <Badge fontWeight="light">{intl.about.specialty.title}</Badge>
             <Text>{intl.about.specialty.description}</Text>
@@ -163,12 +163,12 @@ export default function About() {
           <VStack
             gap={2}
             w="full"
-            bg="gray.50"
+            bg="bg.subtle"
             p={{ base: 4, md: 8 }}
             align="flex-start"
             borderRadius="lg"
             justify="flex-end"
-            color="gray.500"
+            color="fg.muted"
           >
             <Badge fontWeight="light">{intl.about.focus.title}</Badge>
             {intl.about.focus.description.map((d, i) => (
@@ -182,7 +182,7 @@ export default function About() {
             align="flex-start"
             p={{ base: 8, md: 16 }}
             bg="gray.900"
-            color="gray.50"
+            color="bg.subtle"
             borderRadius="lg"
           >
             <Badge fontWeight="light">{intl.about.mission.title}</Badge>

@@ -53,7 +53,7 @@ const Testimonials: FC<{
           <SwiperSlide key={`list-${i}`}>
             <VStack
               key={`testimonials-item-${t.name}`}
-              spacing={4}
+              gap={4}
               flex={1}
               pos="relative"
             >
@@ -90,7 +90,7 @@ const Testimonials: FC<{
                     backgroundPosition="center"
                     filter="grayscale(1)"
                     border="2px solid"
-                    borderColor="gray.500"
+                    borderColor="fg.muted"
                   />
                 ) : (
                   <Flex
@@ -98,18 +98,18 @@ const Testimonials: FC<{
                     overflow="hidden"
                     w="64px"
                     h="64px"
-                    color="gray.500"
+                    color="fg.muted"
                     justify="center"
                     align="center"
                     bg="gray.800"
                     border="2px solid"
-                    borderColor="gray.500"
+                    borderColor="fg.muted"
                   >
                     <User2Icon size={32} />
                   </Flex>
                 )}
                 <VStack align="flex-start" gap={0}>
-                  <Text fontSize="smaller" color="gray.50">
+                  <Text fontSize="smaller" color="bg.subtle">
                     {t.name}
                   </Text>
                   <Text fontSize="x-small" color="gray.200">
@@ -121,7 +121,7 @@ const Testimonials: FC<{
           </SwiperSlide>
         ))}
       </Swiper>
-      <Container maxW="container.xl" mt={4} pos="relative" h="48px">
+      <Container maxW="8xl" mt={4} pos="relative" h="48px">
         <Flex w="full" justify="flex-end" gap={4}>
           <Button
             title="<"

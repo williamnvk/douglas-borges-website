@@ -7,17 +7,17 @@ import {
   Heading,
   Button,
   VStack,
-  Tooltip,
   Tag,
   Grid,
 } from "@chakra-ui/react";
-import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
+import { HEADER_NAVBAR_HEIGHT } from "../../theme/consts";
 import { INSIGHTS } from "@/data";
 import { ClockIcon } from "lucide-react";
 import Link from "next/link";
 import { Header } from "@/components/shared/Header";
 import { siteImage, siteUrl } from "@/data/dictionaries";
 import Image from "next/image";
+import { Tooltip } from "../components/ui/tooltip";
 
 interface Props {
   searchParams: {
@@ -96,9 +96,9 @@ export default function InsightsPage({ searchParams }: Props) {
           </Heading>
 
           {selectedTag && (
-            <Tag as="span" fontSize="lg" color="gray.500" ml={2} mb={8}>
-              #{selectedTag}
-            </Tag>
+            <Tag.Root as="span" fontSize="lg" color="fg.muted" ml={2} mb={8}>
+              <Tag.Label>#{selectedTag}</Tag.Label>
+            </Tag.Root>
           )}
 
           <Grid
@@ -112,10 +112,11 @@ export default function InsightsPage({ searchParams }: Props) {
                 <VStack
                   align="flex-start"
                   as={Link}
+                  // @ts-ignore
                   href={`/${post.slug}`}
                   p={6}
                   borderRadius="lg"
-                  bg="gray.50"
+                  bg="bg.subtle"
                   _hover={{ bg: "gray.100" }}
                   transition="background 0.2s"
                 >
@@ -137,14 +138,9 @@ export default function InsightsPage({ searchParams }: Props) {
                   >
                     {post.title}
                   </Text>
-                  <HStack spacing={4} w="full">
+                  <HStack gap={4} w="full">
                     <Box w="auto">
-                      <Tooltip
-                        label="Tempo de leitura"
-                        gutter={16}
-                        hasArrow
-                        placement="left"
-                      >
+                      <Tooltip content="Tempo de leitura">
                         <HStack
                           w="full"
                           align="center"
@@ -169,7 +165,7 @@ export default function InsightsPage({ searchParams }: Props) {
                           <Text
                             fontSize="sm"
                             color="gray.300"
-                            _hover={{ color: "gray.500" }}
+                            _hover={{ color: "fg.muted" }}
                             mr={2}
                           >
                             #{tag}
@@ -185,12 +181,13 @@ export default function InsightsPage({ searchParams }: Props) {
 
           {totalPages > 1 && (
             <nav role="navigation" aria-label="Pagination">
-              <HStack spacing={2} justify="center" mt={8}>
+              <HStack gap={2} justify="center" mt={8}>
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map(
                   (pageNum) => (
                     <Button
                       key={pageNum}
                       as={Link}
+                      // @ts-ignore
                       href={`/insights?pagina=${pageNum}${
                         selectedTag ? `&tag=${selectedTag}` : ""
                       }`}
