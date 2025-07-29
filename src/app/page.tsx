@@ -201,7 +201,7 @@ export default function Home() {
                     transition="all 0.3s"
                     w="full"
                   >
-                    Atendimento para minha empresa →
+                    Para minha empresa →
                   </Button>
                 </Link>
 
