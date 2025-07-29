@@ -16,7 +16,7 @@ import { Building2Icon, MenuIcon, User2Icon } from "lucide-react";
 
 // Function to determine the current page based on pathname
 const getCurrentPage = (pathname: string): string => {
-  if (pathname === "/") return "home";
+  if (pathname === "/") return "personal";
   if (pathname === "/empresas") return "company";
   if (pathname === "/servicos") return "services";
   if (pathname === "/sobre") return "about";
@@ -48,11 +48,16 @@ export const Header = () => {
     },
   };
 
+  const isCurrentPage = (page: string) => {
+    return currentPage === page;
+  };
+
   return (
     <HStack
       as="nav"
       w="full"
-      p={4}
+      py={4}
+      px={8}
       justifyContent="space-between"
       pos="fixed"
       left={0}
@@ -80,24 +85,14 @@ export const Header = () => {
           borderColor="gray.100"
         >
           <Button
-            // @ts-ignore
-            variant={
-              currentPage === "personal"
-                ? "solid"
-                : "link"
-            }
             as={Link}
             href="/"
+            variant={isCurrentPage("personal") ? "outline" : "ghost"}
           >
             {intl.personal}
           </Button>
           <Button
-            // @ts-ignore
-            variant={
-              currentPage === "company"
-                ? "solid"
-                : "link"
-            }
+            variant={isCurrentPage("company") ? "outline" : "ghost"}
             as={Link}
             href="/empresas"
           >
@@ -117,10 +112,7 @@ export const Header = () => {
         </IconButton>
         <HStack display={{ base: "none", md: "flex" }} gap={4}>
           <Button
-            // @ts-ignore
-            variant={
-              currentPage === "services" ? "outline" : "link"
-            }
+            variant={isCurrentPage("services") ? "outline" : "ghost"}
             as={Link}
             href="/servicos"
           >
@@ -128,9 +120,7 @@ export const Header = () => {
           </Button>
           <Button
             // @ts-ignore
-            variant={
-              currentPage === "about" ? "outline" : "link"
-            }
+            variant={isCurrentPage("about") ? "outline" : "ghost"}
             as={Link}
             href="/sobre"
           >
@@ -138,9 +128,7 @@ export const Header = () => {
           </Button>
           <Button
             // @ts-ignore
-            variant={
-              currentPage === "events" ? "outline" : "link"
-            }
+            variant={isCurrentPage("events") ? "outline" : "ghost"}
             as={Link}
             href="/palestras-e-eventos"
           >
@@ -148,9 +136,7 @@ export const Header = () => {
           </Button>
           <Button
             // @ts-ignore
-            variant={
-              currentPage === "insights" ? "outline" : "link"
-            }
+            variant={isCurrentPage("insights") ? "outline" : "ghost"}
             as={Link}
             href="/insights"
           >
@@ -158,9 +144,7 @@ export const Header = () => {
           </Button>
           <Button
             // @ts-ignore
-            variant={
-              currentPage === "contact" ? "outline" : "link"
-            }
+            variant={isCurrentPage("contact") ? "outline" : "ghost"}
             as={Link}
             href="/contato"
           >
@@ -174,7 +158,7 @@ export const Header = () => {
           href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
           target="_blank"
           referrerPolicy="no-referrer"
-          // @ts-ignore
+          colorPalette="blue"
           variant="solid"
         >
           {intl.cta}
@@ -183,10 +167,7 @@ export const Header = () => {
 
       <Drawer.Root open={open} onOpenChange={onToggle}>
         <Drawer.Backdrop />
-        <Drawer.Content
-          bg="white"
-          color="black"
-        >
+        <Drawer.Content bg="white" color="black">
           <Drawer.CloseTrigger aria-label="Close menu" />
           <Drawer.Body p={0}>
             <VStack align="start" h="full" w="full">
@@ -201,12 +182,7 @@ export const Header = () => {
                 </h1>
 
                 <Button
-                  // @ts-ignore
-                  variant={
-                    currentPage === "home"
-                      ? "solid"
-                      : "outline"
-                  }
+                  variant={isCurrentPage("home") ? "solid" : "ghost"}
                   // @ts-ignore
                   as={Link}
                   w="full"
@@ -218,12 +194,7 @@ export const Header = () => {
                   {intl.personal}
                 </Button>
                 <Button
-                  // @ts-ignore
-                  variant={
-                    currentPage === "company"
-                      ? "solid"
-                      : "outline"
-                  }
+                  variant={isCurrentPage("company") ? "solid" : "ghost"}
                   // @ts-ignore
                   as={Link}
                   size="lg"
@@ -236,12 +207,7 @@ export const Header = () => {
                 </Button>
 
                 <Button
-                  // @ts-ignore
-                  variant={
-                    currentPage === "home"
-                      ? "solid"
-                      : "link"
-                  }
+                  variant={isCurrentPage("home") ? "solid" : "ghost"}
                   // @ts-ignore
                   as={Link}
                   // @ts-ignore
@@ -252,11 +218,7 @@ export const Header = () => {
                 </Button>
                 <Button
                   // @ts-ignore
-                  variant={
-                    currentPage === "services"
-                      ? "solid"
-                      : "outline"
-                  }
+                  variant={isCurrentPage("services") ? "solid" : "outline"}
                   // @ts-ignore
                   as={Link}
                   // @ts-ignore
@@ -267,11 +229,7 @@ export const Header = () => {
                 </Button>
                 <Button
                   // @ts-ignore
-                  variant={
-                    currentPage === "about"
-                      ? "solid"
-                      : "outline"
-                  }
+                  variant={isCurrentPage("about") ? "solid" : "outline"}
                   // @ts-ignore
                   as={Link}
                   // @ts-ignore
@@ -282,11 +240,7 @@ export const Header = () => {
                 </Button>
                 <Button
                   // @ts-ignore
-                  variant={
-                    currentPage === "events"
-                      ? "solid"
-                      : "outline"
-                  }
+                  variant={isCurrentPage("events") ? "solid" : "outline"}
                   // @ts-ignore
                   as={Link}
                   // @ts-ignore
@@ -297,11 +251,7 @@ export const Header = () => {
                 </Button>
                 <Button
                   // @ts-ignore
-                  variant={
-                    currentPage === "insights"
-                      ? "solid"
-                      : "outline"
-                  }
+                  variant={isCurrentPage("insights") ? "solid" : "outline"}
                   // @ts-ignore
                   as={Link}
                   // @ts-ignore
@@ -312,11 +262,7 @@ export const Header = () => {
                 </Button>
                 <Button
                   // @ts-ignore
-                  variant={
-                    currentPage === "contact"
-                      ? "solid"
-                      : "outline"
-                  }
+                  variant={isCurrentPage("contact") ? "solid" : "outline"}
                   // @ts-ignore
                   as={Link}
                   // @ts-ignore
@@ -331,9 +277,9 @@ export const Header = () => {
                   onClick={onClose}
                   w="full"
                   size="lg"
-                  // @ts-ignore
                   variant="solid"
                   as="a"
+                  // @ts-ignore
                   href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
                 >
                   {intl.cta}
