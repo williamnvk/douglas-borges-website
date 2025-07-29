@@ -9,7 +9,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Header } from "@/components/shared/Header";
-import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
+import { HEADER_NAVBAR_HEIGHT } from "../../theme/consts";
 import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import MessageForm from "./MessageForm";
 import language, { siteImage, siteUrl } from "@/data/dictionaries";
@@ -38,37 +38,38 @@ export default function Contact() {
 
   return (
     <>
-      <Header page="contact" />
-      <Box as="main" mt={HEADER_NAVBAR_HEIGHT} bg="gray.50" minH="100vh">
+      <Header />
+      <Box as="main" mt={HEADER_NAVBAR_HEIGHT} bg="bg.subtle" minH="100vh">
         <Container
-          maxW="container.xl"
+          maxW="8xl"
           py={{ base: 8, md: 16 }}
           as="section"
           aria-label={intl.contact.title}
         >
-          <Stack spacing={12}>
-            <VStack align="start" spacing={4}>
+          <Stack gap={12}>
+            <VStack align="start" gap={4}>
               <Heading as="h1" size="2xl">
                 {intl.contact.title}
               </Heading>
-              <Text fontSize="md" color="gray.600">
+              <Text fontSize="md" color="fg.muted">
                 {intl.contact.subtitle}
               </Text>
             </VStack>
 
             <Stack
               direction={{ base: "column", md: "row" }}
-              spacing={8}
+              gap={8}
               as="section"
               aria-label={intl.contact.contactInfoTitle}
             >
-              <VStack align="start" spacing={4} flex={1}>
+              <VStack align="start" gap={4} flex={1}>
                 <Heading size="md">{intl.contact.contactInfoTitle}</Heading>
                 <HStack gap={4} align="center" justify="center">
                   <Phone size={28} />
                   <Link
                     href={`https://wa.me/${intl.contact.whatsapp}`}
-                    isExternal
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="WhatsApp"
                     fontSize="sm"
                   >
@@ -87,7 +88,8 @@ export default function Contact() {
                   <Instagram size={28} />
                   <Link
                     href={`https://instagram.com/${intl.contact.instagram}`}
-                    isExternal
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     @{intl.contact.instagram}
                   </Link>
@@ -97,7 +99,8 @@ export default function Contact() {
                   <Linkedin size={28} />
                   <Link
                     href={`https://linkedin.com/in/${intl.contact.linkedin}`}
-                    isExternal
+                    target="_blank"
+                    rel="noopener noreferrer"
                     fontSize="sm"
                   >
                     Douglas Borges
@@ -138,7 +141,7 @@ export default function Contact() {
               <Box flex={1}>
                 <VStack
                   align="stretch"
-                  spacing={6}
+                  gap={6}
                   bg="white"
                   p={{ base: 4, md: 8 }}
                   borderRadius="lg"

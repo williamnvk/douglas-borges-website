@@ -94,38 +94,6 @@ export const language = {
     person: {
       preTitle: "Para",
       title: "você",
-      fellings: [
-        {
-          bg: "white",
-          title: "Burnout",
-          description: "Recupere a Paixão pelo Trabalho",
-          text: "Reencontre o equilíbrio entre a vida profissional e pessoal, transformando o desgaste emocional em motivação renovada. A psicoterapia auxilia na construção de uma trajetória alinhada ao seu propósito e valores.",
-        },
-        {
-          bg: "yellow.100",
-          title: "Vazio Existencial",
-          description: "Encontre Sentido e Propósito",
-          text: "Descubra um significado mais profundo para suas escolhas e ações. Ao explorar suas motivações e objetivos, você pode criar uma vida mais alinhada aos seus valores e ao propósito que inspira sua jornada.",
-        },
-        {
-          bg: "orange.100",
-          title: "Transtornos de Ansiedade",
-          description: "Redução de Ansiedade",
-          text: "Desenvolva ferramentas práticas para gerenciar a ansiedade de forma mais eficaz. Compreendendo os fatores que a desencadeiam, você ganha clareza e confiança para enfrentar os desafios do dia a dia.",
-        },
-        {
-          bg: "green.100",
-          title: "Apatia e Depressão",
-          description: "Superação",
-          text: "Identifique as causas subjacentes da apatia e da tristeza persistente. Através do processo terapêutico, é possível reconstruir a motivação e encontrar novas perspectivas para viver com plenitude.",
-        },
-        {
-          bg: "purple.100",
-          title: "Relacionamentos",
-          description: "Ame-se primeiro",
-          text: "Fortaleça sua autoestima e melhore a qualidade de suas relações interpessoais. Ao desenvolver uma compreensão mais profunda de si mesmo, você constrói conexões mais saudáveis e significativas.",
-        },
-      ],
     },
     cta: {
       title: "Como as mudanças que você quer vão realmente acontecer?",

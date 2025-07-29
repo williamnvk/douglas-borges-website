@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, FormControl, Textarea } from "@chakra-ui/react";
+import { Button, Field, Textarea } from "@chakra-ui/react";
 import { useState } from "react";
 
 export default function MessageForm() {
@@ -18,20 +18,21 @@ export default function MessageForm() {
 
   return (
     <>
-      <FormControl>
+      <Field.Root>
+        <Field.Label>Mensagem</Field.Label>
         <Textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Digite sua mensagem aqui..."
           rows={6}
         />
-      </FormControl>
+      </Field.Root>
 
       <Button
-        colorScheme="green"
+        colorPalette="green"
         size="lg"
         onClick={handleWhatsAppClick}
-        isDisabled={!message}
+        disabled={!message}
       >
         Enviar mensagem
       </Button>

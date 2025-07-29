@@ -35,7 +35,7 @@ const WordTransition: FC<{
 
   if (typewriter) {
     return (
-      <span style={{ display: inline ? "inline-block" : "block" }}>
+      <span style={{ display: inline ? "inline" : "block", lineHeight: "1", margin: 0 }}>
         {displayText}
       </span>
     );

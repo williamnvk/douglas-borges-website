@@ -1,7 +1,7 @@
 "use client";
 
 import { Header } from "@/components/shared/Header";
-import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
+import { HEADER_NAVBAR_HEIGHT } from "../theme/consts";
 import { Button, Container, Heading, Text, VStack } from "@chakra-ui/react";
 import Link from "next/link";
 
@@ -13,8 +13,8 @@ export default function GlobalError({
   console.log(error);
   return (
     <>
-      <Header page="404" />
-      <Container maxW="container.xl" mt={HEADER_NAVBAR_HEIGHT}>
+      <Header />
+      <Container maxW="8xl" mt={HEADER_NAVBAR_HEIGHT}>
         <VStack
           align="center"
           justify="center"
@@ -22,7 +22,11 @@ export default function GlobalError({
         >
           <Heading>Página não encontrada</Heading>
           <Text>A página que você está procurando não foi encontrada.</Text>
-          <Button as={Link} href={"/"}>
+          <Button
+            as={Link}
+            // @ts-expect-error: Type compatibility issue
+            href={"/"}
+          >
             Ir para página inicial
           </Button>
         </VStack>

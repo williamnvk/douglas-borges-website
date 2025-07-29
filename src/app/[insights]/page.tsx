@@ -8,15 +8,15 @@ import {
   Box,
   SimpleGrid,
   HStack,
-  Tooltip,
 } from "@chakra-ui/react";
 import { Header } from "@/components/shared/Header";
-import { HEADER_NAVBAR_HEIGHT } from "@/theme/consts";
+import { HEADER_NAVBAR_HEIGHT } from "../../theme/consts";
 import Link from "next/link";
 import { Metadata } from "next";
 import { ClockIcon } from "lucide-react";
 import { siteImage, siteUrl } from "@/data/dictionaries";
 import Image from "next/image";
+import { Tooltip } from "../components/ui/tooltip";
 
 interface Props {
   params: {
@@ -77,7 +77,7 @@ export default function InsightPage({ params }: Props) {
 
   return (
     <>
-      <Header page="insights" />
+      <Header />
       <Container
         maxW="container.lg"
         mt={HEADER_NAVBAR_HEIGHT}
@@ -95,12 +95,7 @@ export default function InsightPage({ params }: Props) {
           </Heading>
           <HStack justify="center" align="center" gap={4}>
             <Box w="auto">
-              <Tooltip
-                label="Tempo de leitura"
-                gutter={16}
-                hasArrow
-                placement="left"
-              >
+              <Tooltip content="Tempo de leitura">
                 <HStack
                   w="full"
                   align="center"
@@ -126,7 +121,7 @@ export default function InsightPage({ params }: Props) {
                   <Text
                     fontSize="sm"
                     color="gray.300"
-                    _hover={{ color: "gray.500" }}
+                    _hover={{ color: "fg.muted" }}
                   >
                     #{tag}
                   </Text>
@@ -185,7 +180,7 @@ export default function InsightPage({ params }: Props) {
 
         <SimpleGrid
           columns={{ base: 1, md: 2 }}
-          spacing={4}
+          gap={4}
           mt={8}
           as="nav"
           aria-label="Post navigation"
@@ -193,19 +188,15 @@ export default function InsightPage({ params }: Props) {
           {previous && (
             <Box
               as={Link}
+              // @ts-expect-error: Type compatibility issue
               href={`/${previous.slug}`}
               rel="prev"
-              bg="gray.50"
+              bg="bg.subtle"
               borderRadius="lg"
               p={{ base: 4, md: 8 }}
             >
               <Text fontWeight="bold">{previous.title}</Text>
-              <Tooltip
-                label="Tempo de leitura"
-                gutter={16}
-                hasArrow
-                placement="left"
-              >
+              <Tooltip content="Tempo de leitura">
                 <HStack
                   w="full"
                   align="center"
@@ -221,19 +212,15 @@ export default function InsightPage({ params }: Props) {
           {next && (
             <Box
               as={Link}
+              // @ts-expect-error: Type compatibility issue
               href={`/${next.slug}`}
               rel="next"
-              bg="gray.50"
+              bg="bg.subtle"
               borderRadius="lg"
               p={{ base: 4, md: 8 }}
             >
               <Text fontWeight="bold">{next.title}</Text>
-              <Tooltip
-                label="Tempo de leitura"
-                gutter={16}
-                hasArrow
-                placement="left"
-              >
+              <Tooltip content="Tempo de leitura">
                 <HStack
                   w="full"
                   align="center"

@@ -5,25 +5,35 @@ import {
   HStack,
   IconButton,
   Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerBody,
   VStack,
   useDisclosure,
   Box,
+  Icon,
+  Heading,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Building2Icon, MenuIcon, User2Icon } from "lucide-react";
 
-export const Header = ({
-  page,
-  isDark,
-}: {
-  page: string;
-  isDark?: boolean;
-}) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+// Function to determine the current page based on pathname
+const getCurrentPage = (pathname: string): string => {
+  if (pathname === "/") return "personal";
+  if (pathname === "/empresas") return "company";
+  if (pathname === "/servicos") return "services";
+  if (pathname === "/sobre") return "about";
+  if (pathname === "/palestras-e-eventos") return "events";
+  if (pathname === "/insights") return "insights";
+  if (pathname === "/contato") return "contact";
+  if (pathname === "/links") return "links";
+  // For dynamic insight pages (individual insight posts)
+  if (pathname.match(/^\/[^\/]+$/) && pathname !== "/") return "insights";
+  return "";
+};
+
+export const Header = () => {
+  const { open, onOpen, onClose, onToggle } = useDisclosure();
+  const pathname = usePathname();
+  const currentPage = getCurrentPage(pathname);
 
   const intl = {
     personal: "Para você",
@@ -39,18 +49,23 @@ export const Header = ({
     },
   };
 
+  const isCurrentPage = (page: string) => {
+    return currentPage === page;
+  };
+
   return (
     <HStack
       as="nav"
       w="full"
-      p={4}
+      py={4}
+      px={8}
       justifyContent="space-between"
       pos="fixed"
       left={0}
       top={0}
       zIndex={100}
-      bg={isDark ? "black" : "white"}
-      color={isDark ? "white" : "black"}
+      bg="white"
+      color="black"
     >
       <HStack gap={4}>
         <Link href="/">
@@ -58,7 +73,8 @@ export const Header = ({
             <span>
               <strong>Douglas</strong>
             </span>
-            &nbsp;<span>Borges</span>{' | '}
+            &nbsp;<span>Borges</span>
+            {" | "}
             <span>Psicólogo</span>
           </h1>
         </Link>
@@ -67,34 +83,20 @@ export const Header = ({
           gap={4}
           border={1}
           borderRadius={4}
-          borderColor={isDark ? "whiteAlpha.200" : "gray.100"}
+          borderColor="gray.100"
         >
           <Button
-            variant={
-              page === "home"
-                ? isDark
-                  ? "outlinedInverted"
-                  : "outline"
-                : isDark
-                ? "linkInverted"
-                : "link"
-            }
             as={Link}
+            // @ts-expect-error: Type compatibility issue
             href="/"
+            variant={isCurrentPage("personal") ? "outline" : "ghost"}
           >
             {intl.personal}
           </Button>
           <Button
-            variant={
-              page === "company"
-                ? isDark
-                  ? "outlineInverted"
-                  : "outline"
-                : isDark
-                ? "linkInverted"
-                : "link"
-            }
+            variant={isCurrentPage("company") ? "outline" : "ghost"}
             as={Link}
+            // @ts-expect-error: Type compatibility issue
             href="/empresas"
           >
             {intl.company}
@@ -106,52 +108,48 @@ export const Header = ({
         <IconButton
           borderRadius="full"
           aria-label="Open menu"
-          icon={<MenuIcon />}
           display={{ base: "flex", md: "none" }}
           onClick={onOpen}
-        />
+        >
+          <Icon as={MenuIcon} />
+        </IconButton>
         <HStack display={{ base: "none", md: "flex" }} gap={4}>
           <Button
-            variant={
-              page === "services" ? "outline" : isDark ? "linkInverted" : "link"
-            }
+            variant={isCurrentPage("services") ? "outline" : "ghost"}
             as={Link}
+            // @ts-expect-error: Type compatibility issue
             href="/servicos"
           >
             {intl.nav.services}
           </Button>
           <Button
-            variant={
-              page === "about" ? "outline" : isDark ? "linkInverted" : "link"
-            }
+            variant={isCurrentPage("about") ? "outline" : "ghost"}
             as={Link}
+            // @ts-expect-error: Type compatibility issue
             href="/sobre"
           >
             {intl.nav.about}
           </Button>
           <Button
-            variant={
-              page === "events" ? "outline" : isDark ? "linkInverted" : "link"
-            }
+            variant={isCurrentPage("events") ? "outline" : "ghost"}
             as={Link}
+            // @ts-expect-error: Type compatibility issue
             href="/palestras-e-eventos"
           >
             {intl.nav.events}
           </Button>
           <Button
-            variant={
-              page === "insights" ? "outline" : isDark ? "linkInverted" : "link"
-            }
+            variant={isCurrentPage("insights") ? "outline" : "ghost"}
             as={Link}
+            // @ts-expect-error: Type compatibility issue
             href="/insights"
           >
             {intl.nav.insights}
           </Button>
           <Button
-            variant={
-              page === "contact" ? "outline" : isDark ? "linkInverted" : "link"
-            }
+            variant={isCurrentPage("contact") ? "outline" : "ghost"}
             as={Link}
+            // @ts-expect-error: Type compatibility issue
             href="/contato"
           >
             {intl.nav.contact}
@@ -161,119 +159,170 @@ export const Header = ({
         <Button
           display={{ base: "none", md: "inline-flex" }}
           as="a"
+          // @ts-expect-error: Type compatibility issue
           href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
           target="_blank"
           referrerPolicy="no-referrer"
-          variant={isDark ? "solidInverted" : "solid"}
+          colorPalette="blue"
+          variant="solid"
         >
           {intl.cta}
         </Button>
       </HStack>
 
-      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
-        <DrawerOverlay />
-        <DrawerContent
-          bg={isDark ? "black" : "white"}
-          color={isDark ? "white" : "black"}
-        >
-          <DrawerCloseButton />
-          <DrawerBody p={0}>
-            <VStack align="start" h="full" w="full">
-              <VStack align="start" spacing={4} flex={1} w="full" p={6}>
-                <h1>
-                  <span>
-                    <strong>Douglas</strong>
-                  </span>
-                  &nbsp;<span>Borges</span>{' | '}
-                  <span>Psicólogo</span>
-                </h1>
+      <Drawer.Root open={open} onOpenChange={onToggle}>
+        <Drawer.Backdrop />
+        <Drawer.Positioner>
+          <Drawer.CloseTrigger aria-label="Close menu" />
+          <Drawer.Content
+            bg="white"
+            color="black"
+            maxW="90vw"
+            w="90vw"
+            h="100vh"
+            maxH="100vh"
+            m={0}
+            borderRadius={0}
+          >
+            <Drawer.Body p={0} h="full">
+              <VStack align="start" h="full" w="full" justify="space-between">
+                <VStack align="start" gap={6} flex={1} w="full" p={6} pt={12}>
+                  <Heading as="h1" size="2xl" fontWeight="light">
+                    <Heading as="span" size="2xl" fontWeight="strong">
+                      Douglas
+                    </Heading>
+                    &nbsp;<span>Borges</span>
+                    {" | "}
+                    <span>Psicólogo</span>
+                  </Heading>
 
-                <Button
-                  variant={isDark ? "outlineInverted" : "outline"}
-                  as={Link}
-                  w="full"
-                  size="lg"
-                  href="/"
-                  leftIcon={<User2Icon />}
-                >
-                  {intl.personal}
-                </Button>
-                <Button
-                  variant={isDark ? "outlineInverted" : "outline"}
-                  as={Link}
-                  size="lg"
-                  w="full"
-                  href="/empresas"
-                  leftIcon={<Building2Icon />}
-                >
-                  {intl.company}
-                </Button>
+                  {/* Seção Principal */}
+                  <VStack align="start" gap={3} w="full">
+                    <Button
+                      variant={isCurrentPage("personal") ? "solid" : "ghost"}
+                      as={Link}
+                      w="full"
+                      size="lg"
+                      // @ts-expect-error: Type compatibility issue
+                      href="/"
+                      leftIcon={<User2Icon />}
+                      onClick={onClose}
+                      colorPalette={isCurrentPage("personal") ? "blue" : "gray"}
+                      justifyContent="flex-start"
+                    >
+                      {intl.personal}
+                    </Button>
+                    <Button
+                      variant={isCurrentPage("company") ? "solid" : "ghost"}
+                      as={Link}
+                      size="lg"
+                      w="full"
+                      // @ts-expect-error: Type compatibility issue
+                      href="/empresas"
+                      leftIcon={<Building2Icon />}
+                      onClick={onClose}
+                      colorPalette={isCurrentPage("company") ? "blue" : "gray"}
+                      justifyContent="flex-start"
+                    >
+                      {intl.company}
+                    </Button>
+                  </VStack>
 
-                <Button
-                  variant={isDark ? "linkInverted" : "link"}
-                  as={Link}
-                  href="/"
-                  onClick={onClose}
-                >
-                  {intl.nav.home}
-                </Button>
-                <Button
-                  variant={isDark ? "linkInverted" : "link"}
-                  as={Link}
-                  href="/servicos"
-                  onClick={onClose}
-                >
-                  {intl.nav.services}
-                </Button>
-                <Button
-                  variant={isDark ? "linkInverted" : "link"}
-                  as={Link}
-                  href="/sobre"
-                  onClick={onClose}
-                >
-                  {intl.nav.about}
-                </Button>
-                <Button
-                  variant={isDark ? "linkInverted" : "link"}
-                  as={Link}
-                  href="/palestras-e-eventos"
-                  onClick={onClose}
-                >
-                  {intl.nav.events}
-                </Button>
-                <Button
-                  variant={isDark ? "linkInverted" : "link"}
-                  as={Link}
-                  href="/insights"
-                  onClick={onClose}
-                >
-                  {intl.nav.insights}
-                </Button>
-                <Button
-                  variant={isDark ? "linkInverted" : "link"}
-                  as={Link}
-                  href="/contato"
-                  onClick={onClose}
-                >
-                  {intl.nav.contact}
-                </Button>
+                  {/* Separador */}
+                  <Box w="full" h="1px" bg="gray.200" my={4} />
+
+                  {/* Menu de Navegação */}
+                  <VStack align="start" gap={2} w="full">
+                    <Button
+                      variant={isCurrentPage("services") ? "solid" : "ghost"}
+                      as={Link}
+                      w="full"
+                      size="md"
+                      // @ts-expect-error: Type compatibility issue
+                      href="/servicos"
+                      onClick={onClose}
+                      colorPalette={isCurrentPage("services") ? "blue" : "gray"}
+                      justifyContent="flex-start"
+                    >
+                      {intl.nav.services}
+                    </Button>
+                    <Button
+                      variant={isCurrentPage("about") ? "solid" : "ghost"}
+                      as={Link}
+                      w="full"
+                      size="md"
+                      // @ts-expect-error: Type compatibility issue
+                      href="/sobre"
+                      onClick={onClose}
+                      colorPalette={isCurrentPage("about") ? "blue" : "gray"}
+                      justifyContent="flex-start"
+                    >
+                      {intl.nav.about}
+                    </Button>
+                    <Button
+                      variant={isCurrentPage("events") ? "solid" : "ghost"}
+                      as={Link}
+                      w="full"
+                      size="md"
+                      // @ts-expect-error: Type compatibility issue
+                      href="/palestras-e-eventos"
+                      onClick={onClose}
+                      colorPalette={isCurrentPage("events") ? "blue" : "gray"}
+                      justifyContent="flex-start"
+                    >
+                      {intl.nav.events}
+                    </Button>
+                    <Button
+                      variant={isCurrentPage("insights") ? "solid" : "ghost"}
+                      as={Link}
+                      w="full"
+                      size="md"
+                      // @ts-expect-error: Type compatibility issue
+                      href="/insights"
+                      onClick={onClose}
+                      colorPalette={isCurrentPage("insights") ? "blue" : "gray"}
+                      justifyContent="flex-start"
+                    >
+                      {intl.nav.insights}
+                    </Button>
+                    <Button
+                      variant={isCurrentPage("contact") ? "solid" : "ghost"}
+                      as={Link}
+                      w="full"
+                      size="md"
+                      // @ts-expect-error: Type compatibility issue
+                      href="/contato"
+                      onClick={onClose}
+                      colorPalette={isCurrentPage("contact") ? "blue" : "gray"}
+                      justifyContent="flex-start"
+                    >
+                      {intl.nav.contact}
+                    </Button>
+                  </VStack>
+                </VStack>
+
+                {/* CTA Fixo na parte inferior */}
+                <Box p={6} w="full" borderTop="1px" borderColor="gray.200">
+                  <Button
+                    onClick={onClose}
+                    w="full"
+                    size="lg"
+                    variant="solid"
+                    colorPalette="blue"
+                    as="a"
+                    // @ts-expect-error: Type compatibility issue
+                    href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
+                    target="_blank"
+                    referrerPolicy="no-referrer"
+                  >
+                    {intl.cta}
+                  </Button>
+                </Box>
               </VStack>
-              <Box p={6} w="full">
-                <Button
-                  onClick={onClose}
-                  w="full"
-                  size="lg"
-                  variant={isDark ? "solidInverted" : "solid"}
-                  as="a"
-                  href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
-                >
-                  {intl.cta}
-                </Button>
-              </Box>
-            </VStack>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
+            </Drawer.Body>
+          </Drawer.Content>
+        </Drawer.Positioner>
+      </Drawer.Root>
     </HStack>
   );
 };
