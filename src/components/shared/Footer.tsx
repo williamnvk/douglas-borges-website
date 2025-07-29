@@ -112,6 +112,7 @@ function Footer() {
 
               <HStack
                 as={Link}
+                // @ts-expect-error: Type compatibility issue
                 href={`https://instagram.com/${intl.contact.instagram}`}
                 isExternal
                 gap={3}
@@ -126,6 +127,7 @@ function Footer() {
 
               <HStack
                 as={Link}
+                // @ts-expect-error: Type compatibility issue
                 href={`https://linkedin.com/in/${intl.contact.linkedin}`}
                 isExternal
                 gap={3}
@@ -150,6 +152,7 @@ function Footer() {
 
               <HStack
                 as={Link}
+                // @ts-expect-error: Type compatibility issue
                 href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
                 isExternal
                 gap={3}
@@ -164,6 +167,7 @@ function Footer() {
 
               <HStack
                 as={Link}
+                // @ts-expect-error: Type compatibility issue
                 href={`mailto:${intl.contact.email}`}
                 isExternal
                 gap={3}
@@ -189,6 +193,7 @@ function Footer() {
 
               <VStack
                 as={Link}
+                // @ts-expect-error: Type compatibility issue
                 href={language.contact.mapsCuritiba}
                 isExternal
                 align="flex-start"
@@ -218,6 +223,7 @@ function Footer() {
               </VStack>
               <VStack
                 as={Link}
+                // @ts-expect-error: Type compatibility issue
                 href={language.contact.maps}
                 isExternal
                 align="flex-start"

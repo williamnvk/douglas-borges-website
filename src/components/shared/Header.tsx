@@ -86,7 +86,6 @@ export const Header = () => {
           borderColor="gray.100"
         >
           <Button
-            // @ts-expect-error: Type compatibility issue
             as={Link}
             // @ts-expect-error: Type compatibility issue
             href="/"
@@ -96,7 +95,6 @@ export const Header = () => {
           </Button>
           <Button
             variant={isCurrentPage("company") ? "outline" : "ghost"}
-            // @ts-expect-error: Type compatibility issue
             as={Link}
             // @ts-expect-error: Type compatibility issue
             href="/empresas"
@@ -118,7 +116,6 @@ export const Header = () => {
         <HStack display={{ base: "none", md: "flex" }} gap={4}>
           <Button
             variant={isCurrentPage("services") ? "outline" : "ghost"}
-            // @ts-expect-error: Type compatibility issue
             as={Link}
             // @ts-expect-error: Type compatibility issue
             href="/servicos"
@@ -126,9 +123,7 @@ export const Header = () => {
             {intl.nav.services}
           </Button>
           <Button
-            // @ts-expect-error: Type compatibility issue
             variant={isCurrentPage("about") ? "outline" : "ghost"}
-            // @ts-expect-error: Type compatibility issue
             as={Link}
             // @ts-expect-error: Type compatibility issue
             href="/sobre"
@@ -136,9 +131,7 @@ export const Header = () => {
             {intl.nav.about}
           </Button>
           <Button
-            // @ts-expect-error: Type compatibility issue
             variant={isCurrentPage("events") ? "outline" : "ghost"}
-            // @ts-expect-error: Type compatibility issue
             as={Link}
             // @ts-expect-error: Type compatibility issue
             href="/palestras-e-eventos"
@@ -146,9 +139,7 @@ export const Header = () => {
             {intl.nav.events}
           </Button>
           <Button
-            // @ts-expect-error: Type compatibility issue
             variant={isCurrentPage("insights") ? "outline" : "ghost"}
-            // @ts-expect-error: Type compatibility issue
             as={Link}
             // @ts-expect-error: Type compatibility issue
             href="/insights"
@@ -156,9 +147,7 @@ export const Header = () => {
             {intl.nav.insights}
           </Button>
           <Button
-            // @ts-expect-error: Type compatibility issue
             variant={isCurrentPage("contact") ? "outline" : "ghost"}
-            // @ts-expect-error: Type compatibility issue
             as={Link}
             // @ts-expect-error: Type compatibility issue
             href="/contato"
@@ -169,13 +158,10 @@ export const Header = () => {
 
         <Button
           display={{ base: "none", md: "inline-flex" }}
-          // @ts-expect-error: Type compatibility issue
           as="a"
           // @ts-expect-error: Type compatibility issue
           href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
-          // @ts-expect-error: Type compatibility issue
           target="_blank"
-          // @ts-expect-error: Type compatibility issue
           referrerPolicy="no-referrer"
           colorPalette="blue"
           variant="solid"
@@ -214,7 +200,6 @@ export const Header = () => {
                   <VStack align="start" gap={3} w="full">
                     <Button
                       variant={isCurrentPage("personal") ? "solid" : "ghost"}
-                      // @ts-expect-error: Type compatibility issue
                       as={Link}
                       w="full"
                       size="lg"
@@ -229,7 +214,6 @@ export const Header = () => {
                     </Button>
                     <Button
                       variant={isCurrentPage("company") ? "solid" : "ghost"}
-                      // @ts-expect-error: Type compatibility issue
                       as={Link}
                       size="lg"
                       w="full"
@@ -250,9 +234,7 @@ export const Header = () => {
                   {/* Menu de Navegação */}
                   <VStack align="start" gap={2} w="full">
                     <Button
-                      // @ts-expect-error: Type compatibility issue
                       variant={isCurrentPage("services") ? "solid" : "ghost"}
-                      // @ts-expect-error: Type compatibility issue
                       as={Link}
                       w="full"
                       size="md"
@@ -265,9 +247,7 @@ export const Header = () => {
                       {intl.nav.services}
                     </Button>
                     <Button
-                      // @ts-expect-error: Type compatibility issue
                       variant={isCurrentPage("about") ? "solid" : "ghost"}
-                      // @ts-expect-error: Type compatibility issue
                       as={Link}
                       w="full"
                       size="md"
@@ -280,9 +260,7 @@ export const Header = () => {
                       {intl.nav.about}
                     </Button>
                     <Button
-                      // @ts-expect-error: Type compatibility issue
                       variant={isCurrentPage("events") ? "solid" : "ghost"}
-                      // @ts-expect-error: Type compatibility issue
                       as={Link}
                       w="full"
                       size="md"
@@ -295,9 +273,7 @@ export const Header = () => {
                       {intl.nav.events}
                     </Button>
                     <Button
-                      // @ts-expect-error: Type compatibility issue
                       variant={isCurrentPage("insights") ? "solid" : "ghost"}
-                      // @ts-expect-error: Type compatibility issue
                       as={Link}
                       w="full"
                       size="md"
@@ -310,9 +286,7 @@ export const Header = () => {
                       {intl.nav.insights}
                     </Button>
                     <Button
-                      // @ts-expect-error: Type compatibility issue
                       variant={isCurrentPage("contact") ? "solid" : "ghost"}
-                      // @ts-expect-error: Type compatibility issue
                       as={Link}
                       w="full"
                       size="md"

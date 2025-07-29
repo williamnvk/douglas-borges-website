@@ -91,8 +91,7 @@ export default function About() {
                 key={`about-exp-${e.title}`}
                 w="full"
                 align="flex-start"
-                bg="white"
-                border
+                bg="bg.subtle"
                 borderWidth={4}
                 p={{ base: 4, md: 8 }}
                 borderRadius="lg"
