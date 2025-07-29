@@ -42,5 +42,9 @@ export const globalCss = defineGlobalStyles({
   html: {
     color: "fg",
     bg: "bg",
-  }
+  },
+  body: {
+    overflowX: "clip",
+    maxW: "100vw"
+  },
 });

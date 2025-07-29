@@ -100,27 +100,17 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <Box
+      <Container
         as="main"
+        mx={{ base: 0, lg: 8 }}
         mt={HEADER_NAVBAR_HEIGHT}
         role="main"
+        rounded={{ base: "none", lg: "3xl" }}
+        maxW={{ base: "full", lg: "calc(100vw - 80px)" }}
         aria-labelledby="hero-title"
-        bgGradient="linear(to-br, gray.50, white)"
+        bgGradient="linear-gradient(180deg, {colors.gray.50}, {colors.gray.100})"
         position="relative"
-        overflow="hidden"
       >
-        {/* Background decoration */}
-        <Box
-          position="absolute"
-          top="0"
-          right="0"
-          w="50%"
-          h="100%"
-          bgGradient="linear(45deg, blue.50, transparent)"
-          opacity="0.3"
-          zIndex="0"
-        />
-
         <Container
           maxW="8xl"
           py={{ base: 16, md: 24 }}
@@ -138,7 +128,7 @@ export default function Home() {
               flex={1}
               align="flex-start"
               gap={8}
-              maxW={{ base: "full", lg: "600px" }}
+              maxW={{ base: "full", lg: "800px" }}
             >
               {/* Badge/Tag */}
               <Badge
@@ -146,54 +136,52 @@ export default function Home() {
                 color="blue.600"
                 px={4}
                 py={2}
-                fontSize="sm"
-                fontWeight="medium"
+                textStyle="sm"
+                fontWeight="semibold"
                 border="1px solid"
                 borderColor="blue.200"
+                borderRadius="full"
               >
                 Consultoria Psicológica Empresarial
               </Badge>
 
               <Heading
                 id="hero-title"
-                fontSize={{ base: "4xl", md: "6xl", xl: "7xl" }}
+                textStyle={{ base: "4xl", md: "6xl", xl: "7xl" }}
+                fontWeight="black"
+                color="gray.900"
+                fontFamily="heading"
                 lineHeight="1"
-                fontWeight="800"
+                m={0}
               >
-                <Box as="span" display="block" mb={2} lineHeight="1">
-                  <WordTransition typewriter words={intl.home.how} />
-                </Box>
-                <Box
-                  as="span"
-                  display="block"
-                  mb={2}
-                  color="blue.600"
-                  lineHeight="1"
-                >
-                  <WordTransition
-                    typewriter
-                    words={intl.home.who}
-                    delay={5000}
-                  />
-                </Box>
-                <Box
-                  as="span"
-                  fontSize={{ base: "2xl", md: "4xl", xl: "5xl" }}
-                  lineHeight="1"
-                >
-                  a encontrar equilíbrio entre{" "}
-                  <Box as="span" lineHeight="1">
-                    <WordTransition typewriter words={intl.home.where} />
-                  </Box>
-                  , família e propósito
-                </Box>
+                <WordTransition inline typewriter words={intl.home.how} />
+                <br />
+                <WordTransition
+                  typewriter
+                  words={intl.home.who}
+                  delay={5000}
+                  inline
+                />
+              </Heading>
+
+              <Heading
+                mt={-4}
+                pt={-4}
+                textStyle={{ base: "4xl", md: "4xl", xl: "5xl" }}
+                as="span"
+                color="blue.600"
+              >
+                {" "}
+                a encontrar equilíbrio entre <br />
+                <WordTransition inline typewriter words={intl.home.where} />,
+                família e propósito
               </Heading>
 
               <Text
-                fontSize={{ base: "lg", md: "xl" }}
-                color="gray.600"
+                textStyle={{ base: "lg", md: "xl" }}
+                color="fg.muted"
                 maxW="500px"
-                lineHeight="1.4"
+                fontFamily="body"
               >
                 Transforme a pressão em performance sustentável. Há mais de 10
                 anos ajudando líderes a prosperarem sem sacrificar o que
@@ -207,7 +195,8 @@ export default function Home() {
                     colorPalette="blue"
                     px={8}
                     py={6}
-                    fontSize="lg"
+                    textStyle="lg"
+                    fontWeight="semibold"
                     _hover={{ transform: "translateY(-2px)", shadow: "xl" }}
                     transition="all 0.3s"
                     w="full"
@@ -222,7 +211,8 @@ export default function Home() {
                     size="lg"
                     px={8}
                     py={6}
-                    fontSize="lg"
+                    textStyle="lg"
+                    fontWeight="semibold"
                     _hover={{ bg: "gray.50" }}
                     transition="all 0.3s"
                     w="full"
@@ -234,10 +224,10 @@ export default function Home() {
 
               {/* Social Proof */}
               <HStack gap={6} flexWrap="wrap">
-                <Text fontSize="sm" color="gray.600" fontWeight="medium">
+                <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
                   +1000 pessoas transformadas
                 </Text>
-                <Text fontSize="sm" color="gray.600" fontWeight="medium">
+                <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
                   +90 empresas atendidas
                 </Text>
               </HStack>
@@ -260,17 +250,13 @@ export default function Home() {
               />
 
               {/* Balões de contagem aleatórios sobre a foto */}
-              {/* Os balões são posicionados absolutamente sobre a imagem */}
               {intl.home.counting.map((stat, i) => {
-                // Array de posições predefinidas para os balões (top, left)
-                // Ajuste os valores conforme necessário para melhor visual
                 const positions = [
-                  { top: '160px', left: '40px' },
-                  { top: '190px', right: '-40px' },
-                  { bottom: '140px', left: '-40px' },
-                  { bottom: '80px', right: '80px' }
+                  { top: "160px", left: "40px" },
+                  { top: "190px", right: "-40px" },
+                  { bottom: "140px", left: "-40px" },
+                  { bottom: "80px", right: "80px" },
                 ];
-                // Garante que sempre haja uma posição para cada balão
                 const pos = positions[i % positions.length];
                 return (
                   <Box
@@ -283,28 +269,30 @@ export default function Home() {
                     boxShadow="2xl"
                     border="2px solid"
                     borderColor="blue.500"
-                    px={{ base: 2, md: 4}}
-                    py={{ base: 2, md: 6}}
+                    px={{ base: 2, md: 4 }}
+                    py={{ base: 2, md: 6 }}
                     textAlign="center"
                     _hover={{ transform: "scale(1.07)", shadow: "3xl" }}
                     transition="all 0.3s"
                   >
                     <VStack gap={2}>
                       <Heading
-                        fontSize="3xl"
-                        fontWeight="900"
+                        textStyle="3xl"
+                        fontWeight="black"
                         display="flex"
                         alignItems="center"
                         justifyContent="center"
                         gap={1}
                         color="blue.600"
+                        fontFamily="heading"
                       >
                         <PlusIcon size={28} />
                         {stat.title}
                       </Heading>
                       <Text
-                        fontSize="sm"
-                        fontWeight="medium"
+                        textStyle="sm"
+                        fontWeight="semibold"
+                        color="fg.muted"
                       >
                         {stat.description}
                       </Text>
@@ -328,52 +316,56 @@ export default function Home() {
               >
                 <HStack justify="space-between">
                   <VStack align="start" gap={1}>
-                    <Text fontSize="sm" fontWeight="bold">
+                    <Text textStyle="sm" fontWeight="bold" color="gray.900">
                       Douglas Borges
                     </Text>
-                    <Text fontSize="xs" color="gray.600">
+                    <Text textStyle="xs" color="fg.muted" fontWeight="medium">
                       Psicólogo • CRP/PR 08-21013
                     </Text>
                   </VStack>
-                  <Box
-                    bg="green.100"
-                    color="green.700"
-                    px={2}
-                    py={1}
-                    borderRadius="md"
-                    fontSize="xs"
-                  >
+                  <Badge colorPalette="green" fontWeight="bold">
                     ✓ Disponível
-                  </Box>
+                  </Badge>
                 </HStack>
               </Box>
             </Box>
           </Stack>
         </Container>
-      </Box>
+      </Container>
 
       {/* Services Section */}
-      <Box bg="gray.50" py={{ base: 16, md: 24 }}>
+      <Box py={{ base: 16, md: 24 }}>
         <Container maxW="8xl">
           <VStack gap={16}>
             <VStack gap={6} textAlign="center" maxW="800px" mx="auto">
-              <Box
+              <Badge
                 bg="blue.50"
                 color="blue.600"
                 px={4}
                 py={2}
                 borderRadius="full"
-                fontSize="sm"
-                fontWeight="medium"
+                textStyle="sm"
+                fontWeight="semibold"
                 border="1px solid"
                 borderColor="blue.200"
               >
                 Nossos Serviços
-              </Box>
-              <Heading fontSize={{ base: "4xl", md: "5xl" }} lineHeight="1.2">
+              </Badge>
+              <Heading
+                textStyle={{ base: "4xl", md: "5xl" }}
+                color="gray.900"
+                fontFamily="heading"
+                fontWeight="bold"
+                textAlign="center"
+              >
                 {intl.home.services.title}
               </Heading>
-              <Text fontSize="lg" color="gray.600" lineHeight="1.7">
+              <Text
+                textStyle="lg"
+                color="fg.muted"
+                textAlign="center"
+                maxW="600px"
+              >
                 Soluções personalizadas para desenvolver liderança equilibrada e
                 sustentável
               </Text>
@@ -388,7 +380,7 @@ export default function Home() {
                   borderRadius="lg"
                   boxShadow="lg"
                   border="1px solid"
-                  borderColor="gray.100"
+                  borderColor="border.muted"
                   h="full"
                 >
                   <VStack align="start" gap={6} h="full">
@@ -405,10 +397,15 @@ export default function Home() {
                     </Flex>
 
                     <VStack align="start" gap={3} flex={1}>
-                      <Heading fontSize="xl" lineHeight="1.3">
+                      <Heading
+                        textStyle="xl"
+                        color="gray.900"
+                        fontFamily="heading"
+                        fontWeight="semibold"
+                      >
                         {service.title}
                       </Heading>
-                      <Text color="gray.600" lineHeight="1.6">
+                      <Text color="fg.muted" textStyle="md">
                         {service.description}
                       </Text>
                     </VStack>
@@ -430,20 +427,25 @@ export default function Home() {
           >
             <VStack flex={1} align="start" gap={8}>
               <VStack align="start" gap={4}>
-                <Box
+                <Badge
                   bg="blue.50"
                   color="blue.600"
                   px={4}
                   py={2}
                   borderRadius="full"
-                  fontSize="sm"
-                  fontWeight="medium"
+                  textStyle="sm"
+                  fontWeight="semibold"
                   border="1px solid"
                   borderColor="blue.200"
                 >
                   Sobre Douglas Borges
-                </Box>
-                <Heading fontSize={{ base: "4xl", md: "5xl" }} lineHeight="1.2">
+                </Badge>
+                <Heading
+                  textStyle={{ base: "4xl", md: "5xl" }}
+                  color="gray.900"
+                  fontFamily="heading"
+                  fontWeight="bold"
+                >
                   {intl.home.about.title}
                 </Heading>
               </VStack>
@@ -451,9 +453,8 @@ export default function Home() {
               <VStack align="start" gap={6}>
                 {intl.home.about.description.map((p, i) => (
                   <Text
-                    fontSize={{ base: "lg", md: "xl" }}
-                    color="gray.600"
-                    lineHeight="1.7"
+                    textStyle={{ base: "lg", md: "xl" }}
+                    color="fg.muted"
                     key={`home-about-${i}`}
                   >
                     {p}
@@ -462,23 +463,20 @@ export default function Home() {
               </VStack>
 
               <VStack align="start" gap={3}>
-                <Text fontSize="lg" fontWeight="medium">
+                <Text textStyle="lg" fontWeight="semibold" color="gray.900">
                   {intl.home.about.subtitle}
                 </Text>
-                <Text fontSize="sm" color="gray.500" fontWeight="medium">
+                <Text textStyle="sm" color="fg.subtle" fontWeight="medium">
                   CRP/PR 08-21013 · CRP/SC 12-13884
                 </Text>
               </VStack>
 
-              <Button
-                as="a"
-                href="/sobre"
-                variant="outline"
-                size="lg"
-                rightIcon={<ArrowRightIcon size={20} />}
-              >
-                Conheça minha história
-              </Button>
+              <Link href="/sobre">
+                <Button variant="outline" size="lg" fontWeight="semibold">
+                  Conheça minha história
+                  <ArrowRightIcon size={20} />
+                </Button>
+              </Link>
             </VStack>
 
             <Box
@@ -510,21 +508,26 @@ export default function Home() {
         <Container maxW="8xl">
           <VStack gap={16}>
             <VStack gap={6} textAlign="center">
-              <Box
+              <Badge
                 bg="blue.500"
                 color="white"
                 px={4}
                 py={2}
                 borderRadius="full"
-                fontSize="sm"
-                fontWeight="medium"
+                textStyle="sm"
+                fontWeight="semibold"
               >
                 Depoimentos
-              </Box>
-              <Heading fontSize={{ base: "4xl", md: "5xl" }} color="white">
+              </Badge>
+              <Heading
+                textStyle={{ base: "4xl", md: "5xl" }}
+                color="white"
+                fontFamily="heading"
+                fontWeight="bold"
+              >
                 {intl.testimonials.title}
               </Heading>
-              <Text fontSize="lg" color="gray.300" maxW="600px">
+              <Text textStyle="lg" color="gray.300" maxW="600px">
                 {intl.testimonials.subtitle}
               </Text>
             </VStack>
@@ -548,10 +551,15 @@ export default function Home() {
               gap={6}
             >
               <VStack align="start" gap={2}>
-                <Heading fontSize={{ base: "3xl", md: "4xl" }}>
+                <Heading
+                  textStyle={{ base: "3xl", md: "4xl" }}
+                  color="gray.900"
+                  fontFamily="heading"
+                  fontWeight="bold"
+                >
                   {intl.topics.title}
                 </Heading>
-                <Text fontSize="lg" color="gray.600">
+                <Text textStyle="lg" color="fg.muted">
                   Conteúdo especializado para transformar sua organização
                 </Text>
               </VStack>
@@ -563,78 +571,81 @@ export default function Home() {
                   target="_blank"
                   colorPalette="blue"
                   size="lg"
+                  fontWeight="semibold"
                 >
                   {intl.topics.cta.button}
                 </Button>
-                <Button
-                  as="a"
-                  href="/palestras-e-eventos"
-                  variant="outline"
-                  size="lg"
-                >
-                  {intl.topics.link}
-                </Button>
+                <Link href="/palestras-e-eventos">
+                  <Button variant="outline" size="lg" fontWeight="semibold">
+                    {intl.topics.link}
+                  </Button>
+                </Link>
               </HStack>
             </Stack>
 
             <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} gap={8}>
               {intl.topics.items.map((topic, i) => (
-                <Box
-                  key={`topic-${i}`}
-                  as="a"
-                  href="/palestras-e-eventos"
-                  bg="white"
-                  borderRadius="lg"
-                  overflow="hidden"
-                  boxShadow="lg"
-                  _hover={{ transform: "translateY(-4px)", shadow: "xl" }}
-                  transition="all 0.3s"
-                  h="full"
-                  textDecoration="none"
-                  _focus={{ outline: "none" }}
-                >
+                <Link key={`topic-${i}`} href="/palestras-e-eventos">
                   <Box
-                    h="200px"
-                    bgImage={`url(${topic.image})`}
-                    bgPosition="center"
-                    bgSize="cover"
-                    filter="grayscale(0.3)"
-                    _hover={{ filter: "grayscale(0)" }}
-                    transition="filter 0.3s"
-                  />
-                  <Box p={6}>
-                    <VStack align="start" gap={3}>
-                      <Heading fontSize="lg" noOfLines={2}>
-                        {topic.title}
-                      </Heading>
-                      <Text fontSize="sm" color="gray.600" noOfLines={3}>
-                        {topic.description}
-                      </Text>
-                      <HStack gap={2}>
-                        <Box
-                          bg="blue.100"
-                          color="blue.800"
-                          px={2}
-                          py={1}
-                          borderRadius="md"
-                          fontSize="xs"
+                    bg="white"
+                    borderRadius="lg"
+                    overflow="hidden"
+                    boxShadow="lg"
+                    _hover={{ transform: "translateY(-4px)", shadow: "xl" }}
+                    transition="all 0.3s"
+                    h="full"
+                  >
+                    <Box
+                      h="200px"
+                      backgroundImage={`url(${topic.image})`}
+                      backgroundPosition="center"
+                      backgroundSize="cover"
+                      filter="grayscale(0.3)"
+                      _hover={{ filter: "grayscale(0)" }}
+                      transition="filter 0.3s"
+                    />
+                    <Box p={6}>
+                      <VStack align="start" gap={3}>
+                        <Heading
+                          textStyle="lg"
+                          color="gray.900"
+                          fontFamily="heading"
+                          fontWeight="semibold"
+                          lineClamp={2}
                         >
-                          {topic.duration}
-                        </Box>
-                        <Box
-                          bg="gray.100"
-                          color="gray.700"
-                          px={2}
-                          py={1}
-                          borderRadius="md"
-                          fontSize="xs"
-                        >
-                          {topic.format}
-                        </Box>
-                      </HStack>
-                    </VStack>
+                          {topic.title}
+                        </Heading>
+                        <Text textStyle="sm" color="fg.muted" lineClamp={3}>
+                          {topic.description}
+                        </Text>
+                        <HStack gap={2}>
+                          <Box
+                            bg="blue.100"
+                            color="blue.800"
+                            px={2}
+                            py={1}
+                            borderRadius="md"
+                            textStyle="xs"
+                            fontWeight="semibold"
+                          >
+                            {topic.duration}
+                          </Box>
+                          <Box
+                            bg="gray.100"
+                            color="gray.700"
+                            px={2}
+                            py={1}
+                            borderRadius="md"
+                            textStyle="xs"
+                            fontWeight="semibold"
+                          >
+                            {topic.format}
+                          </Box>
+                        </HStack>
+                      </VStack>
+                    </Box>
                   </Box>
-                </Box>
+                </Link>
               ))}
             </SimpleGrid>
           </VStack>
@@ -642,7 +653,7 @@ export default function Home() {
       </Box>
 
       {/* Insights Section */}
-      <Box bg="gray.50" py={{ base: 16, md: 20 }}>
+      <Box bg="bg.subtle" py={{ base: 16, md: 20 }}>
         <Container maxW="8xl">
           <VStack gap={12}>
             <Stack
@@ -653,82 +664,88 @@ export default function Home() {
               gap={6}
             >
               <VStack align="start" gap={2}>
-                <Heading fontSize={{ base: "3xl", md: "4xl" }}>
+                <Heading
+                  textStyle={{ base: "3xl", md: "4xl" }}
+                  color="gray.900"
+                  fontFamily="heading"
+                  fontWeight="bold"
+                >
                   Insights e Reflexões
                 </Heading>
-                <Text fontSize="lg" color="gray.600">
+                <Text textStyle="lg" color="fg.muted">
                   Conteúdo exclusivo sobre liderança e equilíbrio de vida
                 </Text>
               </VStack>
 
-              <Button
-                as="a"
-                href="/insights"
-                variant="outline"
-                size="lg"
-                rightIcon={<ArrowRightIcon size={16} />}
-              >
-                Ver todos
-              </Button>
+              <Link href="/insights">
+                <Button variant="outline" size="lg" fontWeight="semibold">
+                  Ver todos
+                  <ArrowRightIcon size={16} />
+                </Button>
+              </Link>
             </Stack>
 
             <SimpleGrid columns={{ base: 1, md: 3 }} gap={8}>
               {INSIGHTS_HIGHLIGHTS.slice(0, 3).map((insight, index) => (
-                <Box
-                  key={`highlight-${index}`}
-                  as="a"
-                  href={`/${insight.slug}`}
-                  bg="white"
-                  p={8}
-                  borderRadius="lg"
-                  boxShadow="lg"
-                  _hover={{ transform: "translateY(-4px)", shadow: "xl" }}
-                  transition="all 0.3s"
-                  h="full"
-                  textDecoration="none"
-                  _focus={{ outline: "none" }}
-                >
-                  <VStack align="start" gap={6} h="full">
-                    <VStack align="start" gap={3} flex={1}>
-                      <Heading fontSize="xl" noOfLines={2}>
-                        {insight.title}
-                      </Heading>
-                      <Text color="gray.600" noOfLines={4} lineHeight="1.6">
-                        {insight.content[0]}
-                      </Text>
-                    </VStack>
-
-                    <HStack
-                      justify="space-between"
-                      w="full"
-                      pt={4}
-                      borderTop="1px"
-                      borderColor="gray.100"
-                    >
-                      <HStack gap={2}>
-                        <ClockIcon size={16} color="#9CA3AF" />
-                        <Text fontSize="sm" color="gray.500">
-                          {insight.timeToRead}
+                <Link key={`highlight-${index}`} href={`/${insight.slug}`}>
+                  <Box
+                    bg="white"
+                    p={8}
+                    borderRadius="lg"
+                    boxShadow="lg"
+                    _hover={{ transform: "translateY(-4px)", shadow: "xl" }}
+                    transition="all 0.3s"
+                    h="full"
+                  >
+                    <VStack align="start" gap={6} h="full">
+                      <VStack align="start" gap={3} flex={1}>
+                        <Heading
+                          textStyle="xl"
+                          color="gray.900"
+                          fontFamily="heading"
+                          fontWeight="semibold"
+                          lineClamp={2}
+                        >
+                          {insight.title}
+                        </Heading>
+                        <Text color="fg.muted" lineClamp={4} textStyle="md">
+                          {insight.content[0]}
                         </Text>
+                      </VStack>
+
+                      <HStack
+                        justify="space-between"
+                        w="full"
+                        pt={4}
+                        borderTop="1px"
+                        borderColor="border.muted"
+                      >
+                        <HStack gap={2}>
+                          <ClockIcon size={16} color="#9CA3AF" />
+                          <Text textStyle="sm" color="fg.subtle">
+                            {insight.timeToRead}
+                          </Text>
+                        </HStack>
+                        <HStack gap={2}>
+                          {insight.tags.slice(0, 2).map((tag: string) => (
+                            <Box
+                              key={tag}
+                              bg="blue.100"
+                              color="blue.800"
+                              px={2}
+                              py={1}
+                              borderRadius="md"
+                              textStyle="xs"
+                              fontWeight="semibold"
+                            >
+                              #{tag}
+                            </Box>
+                          ))}
+                        </HStack>
                       </HStack>
-                      <HStack gap={2}>
-                        {insight.tags.slice(0, 2).map((tag: string) => (
-                          <Box
-                            key={tag}
-                            bg="blue.100"
-                            color="blue.800"
-                            px={2}
-                            py={1}
-                            borderRadius="md"
-                            fontSize="xs"
-                          >
-                            #{tag}
-                          </Box>
-                        ))}
-                      </HStack>
-                    </HStack>
-                  </VStack>
-                </Box>
+                    </VStack>
+                  </Box>
+                </Link>
               ))}
             </SimpleGrid>
           </VStack>
@@ -746,17 +763,13 @@ export default function Home() {
           <VStack gap={8} maxW="600px" mx="auto">
             <VStack gap={4}>
               <Heading
-                fontSize={{ base: "4xl", md: "5xl" }}
-                fontWeight="800"
-                lineHeight="1.2"
+                textStyle={{ base: "4xl", md: "5xl" }}
+                fontWeight="black"
+                fontFamily="heading"
               >
                 {intl.home.cta.title}
               </Heading>
-              <Text
-                fontSize={{ base: "lg", md: "xl" }}
-                opacity="0.9"
-                lineHeight="1.6"
-              >
+              <Text textStyle={{ base: "lg", md: "xl" }} opacity="0.9">
                 {intl.home.cta.subtitle}
               </Text>
             </VStack>
@@ -770,13 +783,13 @@ export default function Home() {
               color="blue.600"
               px={8}
               py={6}
-              fontSize="lg"
+              textStyle="lg"
               fontWeight="bold"
               _hover={{ bg: "gray.50", transform: "translateY(-2px)" }}
               transition="all 0.3s"
-              rightIcon={<ArrowRightIcon size={20} />}
             >
               {intl.home.cta.button}
+              <ArrowRightIcon size={20} />
             </Button>
           </VStack>
         </Box>
