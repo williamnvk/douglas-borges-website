@@ -23,7 +23,8 @@ export default function GlobalError({
           <Heading>Página não encontrada</Heading>
           <Text>A página que você está procurando não foi encontrada.</Text>
           <Button
-            as={Link} // @ts-expect-error: Type compatibility issue
+            as={Link}
+            // @ts-expect-error: Type compatibility issue
             href={"/"}
           >
             Ir para página inicial
