@@ -201,7 +201,7 @@ export default function About() {
 
               <HStack gap={4} flexWrap="wrap">
                 <Badge
-                  colorScheme="blue"
+                  colorPalette="blue"
                   variant="outline"
                   size="md"
                   borderRadius="full"
@@ -217,7 +217,7 @@ export default function About() {
                   </HStack>
                 </Badge>
                 <Badge
-                  colorScheme="green"
+                  colorPalette="green"
                   variant="outline"
                   size="md"
                   borderRadius="full"
@@ -474,7 +474,7 @@ export default function About() {
                 </Box>
               <VStack align="flex-start" gap={1}>
                 <Badge
-                  colorScheme="blue"
+                  colorPalette="blue"
                   variant="subtle"
                   size="md"
                   borderRadius="full"
@@ -538,7 +538,7 @@ export default function About() {
               </Box>
               <VStack align="flex-start" gap={1}>
                 <Badge
-                  colorScheme="green"
+                  colorPalette="green"
                   variant="subtle"
                   size="md"
                   borderRadius="full"
@@ -628,7 +628,7 @@ export default function About() {
                 </Box>
                 <VStack align="flex-start" gap={1}>
                   <Badge
-                    colorScheme="purple"
+                    colorPalette="purple"
                     variant="solid"
                     size="md"
                     borderRadius="full"
