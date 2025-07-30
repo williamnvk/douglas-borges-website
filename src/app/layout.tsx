@@ -7,7 +7,7 @@ import {
   siteDescription,
   siteImage,
   siteUrl,
-} from "@/data/dictionaries";
+} from "@/data/site-constants";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 

@@ -14,7 +14,7 @@ import { HEADER_NAVBAR_HEIGHT } from "../../theme/consts";
 import Link from "next/link";
 import { Metadata } from "next";
 import { ClockIcon } from "lucide-react";
-import { siteImage, siteUrl } from "@/data/dictionaries";
+import { siteImage, siteUrl } from "@/data/site-constants";
 import Image from "next/image";
 import { Tooltip } from "../components/ui/tooltip";
 

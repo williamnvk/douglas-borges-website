@@ -1,10 +1,10 @@
 import { Header } from "@/components/shared/Header";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
-import language, {
+import {
   siteDescription,
   siteImage,
   siteUrl,
-} from "@/data/dictionaries";
+} from "@/data/site-constants";
 import { HEADER_NAVBAR_HEIGHT } from "../../theme/consts";
 import {
   Container,
@@ -142,7 +142,7 @@ export default function LinksPage() {
           <HStack
             as={Link}
             // @ts-expect-error: Type compatibility issue
-            href={language.contact.mapsCuritiba}
+                          href="https://maps.app.goo.gl/X3jS4dC17Q1TtKC86"
             w="full"
             p={4}
             gap={4}
@@ -160,7 +160,7 @@ export default function LinksPage() {
                 Curitiba - PR
               </Text>
               <address>
-                {language.contact.addressCuritiba.map((item) => (
+                {["Nex Coworking | Casa de Pedra", "Alameda Pres. Taunay, 130, Batel", "Curitiba · PR"].map((item) => (
                   <Text key={item} fontSize="x-small">
                     {item}
                   </Text>
@@ -172,7 +172,7 @@ export default function LinksPage() {
           <HStack
             as={Link}
             // @ts-expect-error: Type compatibility issue
-            href={language.contact.maps}
+                          href="https://goo.gl/maps/CeckryQb4Z6s6rRr7"
             w="full"
             p={4}
             gap={4}
@@ -192,7 +192,7 @@ export default function LinksPage() {
                 Porto União e Região
               </Text>
               <address>
-                {language.contact.address.map((item) => (
+                {["Clínica Iluminary", "Rua Germano Unger, 20, Cidade Nova", "Porto União · SC"].map((item) => (
                   <Text key={item} fontSize="x-small">
                     {item}
                   </Text>
@@ -204,7 +204,7 @@ export default function LinksPage() {
           <HStack
             as={Link}
             // @ts-expect-error: Type compatibility issue
-            href={`mailto:${language.contact.email}`}
+                          href="mailto:contato@douglasborgespsicologo.com.br"
             w="full"
             p={4}
             gap={4}
@@ -219,14 +219,14 @@ export default function LinksPage() {
             <VStack flex={1} align="start" gap={0}>
               <Text fontWeight="bold">Enviar um e-mail</Text>
 
-              <Text fontSize="x-small">{language.contact.email}</Text>
+                              <Text fontSize="x-small">contato@douglasborgespsicologo.com.br</Text>
             </VStack>
           </HStack>
 
           <HStack
             as={Link}
             // @ts-expect-error: Type compatibility issue
-            href={language.contact.linkedin}
+                          href="https://linkedin.com/in/douglasborgespsicologo"
             w="full"
             p={4}
             gap={4}
@@ -241,14 +241,14 @@ export default function LinksPage() {
             <LinkedinIcon size={22} />
             <VStack flex={1} align="start" gap={0}>
               <Text fontWeight="bold">Acessar meu perfil no LinkedIn</Text>
-              <Text fontSize="x-small">{language.contact.linkedin}</Text>
+                              <Text fontSize="x-small">douglasborgespsicologo</Text>
             </VStack>
           </HStack>
 
           <HStack
             as={Link}
             // @ts-expect-error: Type compatibility issue
-            href={language.contact.instagram}
+                          href="https://instagram.com/douglasborgespsicologo"
             w="full"
             p={4}
             gap={4}
@@ -263,7 +263,7 @@ export default function LinksPage() {
             <InstagramIcon size={22} />
             <VStack flex={1} align="start" gap={0}>
               <Text fontWeight="bold">Instagram</Text>
-              <Text fontSize="x-small">@{language.contact.instagram}</Text>
+                              <Text fontSize="x-small">@douglasborgespsicologo</Text>
             </VStack>
           </HStack>
         </VStack>

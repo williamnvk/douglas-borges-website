@@ -10,14 +10,14 @@ import {
 } from "@chakra-ui/react";
 import { Header } from "@/components/shared/Header";
 import { HEADER_NAVBAR_HEIGHT } from "../../theme/consts";
-import language, { siteUrl } from "@/data/dictionaries";
+import { siteUrl } from "@/data/site-constants";
 
 export const metadata = {
-  title: language.topics.title,
-  description: language.topics.subtitle,
+  title: "Palestras e Eventos",
+  description: "Conteúdo especializado para transformar sua organização",
   openGraph: {
-    title: language.topics.title,
-    description: language.topics.subtitle,
+    title: "Palestras e Eventos",
+    description: "Conteúdo especializado para transformar sua organização",
     type: "website",
   },
   robots: {
@@ -30,8 +30,40 @@ export const metadata = {
 };
 
 export default function EventsPage() {
-  const intl = language;
-  const events = intl.topics.items;
+  const events = [
+    {
+      image: "/assets/palestras/ensinando-a-ensinar.jpg",
+      slug: "ensinando-a-ensinar-aprendendo-a-aprender-aprenendo-a-ensinar",
+      title: "Ensinando a Ensinar, Aprendendo a Aprender e Aprendendo a Ensinar",
+      description: "Explora métodos práticos para desenvolver habilidades de ensino e aprendizado contínuo, fortalecendo a troca de conhecimento.",
+      duration: "1h",
+      format: "Presencial ou Online"
+    },
+    {
+      image: "/assets/palestras/ansiedade.jpg",
+      slug: "palestra-controlar-ansiedade",
+      title: "Como controlar a ansiedade",
+      description: "Combinando conteúdos práticos e ferramentas exclusivas usadas em orientações psicológicas, conheça às técnicas para controlar a Ansiedade.",
+      duration: "2h",
+      format: "Presencial"
+    },
+    {
+      image: "/assets/palestras/problema.webp",
+      slug: "palestra-viva-sua-historia",
+      title: "O que eu faço com um PROBLEMA",
+      description: "Existe todo um processo mental quando se trata de um problema. Seja para percebê-lo e/ou para resolvê-lo. O mais importante de tudo é saber que para ser chamado de problema!",
+      duration: "1h30m",
+      format: "Presencial ou Online"
+    },
+    {
+      image: "/assets/palestras/protocolos-comportamentais.jpg",
+      slug: "novos-protocolos-comportamentais",
+      title: "Novos Protocolos Comportamentais",
+      description: "apresenta uma abordagem inovadora para aprimorar a comunicação interpessoal, focada em empatia, clareza e compreensão mútua.",
+      duration: "1h",
+      format: "Presencial ou Online"
+    }
+  ];
 
   return (
     <>
@@ -44,9 +76,9 @@ export default function EventsPage() {
       >
         <VStack w="full" align="flex-start" gap={8}>
           <VStack align="flex-start" gap={2}>
-            <Heading size="2xl">{intl.topics.title}</Heading>
+            <Heading size="2xl">Palestras e Eventos</Heading>
             <Text fontSize="lg" color="fg.muted">
-              {intl.topics.subtitle}
+              Conteúdo especializado para transformar sua organização
             </Text>
           </VStack>
 
@@ -107,14 +139,14 @@ export default function EventsPage() {
           <Heading
             fontSize={{ base: "4xl", md: "6xl" }}
           >
-            {intl.topics.cta.title}
+            Interessado em uma palestra?
           </Heading>
           <Text
             fontSize={{ base: "lg", md: "xl" }}
             color="fg.muted"
             my={2}
           >
-            {intl.topics.cta.subtitle}
+            Entre em contato para mais informações sobre valores e disponibilidade.
           </Text>
           <Button
             as="a"
@@ -126,7 +158,7 @@ export default function EventsPage() {
             size="lg"
             w={{ base: "full", md: "auto" }}
           >
-            {intl.topics.cta.button}
+                          Agendar Palestra
           </Button>
         </VStack>
       </Container>

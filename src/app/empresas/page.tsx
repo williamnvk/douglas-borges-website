@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { Header } from "@/components/shared/Header";
 import { HEADER_NAVBAR_HEIGHT } from "../../theme/consts";
-import { siteUrl } from "@/data/dictionaries";
+import { siteUrl } from "@/data/site-constants";
 import { Metadata } from "next";
 import {
   BarChartIcon,

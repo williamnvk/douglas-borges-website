@@ -14,15 +14,15 @@ import {
 } from "@chakra-ui/react";
 import { Header } from "@/components/shared/Header";
 import { HEADER_NAVBAR_HEIGHT } from "../../theme/consts";
-import language, { siteUrl } from "@/data/dictionaries";
+import { siteUrl } from "@/data/site-constants";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `${language.services.title} | Douglas Borges | Psicólogo`,
-  description: language.services.subtitle,
+  title: "Serviços | Douglas Borges | Psicólogo",
+  description: "Fazer terapia é investir em você e na sua capacidade de lidar com os desafios. Com o suporte de um especialista, você pode construir um equilíbrio verdadeiro entre empresa, família e propósito.",
   openGraph: {
-    title: `${language.services.title} | Douglas Borges | Psicólogo`,
-    description: language.services.subtitle,
+    title: "Serviços | Douglas Borges | Psicólogo",
+    description: "Fazer terapia é investir em você e na sua capacidade de lidar com os desafios. Com o suporte de um especialista, você pode construir um equilíbrio verdadeiro entre empresa, família e propósito.",
     type: "website",
     url: `${siteUrl}/servicos`,
     locale: "pt_BR",
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${language.services.title} | Douglas Borges | Psicólogo`,
-    description: language.services.subtitle,
+    title: "Serviços | Douglas Borges | Psicólogo",
+    description: "Fazer terapia é investir em você e na sua capacidade de lidar com os desafios. Com o suporte de um especialista, você pode construir um equilíbrio verdadeiro entre empresa, família e propósito.",
   },
   robots: {
     index: true,
@@ -47,8 +47,6 @@ export const metadata: Metadata = {
 };
 
 export default function Services() {
-  const intl = language;
-
   return (
     <main>
       <Header />
@@ -69,7 +67,7 @@ export default function Services() {
           >
             <VStack gap={2} flex={1} align="flex-start">
               <Badge fontWeight="light" aria-label="Seção de Serviços">
-                {intl.services.title}
+                Serviços
               </Badge>
 
               <Heading
@@ -77,10 +75,10 @@ export default function Services() {
                 fontSize={{ base: "4xl", md: "6xl" }}
                 
               >
-                {intl.services.hero.title}
+                Supere o Estresse e Redescubra o Equilíbrio Entre Empresa, Família e Propósito!
               </Heading>
               <Text fontSize={{ base: "lg", md: "lg" }} my={2}>
-                {intl.services.hero.subtitle}
+                A psicoterapia é uma jornada para redefinir sua perspectiva, criando novas soluções para os desafios de uma rotina intensa. Vamos juntos construir o caminho para uma vida equilibrada e produtiva.
               </Text>
               <Button
                 asChild
@@ -89,7 +87,7 @@ export default function Services() {
                 w={{ base: "full", md: "auto" }}
                 aria-label="Saiba mais sobre atendimento presencial e online"
               >
-                <a href="#presencial-ou-online">{intl.services.hero.button}</a>
+                <a href="#presencial-ou-online">Qual modalidade você prefere?</a>
               </Button>
             </VStack>
             <Box
@@ -134,14 +132,14 @@ export default function Services() {
                 fontSize={{ base: "4xl", md: "6xl" }}
                 fontWeight="bold"
               >
-                {intl.services.presential.title}
+                Sessões Presenciais
               </Heading>
-              <Text fontSize="xl">{intl.services.presential.subtitle}</Text>
+              <Text fontSize="xl">Imersão e Conexão Direta</Text>
               <Text fontSize="smaller">
-                {intl.services.presential.description}
+                oferece uma experiência focada e profunda para quem valoriza a conexão direta. Em um espaço tranquilo e acolhedor, você tem a oportunidade de mergulhar nas suas questões, encontrar novas perspectivas e desenvolver habilidades para se tornar um líder mais completo e equilibrado. A terapia presencial traz um impacto direto no seu dia a dia, facilitando transformações reais e duradouras.
               </Text>
               <Flex gap={{ base: 1, md: 2 }} flexWrap="wrap" role="list">
-                {intl.services.presential.items.map((i) => (
+                {["Conexão pessoal", "Foco Total", "Experiência Sensorial Completa", "Ritmo mais Intenso"].map((i) => (
                   <Badge
                     role="listitem"
                     p={1.5}
@@ -170,12 +168,12 @@ export default function Services() {
               aria-labelledby="online-title"
             >
               <Heading id="online-title" fontSize="6xl" fontWeight="bold">
-                {intl.services.online.title}
+                Online
               </Heading>
-              <Text fontSize="xl">{intl.services.online.subtitle}</Text>
-              <Text fontSize="smaller">{intl.services.online.description}</Text>
+              <Text fontSize="xl">Conveniência e Cuidado Onde Você Estiver</Text>
+              <Text fontSize="smaller">Ela é ideal para quem busca um equilíbrio emocional sem complicações, podendo ser realizada onde você estiver. Sem deixar a rotina de lado, você ainda recebe o suporte necessário para lidar com o estresse, fortalecer sua autoconfiança e descobrir novas estratégias para ser um líder mais eficaz.</Text>
               <Flex gap={{ base: 1, md: 2 }} flexWrap="wrap" role="list">
-                {intl.services.online.items.map((i) => (
+                {["Praticidade para encaixar na rotina", "Conforto do Seu Espaço", "Agilidade e Acesso Facilitado", "Continuidade, Onde Estiver"].map((i) => (
                   <Badge role="listitem" p={1.5} fontWeight="light" key={i}>
                     {i}
                   </Badge>
@@ -220,7 +218,43 @@ export default function Services() {
                 </Text>
               </HStack>
             </HStack>
-            {intl.services.table.map((t, i) => (
+            {[
+              {
+                aspect: "Conexão",
+                benefits: {
+                  presential: "Conexão pessoal e acolhedora",
+                  online: "Conexão digital, mas com suporte total"
+                }
+              },
+              {
+                aspect: "Praticidade",
+                benefits: {
+                  presential: "Ambiente focado",
+                  online: "Flexibilidade para a sua rotina"
+                }
+              },
+              {
+                aspect: "Profundidade",
+                benefits: {
+                  presential: "Reflexões profundas",
+                  online: "Ferramentas práticas e aplicáveis"
+                }
+              },
+              {
+                aspect: "Transformação",
+                benefits: {
+                  presential: "Estratégias personalizadas",
+                  online: "Autogestão e equilíbrio emocional"
+                }
+              },
+              {
+                aspect: "Impacto na Vida",
+                benefits: {
+                  presential: "Aprendizados para uma vida plena",
+                  online: "Benefícios práticos e sustentáveis"
+                }
+              }
+            ].map((t, i) => (
               <Stack
                 flexDir={{ base: "column", md: "row" }}
                 key={`services-${i}`}
@@ -272,19 +306,48 @@ export default function Services() {
             borderRadius="lg"
             justify="flex-end"
           >
-            <Text fontSize="md">{intl.services.try.title}</Text>
+            <Text fontSize="md">Alguns Benefícios da psicoterapia</Text>
             <Heading as="h2" fontSize="4xl">
-              {intl.services.try.subtitle}
+              Ambiente seguro, respeitoso, sigiloso e livre de julgamentos
             </Heading>
-            <Text fontSize="sm">{intl.services.try.description}</Text>
+            <Text fontSize="sm">A psicoterapia proporciona ao paciente o alcance de inúmeros benefícios, tais como; controle das emoções, melhora nas relações interpessoais, diminuição da agressividade e entre outros.</Text>
           </VStack>
           <VStack flex={{ base: 1, md: 2 }} align="flex-start" gap={4}>
             <Heading as="h2" fontSize="xl">
-              {intl.services.faq.title}
+              Perguntas Frequentes
             </Heading>
 
             <Accordion.Root collapsible>
-              {intl.services.faq.questions.map((q) => (
+              {[
+                {
+                  title: "Por que fazer terapia pode ajudar na minha carreira?",
+                  description: "A terapia ajuda você a desenvolver ferramentas emocionais para lidar com o estresse, tomar decisões mais claras e equilibrar as demandas da vida profissional e pessoal. Isso contribui diretamente para uma liderança mais eficaz e uma vida mais harmoniosa."
+                },
+                {
+                  title: "Qual é a diferença entre o atendimento presencial e o online?",
+                  description: "No atendimento presencial, você tem um espaço físico dedicado para uma imersão mais profunda. Já o atendimento online oferece flexibilidade e praticidade, mantendo o foco no seu bem-estar, onde você estiver."
+                },
+                {
+                  title: "Com que frequência devo fazer as sessões?",
+                  description: "A frequência recomendada depende dos seus objetivos. Para um desenvolvimento contínuo, sessões semanais são ideais, mas o ritmo pode ser ajustado conforme a necessidade e o progresso."
+                },
+                {
+                  title: "Como posso ter certeza de que a terapia terá resultados?",
+                  description: "Cada pessoa responde à terapia de forma única, mas muitos clientes começam a notar mudanças logo nas primeiras sessões. Nosso foco é fornecer orientações práticas e aplicáveis para um impacto positivo e rápido."
+                },
+                {
+                  title: "Qual é o valor da sessão individual?",
+                  description: "O valor de uma sessão individual é de R$ 500,00, com duração entre 50 minutos e 1 hora. Esse investimento reflete a experiência, dedicação e abordagem personalizada para ajudar você a alcançar equilíbrio emocional e clareza. Em relação ao período de tratamento existe a necessidade de avaliação caso a caso."
+                },
+                {
+                  title: "Quais são as formas de pagamento aceitas?",
+                  description: "Aceito pagamentos via PIX, dinheiro e cartão de débito/crédito. Embora não trabalhe com convênios, forneço nota fiscal para reembolso em planos de saúde que oferecem essa cobertura para consultas psicológicas."
+                },
+                {
+                  title: "As sessões são confidenciais?",
+                  description: "Sim, todas as sessões são totalmente confidenciais. A segurança e privacidade são uma prioridade para garantir que você se sinta confortável e seguro ao compartilhar suas experiências."
+                }
+              ].map((q) => (
                 <Accordion.Item key={`faq-q-${q.title}`} value={q.title}>
                   <Accordion.ItemTrigger>
                     <Box
@@ -333,10 +396,10 @@ export default function Services() {
             fontSize={{ base: "4xl", md: "6xl" }}
             
           >
-            {intl.services.cta.title}
+            Pronto para dar o próximo passo?
           </Heading>
           <Text fontSize={{ base: "lg", md: "xl" }} color="fg.muted" my={2}>
-            {intl.services.cta.subtitle}
+            Experimente uma sessão! Agende sua primeira sessão comigo e comece a trilhar o caminho para um equilíbrio emocional mais saudável e uma vida mais produtiva.
           </Text>
           <Button
             asChild
@@ -350,7 +413,7 @@ export default function Services() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {intl.services.cta.button}
+              Agendar uma sessão
             </a>
           </Button>
         </VStack>

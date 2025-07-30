@@ -19,11 +19,10 @@ import {
   HeartIcon,
   CalendarIcon,
 } from "lucide-react";
-import language from "@/data/dictionaries";
+
 import GoToTop from "./GoToTop";
 
 function Footer() {
-  const intl = language;
   const bgColor = "bg.subtle";
   const textColor = "fg.muted";
   const quoteColor = "fg.muted";
@@ -113,7 +112,7 @@ function Footer() {
               <HStack
                 as={Link}
                 // @ts-expect-error: Type compatibility issue
-                href={`https://instagram.com/${intl.contact.instagram}`}
+                href="https://instagram.com/douglasborgespsicologo"
                 isExternal
                 gap={3}
                 color={textColor}
@@ -122,13 +121,13 @@ function Footer() {
                 aria-label="Perfil do Instagram"
               >
                 <InstagramIcon size={20} />
-                <Text fontSize="sm">@{intl.contact.instagram}</Text>
+                <Text fontSize="sm">@douglasborgespsicologo</Text>
               </HStack>
 
               <HStack
                 as={Link}
                 // @ts-expect-error: Type compatibility issue
-                href={`https://linkedin.com/in/${intl.contact.linkedin}`}
+                href="https://linkedin.com/in/douglasborgespsicologo"
                 isExternal
                 gap={3}
                 color={textColor}
@@ -168,7 +167,7 @@ function Footer() {
               <HStack
                 as={Link}
                 // @ts-expect-error: Type compatibility issue
-                href={`mailto:${intl.contact.email}`}
+                href="mailto:contato@douglasborgespsicologo.com.br"
                 isExternal
                 gap={3}
                 color={textColor}
@@ -177,7 +176,7 @@ function Footer() {
                 aria-label="Enviar email"
               >
                 <MailIcon size={20} />
-                <Text fontSize="sm">{intl.contact.email}</Text>
+                <Text fontSize="sm">contato@douglasborgespsicologo.com.br</Text>
               </HStack>
             </VStack>
 
@@ -194,7 +193,7 @@ function Footer() {
               <VStack
                 as={Link}
                 // @ts-expect-error: Type compatibility issue
-                href={language.contact.mapsCuritiba}
+                href="https://maps.app.goo.gl/X3jS4dC17Q1TtKC86"
                 isExternal
                 align="flex-start"
                 gap={2}
@@ -214,7 +213,7 @@ function Footer() {
                   </Text>
                 </HStack>
                 <address>
-                  {intl.contact.addressCuritiba.map((item) => (
+                  {["Nex Coworking | Casa de Pedra", "Alameda Pres. Taunay, 130, Batel", "Curitiba · PR"].map((item) => (
                     <Text key={item} fontSize="sm" color={textColor}>
                       {item}
                     </Text>
@@ -224,7 +223,7 @@ function Footer() {
               <VStack
                 as={Link}
                 // @ts-expect-error: Type compatibility issue
-                href={language.contact.maps}
+                href="https://goo.gl/maps/CeckryQb4Z6s6rRr7"
                 isExternal
                 align="flex-start"
                 gap={2}
@@ -244,7 +243,7 @@ function Footer() {
                   </Text>
                 </HStack>
                 <address>
-                  {intl.contact.address.map((item) => (
+                  {["Clínica Iluminary", "Rua Germano Unger, 20, Cidade Nova", "Porto União · SC"].map((item) => (
                     <Text key={item} fontSize="sm" color={textColor}>
                       {item}
                     </Text>
@@ -263,7 +262,7 @@ function Footer() {
           >
             <Text fontSize="sm">
               &copy; {new Date().getFullYear()} Douglas Borges.{" "}
-              {intl.footer.copy}
+              Todos os direitos reservados.
             </Text>
 
             <HeartIcon
