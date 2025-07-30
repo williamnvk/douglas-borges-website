@@ -250,9 +250,9 @@ export default function Home() {
                 { title: "10", description: "Anos de experiência" }
               ].map((stat, i) => {
                 const positions = [
-                  { top: "160px", left: "40px" },
-                  { top: "190px", right: "-40px" },
-                  { bottom: "140px", left: "-40px" },
+                  { top: "130px", left: "60px" },
+                  { top: "340px", right: "-40px" },
+                  { bottom: "40px", left: "-40px" },
                   { bottom: "80px", right: "80px" },
                 ];
                 const pos = positions[i % positions.length];
@@ -273,9 +273,9 @@ export default function Home() {
                     _hover={{ transform: "scale(1.07)", shadow: "3xl" }}
                     transition="all 0.3s"
                   >
-                    <VStack gap={2}>
+                    <VStack gap={0}>
                       <Heading
-                        textStyle="3xl"
+                        textStyle={{base: "xl", md: "3xl"}}
                         fontWeight="black"
                         display="flex"
                         alignItems="center"
@@ -288,7 +288,7 @@ export default function Home() {
                         {stat.title}
                       </Heading>
                       <Text
-                        textStyle="sm"
+                        textStyle={{base: "xs", md: "sm"}}
                         fontWeight="semibold"
                         color="fg.muted"
                       >
@@ -552,14 +552,13 @@ export default function Home() {
                 Depoimentos
               </Badge>
               <Heading
-                textStyle={{ base: "4xl", md: "5xl" }}
+                textStyle={{ base: "5xl", md: "5xl" }}
                 color="white"
-                fontFamily="heading"
                 fontWeight="bold"
               >
                 Resultados que ajudei a criar
               </Heading>
-              <Text textStyle="lg" color="gray.300" maxW="600px">
+              <Text textStyle="md" color="gray.300" maxW="600px">
                 Ouça o que meus clientes dizem sobre mim
               </Text>
             </VStack>

@@ -153,7 +153,11 @@ export default function Services() {
             justify="stretch"
           >
             <VStack gap={2} flex={1} align="flex-start">
-              <Badge fontWeight="light" aria-label="Seção de Serviços">
+              <Badge
+                colorPalette="blue"
+                fontWeight="light"
+                aria-label="Seção de Serviços"
+              >
                 Serviços
               </Badge>
 
@@ -547,7 +551,11 @@ export default function Services() {
           align={{ base: "flex-start", md: "flex-start" }}
           justify={{ base: "center", md: "flex-end" }}
         >
-          <Heading as="h2" fontSize={{ base: "4xl", md: "6xl" }} lineHeight="1.2">
+          <Heading
+            as="h2"
+            fontSize={{ base: "4xl", md: "6xl" }}
+            lineHeight="1.2"
+          >
             Pronto para dar o próximo passo?
           </Heading>
           <Text fontSize={{ base: "lg", md: "xl" }} color="fg.muted" my={2}>
