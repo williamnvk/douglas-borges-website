@@ -174,7 +174,7 @@ export default function EmpresasPage() {
               w="full"
               h="full"
               objectFit="cover"
-              // @ts-expect-error: Type compatibility issue 
+              // @ts-expect-error: Type compatibility issue
               autoPlay
               muted
               loop
@@ -244,13 +244,16 @@ export default function EmpresasPage() {
                   as="h1"
                   fontSize={{ base: "4xl", sm: "4xl", md: "6xl", lg: "7xl" }}
                   color="white"
-                  lineHeight="0.9"
+                  lineHeight="1.2"
                   fontWeight="800"
                 >
                   Decisões Estratégicas{" "}
-                  <Box as="span" color="blue.400" display="block">
+                  <Heading
+                    as="span"
+                    fontSize={{ base: "4xl", sm: "4xl", md: "6xl", lg: "7xl" }}
+                  >
                     Baseadas em Ciência
-                  </Box>
+                  </Heading>
                 </Heading>
 
                 <Text
@@ -345,7 +348,6 @@ export default function EmpresasPage() {
               overflow="hidden"
               borderWidth={2}
               borderColor="gray.200"
-             
               p={0}
             >
               <SimpleGrid columns={{ base: 1, md: 2 }} w="full" gap={0}>
@@ -453,7 +455,7 @@ export default function EmpresasPage() {
                 {/* Lado B: Com Assessment */}
                 <VStack
                   align="stretch"
-                   bgGradient="linear-gradient(190deg, transparent, {colors.green.100})"
+                  bgGradient="linear-gradient(190deg, transparent, {colors.green.100})"
                   p={{ base: 4, sm: 6, md: 12 }}
                   gap={{ base: 4, sm: 6, md: 8 }}
                   h="100%"
@@ -702,7 +704,7 @@ export default function EmpresasPage() {
 
                     <Button
                       as="a"
-                      // @ts-expect-error: Type compatibility issue 
+                      // @ts-expect-error: Type compatibility issue
                       href="https://wa.me/5542988381261?text=Gostaria%20de%20contratar%20o%20assessment%20individual%20(1%20colaborador)%20por%20R$700"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -800,7 +802,7 @@ export default function EmpresasPage() {
 
                     <Button
                       as="a"
-                      // @ts-expect-error: Type compatibility issue 
+                      // @ts-expect-error: Type compatibility issue
                       href="https://wa.me/5542988381261?text=Gostaria%20de%20contratar%20o%20assessment%20para%20equipe%20(3%20colaboradores)%20por%20R$1.750"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -932,7 +934,7 @@ export default function EmpresasPage() {
 
                     <Button
                       as="a"
-                      // @ts-expect-error: Type compatibility issue 
+                      // @ts-expect-error: Type compatibility issue
                       href="https://wa.me/5542988381261?text=Gostaria%20de%20contratar%20o%20assessment%20para%20departamento%20(5%20colaboradores)%20por%20R$2.205"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -1064,8 +1066,8 @@ export default function EmpresasPage() {
 
                     <Button
                       as="a"
-                      // @ts-expect-error: Type compatibility issue 
-                        href="https://wa.me/5542988381261?text=Gostaria%20de%20contratar%20o%20assessment%20corporativo%20(10%20colaboradores)%20por%20R$3.570"
+                      // @ts-expect-error: Type compatibility issue
+                      href="https://wa.me/5542988381261?text=Gostaria%20de%20contratar%20o%20assessment%20corporativo%20(10%20colaboradores)%20por%20R$3.570"
                       target="_blank"
                       rel="noopener noreferrer"
                       w="full"
@@ -1698,7 +1700,7 @@ export default function EmpresasPage() {
 
                 <Button
                   as="a"
-                  // @ts-expect-error: Type compatibility issue 
+                  // @ts-expect-error: Type compatibility issue
                   href="https://itreebo.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -1750,7 +1752,7 @@ export default function EmpresasPage() {
                 <Flex gap={{ base: 3, sm: 4 }} flexWrap="wrap" justify="center">
                   <Button
                     as="a"
-                    // @ts-expect-error: Type compatibility issue 
+                    // @ts-expect-error: Type compatibility issue
                     href="#investimento"
                     size={{ base: "lg", md: "xl" }}
                     colorPalette="blue"
@@ -1765,7 +1767,7 @@ export default function EmpresasPage() {
                   </Button>
                   <Button
                     as="a"
-                    // @ts-expect-error: Type compatibility issue 
+                    // @ts-expect-error: Type compatibility issue
                     href="https://wa.me/5542988381261?text=Gostaria%20de%20mais%20informações%20sobre%20o%20Assessment%20Comportamental%20para%20minha%20empresa"
                     target="_blank"
                     rel="noopener noreferrer"
