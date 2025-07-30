@@ -17,7 +17,7 @@ export function HeroSection({ keyBenefits }: HeroSectionProps) {
   return (
     <Box
       as="section"
-      bg="gray.900"
+      bg="black"
       color="white"
       w="full"
       borderRadius={{ base: "none", md: "3xl" }}
@@ -44,7 +44,7 @@ export function HeroSection({ keyBenefits }: HeroSectionProps) {
         playsInline
         zIndex="0"
         opacity="0.4"
-        filter="grayscale(100%)"
+        filter="grayscale(100%) brightness(0.5)"
       >
         <source src="/assets/videos/bg.mp4" type="video/mp4" />
       </Box>

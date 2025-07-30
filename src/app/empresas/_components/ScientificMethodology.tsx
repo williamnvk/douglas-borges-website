@@ -1,11 +1,4 @@
-import {
-  HStack,
-  VStack,
-  Heading,
-  Text,
-  SimpleGrid,
-  Box,
-} from "@chakra-ui/react";
+import { HStack, VStack, Heading, Text, SimpleGrid } from "@chakra-ui/react";
 
 export function ScientificMethodology() {
   const methodologies = [
@@ -28,19 +21,15 @@ export function ScientificMethodology() {
       gap={{ base: 4, md: 6 }}
     >
       <VStack gap={{ base: 4, sm: 6 }} flex={1} align="stretch">
-        <Heading
-          as="h2"
-          fontSize={{ base: "2xl", sm: "2xl", md: "4xl" }}
-        >
+        <Heading as="h2" fontSize={{ base: "2xl", sm: "2xl", md: "4xl" }}>
           Base Científica das Avaliações
         </Heading>
         <Text
           fontSize={{ base: "sm", sm: "md", md: "lg", lg: "xl" }}
           color="fg.muted"
         >
-          Utilizamos{" "}
-          <strong>5 metodologias reconhecidas mundialmente</strong> para
-          garantir precisão e confiabilidade:
+          Utilizamos <strong>5 metodologias reconhecidas mundialmente</strong>{" "}
+          para garantir precisão e confiabilidade:
         </Text>
       </VStack>
 

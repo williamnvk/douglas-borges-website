@@ -213,15 +213,6 @@ export default function EmpresasPage() {
     "Maior segurança nas decisões de RH",
   ];
 
-  const whatIsIncluded = [
-    "Relatório técnico completo com análise visual",
-    "Aplicação de 5 metodologias científicas reconhecidas",
-    "Comparativo com o perfil ideal da função",
-    "Reunião de devolutiva exclusiva",
-    "Recomendações práticas para tomada de decisão",
-    "Total confidencialidade do processo",
-  ];
-
   const faqData = [
     {
       question: "Como posso iniciar o processo?",

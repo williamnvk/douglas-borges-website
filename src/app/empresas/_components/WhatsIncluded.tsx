@@ -18,16 +18,22 @@ export function WhatsIncluded() {
       mx="auto"
       align="flex-start"
       gap={{ base: 2, md: 4 }}
-      p={{ base: 4, md: 16 }}
       bg="green.subtle"
       rounded="3xl"
       mb={{ base: 4, md: 16 }}
     >
       {/* Header */}
-      <VStack align="flex-start" gap={2} w="full">
+      <VStack
+        align="flex-start"
+        gap={2}
+        w="full"
+        px={{ base: 6, md: 16 }}
+        pt={{ base: 4, md: 16 }}
+        pb={{ base: 4, md: 4 }}
+      >
         <Heading
           as="h2"
-          fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
+          fontSize={{ base: "3xl", sm: "3xl", md: "5xl" }}
           fontWeight="700"
           color="gray.900"
           lineHeight="1.2"
@@ -49,13 +55,12 @@ export function WhatsIncluded() {
           <HStack
             key={index}
             w="full"
-            align="flex-start"
+            align="center"
             gap={4}
-            py={6}
-            borderBottom={
-              index < includeItems.length - 1 ? "1px solid" : "none"
-            }
-            borderColor="gray.100"
+            px={{ base: 4, md: 16 }}
+            py={{ base: 2, md: 4 }}
+            borderBottom="1px solid"
+            borderColor="green.200"
           >
             <Box
               as="span"
@@ -67,7 +72,6 @@ export function WhatsIncluded() {
               alignItems="center"
               justifyContent="center"
               flexShrink={0}
-              mt={1}
             >
               <Check size={16} color="white" />
             </Box>
@@ -75,7 +79,7 @@ export function WhatsIncluded() {
               fontSize={{ base: "md", md: "lg" }}
               color="gray.800"
               fontWeight="500"
-              lineHeight="1.6"
+              lineHeight="1.4"
               flex="1"
             >
               {item}
@@ -89,6 +93,9 @@ export function WhatsIncluded() {
         color="gray.600"
         textAlign="center"
         fontStyle="italic"
+        px={{ base: 6, md: 16 }}
+        pt={{ base: 4, md: 4 }}
+        pb={{ base: 4, md: 12 }}
       >
         ✓ Todos estes elementos estão inclusos em qualquer plano escolhido
       </Text>
