@@ -15,7 +15,7 @@ import { INSIGHTS } from "@/data";
 import { ClockIcon } from "lucide-react";
 import Link from "next/link";
 import { Header } from "@/components/shared/Header";
-import { siteImage, siteUrl } from "@/data/dictionaries";
+import { siteImage, siteUrl } from "@/data/site-constants";
 import Image from "next/image";
 import { Tooltip } from "../components/ui/tooltip";
 

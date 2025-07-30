@@ -12,15 +12,15 @@ import { Header } from "@/components/shared/Header";
 import { HEADER_NAVBAR_HEIGHT } from "../../theme/consts";
 import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import MessageForm from "./MessageForm";
-import language, { siteImage, siteUrl } from "@/data/dictionaries";
+import { siteImage, siteUrl } from "@/data/site-constants";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contato",
-  description: language.contact.subtitle,
+  description: "Atendo em todo o Brasil, oferecendo consultas online e presenciais. Embora minha base esteja localizada em União da Vitória - PR, estou disponível para atender clientes de qualquer lugar do país. Se você precisar de assistência, não hesite em entrar em contato!",
   openGraph: {
     title: "Contato | Douglas Borges",
-    description: language.contact.subtitle,
+    description: "Atendo em todo o Brasil, oferecendo consultas online e presenciais. Embora minha base esteja localizada em União da Vitória - PR, estou disponível para atender clientes de qualquer lugar do país. Se você precisar de assistência, não hesite em entrar em contato!",
     images: [siteImage],
     type: "website",
   },
@@ -34,8 +34,6 @@ export const metadata: Metadata = {
 };
 
 export default function Contact() {
-  const intl = language;
-
   return (
     <>
       <Header />
@@ -44,15 +42,15 @@ export default function Contact() {
           maxW="8xl"
           py={{ base: 8, md: 16 }}
           as="section"
-          aria-label={intl.contact.title}
+          aria-label="Entre em Contato"
         >
           <Stack gap={12}>
             <VStack align="start" gap={4}>
               <Heading as="h1" size="2xl">
-                {intl.contact.title}
+                Entre em Contato
               </Heading>
               <Text fontSize="md" color="fg.muted">
-                {intl.contact.subtitle}
+                Atendo em todo o Brasil, oferecendo consultas online e presenciais. Embora minha base esteja localizada em União da Vitória - PR, estou disponível para atender clientes de qualquer lugar do país. Se você precisar de assistência, não hesite em entrar em contato!
               </Text>
             </VStack>
 
@@ -60,14 +58,14 @@ export default function Contact() {
               direction={{ base: "column", md: "row" }}
               gap={8}
               as="section"
-              aria-label={intl.contact.contactInfoTitle}
+              aria-label="Informações de Contato"
             >
               <VStack align="start" gap={4} flex={1}>
-                <Heading size="md">{intl.contact.contactInfoTitle}</Heading>
+                <Heading size="md">Informações de Contato</Heading>
                 <HStack gap={4} align="center" justify="center">
                   <Phone size={28} />
                   <Link
-                    href={`https://wa.me/${intl.contact.whatsapp}`}
+                    href="https://wa.me/5542988381261"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"
@@ -79,26 +77,26 @@ export default function Contact() {
 
                 <HStack gap={4} align="center" justify="center">
                   <Mail size={28} />
-                  <Link href={`mailto:${intl.contact.email}`} fontSize="sm">
-                    {intl.contact.email}
+                  <Link href="mailto:contato@douglasborgespsicologo.com.br" fontSize="sm">
+                    contato@douglasborgespsicologo.com.br
                   </Link>
                 </HStack>
 
                 <HStack gap={4} align="center" justify="center">
                   <Instagram size={28} />
                   <Link
-                    href={`https://instagram.com/${intl.contact.instagram}`}
+                    href="https://instagram.com/douglasborgespsicologo"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    @{intl.contact.instagram}
+                    @douglasborgespsicologo
                   </Link>
                 </HStack>
 
                 <HStack gap={4} align="center" justify="center">
                   <Linkedin size={28} />
                   <Link
-                    href={`https://linkedin.com/in/${intl.contact.linkedin}`}
+                    href="https://linkedin.com/in/douglasborgespsicologo"
                     target="_blank"
                     rel="noopener noreferrer"
                     fontSize="sm"
@@ -116,7 +114,7 @@ export default function Contact() {
                 >
                   <MapPin size={28} />
                   <address>
-                    {intl.contact.addressCuritiba.map((item) => (
+                    {["Nex Coworking | Casa de Pedra", "Alameda Pres. Taunay, 130, Batel", "Curitiba · PR"].map((item) => (
                       <Text key={item}>{item}</Text>
                     ))}
                   </address>
@@ -131,7 +129,7 @@ export default function Contact() {
                 >
                   <MapPin size={28} />
                   <address>
-                    {intl.contact.address.map((item) => (
+                    {["Clínica Iluminary", "Rua Germano Unger, 20, Cidade Nova", "Porto União · SC"].map((item) => (
                       <Text key={item}>{item}</Text>
                     ))}
                   </address>
@@ -147,7 +145,7 @@ export default function Contact() {
                   borderRadius="lg"
                   boxShadow="md"
                 >
-                  <Heading size="md">{intl.contact.messageTitle}</Heading>
+                  <Heading size="md">Envie uma mensagem</Heading>
 
                   <MessageForm />
                 </VStack>

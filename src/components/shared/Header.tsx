@@ -35,19 +35,7 @@ export const Header = () => {
   const pathname = usePathname();
   const currentPage = getCurrentPage(pathname);
 
-  const intl = {
-    personal: "Para você",
-    company: "Para sua empresa",
-    cta: "Entre em contato",
-    nav: {
-      home: "Home",
-      services: "Serviços",
-      about: "Sobre",
-      events: "Palestras e Eventos",
-      insights: "Insights",
-      contact: "Contato",
-    },
-  };
+
 
   const isCurrentPage = (page: string) => {
     return currentPage === page;
@@ -91,7 +79,7 @@ export const Header = () => {
             href="/"
             variant={isCurrentPage("personal") ? "outline" : "ghost"}
           >
-            {intl.personal}
+            Para você
           </Button>
           <Button
             variant={isCurrentPage("company") ? "outline" : "ghost"}
@@ -99,7 +87,7 @@ export const Header = () => {
             // @ts-expect-error: Type compatibility issue
             href="/empresas"
           >
-            {intl.company}
+            Para sua empresa
           </Button>
         </HStack>
       </HStack>
@@ -120,7 +108,7 @@ export const Header = () => {
             // @ts-expect-error: Type compatibility issue
             href="/servicos"
           >
-            {intl.nav.services}
+            Serviços
           </Button>
           <Button
             variant={isCurrentPage("about") ? "outline" : "ghost"}
@@ -128,7 +116,7 @@ export const Header = () => {
             // @ts-expect-error: Type compatibility issue
             href="/sobre"
           >
-            {intl.nav.about}
+            Sobre
           </Button>
           <Button
             variant={isCurrentPage("events") ? "outline" : "ghost"}
@@ -136,7 +124,7 @@ export const Header = () => {
             // @ts-expect-error: Type compatibility issue
             href="/palestras-e-eventos"
           >
-            {intl.nav.events}
+            Palestras
           </Button>
           <Button
             variant={isCurrentPage("insights") ? "outline" : "ghost"}
@@ -144,7 +132,7 @@ export const Header = () => {
             // @ts-expect-error: Type compatibility issue
             href="/insights"
           >
-            {intl.nav.insights}
+            Insights
           </Button>
           <Button
             variant={isCurrentPage("contact") ? "outline" : "ghost"}
@@ -152,7 +140,7 @@ export const Header = () => {
             // @ts-expect-error: Type compatibility issue
             href="/contato"
           >
-            {intl.nav.contact}
+            Contato
           </Button>
         </HStack>
 
@@ -166,7 +154,7 @@ export const Header = () => {
           colorPalette="blue"
           variant="solid"
         >
-          {intl.cta}
+          Entrar em contato
         </Button>
       </HStack>
 
@@ -210,7 +198,7 @@ export const Header = () => {
                       colorPalette={isCurrentPage("personal") ? "blue" : "gray"}
                       justifyContent="flex-start"
                     >
-                      {intl.personal}
+                      Para você
                     </Button>
                     <Button
                       variant={isCurrentPage("company") ? "solid" : "ghost"}
@@ -224,7 +212,7 @@ export const Header = () => {
                       colorPalette={isCurrentPage("company") ? "blue" : "gray"}
                       justifyContent="flex-start"
                     >
-                      {intl.company}
+                      Para sua empresa
                     </Button>
                   </VStack>
 
@@ -244,7 +232,7 @@ export const Header = () => {
                       colorPalette={isCurrentPage("services") ? "blue" : "gray"}
                       justifyContent="flex-start"
                     >
-                      {intl.nav.services}
+                      Serviços
                     </Button>
                     <Button
                       variant={isCurrentPage("about") ? "solid" : "ghost"}
@@ -257,7 +245,7 @@ export const Header = () => {
                       colorPalette={isCurrentPage("about") ? "blue" : "gray"}
                       justifyContent="flex-start"
                     >
-                      {intl.nav.about}
+                      Sobre
                     </Button>
                     <Button
                       variant={isCurrentPage("events") ? "solid" : "ghost"}
@@ -270,7 +258,7 @@ export const Header = () => {
                       colorPalette={isCurrentPage("events") ? "blue" : "gray"}
                       justifyContent="flex-start"
                     >
-                      {intl.nav.events}
+                      Palestras
                     </Button>
                     <Button
                       variant={isCurrentPage("insights") ? "solid" : "ghost"}
@@ -283,7 +271,7 @@ export const Header = () => {
                       colorPalette={isCurrentPage("insights") ? "blue" : "gray"}
                       justifyContent="flex-start"
                     >
-                      {intl.nav.insights}
+                      Insights
                     </Button>
                     <Button
                       variant={isCurrentPage("contact") ? "solid" : "ghost"}
@@ -296,7 +284,7 @@ export const Header = () => {
                       colorPalette={isCurrentPage("contact") ? "blue" : "gray"}
                       justifyContent="flex-start"
                     >
-                      {intl.nav.contact}
+                      Contato
                     </Button>
                   </VStack>
                 </VStack>
@@ -315,7 +303,7 @@ export const Header = () => {
                     target="_blank"
                     referrerPolicy="no-referrer"
                   >
-                    {intl.cta}
+                    Entrar em contato
                   </Button>
                 </Box>
               </VStack>

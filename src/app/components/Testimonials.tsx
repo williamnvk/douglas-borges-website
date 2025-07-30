@@ -131,7 +131,7 @@ const Testimonials: FC<{
             w="48px"
             h="48px"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={24} color="white" />
           </Button>
           <Button
             className="button__next"
@@ -141,7 +141,7 @@ const Testimonials: FC<{
             h="48px"
             title=">"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={24} color="white" />
           </Button>
         </Flex>
       </Container>

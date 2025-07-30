@@ -1,5 +1,5 @@
 import { INSIGHTS_SLUGS } from "@/data";
-import { siteUrl } from "@/data/dictionaries";
+import { siteUrl } from "@/data/site-constants";
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
