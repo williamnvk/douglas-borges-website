@@ -12,8 +12,17 @@ import {
   Image,
   Badge,
 } from "@chakra-ui/react";
-import { WordTransition } from "./components/WordTransition";
-import { ClockIcon, PlusIcon, ArrowRightIcon } from "lucide-react";
+import {
+  ClockIcon,
+  PlusIcon,
+  ArrowRightIcon,
+  TargetIcon,
+  ZapIcon,
+  DollarSignIcon,
+  CheckIcon,
+  Building2Icon,
+  TriangleAlertIcon,
+} from "lucide-react";
 import Icon from "@/components/shared/DynamicIcon";
 import { Header } from "@/components/shared/Header";
 import Testimonials from "./components/Testimonials";
@@ -96,11 +105,12 @@ export default function Home() {
         mx={{ base: 0, lg: 8 }}
         mt={HEADER_NAVBAR_HEIGHT}
         role="main"
-        rounded={{ base: "none", lg: "3xl" }}
+        roundedTop={{ base: "none", lg: "3xl" }}
         maxW={{ base: "full", lg: "calc(100vw - 80px)" }}
         aria-labelledby="hero-title"
         bgGradient="linear-gradient(180deg, {colors.gray.50}, {colors.gray.100})"
         position="relative"
+        overflow="hidden"
       >
         <Container
           maxW="8xl"
@@ -122,19 +132,20 @@ export default function Home() {
               maxW={{ base: "full", lg: "800px" }}
             >
               {/* Badge/Tag */}
-              <Badge
-                bg="blue.50"
-                color="blue.600"
+              <HStack
+                bg="orange.50"
+                color="orange.700"
                 px={4}
                 py={2}
                 textStyle="sm"
                 fontWeight="semibold"
                 border="1px solid"
-                borderColor="blue.200"
-                borderRadius="full"
+                borderColor="orange.200"
+                borderRadius={{ base: "md", md: "full" }}
               >
-                Consultoria Comportamental para Empresários
-              </Badge>
+                <TriangleAlertIcon size={16} />{" "}
+                <Text>73% dos líderes empresariais sofrem com burnout</Text>
+              </HStack>
 
               <Heading
                 id="hero-title"
@@ -145,58 +156,22 @@ export default function Home() {
                 lineHeight="1"
                 m={0}
               >
-                <WordTransition
-                  inline
-                  typewriter
-                  words={[
-                    "Desenvolvendo",
-                    "Aconselhando",
-                    "Ajudando",
-                    "Encorajando",
-                    "Incentivando",
-                  ]}
-                />
-                <br />
-                <WordTransition
-                  typewriter
-                  words={[
-                    "empresários",
-                    "executivos",
-                    "líderes",
-                    "profissionais",
-                    "empreendedores",
-                  ]}
-                  delay={5000}
-                  inline
-                />
-              </Heading>
-
-              <Heading
-                mt={-4}
-                pt={-4}
-                textStyle={{ base: "4xl", md: "4xl", xl: "5xl" }}
-                as="span"
-                color="blue.600"
-              >
-                {" "}
-                a encontrar equilíbrio entre <br />
-                <WordTransition
-                  inline
-                  typewriter
-                  words={["empresa", "trabalho", "negócios"]}
-                />
-                , família e propósito
+                Liderança que gera resultados{" "}
+                <Box as="span" color="blue.600">
+                  sem esgotar pessoas.
+                </Box>
               </Heading>
 
               <Text
                 textStyle={{ base: "lg", md: "xl" }}
                 color="fg.muted"
-                maxW="500px"
+                maxW="600px"
                 fontFamily="body"
               >
-                Transforme a pressão em performance sustentável. Há mais de 10
-                anos ajudando líderes a prosperarem sem sacrificar o que
-                realmente importa.
+                Consultoria especializada para{" "}
+                <strong>CEOs, Diretores, Executivos e RH</strong> que precisam
+                aumentar performance sem sacrificar o bem-estar das equipes.
+                Metodologia comprovada em 90+ empresas.
               </Text>
 
               <Stack direction={{ base: "column", sm: "row" }} gap={4} w="full">
@@ -212,11 +187,11 @@ export default function Home() {
                     transition="all 0.3s"
                     w="full"
                   >
-                    Para minha empresa →
+                    Consultoria Empresarial →
                   </Button>
                 </Link>
 
-                <Link href="/assessment ">
+                <Link href="/assessment">
                   <Button
                     size="lg"
                     variant="outline"
@@ -229,32 +204,39 @@ export default function Home() {
                     transition="all 0.3s"
                     w="full"
                   >
-                    Assessment →
+                    Assessment Comportamental →
                   </Button>
                 </Link>
               </Stack>
 
               {/* Social Proof */}
-              <HStack gap={4} flexWrap="wrap">
-                <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
-                  +1000 pessoas transformadas
+              <VStack align="start" gap={3}>
+                <HStack gap={6} flexWrap="wrap">
+                  <HStack align="center" gap={2}>
+                    <CheckIcon size={16} />
+                    <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
+                      +1000 profissionais desenvolvidos
+                    </Text>
+                  </HStack>
+                  <HStack align="center" gap={2}>
+                    <Building2Icon size={16} />
+                    <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
+                      90+ empresas transformadas
+                    </Text>
+                  </HStack>
+                  <HStack align="center" gap={2}>
+                    <ClockIcon size={16} />
+                    <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
+                      10 anos de experiência
+                    </Text>
+                  </HStack>
+                </HStack>
+                <Text textStyle="xs" color="fg.subtle" fontStyle="italic">
+                  &ldquo;Nossos clientes aumentam 40% a produtividade e reduzem
+                  60% o turnover, criando ambientes de trabalho mais saudáveis e
+                  lucrativos.&rdquo; - Douglas Borges, CRP 08-21013
                 </Text>
-                <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
-                  +90 empresas atendidas
-                </Text>
-                <Link href="/contato">
-                  <Button
-                    variant="ghost"
-                    colorPalette="blue"
-                    fontWeight="semibold"
-                  >
-                    <Box as="span" textDecoration="underline">
-                      Agendar Psicoterapia
-                    </Box>{" "}
-                    →
-                  </Button>
-                </Link>
-              </HStack>
+              </VStack>
             </VStack>
 
             <Box
@@ -275,14 +257,14 @@ export default function Home() {
 
               {/* Balões de contagem aleatórios sobre a foto */}
               {[
-                { title: "1000", description: "Pessoas atendidas" },
+                { title: "1000", description: "Profissionais desenvolvidos" },
                 { title: "90", description: "Empresas atendidas" },
                 { title: "10", description: "Anos de experiência" },
               ].map((stat, i) => {
                 const positions = [
                   { top: "130px", left: "60px" },
-                  { top: "340px", right: "-40px" },
-                  { bottom: "40px", left: "-40px" },
+                  { top: "340px", right: "-20px" },
+                  { bottom: "40px", left: "-20px" },
                   { bottom: "80px", right: "80px" },
                 ];
                 const pos = positions[i % positions.length];
@@ -361,23 +343,177 @@ export default function Home() {
         </Container>
       </Container>
 
+      {/* Assessment Destacado */}
+
+      <Container
+        maxW={{ base: "full", lg: "calc(100vw - 80px)" }}
+        bg="gray.900"
+        py={{ base: 24, md: 20 }}
+        roundedBottomLeft={{ base: "none", md: "3xl" }}
+        roundedBottomRight={{ base: "none", md: "3xl" }}
+        my={0}
+      >
+        <Container w="full">
+          <VStack gap={12}>
+            <VStack gap={6} textAlign="center" maxW="800px" mx="auto">
+              <Badge
+                bg="yellow.400"
+                color="gray.900"
+                px={4}
+                py={2}
+                borderRadius="full"
+                textStyle="sm"
+                fontWeight="bold"
+              >
+                NOSSO DIFERENCIAL COMPETITIVO
+              </Badge>
+              <Heading
+                textStyle={{ base: "4xl", md: "5xl" }}
+                color="white"
+                fontFamily="heading"
+                fontWeight="bold"
+                textAlign="center"
+              >
+                Assessment Comportamental Científico
+              </Heading>
+              <Text
+                textStyle="lg"
+                color="gray.300"
+                textAlign="center"
+                maxW="700px"
+              >
+                A ferramenta que CEOs de grandes empresas usam para tomar
+                decisões estratégicas sobre pessoas. Baseado em 5 metodologias
+                científicas reconhecidas mundialmente.
+              </Text>
+            </VStack>
+
+            <SimpleGrid columns={{ base: 1, md: 3 }} gap={8}>
+              {[
+                {
+                  icon: <TargetIcon />,
+                  title: "Elimine 89% dos Erros",
+                  description:
+                    "Pare de contratar por intuição. Nosso assessment científico identifica o perfil comportamental ideal para cada função.",
+                  metric: "89% de assertividade",
+                },
+                {
+                  icon: <ZapIcon />,
+                  title: "Resultados em 5-7 Dias",
+                  description:
+                    "Análise completa de personalidade, competências e fit cultural. Relatório detalhado entregue rapidamente.",
+                  metric: "5-7 dias úteis",
+                },
+                {
+                  icon: <DollarSignIcon />,
+                  title: "ROI Comprovado",
+                  description:
+                    "Uma contratação errada custa 3x o salário anual. O assessment custa R$ 700 e protege investimentos de até R$ 300k.",
+                  metric: "ROI de 42.700%",
+                },
+              ].map((item, i) => (
+                <Box
+                  key={`assessment-feature-${i}`}
+                  bg="white"
+                  p={8}
+                  borderRadius="xl"
+                  boxShadow="xl"
+                  textAlign="center"
+                  _hover={{ transform: "translateY(-4px)", shadow: "2xl" }}
+                  transition="all 0.3s"
+                >
+                  <VStack gap={4}>
+                    {item.icon}
+                    <Heading
+                      textStyle="xl"
+                      color="gray.900"
+                      fontFamily="heading"
+                      fontWeight="bold"
+                    >
+                      {item.title}
+                    </Heading>
+                    <Text color="fg.muted" textStyle="md">
+                      {item.description}
+                    </Text>
+                    <Badge colorPalette="blue" fontWeight="bold" textStyle="sm">
+                      {item.metric}
+                    </Badge>
+                  </VStack>
+                </Box>
+              ))}
+            </SimpleGrid>
+
+            <Box textAlign="center">
+              <VStack gap={4}>
+                <Text color="gray.300" textStyle="lg" fontWeight="semibold">
+                  Metodologias Científicas Utilizadas:
+                </Text>
+                <HStack
+                  gap={{ base: 1, md: 4 }}
+                  flexWrap="wrap"
+                  justify="center"
+                >
+                  {["Big Five", "DISC", "MBTI", "Enneagram", "HEXACO"].map(
+                    (method) => (
+                      <Badge
+                        key={method}
+                        variant="outline"
+                        colorPalette="blue"
+                        px={3}
+                        py={1}
+                        fontWeight="semibold"
+                        color="blue.300"
+                        borderColor="blue.400"
+                      >
+                        {method}
+                      </Badge>
+                    )
+                  )}
+                </HStack>
+              </VStack>
+            </Box>
+
+            <Box textAlign="center">
+              <Link href="/assessment">
+                <Button
+                  size="xl"
+                  colorPalette="blue"
+                  px={10}
+                  py={8}
+                  textStyle={{ base: "sm", md: "xl" }}
+                  fontWeight="bold"
+                  _hover={{ transform: "translateY(-2px)", shadow: "2xl" }}
+                  transition="all 0.3s"
+                >
+                  Solicitar Assessment Comportamental
+                </Button>
+              </Link>
+              <Text textStyle="sm" color="gray.400" mt={2}>
+                Resultados em 5-7 dias úteis | 100% confidencial | Suporte
+                incluído
+              </Text>
+            </Box>
+          </VStack>
+        </Container>
+      </Container>
+
       {/* Services Section */}
       <Box py={{ base: 16, md: 24 }}>
         <Container maxW="8xl">
           <VStack gap={16}>
             <VStack gap={6} textAlign="center" maxW="800px" mx="auto">
               <Badge
-                bg="blue.50"
-                color="blue.600"
+                bg="green.50"
+                color="green.700"
                 px={4}
                 py={2}
                 borderRadius="full"
                 textStyle="sm"
                 fontWeight="semibold"
                 border="1px solid"
-                borderColor="blue.200"
+                borderColor="green.200"
               >
-                Nossos Serviços
+                SOLUÇÕES EMPRESARIAIS COMPROVADAS
               </Badge>
               <Heading
                 textStyle={{ base: "4xl", md: "5xl" }}
@@ -386,57 +522,69 @@ export default function Home() {
                 fontWeight="bold"
                 textAlign="center"
               >
-                Juntos, podemos criar um ambiente mais saudável e equilibrado.
+                Transforme Pressão em Performance.{" "}
+                <Box as="span" color="green.600">
+                  Lucre Mais, Estresse Menos.
+                </Box>
               </Heading>
               <Text
-                textStyle="lg"
+                textStyle={{ base: "md", md: "lg" }}
                 color="fg.muted"
                 textAlign="center"
-                maxW="600px"
+                maxW="700px"
               >
-                Soluções personalizadas para desenvolver liderança equilibrada e
-                sustentável
+                <strong>73% dos líderes sofrem burnout.</strong> Nossos serviços
+                aumentam produtividade em 40% enquanto reduzem turnover em 60%.
+                Metodologia que transforma equipes e resultados.
               </Text>
             </VStack>
 
-            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={8}>
+            <SimpleGrid
+              columns={{ base: 1, md: 2, lg: 3 }}
+              gap={{ base: 2, md: 4 }}
+            >
               {[
                 {
                   icon: "handshake",
-                  title: "Programas de Inteligência Emocional para Equipes",
+                  title: "Assessment Comportamental Científico",
                   description:
-                    "Fortaleça a coesão e o desempenho da sua equipe, promovendo um ambiente de trabalho mais ético, colaborativo e equilibrado.",
+                    "Elimine 89% dos erros de contratação. Metodologias Big Five, DISC e MBTI para identificar talentos de alta performance. ROI comprovado de 42.700%.",
+                  metric: "R$ 700 por avaliação",
                 },
                 {
                   icon: "quote",
-                  title:
-                    "Aconselhamento para Alta Performance Pessoal e Profissional",
+                  title: "Coaching Executivo Anti-Burnout",
                   description:
-                    "Um acompanhamento focado para empresários que buscam gerenciar o estresse, aprimorar seu desempenho e manter uma visão de longo prazo.",
+                    "Líderes aumentam produtividade em 40% e reduzem estresse em 70%. Para Diretores, Executivos e Gestores que precisam entregar resultados sem se esgotar.",
+                  metric: "40% mais produtividade",
                 },
                 {
                   icon: "plus",
-                  title: "Workshops In-Company",
+                  title: "Consultoria em Inteligência Emocional",
                   description:
-                    "Capacite líderes e equipes com treinamentos práticos, fundamentados em valores cristãos, em temas como inteligência emocional, produtividade e gestão de conflitos.",
+                    "Equipes com alta IE geram 25% mais receita. Treinamentos práticos que transformam conflitos em colaboração e pressão em performance.",
+                  metric: "+25% de receita",
                 },
                 {
                   icon: "scale",
-                  title: "Consultoria para o Equilíbrio Vida-Trabalho",
+                  title: "Programa de Retenção de Talentos",
                   description:
-                    "Apoio na construção de uma cultura organizacional onde o bem-estar pessoal, familiar e profissional caminham juntos, maximizando o desempenho a longo prazo.",
+                    "Reduza turnover em 60% e economize até R$ 500k anuais. Ideal para RH e Gestores que precisam manter talentos motivados e engajados.",
+                  metric: "-60% turnover",
                 },
                 {
                   icon: "user",
-                  title: "Coaching Executivo",
+                  title: "Desenvolvimento de Liderança Executiva",
                   description:
-                    "Desenvolvimento de liderança fundamentado em princípios bíblicos, aprimorando a tomada de decisões empresariais com propósito e resiliência.",
+                    "Líderes treinados aumentam engajamento das equipes em 35%. Metodologia exclusiva baseada em 10 anos de experiência com C-Level.",
+                  metric: "+35% engajamento",
                 },
                 {
                   icon: "lightbulb",
-                  title: "Mentoria para Planejamento de Carreira com Propósito",
+                  title: "Mentoria Estratégica para Liderança",
                   description:
-                    "Ajuda a alinhar suas metas profissionais com seu propósito de vida, para alcançar uma carreira significativa e equilibrada.",
+                    "Tomada de decisão 50% mais assertiva. Acompanhamento 1:1 para Executivos e Diretores que precisam equilibrar crescimento empresarial com propósito de vida.",
+                  metric: "+50% assertividade",
                 },
               ]
                 .slice(0, 6)
@@ -444,25 +592,36 @@ export default function Home() {
                   <Box
                     key={`service-${i}`}
                     bg="white"
-                    p={8}
+                    p={{ base: 4, md: 8 }}
                     borderRadius="lg"
-                    boxShadow="lg"
                     border="1px solid"
                     borderColor="border.muted"
                     h="full"
                   >
                     <VStack align="start" gap={6} h="full">
-                      <Flex
-                        w={16}
-                        h={16}
-                        borderRadius="xl"
-                        bg="blue.500"
-                        align="center"
-                        justify="center"
-                        color="white"
-                      >
-                        <Icon name={service.icon as never} size={32} />
-                      </Flex>
+                      <HStack justify="space-between" w="full">
+                        <Flex
+                          w={16}
+                          h={16}
+                          borderRadius="xl"
+                          bg="blue.500"
+                          align="center"
+                          justify="center"
+                          color="white"
+                        >
+                          <Icon name={service.icon as never} size={32} />
+                        </Flex>
+
+                        <Badge
+                          colorPalette="green"
+                          fontWeight="bold"
+                          textStyle="xs"
+                          px={2}
+                          py={1}
+                        >
+                          {service.metric}
+                        </Badge>
+                      </HStack>
 
                       <VStack align="start" gap={3} flex={1}>
                         <Heading
@@ -497,7 +656,7 @@ export default function Home() {
               <VStack align="start" gap={4}>
                 <Badge
                   bg="blue.50"
-                  color="blue.600"
+                  color="blue.700"
                   px={4}
                   py={2}
                   borderRadius="full"
@@ -506,7 +665,7 @@ export default function Home() {
                   border="1px solid"
                   borderColor="blue.200"
                 >
-                  Sobre Douglas Borges
+                  O PSICÓLOGO DA LIDERANÇA EMPRESARIAL
                 </Badge>
                 <Heading
                   textStyle={{ base: "4xl", md: "5xl" }}
@@ -514,14 +673,17 @@ export default function Home() {
                   fontFamily="heading"
                   fontWeight="bold"
                 >
-                  Um propósito uma missão
+                  O especialista que líderes procuram{" "}
+                  <Box as="span" color="blue.600">
+                    para decisões estratégicas sobre pessoas
+                  </Box>
                 </Heading>
               </VStack>
 
               <VStack align="start" gap={6}>
                 {[
-                  "Como cristão, minha missão é apoiar líderes a alcançarem equilíbrio emocional e a prosperarem em suas jornadas, capacitando-os a gerar empregos e garantir o sustento de inúmeras famílias. Ao promover ambientes de trabalho saudáveis e harmonizar suas próprias vidas pessoais, esses líderes inspiram futuras gerações a enxergarem a sucessão de forma positiva, leve e sustentável, moldando um legado de liderança saudável e comprometida com o futuro.",
-                  "Há 10 anos, ajudo líderes empresariais a superar a exaustão emocional, promovendo equilíbrio entre Empresa, Família e Propósito de Vida.",
+                  "Fundador da i-Treebo, já realizei mais de 1.000 assessments comportamentais para 90+ empresas. Minha expertise ajuda Diretores, Executivos e profissionais de RH a tomar decisões estratégicas sobre pessoas com 89% de assertividade.",
+                  "Há 10 anos, transformo equipes e lideranças: 40% aumentam produtividade, 60% reduzem turnover e 70% melhoram o equilíbrio vida-trabalho. Metodologia científica para quem precisa de resultados reais.",
                 ].map((p, i) => (
                   <Text
                     textStyle={{ base: "lg", md: "xl" }}
@@ -885,47 +1047,98 @@ export default function Home() {
         </Container>
       </Box>
 
-      <Container maxW="8xl" mt={{ base: 4, md: 8, lg: 16 }}>
+      <Container
+        maxW={{ base: "full", lg: "8xl" }}
+        w="full"
+        p={0}
+        mt={{ base: 0, md: 8, lg: 16 }}
+        mb={{ base: -16, md: 0 }}
+      >
         <Box
           bgGradient="linear-gradient(135deg, {colors.blue.600}, {colors.blue.500})"
           color="white"
-          borderRadius="xl"
+          borderRadius={{ base: "none", md: "3xl" }}
           p={{ base: 8, md: 16 }}
           textAlign="center"
         >
-          <VStack gap={8} maxW="600px" mx="auto">
-            <VStack gap={4}>
+          <VStack gap={8} maxW={{ base: "700px", lg: "none" }} mx="auto">
+            <VStack
+              gap={4}
+              w="full"
+              align="stretch"
+              textAlign={{ base: "center", lg: "left" }}
+            >
               <Heading
-                textStyle={{ base: "4xl", md: "5xl" }}
+                textStyle={{ base: "4xl", md: "7xl" }}
                 fontWeight="black"
                 fontFamily="heading"
+                w="full"
               >
-                Como as mudanças que você quer vão realmente acontecer?
+                Qual solução é ideal para sua empresa?
               </Heading>
-              <Text textStyle={{ base: "lg", md: "xl" }} opacity="0.9">
-                Entre em contato agora conosco e crie uma parceria pela
-                construção de um novo caminho para sua carreira!
+              <Text
+                textStyle={{ base: "lg", md: "xl" }}
+                textAlign={{ base: "center", lg: "left" }}
+              >
+                Cada empresa tem necessidades únicas. Em uma{" "}
+                <strong>conversa de 30 minutos</strong>, vou entender seus
+                desafios e recomendar a melhor abordagem:
               </Text>
             </VStack>
 
-            <Button
-              as="a"
-              // @ts-expect-error: Type compatibility issue
-              href="https://wa.me/5542988381261?text=Olá!%20Vim%20através%20do%20site%20do%20Douglas%20Borges."
-              target="_blank"
-              size="lg"
-              bg="white"
-              color="blue.600"
-              px={8}
-              py={6}
-              textStyle="lg"
-              fontWeight="bold"
-              _hover={{ bg: "gray.50", transform: "translateY(-2px)" }}
-              transition="all 0.3s"
+            <Stack
+              direction={{ base: "column", lg: "row" }}
+              gap={{ base: 6, lg: 12 }}
+              align="center"
+              justify="space-between"
+              w="full"
             >
-              Entrar em contato
-              <ArrowRightIcon size={20} />
-            </Button>
+              <VStack
+                gap={3}
+                textAlign="left"
+                align="stretch"
+                flex={1}
+                maxW={{ base: "full", lg: "600px" }}
+              >
+                <Text textStyle="md" opacity="0.9">
+                  <strong>Assessment Comportamental</strong> - Para decisões de
+                  contratação e desenvolvimento
+                </Text>
+                <Text textStyle="md" opacity="0.9">
+                  <strong>Consultoria Empresarial</strong> - Para transformação
+                  de equipes e cultura
+                </Text>
+                <Text textStyle="md" opacity="0.9">
+                  <strong>Atendimento Individual</strong> - Para desenvolvimento
+                  de lideranças específicas
+                </Text>
+              </VStack>
+
+              <VStack gap={4} flex="none">
+                <Button
+                  as="a"
+                  // @ts-expect-error: Type compatibility issue
+                  href="https://wa.me/5542988381261?text=Olá%20Douglas!%20Sou%20da%20área%20de%20[SEU_CARGO]%20e%20gostaria%20de%20conversar%20sobre%20as%20soluções%20para%20minha%20empresa.%20Quando%20podemos%20agendar%20uma%20conversa?"
+                  target="_blank"
+                  size="xl"
+                  bg="white"
+                  color="blue.600"
+                  px={{ base: 4, md: 12 }}
+                  py={{ base: 4, md: 8 }}
+                  textStyle={{ base: "sm", md: "xl" }}
+                  fontWeight="bold"
+                  _hover={{ bg: "gray.50", transform: "translateY(-2px)" }}
+                  transition="all 0.3s"
+                  whiteSpace="nowrap"
+                >
+                  Agendar Conversa Estratégica (30min)
+                </Button>
+
+                <Text textStyle="sm" opacity="0.8" textAlign="center">
+                  Conversa 100% confidencial | Online ou presencial
+                </Text>
+              </VStack>
+            </Stack>
           </VStack>
         </Box>
       </Container>
