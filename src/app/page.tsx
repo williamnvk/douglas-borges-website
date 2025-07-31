@@ -114,7 +114,7 @@ export default function Home() {
       >
         <Container
           maxW="8xl"
-          py={{ base: 16, md: 24 }}
+          py={{ base: 8, md: 16 }}
           position="relative"
           zIndex="1"
         >
@@ -144,99 +144,127 @@ export default function Home() {
                 borderRadius={{ base: "md", md: "full" }}
               >
                 <TriangleAlertIcon size={16} />{" "}
-                <Text>73% dos líderes empresariais sofrem com burnout</Text>
+                <Text>73% dos profissionais sofrem com estresse e burnout</Text>
               </HStack>
 
               <Heading
                 id="hero-title"
-                textStyle={{ base: "4xl", md: "6xl", xl: "7xl" }}
+                textStyle={{ base: "4xl", md: "6xl", xl: "6xl" }}
                 fontWeight="black"
                 color="gray.900"
                 fontFamily="heading"
-                lineHeight="1"
+                lineHeight="1.2"
                 m={0}
               >
-                Liderança que gera resultados{" "}
+                Transforme sua carreira e sua vida{" "}
                 <Box as="span" color="blue.600">
-                  sem esgotar pessoas.
+                  sem sacrificar seu bem-estar.
                 </Box>
               </Heading>
 
               <Text
-                textStyle={{ base: "lg", md: "xl" }}
+                textStyle={{ base: "md", md: "xl" }}
                 color="fg.muted"
-                maxW="600px"
+                maxW="650px"
                 fontFamily="body"
               >
-                Consultoria especializada para{" "}
-                <strong>CEOs, Diretores, Executivos e RH</strong> que precisam
-                aumentar performance sem sacrificar o bem-estar das equipes.
-                Metodologia comprovada em 90+ empresas.
+                <strong>Para Empresas:</strong> Consultoria especializada para CEOs, Diretores, 
+                Executivos e RH que precisam aumentar performance sem esgotar equipes. 
+                <br/><br/>
+                <strong>Para Pessoas:</strong> Psicoterapia individual para quem busca equilibrio, 
+                crescimento pessoal e melhoria da saúde mental.
+                
               </Text>
 
-              <Stack direction={{ base: "column", sm: "row" }} gap={4} w="full">
-                <Link href="/empresas">
-                  <Button
-                    size="lg"
-                    colorPalette="blue"
-                    px={8}
-                    py={6}
-                    textStyle="lg"
-                    fontWeight="semibold"
-                    _hover={{ transform: "translateY(-2px)", shadow: "xl" }}
-                    transition="all 0.3s"
-                    w="full"
-                  >
-                    Consultoria Empresarial →
-                  </Button>
-                </Link>
-
-                <Link href="/assessment">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    colorPalette="blue"
-                    px={8}
-                    py={6}
-                    textStyle="lg"
-                    fontWeight="semibold"
-                    _hover={{ transform: "translateY(-2px)", shadow: "xl" }}
-                    transition="all 0.3s"
-                    w="full"
-                  >
-                    Assessment Comportamental →
-                  </Button>
-                </Link>
-              </Stack>
+              <VStack align="start" gap={4} w="full">
+                
+                <SimpleGrid columns={{ base: 1, md: 3 }} gap={{ base: 2, md: 4}} w="full">
+                  <Link href="/empresas">
+                    <Button
+                      size="lg"
+                      colorPalette="blue"
+                      px={6}
+                      py={6}
+                      textStyle={{ base: "md", md: "lg" }}
+                      fontWeight="semibold"
+                      _hover={{ transform: "translateY(-2px)", shadow: "xl" }}
+                      transition="all 0.3s"
+                      w="full"
+                      h="auto"
+                      flexDirection="column"
+                      gap={2}
+                      lineHeight="1.2"
+                    >
+                      <Text fontSize="lg" fontWeight="bold" lineHeight="1">Para Empresas →</Text>
+                      <Text fontSize="xs" opacity={0.9} lineHeight="1">Consultoria & Assessment</Text>
+                    </Button>
+                  </Link>
+                  
+                  <Link href="/contato">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      colorPalette="blue"
+                      px={6}
+                      py={6}
+                      textStyle={{ base: "md", md: "lg" }}
+                      fontWeight="semibold"
+                      _hover={{ transform: "translateY(-2px)", shadow: "xl" }}
+                      transition="all 0.3s"
+                      w="full"
+                      h="auto"
+                      flexDirection="column"
+                      gap={2}
+                    >
+                      <Text fontSize="lg" fontWeight="bold" lineHeight="1">Para Pessoas →</Text>
+                      <Text fontSize="xs" opacity={0.7} lineHeight="1">Psicoterapia Individual</Text>
+                    </Button>
+                  </Link>
+                  
+                  <Link href="/assessment">
+                    <Button
+                      size="lg"
+                      variant="subtle"
+                      colorPalette="green"
+                      px={6}
+                      py={6}
+                      textStyle={{ base: "md", md: "lg" }}
+                      fontWeight="semibold"
+                      _hover={{ transform: "translateY(-2px)", shadow: "xl" }}
+                      transition="all 0.3s"
+                      w="full"
+                      h="auto"
+                      flexDirection="column"
+                      gap={2}
+                    >
+                      <Text fontSize="lg" fontWeight="bold" lineHeight="1">Assessment →&nbsp;&nbsp;&nbsp;</Text>
+                      <Text fontSize="xs" opacity={0.7} lineHeight="1">Análise Comportamental</Text>
+                    </Button>
+                  </Link>
+                </SimpleGrid>
+              </VStack>
 
               {/* Social Proof */}
-              <VStack align="start" gap={3}>
-                <HStack gap={6} flexWrap="wrap">
-                  <HStack align="center" gap={2}>
-                    <CheckIcon size={16} />
-                    <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
-                      +1000 profissionais desenvolvidos
-                    </Text>
-                  </HStack>
-                  <HStack align="center" gap={2}>
-                    <Building2Icon size={16} />
-                    <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
-                      90+ empresas transformadas
-                    </Text>
-                  </HStack>
-                  <HStack align="center" gap={2}>
-                    <ClockIcon size={16} />
-                    <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
-                      10 anos de experiência
-                    </Text>
-                  </HStack>
+              <HStack gap={6} flexWrap="wrap" pt={4}>
+                <HStack align="center" gap={2}>
+                  <CheckIcon size={16} color="#059669" />
+                  <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
+                    +1000 pessoas atendidas
+                  </Text>
                 </HStack>
-                <Text textStyle="xs" color="fg.subtle" fontStyle="italic">
-                  &ldquo;Nossos clientes aumentam 40% a produtividade e reduzem
-                  60% o turnover, criando ambientes de trabalho mais saudáveis e
-                  lucrativos.&rdquo; - Douglas Borges, CRP 08-21013
-                </Text>
-              </VStack>
+                <HStack align="center" gap={2}>
+                  <Building2Icon size={16} color="#059669" />
+                  <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
+                    90+ empresas transformadas
+                  </Text>
+                </HStack>
+                <HStack align="center" gap={2}>
+                  <ClockIcon size={16} color="#059669" />
+                  <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
+                    10 anos de experiência
+                  </Text>
+                </HStack>
+              </HStack>
             </VStack>
 
             <Box
@@ -257,7 +285,7 @@ export default function Home() {
 
               {/* Balões de contagem aleatórios sobre a foto */}
               {[
-                { title: "1000", description: "Profissionais desenvolvidos" },
+                { title: "1000", description: "Pessoas atendidas" },
                 { title: "90", description: "Empresas atendidas" },
                 { title: "10", description: "Anos de experiência" },
               ].map((stat, i) => {
