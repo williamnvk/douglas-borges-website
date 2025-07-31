@@ -57,6 +57,7 @@ export const metadata: Metadata = {
     apple: { url: "/apple-touch-icon.png", sizes: "180x180" },
   },
   manifest: "/site.webmanifest",
+  
 };
 
 export default function RootLayout(
@@ -70,6 +71,7 @@ export default function RootLayout(
 
   return (
     <html lang={lang} suppressHydrationWarning suppressContentEditableWarning>
+      
       <GoogleTagManager gtmId="GTM-N8DHV67" />
       <GoogleAnalytics gaId="G-5QM28K26ND" />
       <body>

@@ -1,10 +1,6 @@
 export { HeroSection } from "./HeroSection";
-export { ComparisonSection } from "./ComparisonSection";
-export { InvestmentPlans } from "./InvestmentPlans";
-export { WhatsIncluded } from "./WhatsIncluded";
-export { ScientificMethodology } from "./ScientificMethodology";
-export { ProcessSteps } from "./ProcessSteps";
-export { FAQSection } from "./FAQSection";
-export { ProfessionalInfo } from "./ProfessionalInfo";
-export { ITreeboInfo } from "./ITreeboInfo";
-export { FinalCTA } from "./FinalCTA";
+export { ProblemsSection } from "./ProblemsSection";
+export { ServicesSection } from "./ServicesSection";
+export { BenefitsSection } from "./BenefitsSection";
+export { TestimonialsSection } from "./TestimonialsSection";
+export { CTASection } from "./CTASection";

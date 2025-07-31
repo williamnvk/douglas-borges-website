@@ -4,215 +4,209 @@ import {
   Badge,
   Heading,
   Text,
-  HStack,
   Button,
   Stack,
+  Image,
+  Container,
 } from "@chakra-ui/react";
 
-interface HeroSectionProps {
-  keyBenefits: string[];
-}
-
-export function HeroSection({ keyBenefits }: HeroSectionProps) {
+export function HeroSection() {
   return (
     <Box
       as="section"
-      bg="black"
+      bgGradient="linear-gradient(135deg, {colors.gray.950}, {colors.blue.900})"
       color="white"
       w="full"
       borderRadius={{ base: "none", md: "3xl" }}
-      p={{ base: 6, sm: 8, md: 16 }}
       position="relative"
       overflow="hidden"
       aria-labelledby="hero-heading"
     >
-      {/* Video Background */}
-      <Box
-        as="video"
-        position="absolute"
-        top="0"
-        left="0"
-        right="0"
-        bottom="0"
-        w="full"
-        h="full"
-        objectFit="cover"
-        // @ts-expect-error: Type compatibility issue
-        autoPlay
-        muted
-        loop
-        playsInline
-        zIndex="0"
-        opacity="0.4"
-        filter="grayscale(100%) brightness(0.5)"
-      >
-        <source src="/assets/videos/bg.mp4" type="video/mp4" />
-      </Box>
-
-      {/* Dark Overlay */}
-      <Box
-        position="absolute"
-        top="0"
-        left="0"
-        right="0"
-        bottom="0"
-        bg="gray.900"
-        opacity="0.7"
-        zIndex="1"
-      />
-
-      {/* Gradient Overlay */}
-      <Box
-        position="absolute"
-        top="0"
-        left="0"
-        right="0"
-        bottom="0"
-        bgGradient="linear(135deg, gray.900 0%, transparent 50%, gray.900 100%)"
-        opacity="0.8"
-        zIndex="2"
-      />
-
-      <Stack
-        flexDir={{ base: "column", md: "row" }}
-        w="full"
-        gap={{ base: 6, sm: 8, md: 16 }}
-        align="center"
-        justify="space-between"
+      <Container
+        maxW="8xl"
+        py={{ base: 16, md: 24 }}
         position="relative"
-        zIndex="3"
+        zIndex="1"
       >
-        <VStack
-          gap={{ base: 6, sm: 7, md: 8 }}
-          flex={1}
-          align="stretch"
-          maxW={{ base: "full", md: "800px" }}
+        <Stack
+          direction={{ base: "column", lg: "row" }}
+          gap={{ base: 12, lg: 20 }}
+          align="center"
+          justify="space-between"
+          minH={{ base: "auto", lg: "70vh" }}
         >
-          <Badge
-            colorPalette="blue"
-            fontSize={{ base: "xs", sm: "sm" }}
-            px={3}
-            py={1}
-            w="fit-content"
-            bg="blue.500"
-            color="white"
-            fontWeight="600"
-            letterSpacing="wider"
-            textTransform="uppercase"
+          <VStack
+            flex={1}
+            align="flex-start"
+            gap={8}
+            maxW={{ base: "full", lg: "600px" }}
           >
-            Assessment Comportamental Empresarial
-          </Badge>
+            {/* Badge */}
+            <Badge
+              bg="yellow.50/10"
+              color="yellow.600"
+              px={4}
+              py={2}
+              textStyle="sm"
+              fontWeight="semibold"
+              borderRadius="full"
+            >
+              Psicologia Corporativa
+            </Badge>
 
-          <Heading
-            as="h1"
-            id="hero-heading"
-            fontSize={{ base: "4xl", sm: "4xl", md: "6xl", lg: "7xl" }}
-            color="white"
-            lineHeight="1.2"
-            fontWeight="800"
-          >
-            Assessment Comportamental Empresarial:{" "}
+            {/* Título Principal */}
             <Heading
-              as="span"
-              fontSize={{ base: "4xl", sm: "4xl", md: "6xl", lg: "7xl" }}
+              id="hero-heading"
+              textStyle={{ base: "4xl", md: "6xl", xl: "7xl" }}
+              fontWeight="black"
+              fontFamily="heading"
+              lineHeight="1"
             >
-              Decisões Baseadas em Ciência
+              Saúde mental nas empresas começa pela
+              <Box as="span" color="yellow.300">
+                {" "}
+                liderança
+              </Box>
             </Heading>
-          </Heading>
 
-          <Text
-            fontSize={{ base: "md", sm: "lg", md: "xl" }}
-            color="gray.200"
-            fontWeight="400"
-            lineHeight="1.25"
-          >
-            Assessment comportamental que oferece uma análise científica e
-            objetiva do perfil psicológico dos seus colaboradores,
-            fundamentando decisões importantes sobre pessoas. Conheça também nossos{" "}
-            <Text
-              as="a"
-              asChild
-              color="blue.300"
-              textDecoration="underline"
-              _hover={{ color: "blue.100" }}
+            {/* Subtítulo provocativo */}
+            <Heading
+              textStyle={{ base: "xl", md: "2xl", xl: "3xl" }}
+              fontWeight="medium"
+              opacity="0.9"
+              fontFamily="body"
             >
-              <a href="/servicos">outros serviços psicológicos</a>
-            </Text>.
-          </Text>
+              Sua equipe está produtiva, ou apenas exausta?
+            </Heading>
 
-          <HStack gap={{ base: 2, sm: 4 }} flexWrap="wrap" w="full">
+            <Text
+              textStyle={{ base: "lg", md: "xl" }}
+              opacity="0.8"
+              maxW="600px"
+              fontFamily="body"
+            >
+              Como líder, você tem o poder de transformar não apenas sua
+              empresa, mas as vidas de todos que trabalham com você. Comece
+              cuidando da sua própria saúde mental.
+            </Text>
+
             <Button
+              w="full"
               as="a"
-              asChild
-              size={{ base: "lg", md: "xl" }}
-              variant="solid"
-              px={{ base: 6, sm: 8 }}
-              py={{ base: 3, sm: 4 }}
-              bg="blue.500"
-              fontSize={{ base: "md", sm: "lg", md: "xl" }}
-              fontWeight="700"
-              w={{ base: "full", md: "fit-content" }}
-              _hover={{
-                bg: "blue.400",
-                transform: "translateY(-2px)",
-                boxShadow: "2xl",
-              }}
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              href="https://wa.me/5542988381261?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20de%20psicologia%20corporativa."
+              target="_blank"
+              size="lg"
+              colorPalette="yellow"
+              px={8}
+              py={10}
+              textStyle="lg"
+              fontWeight="bold"
+              _hover={{ transform: "translateY(-2px)" }}
               transition="all 0.3s"
             >
-              <a href="#investimento">Ver Planos e Investimento</a>
+              Agendar Atendimento →
             </Button>
-            <Button
-              as="a"
-              asChild
-              variant="outline"
-              w={{ base: "full", md: "fit-content" }}
-              px={{ base: 6, sm: 8 }}
-              py={{ base: 3, sm: 4 }}
-              size={{ base: "lg", md: "xl" }}
-              borderColor="transparent"
-              color="white"
-              fontSize={{ base: "sm", sm: "md", md: "lg" }}
-            >
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20um%20exemplo%20de%20relat%C3%B3rio%20do%20Assessment%20Comportamental."
-              >
-                Exemplo de Relatório
-              </a>
-            </Button>
-          </HStack>
 
-          <VStack align="flex-start" gap={{ base: 2, sm: 3 }} w="full">
-            {keyBenefits.map((benefit, index) => (
-              <Text
-                key={index}
-                fontSize={{ base: "sm", sm: "md" }}
-                color="gray.300"
-                fontWeight="500"
-              >
-                {benefit}
-              </Text>
-            ))}
+            {/* Estatísticas */}
+            <Stack direction={{ base: "column", sm: "row" }} gap={6} pt={4}>
+              <VStack align="start" gap={1}>
+                <Text textStyle="2xl" fontWeight="bold">
+                  +1000
+                </Text>
+                <Text textStyle="sm" opacity="0.8">
+                  Líderes transformados
+                </Text>
+              </VStack>
+              <VStack align="start" gap={1}>
+                <Text textStyle="2xl" fontWeight="bold">
+                  +90
+                </Text>
+                <Text textStyle="sm" opacity="0.8">
+                  Empresas atendidas
+                </Text>
+              </VStack>
+              <VStack align="start" gap={1}>
+                <Text textStyle="2xl" fontWeight="bold">
+                  10 anos
+                </Text>
+                <Text textStyle="sm" opacity="0.8">
+                  De experiência
+                </Text>
+              </VStack>
+            </Stack>
           </VStack>
-        </VStack>
 
-        <Box
-          w={{ base: "full", md: "450px" }}
-          h={{ base: "250px", sm: "300px", md: "500px" }}
-          borderRadius={{ base: "xl", md: "2xl" }}
-          boxShadow="2xl"
-          border="4px solid"
-          borderColor="gray.700"
-          role="img"
-          aria-label="Escritório profissional para assessment comportamental empresarial em Curitiba - Douglas Borges Psicólogo"
-          style={{
-            backgroundImage: "url(/assets/escritório.webp)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-      </Stack>
+          {/* Imagem */}
+          <Box
+            w={{ base: "full", lg: "500px" }}
+            h={{ base: "400px", lg: "600px" }}
+            position="relative"
+            borderRadius="2xl"
+            overflow="hidden"
+            boxShadow="2xl"
+          >
+            <Image
+              src="/assets/douglas-borges-atendimento.webp"
+              alt="Douglas Borges - Psicólogo Empresarial em atendimento"
+              style={{ objectFit: "cover" }}
+              sizes="(max-width: 768px) 100vw, 500px"
+              w="full"
+              h="full"
+            />
+
+            {/* Badge flutuante */}
+            <Box
+              position="absolute"
+              top={4}
+              left={4}
+              right={4}
+              bg="rgba(255, 255, 255, 0.95)"
+              backdropFilter="blur(10px)"
+              borderRadius="xl"
+              p={4}
+              boxShadow="lg"
+            >
+              <VStack align="start" gap={1}>
+                <Text textStyle="sm" fontWeight="bold" color="gray.900">
+                  Douglas Borges
+                </Text>
+                <Text textStyle="xs" color="gray.600" fontWeight="medium">
+                  Psicólogo Empresarial • CRP/PR 08-21013
+                </Text>
+                <Badge colorPalette="green" size="sm" fontWeight="bold">
+                  ✓ Especialista em Liderança
+                </Badge>
+              </VStack>
+            </Box>
+          </Box>
+        </Stack>
+      </Container>
+
+      {/* Elementos decorativos */}
+      <Box
+        position="absolute"
+        top="-20%"
+        right="-10%"
+        w="400px"
+        h="400px"
+        borderRadius="full"
+        bg="whiteAlpha.100"
+        filter="blur(100px)"
+        zIndex="0"
+      />
+      <Box
+        position="absolute"
+        bottom="-20%"
+        left="-10%"
+        w="300px"
+        h="300px"
+        borderRadius="full"
+        bg="whiteAlpha.100"
+        filter="blur(80px)"
+        zIndex="0"
+      />
     </Box>
   );
 }

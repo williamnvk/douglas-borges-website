@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Building2Icon, MenuIcon, User2Icon } from "lucide-react";
+import { BrainIcon, Building2Icon, MenuIcon, User2Icon } from "lucide-react";
 
 // Function to determine the current page based on pathname
 const getCurrentPage = (pathname: string): string => {
@@ -25,6 +25,7 @@ const getCurrentPage = (pathname: string): string => {
   if (pathname === "/insights") return "insights";
   if (pathname === "/contato") return "contact";
   if (pathname === "/links") return "links";
+  if (pathname === "/assessment") return "assessment";
   // For dynamic insight pages (individual insight posts)
   if (pathname.match(/^\/[^\/]+$/) && pathname !== "/") return "insights";
   return "";
@@ -34,8 +35,6 @@ export const Header = () => {
   const { open, onOpen, onClose, onToggle } = useDisclosure();
   const pathname = usePathname();
   const currentPage = getCurrentPage(pathname);
-
-
 
   const isCurrentPage = (page: string) => {
     return currentPage === page;
@@ -88,6 +87,14 @@ export const Header = () => {
             href="/empresas"
           >
             Para sua empresa
+          </Button>
+          <Button
+            variant={isCurrentPage("assessment") ? "outline" : "ghost"}
+            as={Link}
+            // @ts-expect-error: Type compatibility issue
+            href="/assessment"
+          >
+            Assessment Comportamental
           </Button>
         </HStack>
       </HStack>
@@ -213,6 +220,21 @@ export const Header = () => {
                       justifyContent="flex-start"
                     >
                       Para sua empresa
+                    </Button>
+                    <Button
+                      variant={isCurrentPage("assessment") ? "solid" : "ghost"}
+                      as={Link}
+                      w="full"
+                      // @ts-expect-error: Type compatibility issue
+                      href="/assessment"
+                      leftIcon={<BrainIcon />}
+                      onClick={onClose}
+                      colorPalette={
+                        isCurrentPage("assessment") ? "blue" : "gray"
+                      }
+                      justifyContent="flex-start"
+                    >
+                      Assessment Comportamental
                     </Button>
                   </VStack>
 

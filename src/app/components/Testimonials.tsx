@@ -64,6 +64,7 @@ const Testimonials: FC<{
                 bg="white"
                 borderRadius="lg"
                 boxShadow="lg"
+                color="gray.900"
                 _after={{
                   content: '""',
                   position: "absolute",

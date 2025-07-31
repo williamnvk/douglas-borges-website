@@ -123,8 +123,6 @@ export function ComparisonSection({
             borderRadius="full"
             fontWeight="bold"
             fontSize={{ base: "xs", md: "sm" }}
-            letterSpacing="wider"
-            boxShadow="md"
           >
             Sem Assessment
           </Box>
@@ -238,7 +236,6 @@ export function ComparisonSection({
             fontWeight="bold"
             fontSize={{ base: "xs", md: "sm" }}
             letterSpacing="wider"
-            boxShadow="md"
           >
             Com Assessment
           </Box>

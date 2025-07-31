@@ -149,7 +149,7 @@ export function InvestmentPlans() {
               _hover={{ transform: "translateY(-2px)" }}
               transition="all 0.3s"
             >
-              <a href="https://buy.stripe.com/9B63cvgiB0bE4BPdNB3Ru00" target="_blank" rel="noopener noreferrer">
+              <a href="https://buy.stripe.com/fZu14p5BD2ehgO3fDCaIM00" target="_blank" rel="noopener noreferrer">
                 Contratar Agora
               </a>
             </Button>
@@ -245,7 +245,7 @@ export function InvestmentPlans() {
               _hover={{ transform: "translateY(-2px)" }}
               transition="all 0.3s"
             >
-              <a href="https://wa.me/5542988381261?text=Gostaria%20de%20contratar%20o%20assessment%20para%20equipe%20(3%20colaboradores)%20por%20R$1.750" target="_blank" rel="noopener noreferrer">
+              <a href="https://buy.stripe.com/3cIdRbaVXaKN2Xd9feaIM01" target="_blank" rel="noopener noreferrer">
                 Contratar Agora
               </a>
             </Button>
@@ -375,7 +375,7 @@ export function InvestmentPlans() {
               _hover={{ transform: "translateY(-2px)" }}
               transition="all 0.3s"
             >
-              <a href="https://wa.me/5542988381261?text=Gostaria%20de%20contratar%20o%20assessment%20para%20departamento%20(5%20colaboradores)%20por%20R$2.205" target="_blank" rel="noopener noreferrer">
+              <a href="https://buy.stripe.com/cNi00lfcdf13fJZfDCaIM02" target="_blank" rel="noopener noreferrer">
                 Contratar Agora
               </a>
             </Button>
@@ -505,7 +505,7 @@ export function InvestmentPlans() {
               _hover={{ transform: "translateY(-2px)" }}
               transition="all 0.3s"
             >
-              <a href="https://wa.me/5542988381261?text=Gostaria%20de%20contratar%20o%20assessment%20corporativo%20(10%20colaboradores)%20por%20R$3.570" target="_blank" rel="noopener noreferrer">
+              <a href="https://buy.stripe.com/dRmaEZd451ad8hx2QQaIM03" target="_blank" rel="noopener noreferrer">
                 Contratar Agora
               </a>
             </Button>
