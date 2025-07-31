@@ -13,11 +13,7 @@ import {
   Badge,
 } from "@chakra-ui/react";
 import { WordTransition } from "./components/WordTransition";
-import {
-  ClockIcon,
-  PlusIcon,
-  ArrowRightIcon,
-} from "lucide-react";
+import { ClockIcon, PlusIcon, ArrowRightIcon } from "lucide-react";
 import Icon from "@/components/shared/DynamicIcon";
 import { Header } from "@/components/shared/Header";
 import Testimonials from "./components/Testimonials";
@@ -77,7 +73,8 @@ export default function Home() {
             "@type": "ProfessionalService",
             name: siteTitle,
             image: siteImage,
-            description: "Como cristão, minha missão é apoiar líderes a alcançarem equilíbrio emocional e a prosperarem em suas jornadas, capacitando-os a gerar empregos e garantir o sustento de inúmeras famílias. Ao promover ambientes de trabalho saudáveis e harmonizar suas próprias vidas pessoais, esses líderes inspiram futuras gerações a enxergarem a sucessão de forma positiva, leve e sustentável, moldando um legado de liderança saudável e comprometida com o futuro.",
+            description:
+              "Como cristão, minha missão é apoiar líderes a alcançarem equilíbrio emocional e a prosperarem em suas jornadas, capacitando-os a gerar empregos e garantir o sustento de inúmeras famílias. Ao promover ambientes de trabalho saudáveis e harmonizar suas próprias vidas pessoais, esses líderes inspiram futuras gerações a enxergarem a sucessão de forma positiva, leve e sustentável, moldando um legado de liderança saudável e comprometida com o futuro.",
             address: {
               "@type": "PostalAddress",
               addressLocality: "União da Vitória",
@@ -136,7 +133,7 @@ export default function Home() {
                 borderColor="blue.200"
                 borderRadius="full"
               >
-                Consultoria Psicológica Empresarial
+                Consultoria Comportamental para Empresários
               </Badge>
 
               <Heading
@@ -148,11 +145,27 @@ export default function Home() {
                 lineHeight="1"
                 m={0}
               >
-                <WordTransition inline typewriter words={["Desenvolvendo", "Aconselhando", "Ajudando", "Encorajando", "Incentivando"]} />
+                <WordTransition
+                  inline
+                  typewriter
+                  words={[
+                    "Desenvolvendo",
+                    "Aconselhando",
+                    "Ajudando",
+                    "Encorajando",
+                    "Incentivando",
+                  ]}
+                />
                 <br />
                 <WordTransition
                   typewriter
-                  words={["empresários", "executivos", "líderes", "profissionais", "empreendedores"]}
+                  words={[
+                    "empresários",
+                    "executivos",
+                    "líderes",
+                    "profissionais",
+                    "empreendedores",
+                  ]}
                   delay={5000}
                   inline
                 />
@@ -167,8 +180,12 @@ export default function Home() {
               >
                 {" "}
                 a encontrar equilíbrio entre <br />
-                <WordTransition inline typewriter words={["empresa", "trabalho", "negócios"]} />,
-                família e propósito
+                <WordTransition
+                  inline
+                  typewriter
+                  words={["empresa", "trabalho", "negócios"]}
+                />
+                , família e propósito
               </Heading>
 
               <Text
@@ -199,31 +216,44 @@ export default function Home() {
                   </Button>
                 </Link>
 
-                <Link href="/contato">
+                <Link href="/assessment ">
                   <Button
-                    variant="outline"
                     size="lg"
+                    variant="outline"
+                    colorPalette="blue"
                     px={8}
                     py={6}
                     textStyle="lg"
                     fontWeight="semibold"
-                    _hover={{ bg: "gray.50" }}
+                    _hover={{ transform: "translateY(-2px)", shadow: "xl" }}
                     transition="all 0.3s"
                     w="full"
                   >
-                    Agendar Conversa
+                    Assessment →
                   </Button>
                 </Link>
               </Stack>
 
               {/* Social Proof */}
-              <HStack gap={6} flexWrap="wrap">
+              <HStack gap={4} flexWrap="wrap">
                 <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
                   +1000 pessoas transformadas
                 </Text>
                 <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
                   +90 empresas atendidas
                 </Text>
+                <Link href="/contato">
+                  <Button
+                    variant="ghost"
+                    colorPalette="blue"
+                    fontWeight="semibold"
+                  >
+                    <Box as="span" textDecoration="underline">
+                      Agendar Psicoterapia
+                    </Box>{" "}
+                    →
+                  </Button>
+                </Link>
               </HStack>
             </VStack>
 
@@ -247,7 +277,7 @@ export default function Home() {
               {[
                 { title: "1000", description: "Pessoas atendidas" },
                 { title: "90", description: "Empresas atendidas" },
-                { title: "10", description: "Anos de experiência" }
+                { title: "10", description: "Anos de experiência" },
               ].map((stat, i) => {
                 const positions = [
                   { top: "130px", left: "60px" },
@@ -275,7 +305,7 @@ export default function Home() {
                   >
                     <VStack gap={0}>
                       <Heading
-                        textStyle={{base: "xl", md: "3xl"}}
+                        textStyle={{ base: "xl", md: "3xl" }}
                         fontWeight="black"
                         display="flex"
                         alignItems="center"
@@ -288,7 +318,7 @@ export default function Home() {
                         {stat.title}
                       </Heading>
                       <Text
-                        textStyle={{base: "xs", md: "sm"}}
+                        textStyle={{ base: "xs", md: "sm" }}
                         fontWeight="semibold"
                         color="fg.muted"
                       >
@@ -374,73 +404,82 @@ export default function Home() {
                 {
                   icon: "handshake",
                   title: "Programas de Inteligência Emocional para Equipes",
-                  description: "Fortaleça a coesão e o desempenho da sua equipe, promovendo um ambiente de trabalho mais ético, colaborativo e equilibrado."
+                  description:
+                    "Fortaleça a coesão e o desempenho da sua equipe, promovendo um ambiente de trabalho mais ético, colaborativo e equilibrado.",
                 },
                 {
                   icon: "quote",
-                  title: "Aconselhamento para Alta Performance Pessoal e Profissional",
-                  description: "Um acompanhamento focado para empresários que buscam gerenciar o estresse, aprimorar seu desempenho e manter uma visão de longo prazo."
+                  title:
+                    "Aconselhamento para Alta Performance Pessoal e Profissional",
+                  description:
+                    "Um acompanhamento focado para empresários que buscam gerenciar o estresse, aprimorar seu desempenho e manter uma visão de longo prazo.",
                 },
                 {
                   icon: "plus",
                   title: "Workshops In-Company",
-                  description: "Capacite líderes e equipes com treinamentos práticos, fundamentados em valores cristãos, em temas como inteligência emocional, produtividade e gestão de conflitos."
+                  description:
+                    "Capacite líderes e equipes com treinamentos práticos, fundamentados em valores cristãos, em temas como inteligência emocional, produtividade e gestão de conflitos.",
                 },
                 {
                   icon: "scale",
                   title: "Consultoria para o Equilíbrio Vida-Trabalho",
-                  description: "Apoio na construção de uma cultura organizacional onde o bem-estar pessoal, familiar e profissional caminham juntos, maximizando o desempenho a longo prazo."
+                  description:
+                    "Apoio na construção de uma cultura organizacional onde o bem-estar pessoal, familiar e profissional caminham juntos, maximizando o desempenho a longo prazo.",
                 },
                 {
                   icon: "user",
                   title: "Coaching Executivo",
-                  description: "Desenvolvimento de liderança fundamentado em princípios bíblicos, aprimorando a tomada de decisões empresariais com propósito e resiliência."
+                  description:
+                    "Desenvolvimento de liderança fundamentado em princípios bíblicos, aprimorando a tomada de decisões empresariais com propósito e resiliência.",
                 },
                 {
                   icon: "lightbulb",
                   title: "Mentoria para Planejamento de Carreira com Propósito",
-                  description: "Ajuda a alinhar suas metas profissionais com seu propósito de vida, para alcançar uma carreira significativa e equilibrada."
-                }
-              ].slice(0, 6).map((service, i) => (
-                <Box
-                  key={`service-${i}`}
-                  bg="white"
-                  p={8}
-                  borderRadius="lg"
-                  boxShadow="lg"
-                  border="1px solid"
-                  borderColor="border.muted"
-                  h="full"
-                >
-                  <VStack align="start" gap={6} h="full">
-                    <Flex
-                      w={16}
-                      h={16}
-                      borderRadius="xl"
-                      bg="blue.500"
-                      align="center"
-                      justify="center"
-                      color="white"
-                    >
-                      <Icon name={service.icon as never} size={32} />
-                    </Flex>
-
-                    <VStack align="start" gap={3} flex={1}>
-                      <Heading
-                        textStyle="xl"
-                        color="gray.900"
-                        fontFamily="heading"
-                        fontWeight="semibold"
+                  description:
+                    "Ajuda a alinhar suas metas profissionais com seu propósito de vida, para alcançar uma carreira significativa e equilibrada.",
+                },
+              ]
+                .slice(0, 6)
+                .map((service, i) => (
+                  <Box
+                    key={`service-${i}`}
+                    bg="white"
+                    p={8}
+                    borderRadius="lg"
+                    boxShadow="lg"
+                    border="1px solid"
+                    borderColor="border.muted"
+                    h="full"
+                  >
+                    <VStack align="start" gap={6} h="full">
+                      <Flex
+                        w={16}
+                        h={16}
+                        borderRadius="xl"
+                        bg="blue.500"
+                        align="center"
+                        justify="center"
+                        color="white"
                       >
-                        {service.title}
-                      </Heading>
-                      <Text color="fg.muted" textStyle="md">
-                        {service.description}
-                      </Text>
+                        <Icon name={service.icon as never} size={32} />
+                      </Flex>
+
+                      <VStack align="start" gap={3} flex={1}>
+                        <Heading
+                          textStyle="xl"
+                          color="gray.900"
+                          fontFamily="heading"
+                          fontWeight="semibold"
+                        >
+                          {service.title}
+                        </Heading>
+                        <Text color="fg.muted" textStyle="md">
+                          {service.description}
+                        </Text>
+                      </VStack>
                     </VStack>
-                  </VStack>
-                </Box>
-              ))}
+                  </Box>
+                ))}
             </SimpleGrid>
           </VStack>
         </Container>
@@ -482,7 +521,7 @@ export default function Home() {
               <VStack align="start" gap={6}>
                 {[
                   "Como cristão, minha missão é apoiar líderes a alcançarem equilíbrio emocional e a prosperarem em suas jornadas, capacitando-os a gerar empregos e garantir o sustento de inúmeras famílias. Ao promover ambientes de trabalho saudáveis e harmonizar suas próprias vidas pessoais, esses líderes inspiram futuras gerações a enxergarem a sucessão de forma positiva, leve e sustentável, moldando um legado de liderança saudável e comprometida com o futuro.",
-                  "Há 10 anos, ajudo líderes empresariais a superar a exaustão emocional, promovendo equilíbrio entre Empresa, Família e Propósito de Vida."
+                  "Há 10 anos, ajudo líderes empresariais a superar a exaustão emocional, promovendo equilíbrio entre Empresa, Família e Propósito de Vida.",
                 ].map((p, i) => (
                   <Text
                     textStyle={{ base: "lg", md: "xl" }}
@@ -564,26 +603,31 @@ export default function Home() {
             </VStack>
 
             <Box w="full">
-              <Testimonials items={[
-                {
-                  image: "/assets/testmonials/william-n.webp",
-                  name: "William Novak",
-                  city: "União da Vitória, PR",
-                  description: "Desde a primeira sessão, senti uma clareza incrível sobre meus objetivos e uma paz que há tempos não experimentava. A consultoria me ajudou a reorganizar minhas prioridades e, pela primeira vez, consegui equilibrar meu trabalho com minha vida pessoal."
-                },
-                {
-                  image: null,
-                  name: "Dr. Gustavo Coronel, CEO da Clinica Yluma",
-                  city: "União da Vitória, PR",
-                  description: "Meu maior ganho foi a clareza. Cheguei aos encontros de consultoria com problemas acumulados, me sentindo sempre em débito com todos. Hoje, sei onde quero chegar e como quero viver, e cada decisão tem sido mais consciente. Esse equilíbrio que encontrei reflete diretamente nos resultados do meu trabalho e com a família."
-                },
-                {
-                  image: "/assets/testmonials/thyago-b-de-lima.webp",
-                  name: "Thyago B. de Lima, Empresário e Palestrante",
-                  city: "Curitiba, PR",
-                  description: "A abordagem cristã da consultoria fez toda a diferença para mim. Encontrar alguém que entende meus valores e me ajuda a aplicá-los no dia a dia foi transformador. Hoje, tenho mais paz e confiança em minhas decisões como líder e como pai."
-                }
-              ]} />
+              <Testimonials
+                items={[
+                  {
+                    image: "/assets/testmonials/william-n.webp",
+                    name: "William Novak",
+                    city: "União da Vitória, PR",
+                    description:
+                      "Desde a primeira sessão, senti uma clareza incrível sobre meus objetivos e uma paz que há tempos não experimentava. A consultoria me ajudou a reorganizar minhas prioridades e, pela primeira vez, consegui equilibrar meu trabalho com minha vida pessoal.",
+                  },
+                  {
+                    image: null,
+                    name: "Dr. Gustavo Coronel, CEO da Clinica Yluma",
+                    city: "União da Vitória, PR",
+                    description:
+                      "Meu maior ganho foi a clareza. Cheguei aos encontros de consultoria com problemas acumulados, me sentindo sempre em débito com todos. Hoje, sei onde quero chegar e como quero viver, e cada decisão tem sido mais consciente. Esse equilíbrio que encontrei reflete diretamente nos resultados do meu trabalho e com a família.",
+                  },
+                  {
+                    image: "/assets/testmonials/thyago-b-de-lima.webp",
+                    name: "Thyago B. de Lima, Empresário e Palestrante",
+                    city: "Curitiba, PR",
+                    description:
+                      "A abordagem cristã da consultoria fez toda a diferença para mim. Encontrar alguém que entende meus valores e me ajuda a aplicá-los no dia a dia foi transformador. Hoje, tenho mais paz e confiança em minhas decisões como líder e como pai.",
+                  },
+                ]}
+              />
             </Box>
           </VStack>
         </Container>
@@ -639,35 +683,40 @@ export default function Home() {
                 {
                   image: "/assets/palestras/ensinando-a-ensinar.jpg",
                   slug: "ensinando-a-ensinar-aprendendo-a-aprender-aprenendo-a-ensinar",
-                  title: "Ensinando a Ensinar, Aprendendo a Aprender e Aprendendo a Ensinar",
-                  description: "Explora métodos práticos para desenvolver habilidades de ensino e aprendizado contínuo, fortalecendo a troca de conhecimento.",
+                  title:
+                    "Ensinando a Ensinar, Aprendendo a Aprender e Aprendendo a Ensinar",
+                  description:
+                    "Explora métodos práticos para desenvolver habilidades de ensino e aprendizado contínuo, fortalecendo a troca de conhecimento.",
                   duration: "1h",
-                  format: "Presencial ou Online"
+                  format: "Presencial ou Online",
                 },
                 {
                   image: "/assets/palestras/ansiedade.jpg",
                   slug: "palestra-controlar-ansiedade",
                   title: "Como controlar a ansiedade",
-                  description: "Combinando conteúdos práticos e ferramentas exclusivas usadas em orientações psicológicas, conheça às técnicas para controlar a Ansiedade.",
+                  description:
+                    "Combinando conteúdos práticos e ferramentas exclusivas usadas em orientações psicológicas, conheça às técnicas para controlar a Ansiedade.",
                   duration: "2h",
-                  format: "Presencial"
+                  format: "Presencial",
                 },
                 {
                   image: "/assets/palestras/problema.webp",
                   slug: "palestra-viva-sua-historia",
                   title: "O que eu faço com um PROBLEMA",
-                  description: "Existe todo um processo mental quando se trata de um problema. Seja para percebê-lo e/ou para resolvê-lo. O mais importante de tudo é saber que para ser chamado de problema!",
+                  description:
+                    "Existe todo um processo mental quando se trata de um problema. Seja para percebê-lo e/ou para resolvê-lo. O mais importante de tudo é saber que para ser chamado de problema!",
                   duration: "1h30m",
-                  format: "Presencial ou Online"
+                  format: "Presencial ou Online",
                 },
                 {
                   image: "/assets/palestras/protocolos-comportamentais.jpg",
                   slug: "novos-protocolos-comportamentais",
                   title: "Novos Protocolos Comportamentais",
-                  description: "apresenta uma abordagem inovadora para aprimorar a comunicação interpessoal, focada em empatia, clareza e compreensão mútua.",
+                  description:
+                    "apresenta uma abordagem inovadora para aprimorar a comunicação interpessoal, focada em empatia, clareza e compreensão mútua.",
                   duration: "1h",
-                  format: "Presencial ou Online"
-                }
+                  format: "Presencial ou Online",
+                },
               ].map((topic, i) => (
                 <Link key={`topic-${i}`} href="/palestras-e-eventos">
                   <Box
@@ -854,7 +903,8 @@ export default function Home() {
                 Como as mudanças que você quer vão realmente acontecer?
               </Heading>
               <Text textStyle={{ base: "lg", md: "xl" }} opacity="0.9">
-                Entre em contato agora conosco e crie uma parceria pela construção de um novo caminho para sua carreira!
+                Entre em contato agora conosco e crie uma parceria pela
+                construção de um novo caminho para sua carreira!
               </Text>
             </VStack>
 

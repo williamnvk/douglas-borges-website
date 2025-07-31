@@ -70,6 +70,7 @@ export const metadata: Metadata = {
     "palestras empresariais",
     "workshops saúde mental",
     "consultoria psicológica empresas",
+    "consultoria comportamental para empresários",
     "inteligência emocional empresas",
     "gestão estresse corporativo",
     "liderança saudável",

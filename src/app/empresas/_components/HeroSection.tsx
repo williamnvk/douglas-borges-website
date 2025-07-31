@@ -9,7 +9,6 @@ import {
   Image,
   Container,
 } from "@chakra-ui/react";
-import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -40,12 +39,12 @@ export function HeroSection() {
             flex={1}
             align="flex-start"
             gap={8}
-            maxW={{ base: "full", lg: "700px" }}
+            maxW={{ base: "full", lg: "600px" }}
           >
             {/* Badge */}
             <Badge
-              bg="white"
-              color="blue.600"
+              bg="yellow.50/10"
+              color="yellow.600"
               px={4}
               py={2}
               textStyle="sm"
@@ -61,8 +60,7 @@ export function HeroSection() {
               textStyle={{ base: "4xl", md: "6xl", xl: "7xl" }}
               fontWeight="black"
               fontFamily="heading"
-              lineHeight="1.1"
-              m={0}
+              lineHeight="1"
             >
               Saúde mental nas empresas começa pela
               <Box as="span" color="yellow.300">
@@ -92,45 +90,24 @@ export function HeroSection() {
               cuidando da sua própria saúde mental.
             </Text>
 
-            {/* CTAs */}
-            <Stack direction={{ base: "column", sm: "row" }} gap={4} w="full">
-              <Button
-                as="a"
-                // @ts-expect-error: Type compatibility issue
-                href="https://wa.me/5542988381261?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20de%20psicologia%20corporativa."
-                target="_blank"
-                size="lg"
-                bg="white"
-                color="blue.600"
-                px={8}
-                py={6}
-                textStyle="lg"
-                fontWeight="bold"
-                _hover={{ bg: "gray.50", transform: "translateY(-2px)" }}
-                transition="all 0.3s"
-                w={{ base: "full", sm: "auto" }}
-              >
-                Falar com o Psicólogo
-              </Button>
-
-              <Link href="/contato">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  px={8}
-                  py={6}
-                  textStyle="lg"
-                  fontWeight="semibold"
-                  borderColor="white"
-                  color="white"
-                  _hover={{ bg: "whiteAlpha.200" }}
-                  transition="all 0.3s"
-                  w={{ base: "full", sm: "auto" }}
-                >
-                  Agendar Conversa
-                </Button>
-              </Link>
-            </Stack>
+            <Button
+              w="full"
+              as="a"
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              href="https://wa.me/5542988381261?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20de%20psicologia%20corporativa."
+              target="_blank"
+              size="lg"
+              colorPalette="yellow"
+              px={8}
+              py={10}
+              textStyle="lg"
+              fontWeight="bold"
+              _hover={{ transform: "translateY(-2px)" }}
+              transition="all 0.3s"
+            >
+              Agendar Atendimento →
+            </Button>
 
             {/* Estatísticas */}
             <Stack direction={{ base: "column", sm: "row" }} gap={6} pt={4}>

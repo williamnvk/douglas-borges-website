@@ -20,7 +20,7 @@ export function CTASection() {
           {/* CTA Principal */}
           <Box
             w="full"
-            bgGradient="linear-gradient(135deg, {colors.blue.600}, {colors.purple.600})"
+            bgGradient="linear-gradient(35deg, {colors.blue.900}, {colors.gray.900})"
             color="white"
             borderRadius="3xl"
             p={{ base: 8, md: 16 }}
@@ -65,13 +65,16 @@ export function CTASection() {
                     "Desenhar um plano personalizado de acompanhamento",
                     "Definir métricas de sucesso claras e mensuráveis",
                   ].map((item, index) => (
-                    <HStack key={`cta-item-${index}`} align="start" gap={3}>
+                    <HStack
+                      key={`cta-item-${index}`}
+                      align="center"
+                      gap={{ base: 2, md: 4 }}
+                    >
                       <Box
                         w={2}
                         h={2}
                         borderRadius="full"
                         bg="yellow.300"
-                        mt={2}
                         flexShrink={0}
                       />
                       <Text textStyle="md" opacity="0.9">
@@ -92,14 +95,8 @@ export function CTASection() {
                     href="https://wa.me/5542988381261?text=Olá%20Douglas!%20Sou%20empresário(a)%20e%20gostaria%20de%20agendar%20uma%20conversa%20sobre%20psicologia%20corporativa%20para%20minha%20empresa."
                     target="_blank"
                     size="lg"
-                    bg="white"
-                    color="blue.600"
-                    px={8}
-                    py={6}
-                    textStyle="lg"
-                    fontWeight="bold"
-                    _hover={{ bg: "gray.50", transform: "translateY(-2px)" }}
-                    transition="all 0.3s"
+                    variant="solid"
+                    colorPalette="yellow"
                     w={{ base: "full", sm: "auto" }}
                   >
                     <Icon name="message-circle" size={20} />
@@ -108,16 +105,8 @@ export function CTASection() {
 
                   <Link href="/contato">
                     <Button
-                      variant="outline"
+                      variant="ghost"
                       size="lg"
-                      px={8}
-                      py={6}
-                      textStyle="lg"
-                      fontWeight="semibold"
-                      borderColor="white"
-                      color="white"
-                      _hover={{ bg: "whiteAlpha.200" }}
-                      transition="all 0.3s"
                       w={{ base: "full", sm: "auto" }}
                     >
                       <Icon name="calendar" size={20} />

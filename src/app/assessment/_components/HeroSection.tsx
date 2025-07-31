@@ -1,12 +1,12 @@
 import {
   VStack,
   Box,
-  Badge,
   Heading,
   Text,
   HStack,
   Button,
   Stack,
+  Container,
 } from "@chakra-ui/react";
 
 interface HeroSectionProps {
@@ -73,146 +73,135 @@ export function HeroSection({ keyBenefits }: HeroSectionProps) {
         zIndex="2"
       />
 
-      <Stack
-        flexDir={{ base: "column", md: "row" }}
-        w="full"
-        gap={{ base: 6, sm: 8, md: 16 }}
-        align="center"
-        justify="space-between"
-        position="relative"
-        zIndex="3"
-      >
-        <VStack
-          gap={{ base: 6, sm: 7, md: 8 }}
-          flex={1}
-          align="stretch"
-          maxW={{ base: "full", md: "800px" }}
+      <Container maxW="8xl">
+        <Stack
+          flexDir={{ base: "column", md: "row" }}
+          w="full"
+          gap={{ base: 6, sm: 8, md: 16 }}
+          align="center"
+          justify="space-between"
+          position="relative"
+          zIndex="3"
         >
-          <Badge
-            colorPalette="blue"
-            fontSize={{ base: "xs", sm: "sm" }}
-            px={3}
-            py={1}
-            w="fit-content"
-            bg="blue.500"
-            color="white"
-            fontWeight="600"
-            letterSpacing="wider"
-            textTransform="uppercase"
+          <VStack
+            gap={{ base: 6, sm: 7, md: 8 }}
+            flex={1}
+            align="stretch"
+            maxW={{ base: "full", md: "800px" }}
           >
-            Assessment Comportamental Empresarial
-          </Badge>
-
-          <Heading
-            as="h1"
-            id="hero-heading"
-            fontSize={{ base: "4xl", sm: "4xl", md: "6xl", lg: "7xl" }}
-            color="white"
-            lineHeight="1.2"
-            fontWeight="800"
-          >
-            Assessment Comportamental Empresarial:{" "}
             <Heading
-              as="span"
+              as="h1"
+              id="hero-heading"
               fontSize={{ base: "4xl", sm: "4xl", md: "6xl", lg: "7xl" }}
-            >
-              Decisões Baseadas em Ciência
-            </Heading>
-          </Heading>
-
-          <Text
-            fontSize={{ base: "md", sm: "lg", md: "xl" }}
-            color="gray.200"
-            fontWeight="400"
-            lineHeight="1.25"
-          >
-            Assessment comportamental que oferece uma análise científica e
-            objetiva do perfil psicológico dos seus colaboradores,
-            fundamentando decisões importantes sobre pessoas. Conheça também nossos{" "}
-            <Text
-              as="a"
-              asChild
-              color="blue.300"
-              textDecoration="underline"
-              _hover={{ color: "blue.100" }}
-            >
-              <a href="/servicos">outros serviços psicológicos</a>
-            </Text>.
-          </Text>
-
-          <HStack gap={{ base: 2, sm: 4 }} flexWrap="wrap" w="full">
-            <Button
-              as="a"
-              asChild
-              size={{ base: "lg", md: "xl" }}
-              variant="solid"
-              px={{ base: 6, sm: 8 }}
-              py={{ base: 3, sm: 4 }}
-              bg="blue.500"
-              fontSize={{ base: "md", sm: "lg", md: "xl" }}
-              fontWeight="700"
-              w={{ base: "full", md: "fit-content" }}
-              _hover={{
-                bg: "blue.400",
-                transform: "translateY(-2px)",
-                boxShadow: "2xl",
-              }}
-              transition="all 0.3s"
-            >
-              <a href="#investimento">Ver Planos e Investimento</a>
-            </Button>
-            <Button
-              as="a"
-              asChild
-              variant="outline"
-              w={{ base: "full", md: "fit-content" }}
-              px={{ base: 6, sm: 8 }}
-              py={{ base: 3, sm: 4 }}
-              size={{ base: "lg", md: "xl" }}
-              borderColor="transparent"
               color="white"
-              fontSize={{ base: "sm", sm: "md", md: "lg" }}
+              lineHeight="1.2"
+              fontWeight="800"
             >
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20um%20exemplo%20de%20relat%C3%B3rio%20do%20Assessment%20Comportamental."
+              Assessment Comportamental Empresarial:{" "}
+              <Heading
+                as="span"
+                fontSize={{ base: "4xl", sm: "4xl", md: "6xl", lg: "7xl" }}
               >
-                Exemplo de Relatório
-              </a>
-            </Button>
-          </HStack>
+                Decisões Baseadas em Ciência
+              </Heading>
+            </Heading>
 
-          <VStack align="flex-start" gap={{ base: 2, sm: 3 }} w="full">
-            {keyBenefits.map((benefit, index) => (
+            <Text
+              fontSize={{ base: "md", sm: "lg", md: "xl" }}
+              color="gray.200"
+              fontWeight="400"
+              lineHeight="1.25"
+            >
+              Assessment comportamental que oferece uma análise científica e
+              objetiva do perfil psicológico dos seus colaboradores,
+              fundamentando decisões importantes sobre pessoas. Conheça também
+              nossos{" "}
               <Text
-                key={index}
-                fontSize={{ base: "sm", sm: "md" }}
-                color="gray.300"
-                fontWeight="500"
+                as="a"
+                asChild
+                color="blue.300"
+                textDecoration="underline"
+                _hover={{ color: "blue.100" }}
               >
-                {benefit}
+                <a href="/servicos">outros serviços psicológicos</a>
               </Text>
-            ))}
-          </VStack>
-        </VStack>
+              .
+            </Text>
 
-        <Box
-          w={{ base: "full", md: "450px" }}
-          h={{ base: "250px", sm: "300px", md: "500px" }}
-          borderRadius={{ base: "xl", md: "2xl" }}
-          boxShadow="2xl"
-          border="4px solid"
-          borderColor="gray.700"
-          role="img"
-          aria-label="Escritório profissional para assessment comportamental empresarial em Curitiba - Douglas Borges Psicólogo"
-          style={{
-            backgroundImage: "url(/assets/escritório.webp)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-      </Stack>
+            <HStack gap={{ base: 2, sm: 4 }} flexWrap="wrap" w="full">
+              <Button
+                as="a"
+                asChild
+                size={{ base: "lg", md: "xl" }}
+                variant="solid"
+                px={{ base: 6, sm: 8 }}
+                py={{ base: 3, sm: 4 }}
+                bg="blue.500"
+                fontSize={{ base: "md", sm: "lg", md: "xl" }}
+                fontWeight="700"
+                w={{ base: "full", md: "fit-content" }}
+                _hover={{
+                  bg: "blue.400",
+                  transform: "translateY(-2px)",
+                  boxShadow: "2xl",
+                }}
+                transition="all 0.3s"
+              >
+                <a href="#investimento">Ver Planos e Investimento</a>
+              </Button>
+              <Button
+                as="a"
+                asChild
+                variant="outline"
+                w={{ base: "full", md: "fit-content" }}
+                px={{ base: 6, sm: 8 }}
+                py={{ base: 3, sm: 4 }}
+                size={{ base: "lg", md: "xl" }}
+                borderColor="transparent"
+                color="white"
+                fontSize={{ base: "sm", sm: "md", md: "lg" }}
+              >
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20um%20exemplo%20de%20relat%C3%B3rio%20do%20Assessment%20Comportamental."
+                >
+                  Exemplo de Relatório
+                </a>
+              </Button>
+            </HStack>
+
+            <VStack align="flex-start" gap={{ base: 2, sm: 3 }} w="full">
+              {keyBenefits.map((benefit, index) => (
+                <Text
+                  key={index}
+                  fontSize={{ base: "sm", sm: "md" }}
+                  color="gray.300"
+                  fontWeight="500"
+                >
+                  {benefit}
+                </Text>
+              ))}
+            </VStack>
+          </VStack>
+
+          <Box
+            w={{ base: "full", md: "450px" }}
+            h={{ base: "250px", sm: "300px", md: "500px" }}
+            borderRadius={{ base: "xl", md: "2xl" }}
+            boxShadow="2xl"
+            border="4px solid"
+            borderColor="gray.700"
+            role="img"
+            aria-label="Escritório profissional para assessment comportamental empresarial em Curitiba - Douglas Borges Psicólogo"
+            style={{
+              backgroundImage: "url(/assets/escritório.webp)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        </Stack>
+      </Container>
     </Box>
   );
 }
