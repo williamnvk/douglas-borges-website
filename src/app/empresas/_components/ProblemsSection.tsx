@@ -11,7 +11,6 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import Icon from "@/components/shared/DynamicIcon";
-import { HeartCrackIcon } from "lucide-react";
 
 // Problem type
 interface Problem {

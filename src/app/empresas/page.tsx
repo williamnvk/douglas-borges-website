@@ -1,4 +1,4 @@
-import { Container, VStack } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import { HEADER_NAVBAR_HEIGHT } from "../../theme/consts";
 import { siteUrl } from "@/data/site-constants";
 import { Metadata } from "next";
