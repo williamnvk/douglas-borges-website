@@ -19,7 +19,6 @@ import {
   TargetIcon,
   ZapIcon,
   DollarSignIcon,
-  FileWarningIcon,
   CheckIcon,
   Building2Icon,
   TriangleAlertIcon,
