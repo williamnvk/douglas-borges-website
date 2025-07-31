@@ -3,7 +3,6 @@ import {
   Box,
   Heading,
   Text,
-  HStack,
   Button,
   Stack,
   Container,
@@ -90,9 +89,8 @@ export function HeroSection({ keyBenefits }: HeroSectionProps) {
             align="flex-start"
             maxW={{ base: "full", md: "800px" }}
           >
-
-             {/* Badge */}
-             <Badge
+            {/* Badge */}
+            <Badge
               bg="blue.100"
               color="blue.600"
               px={4}
@@ -104,11 +102,16 @@ export function HeroSection({ keyBenefits }: HeroSectionProps) {
               Assessment Comportamental
             </Badge>
 
-
             <Heading
               as="h1"
               id="hero-heading"
-              fontSize={{ base: "4xl", sm: "4xl", md: "6xl", lg: "3xl", xl: "7xl" }}
+              fontSize={{
+                base: "4xl",
+                sm: "4xl",
+                md: "6xl",
+                lg: "3xl",
+                xl: "7xl",
+              }}
               color="white"
               lineHeight="1.1"
               fontWeight="black"
@@ -121,7 +124,13 @@ export function HeroSection({ keyBenefits }: HeroSectionProps) {
               .{" "}
               <Box
                 as="span"
-                fontSize={{ base: "4xl", sm: "4xl", md: "6xl", lg: "5xl", xl: "7xl" }}
+                fontSize={{
+                  base: "4xl",
+                  sm: "4xl",
+                  md: "6xl",
+                  lg: "5xl",
+                  xl: "7xl",
+                }}
                 display="block"
                 mt={2}
               >
@@ -151,7 +160,11 @@ export function HeroSection({ keyBenefits }: HeroSectionProps) {
               .
             </Text>
 
-            <Stack direction={{ base: "column", md: "row" }} gap={{ base: 2, sm: 4 }} w="full">
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              gap={{ base: 2, sm: 4 }}
+              w="full"
+            >
               <Button
                 as="a"
                 asChild
@@ -160,7 +173,13 @@ export function HeroSection({ keyBenefits }: HeroSectionProps) {
                 px={{ base: 6, sm: 8 }}
                 py={{ base: 3, sm: 4 }}
                 bg="blue.500"
-                fontSize={{ base: "md", sm: "lg", md: "lg", lg: "xl", xl: "2xl" }}
+                fontSize={{
+                  base: "md",
+                  sm: "lg",
+                  md: "lg",
+                  lg: "xl",
+                  xl: "2xl",
+                }}
                 fontWeight="700"
                 w={{ base: "full", md: "fit-content" }}
                 _hover={{
