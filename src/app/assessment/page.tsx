@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title:
     "Assessment Comportamental Empresarial Curitiba | Psicólogo Douglas Borges | RH e Gestão de Pessoas",
   description:
-    "🏆 Assessment comportamental científico em Curitiba/PR. Psicólogo Douglas Borges CRP 12/13884 ✓ 1000+ avaliações ✓ Big Five, DISC, MBTI ✓ Resultados 5-7 dias ✓ R$ 700. Decisões sobre pessoas baseadas em ciência para sua empresa.",
+    "Assessment comportamental científico em Curitiba/PR. Psicólogo Douglas Borges CRP 12/13884 ✓ 1000+ avaliações ✓ Big Five, DISC, MBTI ✓ Resultados 5-7 dias ✓ R$ 700. Decisões sobre pessoas baseadas em ciência para sua empresa.",
   openGraph: {
     title:
       "Assessment Comportamental Empresarial Curitiba | Decisões RH Baseadas em Ciência",
