@@ -35,7 +35,7 @@ export function InvestmentPlans() {
           <Heading
             as="h2"
             id="investment-heading"
-            fontSize={{ base: "3xl", sm: "4xl", md: "5xl" }}
+            fontSize={{ base: "3xl", sm: "3xl", md: "3xl", lg: "4xl", xl: "6xl" }}
             fontWeight="700"
           >
             Escolha o Plano Adequado às{" "}
@@ -44,7 +44,7 @@ export function InvestmentPlans() {
             </Box>
           </Heading>
           <Text
-            fontSize={{ base: "sm", sm: "md", md: "xl" }}
+            fontSize={{ base: "sm", sm: "md", md: "lg", lg: "lg", xl: "xl" }}
             color="fg.muted"
             maxW="2xl"
             fontWeight="400"
@@ -56,7 +56,7 @@ export function InvestmentPlans() {
 
         <SimpleGrid
           columns={{ base: 1, sm: 2, md: 4, lg: 4 }}
-          gap={{ base: 4, sm: 6, md: 4, lg: 8 }}
+          gap={{ base: 2, sm: 2, md: 2, lg: 2, xl: 8 }}
           w="full"
         >
           {/* Plano 1 Colaborador */}

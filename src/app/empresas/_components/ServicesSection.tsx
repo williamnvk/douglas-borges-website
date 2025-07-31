@@ -129,14 +129,14 @@ export function ServicesSection() {
           {/* Grid de serviços */}
           <SimpleGrid
             columns={{ base: 1, md: 2, lg: 3 }}
-            gap={{ base: 2, md: 8 }}
+            gap={{ base: 2, md: 2, lg: 4, xl: 8 }}
             w="full"
           >
             {services.map((service, index) => (
               <Box
                 key={`service-${index}`}
                 bg="white"
-                p={{ base: 4, md: 8 }}
+                p={{ base: 4, md: 4, lg: 6, xl: 8 }}
                 borderRadius="xl"
                 border="1px solid"
                 borderColor="border.muted"

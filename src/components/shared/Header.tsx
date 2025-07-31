@@ -54,26 +54,25 @@ export const Header = () => {
       bg="white"
       color="black"
     >
-      <HStack gap={4}>
+      <HStack gap={{ base: 0, md: 1, lg: 4, xl: 4 }}>
         <Link href="/">
-          <h1>
+          <Heading as="h1" size="md" fontWeight="bold">
             <span>
               <strong>Douglas</strong>
             </span>
             &nbsp;<span>Borges</span>
-            {" | "}
-            <span>Psicólogo</span>
-          </h1>
+           
+            <Heading as="span" size="md" fontWeight="light"> {" | "}Psicólogo</Heading>
+          </Heading>
         </Link>
         <HStack
           display={{ base: "none", md: "flex" }}
-          gap={4}
+          gap={0}
           border={1}
-          borderRadius={4}
-          borderColor="gray.100"
         >
           <Button
             as={Link}
+             size="sm"
             // @ts-expect-error: Type compatibility issue
             href="/"
             variant={isCurrentPage("personal") ? "outline" : "ghost"}
@@ -81,25 +80,27 @@ export const Header = () => {
             Para você
           </Button>
           <Button
+          size="sm"
             variant={isCurrentPage("company") ? "outline" : "ghost"}
             as={Link}
             // @ts-expect-error: Type compatibility issue
             href="/empresas"
           >
-            Para sua empresa
+            Para empresários
           </Button>
           <Button
             variant={isCurrentPage("assessment") ? "outline" : "ghost"}
             as={Link}
+             size="sm"
             // @ts-expect-error: Type compatibility issue
             href="/assessment"
           >
-            Assessment Comportamental
+            Para empresas
           </Button>
         </HStack>
       </HStack>
 
-      <HStack gap={4}>
+      <HStack gap={{ base: 0, md: 1, lg: 1, xl: 4 }}>
         <IconButton
           borderRadius="full"
           aria-label="Open menu"
@@ -108,8 +109,9 @@ export const Header = () => {
         >
           <Icon as={MenuIcon} />
         </IconButton>
-        <HStack display={{ base: "none", md: "flex" }} gap={4}>
+        <HStack display={{ base: "none", md: "flex" }} gap={{ base: 0, md: 1, lg: 1, xl: 4 }}>
           <Button
+            size="sm"
             variant={isCurrentPage("services") ? "outline" : "ghost"}
             as={Link}
             // @ts-expect-error: Type compatibility issue
@@ -118,6 +120,7 @@ export const Header = () => {
             Serviços
           </Button>
           <Button
+            size="sm"
             variant={isCurrentPage("about") ? "outline" : "ghost"}
             as={Link}
             // @ts-expect-error: Type compatibility issue
@@ -126,6 +129,7 @@ export const Header = () => {
             Sobre
           </Button>
           <Button
+            size="sm"
             variant={isCurrentPage("events") ? "outline" : "ghost"}
             as={Link}
             // @ts-expect-error: Type compatibility issue
@@ -134,6 +138,7 @@ export const Header = () => {
             Palestras
           </Button>
           <Button
+            size="sm"
             variant={isCurrentPage("insights") ? "outline" : "ghost"}
             as={Link}
             // @ts-expect-error: Type compatibility issue
@@ -142,6 +147,7 @@ export const Header = () => {
             Insights
           </Button>
           <Button
+            size="sm"
             variant={isCurrentPage("contact") ? "outline" : "ghost"}
             as={Link}
             // @ts-expect-error: Type compatibility issue
@@ -160,6 +166,7 @@ export const Header = () => {
           referrerPolicy="no-referrer"
           colorPalette="blue"
           variant="solid"
+          size="sm"
         >
           Entrar em contato
         </Button>
@@ -192,7 +199,7 @@ export const Header = () => {
                   </Heading>
 
                   {/* Seção Principal */}
-                  <VStack align="start" gap={3} w="full">
+                  <VStack align="start" gap={1} w="full">
                     <Button
                       variant={isCurrentPage("personal") ? "solid" : "ghost"}
                       as={Link}

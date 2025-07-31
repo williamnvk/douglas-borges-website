@@ -85,7 +85,7 @@ export function FinalCTA() {
 
         <Text fontSize={{ base: "xs", sm: "sm" }} color="fg.muted">
           <strong>Validade da proposta:</strong> 10 dias úteis |
-          <strong> Pagamento:</strong> PIX ou boleto à vista |
+          <strong> Pagamento:</strong> PIX, Cartão de Crédito ou boleto à vista |
           <strong> Sigilo:</strong> Confidencialidade total
         </Text>
       </VStack>

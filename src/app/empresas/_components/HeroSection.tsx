@@ -57,7 +57,7 @@ export function HeroSection() {
             {/* Título Principal */}
             <Heading
               id="hero-heading"
-              textStyle={{ base: "4xl", md: "6xl", xl: "7xl" }}
+              textStyle={{ base: "4xl", md: "5xl", lg: "6xl", xl: "7xl" }}
               fontWeight="black"
               fontFamily="heading"
               lineHeight="1"
@@ -71,7 +71,7 @@ export function HeroSection() {
 
             {/* Subtítulo provocativo */}
             <Heading
-              textStyle={{ base: "xl", md: "2xl", xl: "3xl" }}
+              textStyle={{ base: "xl", md: "lg", lg: "2xl", xl: "3xl" }}
               fontWeight="medium"
               opacity="0.9"
               fontFamily="body"
@@ -80,7 +80,7 @@ export function HeroSection() {
             </Heading>
 
             <Text
-              textStyle={{ base: "lg", md: "xl" }}
+              textStyle={{ base: "xs", md: "sm", lg: "md", xl: "lg" }}
               opacity="0.8"
               maxW="600px"
               fontFamily="body"

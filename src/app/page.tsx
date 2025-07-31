@@ -114,13 +114,13 @@ export default function Home() {
       >
         <Container
           maxW="8xl"
-          py={{ base: 8, md: 16 }}
+          py={{ base: 4, md: 6, lg: 8, xl: 16 }}
           position="relative"
           zIndex="1"
         >
           <Stack
             flexDir={{ base: "column", lg: "row" }}
-            gap={{ base: 12, lg: 20 }}
+            gap={{ base: 4, md: 8, lg: 12, xl: 16 }}
             align="center"
             justify="space-between"
             minH={{ base: "auto", lg: "70vh" }}
@@ -128,8 +128,8 @@ export default function Home() {
             <VStack
               flex={1}
               align="flex-start"
-              gap={8}
-              maxW={{ base: "full", lg: "800px" }}
+              gap={{ base: 2, md: 2, lg: 4, xl: 8 }}
+              maxW={{ base: "full", lg: "840px" }}
             >
               {/* Badge/Tag */}
               <HStack
@@ -149,11 +149,11 @@ export default function Home() {
 
               <Heading
                 id="hero-title"
-                textStyle={{ base: "4xl", md: "6xl", xl: "6xl" }}
+                textStyle={{ base: "4xl", md: "6xl", lg: "5xl", xl: "6xl" }}
                 fontWeight="black"
                 color="gray.900"
                 fontFamily="heading"
-                lineHeight="1.2"
+                lineHeight="1.1"
                 m={0}
               >
                 Transforme sua carreira e sua vida{" "}
@@ -163,22 +163,31 @@ export default function Home() {
               </Heading>
 
               <Text
-                textStyle={{ base: "md", md: "xl" }}
+                textStyle={{ base: "sm", lg: "sm", xl: "xl" }}
                 color="fg.muted"
                 maxW="650px"
                 fontFamily="body"
               >
-                <strong>Para Empresas:</strong> Consultoria especializada para CEOs, Diretores, 
-                Executivos e RH que precisam aumentar performance sem esgotar equipes. 
-                <br/><br/>
-                <strong>Para Pessoas:</strong> Psicoterapia individual para quem busca equilibrio, 
-                crescimento pessoal e melhoria da saúde mental.
-                
+                <strong>Para Empresários:</strong> Consultoria especializada
+                para CEOs, Diretores, Executivos e RH que precisam aumentar
+                performance sem esgotar equipes.
+                <br />
+                <br />
+                <strong>Para Pessoas:</strong> Psicoterapia individual para quem
+                busca equilíbrio, crescimento pessoal e melhoria da saúde
+                mental.
               </Text>
 
-              <VStack align="start" gap={4} w="full">
-                
-                <SimpleGrid columns={{ base: 1, md: 3 }} gap={{ base: 2, md: 4}} w="full">
+              <VStack
+                align="start"
+                gap={{ base: 2, md: 2, lg: 2, xl: 4 }}
+                w="full"
+              >
+                <SimpleGrid
+                  columns={{ base: 1, md: 3 }}
+                  gap={{ base: 2, md: 2, lg: 2, xl: 4 }}
+                  w="full"
+                >
                   <Link href="/empresas">
                     <Button
                       size="lg"
@@ -195,11 +204,19 @@ export default function Home() {
                       gap={2}
                       lineHeight="1.2"
                     >
-                      <Text fontSize="lg" fontWeight="bold" lineHeight="1">Para Empresas →</Text>
-                      <Text fontSize="xs" opacity={0.9} lineHeight="1">Consultoria & Assessment</Text>
+                      <Text
+                        fontSize={{ base: "sm", md: "md", lg: "md", xl: "lg" }}
+                        fontWeight="bold"
+                        lineHeight="1"
+                      >
+                        Para Empresários →
+                      </Text>
+                      <Text fontSize="11px" opacity={0.9} lineHeight="1">
+                        Consultoria & Assessment
+                      </Text>
                     </Button>
                   </Link>
-                  
+
                   <Link href="/contato">
                     <Button
                       size="lg"
@@ -216,11 +233,19 @@ export default function Home() {
                       flexDirection="column"
                       gap={2}
                     >
-                      <Text fontSize="lg" fontWeight="bold" lineHeight="1">Para Pessoas →</Text>
-                      <Text fontSize="xs" opacity={0.7} lineHeight="1">Psicoterapia Individual</Text>
+                      <Text
+                        fontSize={{ base: "sm", md: "md", lg: "md", xl: "lg" }}
+                        fontWeight="bold"
+                        lineHeight="1"
+                      >
+                        Para Pessoas →
+                      </Text>
+                      <Text fontSize="11px" opacity={0.7} lineHeight="1">
+                        Psicoterapia Individual
+                      </Text>
                     </Button>
                   </Link>
-                  
+
                   <Link href="/assessment">
                     <Button
                       size="lg"
@@ -237,15 +262,26 @@ export default function Home() {
                       flexDirection="column"
                       gap={2}
                     >
-                      <Text fontSize="lg" fontWeight="bold" lineHeight="1">Assessment →&nbsp;&nbsp;&nbsp;</Text>
-                      <Text fontSize="xs" opacity={0.7} lineHeight="1">Análise Comportamental</Text>
+                      <Text
+                        fontSize={{ base: "sm", md: "md", lg: "md", xl: "lg" }}
+                        fontWeight="bold"
+                        lineHeight="1"
+                      >
+                        Para Empresas →
+                      </Text>
+                      <Text fontSize="11px" opacity={0.7} lineHeight="1">
+                        Análise Comportamental
+                      </Text>
                     </Button>
                   </Link>
                 </SimpleGrid>
               </VStack>
 
               {/* Social Proof */}
-              <HStack gap={6} flexWrap="wrap" pt={4}>
+              <HStack
+                gap={{ base: 1, md: 2, lg: 2, xl: 4 }}
+                flexWrap="wrap"
+              >
                 <HStack align="center" gap={2}>
                   <CheckIcon size={16} color="#059669" />
                   <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
@@ -303,8 +339,7 @@ export default function Home() {
                     zIndex={2}
                     {...pos}
                     bg="white"
-                    borderRadius="2xl"
-                    boxShadow="2xl"
+                    borderRadius="xl"
                     border="2px solid"
                     borderColor="blue.500"
                     px={{ base: 2, md: 4 }}
@@ -376,13 +411,13 @@ export default function Home() {
       <Container
         maxW={{ base: "full", lg: "calc(100vw - 80px)" }}
         bg="gray.900"
-        py={{ base: 24, md: 20 }}
+        py={{ base: 8, md: 12, lg: 16, xl: 24 }}
         roundedBottomLeft={{ base: "none", md: "3xl" }}
         roundedBottomRight={{ base: "none", md: "3xl" }}
         my={0}
       >
         <Container w="full">
-          <VStack gap={12}>
+          <VStack gap={6}>
             <VStack gap={6} textAlign="center" maxW="800px" mx="auto">
               <Badge
                 bg="yellow.400"
@@ -526,7 +561,7 @@ export default function Home() {
       </Container>
 
       {/* Services Section */}
-      <Box py={{ base: 16, md: 24 }}>
+      <Box py={{ base: 8, md: 12, lg: 16, xl: 24 }}>
         <Container maxW="8xl">
           <VStack gap={16}>
             <VStack gap={6} textAlign="center" maxW="800px" mx="auto">
@@ -764,7 +799,7 @@ export default function Home() {
         as="section"
         id="testimonials"
         bg="gray.900"
-        py={{ base: 16, md: 24 }}
+        py={{ base: 8, md: 12, lg: 16, xl: 24 }}
       >
         <Container maxW="8xl">
           <VStack gap={16}>

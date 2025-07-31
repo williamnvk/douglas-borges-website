@@ -233,14 +233,14 @@ export function ProblemsSection() {
           </SimpleGrid>
 
           {/* Seção específica para líderes */}
-          <Box w="full" mt={16}>
+          <Box w="full" mt={12}>
             <Stack
               direction={{ base: "column", lg: "row" }}
               gap={{ base: 10, lg: 20 }}
               align="center"
             >
-              <VStack flex={1} align="start" gap={8}>
-                <VStack align="start" gap={4}>
+              <VStack flex={1} align="center" gap={8}>
+                <VStack align="center" gap={4}>
                   <Badge
                     bg="orange.100"
                     color="orange.700"
@@ -261,6 +261,7 @@ export function ProblemsSection() {
                     fontFamily="heading"
                     fontWeight="black"
                     lineHeight="1.1"
+                    textAlign="center"
                   >
                     Reconhece{" "}
                     <Text as="span" color="orange.500">
@@ -274,6 +275,8 @@ export function ProblemsSection() {
                     color="gray.600"
                     lineHeight="1.6"
                     fontWeight="medium"
+                    maxW="800px"
+                    textAlign="center"
                   >
                     A pressão da liderança pode ser{" "}
                     <Text as="span" color="orange.500" fontWeight="bold">
@@ -289,7 +292,8 @@ export function ProblemsSection() {
 
                 <Flex
                   flexWrap="wrap"
-                  align="start"
+                  align="center"
+                  justify="center"
                   gap={{ base: 2, md: 4 }}
                   w="full"
                 >

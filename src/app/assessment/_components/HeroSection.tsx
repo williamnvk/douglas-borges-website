@@ -7,6 +7,7 @@ import {
   Button,
   Stack,
   Container,
+  Badge,
 } from "@chakra-ui/react";
 
 interface HeroSectionProps {
@@ -84,30 +85,52 @@ export function HeroSection({ keyBenefits }: HeroSectionProps) {
           zIndex="3"
         >
           <VStack
-            gap={{ base: 6, sm: 7, md: 8 }}
+            gap={{ base: 4, sm: 4, md: 4, lg: 6, xl: 8 }}
             flex={1}
-            align="stretch"
+            align="flex-start"
             maxW={{ base: "full", md: "800px" }}
           >
+
+             {/* Badge */}
+             <Badge
+              bg="blue.100"
+              color="blue.600"
+              px={4}
+              py={2}
+              textStyle="sm"
+              fontWeight="semibold"
+              borderRadius="full"
+            >
+              Assessment Comportamental
+            </Badge>
+
+
             <Heading
               as="h1"
               id="hero-heading"
-              fontSize={{ base: "4xl", sm: "4xl", md: "6xl", lg: "7xl" }}
+              fontSize={{ base: "4xl", sm: "4xl", md: "6xl", lg: "3xl", xl: "7xl" }}
               color="white"
-              lineHeight="1.2"
-              fontWeight="800"
+              lineHeight="1.1"
+              fontWeight="black"
+              fontFamily="heading"
             >
-              Assessment Comportamental Empresarial:{" "}
-              <Heading
+              Pare de contratar por{" "}
+              <Box as="span" color="orange.500">
+                intuição
+              </Box>
+              .{" "}
+              <Box
                 as="span"
-                fontSize={{ base: "4xl", sm: "4xl", md: "6xl", lg: "7xl" }}
+                fontSize={{ base: "4xl", sm: "4xl", md: "6xl", lg: "5xl", xl: "7xl" }}
+                display="block"
+                mt={2}
               >
-                Decisões Baseadas em Ciência
-              </Heading>
+                Contrate com ciência.
+              </Box>
             </Heading>
 
             <Text
-              fontSize={{ base: "md", sm: "lg", md: "xl" }}
+              fontSize={{ base: "md", sm: "lg", md: "lg", lg: "lg", xl: "xl" }}
               color="gray.200"
               fontWeight="400"
               lineHeight="1.25"
@@ -128,16 +151,16 @@ export function HeroSection({ keyBenefits }: HeroSectionProps) {
               .
             </Text>
 
-            <HStack gap={{ base: 2, sm: 4 }} flexWrap="wrap" w="full">
+            <Stack direction={{ base: "column", md: "row" }} gap={{ base: 2, sm: 4 }} w="full">
               <Button
                 as="a"
                 asChild
-                size={{ base: "lg", md: "xl" }}
+                size={{ base: "lg", md: "lg", lg: "xl", xl: "2xl" }}
                 variant="solid"
                 px={{ base: 6, sm: 8 }}
                 py={{ base: 3, sm: 4 }}
                 bg="blue.500"
-                fontSize={{ base: "md", sm: "lg", md: "xl" }}
+                fontSize={{ base: "md", sm: "lg", md: "lg", lg: "xl", xl: "2xl" }}
                 fontWeight="700"
                 w={{ base: "full", md: "fit-content" }}
                 _hover={{
@@ -169,7 +192,7 @@ export function HeroSection({ keyBenefits }: HeroSectionProps) {
                   Exemplo de Relatório
                 </a>
               </Button>
-            </HStack>
+            </Stack>
 
             <VStack align="flex-start" gap={{ base: 2, sm: 3 }} w="full">
               {keyBenefits.map((benefit, index) => (
