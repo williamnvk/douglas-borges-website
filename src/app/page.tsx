@@ -168,14 +168,14 @@ export default function Home() {
                 maxW="650px"
                 fontFamily="body"
               >
-                <strong>Para Empresários:</strong> Consultoria especializada
-                para CEOs, Diretores, Executivos e RH que precisam aumentar
-                performance sem esgotar equipes.
-                <br />
-                <br />
                 <strong>Para Pessoas:</strong> Psicoterapia individual para quem
                 busca equilíbrio, crescimento pessoal e melhoria da saúde
                 mental.
+                <br />
+                <br />
+                <strong>Para Empresários:</strong> Consultoria especializada
+                para CEOs, Diretores, Executivos e RH que precisam aumentar
+                performance sem esgotar equipes.
               </Text>
 
               <VStack
@@ -185,42 +185,13 @@ export default function Home() {
               >
                 <SimpleGrid
                   columns={{ base: 1, md: 3 }}
-                  gap={{ base: 2, md: 2, lg: 2, xl: 4 }}
+                  gap={{ base: 2, md: 2, lg: 2, xl: 2 }}
                   w="full"
                 >
-                  <Link href="/empresas">
-                    <Button
-                      size="lg"
-                      colorPalette="blue"
-                      px={6}
-                      py={6}
-                      textStyle={{ base: "md", md: "lg" }}
-                      fontWeight="semibold"
-                      _hover={{ transform: "translateY(-2px)", shadow: "xl" }}
-                      transition="all 0.3s"
-                      w="full"
-                      h="auto"
-                      flexDirection="column"
-                      gap={2}
-                      lineHeight="1.2"
-                    >
-                      <Text
-                        fontSize={{ base: "sm", md: "md", lg: "md", xl: "lg" }}
-                        fontWeight="bold"
-                        lineHeight="1"
-                      >
-                        Para Empresários →
-                      </Text>
-                      <Text fontSize="11px" opacity={0.9} lineHeight="1">
-                        Consultoria & Assessment
-                      </Text>
-                    </Button>
-                  </Link>
-
                   <Link href="/contato">
                     <Button
                       size="lg"
-                      variant="outline"
+                      variant="solid"
                       colorPalette="blue"
                       px={6}
                       py={6}
@@ -246,11 +217,40 @@ export default function Home() {
                     </Button>
                   </Link>
 
+                  <Link href="/empresas">
+                    <Button
+                      size="lg"
+                      colorPalette="gray"
+                      px={6}
+                      py={6}
+                      textStyle={{ base: "md", md: "lg" }}
+                      fontWeight="semibold"
+                      _hover={{ transform: "translateY(-2px)", shadow: "xl" }}
+                      transition="all 0.3s"
+                      w="full"
+                      h="auto"
+                      flexDirection="column"
+                      gap={2}
+                      lineHeight="1.2"
+                    >
+                      <Text
+                        fontSize={{ base: "sm", md: "md", lg: "md", xl: "lg" }}
+                        fontWeight="bold"
+                        lineHeight="1"
+                      >
+                        Para Empresários →
+                      </Text>
+                      <Text fontSize="11px" opacity={0.9} lineHeight="1">
+                        Consultoria & Assessment
+                      </Text>
+                    </Button>
+                  </Link>
+
                   <Link href="/assessment">
                     <Button
                       size="lg"
                       variant="subtle"
-                      colorPalette="green"
+                      colorPalette="orange"
                       px={6}
                       py={6}
                       textStyle={{ base: "md", md: "lg" }}
@@ -278,10 +278,7 @@ export default function Home() {
               </VStack>
 
               {/* Social Proof */}
-              <HStack
-                gap={{ base: 1, md: 2, lg: 2, xl: 4 }}
-                flexWrap="wrap"
-              >
+              <HStack gap={{ base: 1, md: 2, lg: 2, xl: 4 }} flexWrap="wrap">
                 <HStack align="center" gap={2}>
                   <CheckIcon size={16} color="#059669" />
                   <Text textStyle="sm" color="fg.muted" fontWeight="semibold">
@@ -420,8 +417,8 @@ export default function Home() {
           <VStack gap={6}>
             <VStack gap={6} textAlign="center" maxW="800px" mx="auto">
               <Badge
-                bg="yellow.400"
-                color="gray.900"
+                bg="orange.400"
+                color="orange.100"
                 px={4}
                 py={2}
                 borderRadius="full"
@@ -486,7 +483,7 @@ export default function Home() {
                   transition="all 0.3s"
                 >
                   <VStack gap={4}>
-                    {item.icon}
+                    <Box color="orange.500">{item.icon}</Box>
                     <Heading
                       textStyle="xl"
                       color="gray.900"
@@ -498,7 +495,11 @@ export default function Home() {
                     <Text color="fg.muted" textStyle="md">
                       {item.description}
                     </Text>
-                    <Badge colorPalette="blue" fontWeight="bold" textStyle="sm">
+                    <Badge
+                      colorPalette="orange"
+                      fontWeight="bold"
+                      textStyle="sm"
+                    >
                       {item.metric}
                     </Badge>
                   </VStack>
@@ -521,12 +522,12 @@ export default function Home() {
                       <Badge
                         key={method}
                         variant="outline"
-                        colorPalette="blue"
+                        colorPalette="orange"
                         px={3}
                         py={1}
                         fontWeight="semibold"
-                        color="blue.300"
-                        borderColor="blue.400"
+                        color="orange.300"
+                        borderColor="orange.400"
                       >
                         {method}
                       </Badge>
@@ -540,7 +541,7 @@ export default function Home() {
               <Link href="/assessment">
                 <Button
                   size="xl"
-                  colorPalette="blue"
+                  colorPalette="orange"
                   px={10}
                   py={8}
                   textStyle={{ base: "sm", md: "xl" }}
@@ -563,18 +564,18 @@ export default function Home() {
       {/* Services Section */}
       <Box py={{ base: 8, md: 12, lg: 16, xl: 24 }}>
         <Container maxW="8xl">
-          <VStack gap={16}>
+          <VStack gap={{ base: 2, md: 2, lg: 4, xl: 8}}>
             <VStack gap={6} textAlign="center" maxW="800px" mx="auto">
               <Badge
-                bg="green.50"
-                color="green.700"
+                bg="gray.50"
+                color="gray.700"
                 px={4}
                 py={2}
                 borderRadius="full"
                 textStyle="sm"
                 fontWeight="semibold"
                 border="1px solid"
-                borderColor="green.200"
+                borderColor="gray.200"
               >
                 SOLUÇÕES EMPRESARIAIS COMPROVADAS
               </Badge>
@@ -586,10 +587,8 @@ export default function Home() {
                 textAlign="center"
               >
                 Transforme Pressão em Performance.{" "}
-                <Box as="span" color="green.600">
                   Lucre Mais, Estresse Menos.
-                </Box>
-              </Heading>
+                </Heading>
               <Text
                 textStyle={{ base: "md", md: "lg" }}
                 color="fg.muted"
@@ -667,7 +666,7 @@ export default function Home() {
                           w={16}
                           h={16}
                           borderRadius="xl"
-                          bg="blue.500"
+                          bg="gray.900"
                           align="center"
                           justify="center"
                           color="white"
@@ -686,7 +685,7 @@ export default function Home() {
                         </Badge>
                       </HStack>
 
-                      <VStack align="start" gap={3} flex={1}>
+                      <VStack align="start" gap={2} flex={1}>
                         <Heading
                           textStyle="xl"
                           color="gray.900"
@@ -737,7 +736,7 @@ export default function Home() {
                   fontWeight="bold"
                 >
                   O especialista que líderes procuram{" "}
-                  <Box as="span" color="blue.600">
+                  <Box as="span" color="blue.500">
                     para decisões estratégicas sobre pessoas
                   </Box>
                 </Heading>

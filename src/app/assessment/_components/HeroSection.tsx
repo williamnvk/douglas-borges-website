@@ -21,34 +21,11 @@ export function HeroSection({ keyBenefits }: HeroSectionProps) {
       color="white"
       w="full"
       borderRadius={{ base: "none", md: "3xl" }}
-      p={{ base: 6, sm: 8, md: 16 }}
+      p={{ base: 6, sm: 8, md: 12, lg: 16, xl: 24 }}
       position="relative"
       overflow="hidden"
       aria-labelledby="hero-heading"
     >
-      {/* Video Background */}
-      <Box
-        as="video"
-        position="absolute"
-        top="0"
-        left="0"
-        right="0"
-        bottom="0"
-        w="full"
-        h="full"
-        objectFit="cover"
-        // @ts-expect-error: Type compatibility issue
-        autoPlay
-        muted
-        loop
-        playsInline
-        zIndex="0"
-        opacity="0.4"
-        filter="grayscale(100%) brightness(0.5)"
-      >
-        <source src="/assets/videos/bg.mp4" type="video/mp4" />
-      </Box>
-
       {/* Dark Overlay */}
       <Box
         position="absolute"
