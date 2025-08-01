@@ -22,6 +22,7 @@ import {
   CheckIcon,
   Building2Icon,
   TriangleAlertIcon,
+  UserCheck2Icon,
 } from "lucide-react";
 import Icon from "@/components/shared/DynamicIcon";
 import { Header } from "@/components/shared/Header";
@@ -131,22 +132,6 @@ export default function Home() {
               gap={{ base: 2, md: 2, lg: 4, xl: 8 }}
               maxW={{ base: "full", lg: "840px" }}
             >
-              {/* Badge/Tag */}
-              <HStack
-                bg="orange.50"
-                color="orange.700"
-                px={4}
-                py={2}
-                textStyle="sm"
-                fontWeight="semibold"
-                border="1px solid"
-                borderColor="orange.200"
-                borderRadius={{ base: "md", md: "full" }}
-              >
-                <TriangleAlertIcon size={16} />{" "}
-                <Text>73% dos profissionais sofrem com estresse e burnout</Text>
-              </HStack>
-
               <Heading
                 id="hero-title"
                 textStyle={{ base: "4xl", md: "6xl", lg: "5xl", xl: "6xl" }}
@@ -156,9 +141,9 @@ export default function Home() {
                 lineHeight="1.1"
                 m={0}
               >
-                Transforme sua carreira e sua vida{" "}
+                Você pode conquistar tudo{" "}
                 <Box as="span" color="blue.600">
-                  sem sacrificar seu bem-estar.
+                  sem se desconectar de si mesmo
                 </Box>
               </Heading>
 
@@ -168,14 +153,10 @@ export default function Home() {
                 maxW="650px"
                 fontFamily="body"
               >
-                <strong>Para Pessoas:</strong> Psicoterapia individual para quem
-                busca equilíbrio, crescimento pessoal e melhoria da saúde
-                mental.
-                <br />
-                <br />
-                <strong>Para Empresários:</strong> Consultoria especializada
-                para CEOs, Diretores, Executivos e RH que precisam aumentar
-                performance sem esgotar equipes.
+                A terapia e a consultoria são ferramentas valiosas que podem te
+                ajudar a aprimorar comportamentos, hábitos e pensamentos. Elas
+                permitem conhecer melhor seus limites, compreender suas emoções
+                e promovem um maior autoconhecimento e inteligência emocional.
               </Text>
 
               <VStack
@@ -240,8 +221,8 @@ export default function Home() {
                       >
                         Para Empresários →
                       </Text>
-                      <Text fontSize="11px" opacity={0.9} lineHeight="1">
-                        Consultoria & Assessment
+                      <Text fontSize="10px" opacity={0.8} lineHeight="1">
+                        Consultoria Psicológica Empresarial
                       </Text>
                     </Button>
                   </Link>
@@ -413,185 +394,35 @@ export default function Home() {
         roundedBottomRight={{ base: "none", md: "3xl" }}
         my={0}
       >
-        <Container w="full">
-          <VStack gap={6}>
-            <VStack gap={6} textAlign="center" maxW="800px" mx="auto">
-              <Badge
-                bg="orange.400"
-                color="orange.100"
-                px={4}
-                py={2}
-                borderRadius="full"
-                textStyle="sm"
-                fontWeight="bold"
-              >
-                NOSSO DIFERENCIAL COMPETITIVO
-              </Badge>
-              <Heading
-                textStyle={{ base: "4xl", md: "5xl" }}
-                color="white"
-                fontFamily="heading"
-                fontWeight="bold"
-                textAlign="center"
-              >
-                Assessment Comportamental Científico
-              </Heading>
-              <Text
-                textStyle="lg"
-                color="gray.300"
-                textAlign="center"
-                maxW="700px"
-              >
-                A ferramenta que CEOs de grandes empresas usam para tomar
-                decisões estratégicas sobre pessoas. Baseado em 5 metodologias
-                científicas reconhecidas mundialmente.
-              </Text>
-            </VStack>
-
-            <SimpleGrid columns={{ base: 1, md: 3 }} gap={8}>
-              {[
-                {
-                  icon: <TargetIcon />,
-                  title: "Elimine 89% dos Erros",
-                  description:
-                    "Pare de contratar por intuição. Nosso assessment científico identifica o perfil comportamental ideal para cada função.",
-                  metric: "89% de assertividade",
-                },
-                {
-                  icon: <ZapIcon />,
-                  title: "Resultados em 5-7 Dias",
-                  description:
-                    "Análise completa de personalidade, competências e fit cultural. Relatório detalhado entregue rapidamente.",
-                  metric: "5-7 dias úteis",
-                },
-                {
-                  icon: <DollarSignIcon />,
-                  title: "ROI Comprovado",
-                  description:
-                    "Uma contratação errada custa 3x o salário anual. O assessment custa R$ 700 e protege investimentos de até R$ 300k.",
-                  metric: "ROI de 42.700%",
-                },
-              ].map((item, i) => (
-                <Box
-                  key={`assessment-feature-${i}`}
-                  bg="white"
-                  p={8}
-                  borderRadius="xl"
-                  boxShadow="xl"
-                  textAlign="center"
-                  _hover={{ transform: "translateY(-4px)", shadow: "2xl" }}
-                  transition="all 0.3s"
-                >
-                  <VStack gap={4}>
-                    <Box color="orange.500">{item.icon}</Box>
-                    <Heading
-                      textStyle="xl"
-                      color="gray.900"
-                      fontFamily="heading"
-                      fontWeight="bold"
-                    >
-                      {item.title}
-                    </Heading>
-                    <Text color="fg.muted" textStyle="md">
-                      {item.description}
-                    </Text>
-                    <Badge
-                      colorPalette="orange"
-                      fontWeight="bold"
-                      textStyle="sm"
-                    >
-                      {item.metric}
-                    </Badge>
-                  </VStack>
-                </Box>
-              ))}
-            </SimpleGrid>
-
-            <Box textAlign="center">
-              <VStack gap={4}>
-                <Text color="gray.300" textStyle="lg" fontWeight="semibold">
-                  Metodologias Científicas Utilizadas:
-                </Text>
-                <HStack
-                  gap={{ base: 1, md: 4 }}
-                  flexWrap="wrap"
-                  justify="center"
-                >
-                  {["Big Five", "DISC", "MBTI", "Enneagram", "HEXACO"].map(
-                    (method) => (
-                      <Badge
-                        key={method}
-                        variant="outline"
-                        colorPalette="orange"
-                        px={3}
-                        py={1}
-                        fontWeight="semibold"
-                        color="orange.300"
-                        borderColor="orange.400"
-                      >
-                        {method}
-                      </Badge>
-                    )
-                  )}
-                </HStack>
-              </VStack>
-            </Box>
-
-            <Box textAlign="center">
-              <Link href="/assessment">
-                <Button
-                  size="xl"
-                  colorPalette="orange"
-                  px={10}
-                  py={8}
-                  textStyle={{ base: "sm", md: "xl" }}
-                  fontWeight="bold"
-                  _hover={{ transform: "translateY(-2px)", shadow: "2xl" }}
-                  transition="all 0.3s"
-                >
-                  Solicitar Assessment Comportamental
-                </Button>
-              </Link>
-              <Text textStyle="sm" color="gray.400" mt={2}>
-                Resultados em 5-7 dias úteis | 100% confidencial | Suporte
-                incluído
-              </Text>
-            </Box>
-          </VStack>
-        </Container>
-      </Container>
-
-      {/* Services Section */}
-      <Box py={{ base: 8, md: 12, lg: 16, xl: 24 }}>
         <Container maxW="8xl">
-          <VStack gap={{ base: 2, md: 2, lg: 4, xl: 8}}>
+          <VStack gap={{ base: 2, md: 2, lg: 4, xl: 8 }}>
             <VStack gap={6} textAlign="center" maxW="800px" mx="auto">
               <Badge
-                bg="gray.50"
-                color="gray.700"
+                bg="yellow.500/10"
+                color="yellow.200/80"
                 px={4}
                 py={2}
                 borderRadius="full"
                 textStyle="sm"
                 fontWeight="semibold"
                 border="1px solid"
-                borderColor="gray.200"
+                borderColor="yellow.500/10"
               >
-                SOLUÇÕES EMPRESARIAIS COMPROVADAS
+                <UserCheck2Icon size={16} />{" "}
+                <Text>Sua paz vale tanto quanto seus resultados</Text>
               </Badge>
               <Heading
                 textStyle={{ base: "4xl", md: "5xl" }}
-                color="gray.900"
+                color="gray.50"
                 fontFamily="heading"
                 fontWeight="bold"
                 textAlign="center"
               >
-                Transforme Pressão em Performance.{" "}
-                  Lucre Mais, Estresse Menos.
-                </Heading>
+                Transforme Pressão em Performance. Lucre Mais, Estresse Menos.
+              </Heading>
               <Text
                 textStyle={{ base: "md", md: "lg" }}
-                color="fg.muted"
+                color="gray.200"
                 textAlign="center"
                 maxW="700px"
               >
@@ -603,16 +434,16 @@ export default function Home() {
 
             <SimpleGrid
               columns={{ base: 1, md: 2, lg: 3 }}
-              gap={{ base: 2, md: 4 }}
+              gap={{ base: 2, md: "0" }}
+              rounded={{ base: "none", md: "3xl" }}
+              bg={{
+                base: "transparent",
+                md: "linear-gradient(35deg, {colors.gray.200}, white)",
+              }}
+              overflow="hidden"
+              p={{ base: 0, md: 2, lg: 4, xl: 8 }}
             >
               {[
-                {
-                  icon: "handshake",
-                  title: "Assessment Comportamental Científico",
-                  description:
-                    "Elimine 89% dos erros de contratação. Metodologias Big Five, DISC e MBTI para identificar talentos de alta performance. ROI comprovado de 42.700%.",
-                  metric: "R$ 700 por avaliação",
-                },
                 {
                   icon: "quote",
                   title: "Coaching Executivo Anti-Burnout",
@@ -648,30 +479,45 @@ export default function Home() {
                     "Tomada de decisão 50% mais assertiva. Acompanhamento 1:1 para Executivos e Diretores que precisam equilibrar crescimento empresarial com propósito de vida.",
                   metric: "+50% assertividade",
                 },
+                {
+                  icon: "handshake",
+                  title: "Assessment Comportamental Científico",
+                  description:
+                    "Elimine 89% dos erros de contratação. Metodologias Big Five, DISC e MBTI para identificar talentos de alta performance. ROI comprovado de 42.700%.",
+                  metric: "R$ 700 por avaliação",
+                },
               ]
                 .slice(0, 6)
                 .map((service, i) => (
                   <Box
                     key={`service-${i}`}
-                    bg="white"
+                    bg={{ base: "white", md: "transparent" }}
                     p={{ base: 4, md: 8 }}
-                    borderRadius="lg"
-                    border="1px solid"
+                    borderRadius="md"
+                    border={{ base: "1px solid", md: "none" }}
                     borderColor="border.muted"
                     h="full"
                   >
-                    <VStack align="start" gap={6} h="full">
+                    <VStack
+                      align="start"
+                      gap={{ base: 2, md: 3, lg: 3, xl: 6 }}
+                      h="full"
+                    >
                       <HStack justify="space-between" w="full">
                         <Flex
-                          w={16}
-                          h={16}
-                          borderRadius="xl"
-                          bg="gray.900"
+                          w={{ base: 12, md: 16 }}
+                          h={{ base: 12, md: 16 }}
+                          borderRadius="md"
+                          bg={{ base: "gray.900", md: "gray.50" }}
                           align="center"
                           justify="center"
-                          color="white"
+                          color={{ base: "gray.50", md: "gray.900" }}
                         >
-                          <Icon name={service.icon as never} size={32} />
+                          <Icon
+                            name={service.icon as never}
+                            size={36}
+                            strokeWidth={1.5}
+                          />
                         </Flex>
 
                         <Badge
@@ -704,6 +550,157 @@ export default function Home() {
             </SimpleGrid>
           </VStack>
         </Container>
+      </Container>
+
+      {/* Services Section */}
+      <Box py={{ base: 8, md: 12, lg: 16, xl: 24 }}>
+        <Container w="full">
+          <VStack gap={6}>
+            <VStack gap={6} textAlign="center" maxW="800px" mx="auto">
+              <HStack
+                bg="orange.500/10"
+                color="orange.400/70"
+                px={4}
+                py={2}
+                textStyle="sm"
+                fontWeight="semibold"
+                border="1px solid"
+                borderColor="orange.500/10"
+                borderRadius={{ base: "md", md: "full" }}
+              >
+                <TriangleAlertIcon size={16} />{" "}
+                <Text>Tome decisões estratégicas sobre pessoas</Text>
+              </HStack>
+              <Heading
+                textStyle={{ base: "4xl", md: "5xl" }}
+                fontFamily="heading"
+                fontWeight="bold"
+                textAlign="center"
+              >
+                Assessment Comportamental Científico
+              </Heading>
+              <Text
+                textStyle="lg"
+                color="fg.muted"
+                textAlign="center"
+                maxW="700px"
+              >
+                A ferramenta que CEOs de grandes empresas usam para tomar
+                decisões estratégicas sobre pessoas. Baseado em 5 metodologias
+                científicas reconhecidas mundialmente.
+              </Text>
+            </VStack>
+
+            <SimpleGrid
+              columns={{ base: 1, md: 3 }}
+              gap={{ base: 4, md: 4, lg: 6, xl: 8 }}
+            >
+              {[
+                {
+                  icon: <TargetIcon />,
+                  title: "Elimine 89% dos Erros",
+                  description:
+                    "Pare de contratar por intuição. Nosso assessment científico identifica o perfil comportamental ideal para cada função.",
+                  metric: "89% de assertividade",
+                },
+                {
+                  icon: <ZapIcon />,
+                  title: "Resultados em 5-7 Dias",
+                  description:
+                    "Análise completa de personalidade, competências e fit cultural. Relatório detalhado entregue rapidamente.",
+                  metric: "5-7 dias úteis",
+                },
+                {
+                  icon: <DollarSignIcon />,
+                  title: "ROI Comprovado",
+                  description:
+                    "Uma contratação errada custa 3x o salário anual. O assessment custa R$ 700 e protege investimentos de até R$ 300k.",
+                  metric: "ROI de 42.700%",
+                },
+              ].map((item, i) => (
+                <Box
+                  key={`assessment-feature-${i}`}
+                  bg="gray.50"
+                  p={8}
+                  borderRadius="xl"
+                  textAlign="center"
+                >
+                  <VStack gap={4}>
+                    <Box color="orange.500">{item.icon}</Box>
+                    <Heading
+                      textStyle="xl"
+                      color="gray.900"
+                      fontFamily="heading"
+                      fontWeight="bold"
+                    >
+                      {item.title}
+                    </Heading>
+                    <Text color="fg.muted" textStyle="md">
+                      {item.description}
+                    </Text>
+                    <Badge
+                      colorPalette="orange"
+                      fontWeight="bold"
+                      textStyle="sm"
+                    >
+                      {item.metric}
+                    </Badge>
+                  </VStack>
+                </Box>
+              ))}
+            </SimpleGrid>
+
+            <HStack flexDirection={{ base: "column", md: "row" }} textAlign="center" gap={4}>
+                <Text color="fg.muted" textStyle="md">
+                  Metodologias Científicas Utilizadas
+                </Text>
+                <HStack
+                  gap={{ base: 1, md: 4 }}
+                  flexWrap="wrap"
+                  align="center"
+                  flex={1}
+                >
+                  {["Big Five", "DISC", "MBTI", "Enneagram", "HEXACO"].map(
+                    (method) => (
+                      <Badge
+                        key={method}
+                        variant="outline"
+                        colorPalette="orange"
+                        px={3}
+                        py={1}
+                        fontWeight="semibold"
+                        color="orange.300"
+                        borderColor="orange.400"
+                      >
+                        {method}
+                      </Badge>
+                    )
+                  )}
+                </HStack>
+            </HStack>
+
+            <Box textAlign="center">
+              <Link href="/assessment">
+                <Button
+                  size="xl"
+                  colorPalette="orange"
+                  px={10}
+                  py={8}
+                  textStyle={{ base: "sm", md: "xl" }}
+                  fontWeight="bold"
+                  _hover={{ transform: "translateY(-2px)", shadow: "2xl" }}
+                  transition="all 0.3s"
+                >
+                  Solicitar Assessment Comportamental
+                </Button>
+              </Link>
+              <Text textStyle="sm" color="gray.400" mt={2}>
+                Resultados em 5-7 dias úteis | 100% confidencial | Suporte
+                incluído
+              </Text>
+            </Box>
+          </VStack>
+        </Container>
       </Box>
 
       {/* About Section */}
@@ -727,7 +724,7 @@ export default function Home() {
                   border="1px solid"
                   borderColor="blue.200"
                 >
-                  O PSICÓLOGO DA LIDERANÇA EMPRESARIAL
+                  CONHEÇA A MINHA HISTÓRIA
                 </Badge>
                 <Heading
                   textStyle={{ base: "4xl", md: "5xl" }}
