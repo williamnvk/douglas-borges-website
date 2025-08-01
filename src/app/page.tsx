@@ -169,7 +169,11 @@ export default function Home() {
                   gap={{ base: 2, md: 2, lg: 2, xl: 2 }}
                   w="full"
                 >
-                  <Link href="/contato">
+                  <Link
+                    target="_blank"
+                    referrerPolicy="no-referrer"
+                    href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo%20e%20gostaria%20de%20agendar%20um%20atendimento."
+                  >
                     <Button
                       size="lg"
                       variant="solid"
@@ -508,7 +512,10 @@ export default function Home() {
                           w={{ base: 12, md: 16 }}
                           h={{ base: 12, md: 16 }}
                           borderRadius="md"
-                          bg={{ base: "gray.900", md: "gray.50" }}
+                          bg={{ base: "gray.900", md: "rgba(255, 255, 255, 0.1)" }}
+                          borderWidth={{ base: 0, md: 1 }}
+                          boxShadow={{ base: "none", md: "0 0 10px 0 rgba(0, 0, 0, 0.1)" }}
+                          borderColor={{ base: "transparent", md: "rgba(0, 0, 0, 0.2)" }}
                           align="center"
                           justify="center"
                           color={{ base: "gray.50", md: "gray.900" }}
@@ -650,33 +657,37 @@ export default function Home() {
               ))}
             </SimpleGrid>
 
-            <HStack flexDirection={{ base: "column", md: "row" }} textAlign="center" gap={4}>
-                <Text color="fg.muted" textStyle="md">
-                  Metodologias Científicas Utilizadas
-                </Text>
-                <HStack
-                  gap={{ base: 1, md: 4 }}
-                  flexWrap="wrap"
-                  align="center"
-                  flex={1}
-                >
-                  {["Big Five", "DISC", "MBTI", "Enneagram", "HEXACO"].map(
-                    (method) => (
-                      <Badge
-                        key={method}
-                        variant="outline"
-                        colorPalette="orange"
-                        px={3}
-                        py={1}
-                        fontWeight="semibold"
-                        color="orange.300"
-                        borderColor="orange.400"
-                      >
-                        {method}
-                      </Badge>
-                    )
-                  )}
-                </HStack>
+            <HStack
+              flexDirection={{ base: "column", md: "row" }}
+              textAlign="center"
+              gap={4}
+            >
+              <Text color="fg.muted" textStyle="md">
+                Metodologias Científicas Utilizadas
+              </Text>
+              <HStack
+                gap={{ base: 1, md: 4 }}
+                flexWrap="wrap"
+                align="center"
+                flex={1}
+              >
+                {["Big Five", "DISC", "MBTI", "Enneagram", "HEXACO"].map(
+                  (method) => (
+                    <Badge
+                      key={method}
+                      variant="outline"
+                      colorPalette="orange"
+                      px={3}
+                      py={1}
+                      fontWeight="semibold"
+                      color="orange.300"
+                      borderColor="orange.400"
+                    >
+                      {method}
+                    </Badge>
+                  )
+                )}
+              </HStack>
             </HStack>
 
             <Box textAlign="center">

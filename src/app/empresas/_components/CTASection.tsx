@@ -9,7 +9,6 @@ import {
   HStack,
   Image,
 } from "@chakra-ui/react";
-import Link from "next/link";
 import Icon from "@/components/shared/DynamicIcon";
 
 export function CTASection() {
@@ -102,17 +101,6 @@ export function CTASection() {
                     <Icon name="message-circle" size={20} />
                     Agendar Conversa
                   </Button>
-
-                  <Link href="/contato">
-                    <Button
-                      variant="ghost"
-                      size="lg"
-                      w={{ base: "full", sm: "auto" }}
-                    >
-                      <Icon name="calendar" size={20} />
-                      Outras Formas de Contato
-                    </Button>
-                  </Link>
                 </Stack>
               </VStack>
 

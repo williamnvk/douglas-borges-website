@@ -61,18 +61,16 @@ export const Header = () => {
               <strong>Douglas</strong>
             </span>
             &nbsp;<span>Borges</span>
-           
-            <Heading as="span" size="md" fontWeight="light"> {" | "}Psicólogo</Heading>
+            <Heading as="span" size="md" fontWeight="light">
+              {" "}
+              {" | "}Psicólogo
+            </Heading>
           </Heading>
         </Link>
-        <HStack
-          display={{ base: "none", md: "flex" }}
-          gap={0}
-          border={1}
-        >
+        <HStack display={{ base: "none", md: "flex" }} gap={0} border={1}>
           <Button
             as={Link}
-             size="sm"
+            size="sm"
             // @ts-expect-error: Type compatibility issue
             href="/"
             variant={isCurrentPage("personal") ? "outline" : "ghost"}
@@ -80,7 +78,7 @@ export const Header = () => {
             Para você
           </Button>
           <Button
-          size="sm"
+            size="sm"
             variant={isCurrentPage("company") ? "outline" : "ghost"}
             as={Link}
             // @ts-expect-error: Type compatibility issue
@@ -91,7 +89,7 @@ export const Header = () => {
           <Button
             variant={isCurrentPage("assessment") ? "outline" : "ghost"}
             as={Link}
-             size="sm"
+            size="sm"
             // @ts-expect-error: Type compatibility issue
             href="/assessment"
           >
@@ -109,7 +107,10 @@ export const Header = () => {
         >
           <Icon as={MenuIcon} />
         </IconButton>
-        <HStack display={{ base: "none", md: "flex" }} gap={{ base: 0, md: 1, lg: 1, xl: 4 }}>
+        <HStack
+          display={{ base: "none", md: "flex" }}
+          gap={{ base: 0, md: 1, lg: 1, xl: 4 }}
+        >
           <Button
             size="sm"
             variant={isCurrentPage("services") ? "outline" : "ghost"}
@@ -145,15 +146,6 @@ export const Header = () => {
             href="/insights"
           >
             Insights
-          </Button>
-          <Button
-            size="sm"
-            variant={isCurrentPage("contact") ? "outline" : "ghost"}
-            as={Link}
-            // @ts-expect-error: Type compatibility issue
-            href="/contato"
-          >
-            Contato
           </Button>
         </HStack>
 
@@ -301,19 +293,6 @@ export const Header = () => {
                       justifyContent="flex-start"
                     >
                       Insights
-                    </Button>
-                    <Button
-                      variant={isCurrentPage("contact") ? "solid" : "ghost"}
-                      as={Link}
-                      w="full"
-                      size="md"
-                      // @ts-expect-error: Type compatibility issue
-                      href="/contato"
-                      onClick={onClose}
-                      colorPalette={isCurrentPage("contact") ? "blue" : "gray"}
-                      justifyContent="flex-start"
-                    >
-                      Contato
                     </Button>
                   </VStack>
                 </VStack>

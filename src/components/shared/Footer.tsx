@@ -6,10 +6,7 @@ import {
   HStack,
   Link,
   VStack,
-  Button,
   SimpleGrid,
-  Heading,
-  Icon,
   Separator,
 } from "@chakra-ui/react";
 import {
@@ -18,383 +15,199 @@ import {
   MailIcon,
   MapPin,
   PhoneIcon,
-  HeartIcon,
-  CalendarIcon,
 } from "lucide-react";
 
-import GoToTop from "./GoToTop";
-
 function Footer() {
-  const bgColor = "gray.900";
-  const textColor = "gray.300";
-  const accentColor = "blue.400";
-
   return (
     <Box
       as="footer"
-      bg={bgColor}
+      bg="white"
+      borderTop="1px solid"
+      borderColor="gray.200"
       mt={16}
       role="contentinfo"
-      position="relative"
     >
-      {/* Gradient overlay */}
-      <Box
-        position="absolute"
-        top={0}
-        left={0}
-        right={0}
-        bottom={0}
-        bgGradient="linear(to-br, gray.900, gray.800)"
-        opacity={0.9}
-      />
-
       <Container
         maxW="container.xl"
-        py={{ base: 12, md: 16 }}
-        position="relative"
-        zIndex={1}
+        py={{ base: 8, md: 12 }}
       >
-        <VStack gap={{ base: 12, md: 16 }} align="stretch">
-          {/* Appointment Section */}
-          <Box
-            bg="gray.800"
-            p={{ base: 6, md: 8 }}
-            borderRadius="xl"
-            border="1px solid"
-            borderColor="gray.700"
-            position="relative"
-            overflow="hidden"
-          >
-            {/* Subtle background pattern */}
-            <Box
-              position="absolute"
-              top={-2}
-              right={-2}
-              w={20}
-              h={20}
-              bg={accentColor}
-              opacity={0.1}
-              borderRadius="full"
-              filter="blur(20px)"
-            />
-
-            <HStack
-              flexDirection={{ base: "column", md: "row" }}
-              w="full"
-              justify="space-between"
-              align="center"
-              gap={{ base: 6, md: 8 }}
+        <SimpleGrid
+          columns={{ base: 1, md: 3 }}
+          gap={{ base: 8, md: 12 }}
+          mb={8}
+        >
+          {/* Contato */}
+          <VStack align="flex-start" gap={4}>
+            <Text
+              fontWeight="600"
+              fontSize="lg"
+              color="gray.900"
+              mb={2}
             >
-              <VStack flex={1} align="flex-start" justify="center" gap={4}>
-                <Heading
-                  fontSize={{ base: "2xl", md: "4xl" }}
-                  fontWeight="700"
-                  textAlign="left"
-                  lineHeight="1.2"
-                  color="white"
-                >
-                  Atendimento
-                  <br />
-                  <Heading
-                    as="span"
-                    fontSize={{ base: "2xl", md: "4xl" }}
-                    fontWeight="300"
-                    color={accentColor}
-                  >
-                    Online e Presencial
-                  </Heading>
-                </Heading>
-                <Text color={textColor} fontSize={{ base: "md", md: "lg" }}>
-                  Flexibilidade para melhor atender você, onde estiver.
-                </Text>
-              </VStack>
-              <Button
-                as={Link}
-                // @ts-expect-error: Type compatibility issue
-                href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo%20e%20gostaria%20de%20agendar%20um%20atendimento."
-                leftIcon={<CalendarIcon size={20} />}
-                colorPalette="blue"
-                size="lg"
-                w={{ base: "full", md: "auto" }}
-                px={8}
-                py={6}
-                fontSize="md"
-                fontWeight="semibold"
-                _hover={{
-                  transform: "translateY(-2px)",
-                  boxShadow: "0 8px 25px rgba(59, 130, 246, 0.4)",
-                }}
-                transition="all 0.3s"
-                aria-label="Agendar consulta"
+              Contato
+            </Text>
+            
+            <Link
+              href="tel:+5542988381261"
+              color="gray.600"
+              fontSize="sm"
+              _hover={{ color: "blue.600" }}
+              display="flex"
+              alignItems="center"
+              gap={2}
+              aria-label="Telefone para contato"
+            >
+              <PhoneIcon size={16} />
+              (42) 98838-1261
+            </Link>
+            
+            <Link
+              href="mailto:contato@douglasborgespsicologo.com.br"
+              color="gray.600"
+              fontSize="sm"
+              _hover={{ color: "blue.600" }}
+              display="flex"
+              alignItems="center"
+              gap={2}
+              aria-label="Email para contato"
+            >
+              <MailIcon size={16} />
+              contato@douglasborgespsicologo.com.br
+            </Link>
+          </VStack>
+
+          {/* Redes Sociais */}
+          <VStack align="flex-start" gap={4}>
+            <Text
+              fontWeight="600"
+              fontSize="lg"
+              color="gray.900"
+              mb={2}
+            >
+              Redes Sociais
+            </Text>
+            
+            <Link
+              href="https://instagram.com/douglasborgespsicologo"
+              isExternal
+              color="gray.600"
+              fontSize="sm"
+              _hover={{ color: "blue.600" }}
+              display="flex"
+              alignItems="center"
+              gap={2}
+              aria-label="Instagram do Douglas Borges"
+            >
+              <InstagramIcon size={16} />
+              @douglasborgespsicologo
+            </Link>
+            
+            <Link
+              href="https://linkedin.com/in/douglasborgespsicologo"
+              isExternal
+              color="gray.600"
+              fontSize="sm"
+              _hover={{ color: "blue.600" }}
+              display="flex"
+              alignItems="center"
+              gap={2}
+              aria-label="LinkedIn do Douglas Borges"
+            >
+              <Linkedin size={16} />
+              Douglas Borges
+            </Link>
+          </VStack>
+
+          {/* Localização */}
+          <VStack align="flex-start" gap={4}>
+            <Text
+              fontWeight="600"
+              fontSize="lg"
+              color="gray.900"
+              mb={2}
+            >
+              Localização
+            </Text>
+            
+            <Box>
+              <Link
+                href="https://maps.app.goo.gl/X3jS4dC17Q1TtKC86"
                 isExternal
-                boxShadow="0 4px 15px rgba(59, 130, 246, 0.2)"
+                color="gray.600"
+                fontSize="sm"
+                _hover={{ color: "blue.600" }}
+                display="flex"
+                alignItems="flex-start"
+                gap={2}
+                mb={3}
+                aria-label="Endereço em Curitiba"
               >
-                Agendar Consulta
-              </Button>
-            </HStack>
-          </Box>
-
-          <Separator borderColor="gray.700" />
-
-          {/* Contact Grid */}
-          <SimpleGrid
-            columns={{ base: 1, md: 3 }}
-            gap={{ base: 8, md: 12 }}
-            py={{ base: 4, md: 6 }}
-          >
-            {/* Social Links */}
-            <VStack align="flex-start" gap={6} flex={1}>
-              <Text
-                fontWeight="bold"
-                fontSize={{ base: "xl", md: "xl" }}
-                color="white"
-                mb={2}
+                <MapPin size={16} style={{ marginTop: '2px', flexShrink: 0 }} />
+                <Box>
+                  <Text fontWeight="500" color="gray.700">Curitiba - PR</Text>
+                  <address style={{ fontStyle: 'normal' }}>
+                    <Text fontSize="xs" color="gray.500" lineHeight="1.4">
+                      Nex Coworking | Casa de Pedra<br />
+                      Alameda Pres. Taunay, 130, Batel
+                    </Text>
+                  </address>
+                </Box>
+              </Link>
+            </Box>
+            
+            <Box>
+              <Link
+                href="https://goo.gl/maps/CeckryQb4Z6s6rRr7"
+                isExternal
+                color="gray.600"
+                fontSize="sm"
+                _hover={{ color: "blue.600" }}
+                display="flex"
+                alignItems="flex-start"
+                gap={2}
+                aria-label="Endereço em Porto União"
               >
-                Redes Sociais
-              </Text>
+                <MapPin size={16} style={{ marginTop: '2px', flexShrink: 0 }} />
+                <Box>
+                  <Text fontWeight="500" color="gray.700">Porto União - SC</Text>
+                  <address style={{ fontStyle: 'normal' }}>
+                    <Text fontSize="xs" color="gray.500" lineHeight="1.4">
+                      Clínica Iluminary<br />
+                      Rua Germano Unger, 20, Cidade Nova
+                    </Text>
+                  </address>
+                </Box>
+              </Link>
+            </Box>
+          </VStack>
+        </SimpleGrid>
 
-              <VStack align="flex-start" gap={4} w="full">
-                <HStack
-                  as={Link}
-                  // @ts-expect-error: Type compatibility issue
-                  href="https://instagram.com/douglasborgespsicologo"
-                  isExternal
-                  gap={3}
-                  color={textColor}
-                  p={3}
-                  borderRadius="md"
-                  w="full"
-                  _hover={{
-                    color: accentColor,
-                    transform: "translateX(8px)",
-                    bg: "gray.800",
-                  }}
-                  transition="all 0.3s"
-                  aria-label="Perfil do Instagram"
-                >
-                  <InstagramIcon size={22} />
-                  <Text fontSize="md" fontWeight="medium">
-                    @douglasborgespsicologo
-                  </Text>
-                </HStack>
+        <Separator borderColor="gray.200" mb={6} />
 
-                <HStack
-                  as={Link}
-                  // @ts-expect-error: Type compatibility issue
-                  href="https://linkedin.com/in/douglasborgespsicologo"
-                  isExternal
-                  gap={3}
-                  color={textColor}
-                  p={3}
-                  borderRadius="md"
-                  w="full"
-                  _hover={{
-                    color: accentColor,
-                    transform: "translateX(8px)",
-                    bg: "gray.800",
-                  }}
-                  transition="all 0.3s"
-                  aria-label="Perfil do LinkedIn"
-                >
-                  <Linkedin size={22} />
-                  <Text fontSize="md" fontWeight="medium">
-                    Douglas Borges
-                  </Text>
-                </HStack>
-              </VStack>
-
-              <Text
-                fontWeight="bold"
-                fontSize={{ base: "xl", md: "xl" }}
-                color="white"
-                mt={4}
-                mb={2}
-              >
-                Contato
-              </Text>
-
-              <VStack align="flex-start" gap={4} w="full">
-                <HStack
-                  as={Link}
-                  // @ts-expect-error: Type compatibility issue
-                  href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo."
-                  isExternal
-                  gap={3}
-                  color={textColor}
-                  p={3}
-                  borderRadius="md"
-                  w="full"
-                  _hover={{
-                    color: accentColor,
-                    transform: "translateX(8px)",
-                    bg: "gray.800",
-                  }}
-                  transition="all 0.3s"
-                  aria-label="Ligar para telefone"
-                >
-                  <PhoneIcon size={22} />
-                  <Text fontSize="md" fontWeight="medium">
-                    +55 (42) 98838-1261
-                  </Text>
-                </HStack>
-
-                <HStack
-                  as={Link}
-                  // @ts-expect-error: Type compatibility issue
-                  href="mailto:contato@douglasborgespsicologo.com.br"
-                  isExternal
-                  gap={3}
-                  color={textColor}
-                  p={3}
-                  borderRadius="md"
-                  w="full"
-                  _hover={{
-                    color: accentColor,
-                    transform: "translateX(8px)",
-                    bg: "gray.800",
-                  }}
-                  transition="all 0.3s"
-                  aria-label="Enviar email"
-                >
-                  <MailIcon size={22} />
-                  <Text fontSize="md" fontWeight="medium">
-                    contato@douglasborgespsicologo.com.br
-                  </Text>
-                </HStack>
-              </VStack>
-            </VStack>
-
-            {/* Addresses */}
-            <VStack
-              align="flex-start"
-              gap={6}
-              flex={1}
-              gridColumn={{ base: 1, md: "span 2" }}
+        {/* Footer Bottom */}
+        <Flex
+          direction={{ base: "column", sm: "row" }}
+          justify={{ base: "center", sm: "space-between" }}
+          align="center"
+          gap={4}
+        >
+          <Text fontSize="sm" color="gray.500" textAlign={{ base: "center", sm: "left" }}>
+            &copy; {new Date().getFullYear()} Douglas Borges - Psicólogo. Todos os direitos reservados.
+          </Text>
+          
+          <HStack gap={4} fontSize="sm">
+            <Link
+              href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20um%20atendimento."
+              isExternal
+              color="blue.600"
+              fontWeight="500"
+              _hover={{ color: "blue.700" }}
+              aria-label="Agendar consulta pelo WhatsApp"
             >
-              <Text
-                fontWeight="bold"
-                fontSize={{ base: "xl", md: "xl" }}
-                color="white"
-                mb={2}
-              >
-                Localização
-              </Text>
-
-              <SimpleGrid columns={{ base: 1, md: 2 }} gap={6} w="full">
-                <VStack
-                  as={Link}
-                  // @ts-expect-error: Type compatibility issue
-                  href="https://maps.app.goo.gl/X3jS4dC17Q1TtKC86"
-                  isExternal
-                  align="flex-start"
-                  gap={3}
-                  p={6}
-                  bg="gray.800"
-                  borderRadius="lg"
-                  border="1px solid"
-                  borderColor="gray.700"
-                  w="full"
-                  _hover={{
-                    transform: "translateY(-4px)",
-                    boxShadow: "0 8px 25px rgba(0, 0, 0, 0.3)",
-                    borderColor: accentColor,
-                  }}
-                  transition="all 0.3s"
-                  aria-label="Endereço em Curitiba"
-                >
-                  <HStack color={accentColor} mb={2}>
-                    <MapPin size={22} />
-                    <Text fontSize="md" fontWeight="semibold">
-                      Curitiba - PR
-                    </Text>
-                  </HStack>
-                  <address>
-                    {[
-                      "Nex Coworking | Casa de Pedra",
-                      "Alameda Pres. Taunay, 130, Batel",
-                      "Curitiba · PR",
-                    ].map((item) => (
-                      <Text
-                        key={item}
-                        fontSize="sm"
-                        color={textColor}
-                        lineHeight="1.5"
-                      >
-                        {item}
-                      </Text>
-                    ))}
-                  </address>
-                </VStack>
-
-                <VStack
-                  as={Link}
-                  // @ts-expect-error: Type compatibility issue
-                  href="https://goo.gl/maps/CeckryQb4Z6s6rRr7"
-                  isExternal
-                  align="flex-start"
-                  gap={3}
-                  p={6}
-                  bg="gray.800"
-                  borderRadius="lg"
-                  border="1px solid"
-                  borderColor="gray.700"
-                  w="full"
-                  _hover={{
-                    transform: "translateY(-4px)",
-                    boxShadow: "0 8px 25px rgba(0, 0, 0, 0.3)",
-                    borderColor: accentColor,
-                  }}
-                  transition="all 0.3s"
-                  aria-label="Endereço em Porto União"
-                >
-                  <HStack color={accentColor} mb={2}>
-                    <MapPin size={22} />
-                    <Text fontSize="md" fontWeight="semibold">
-                      Gêmeas do Iguaçu e Região
-                    </Text>
-                  </HStack>
-                  <address>
-                    {[
-                      "Clínica Iluminary",
-                      "Rua Germano Unger, 20, Cidade Nova",
-                      "Porto União · SC",
-                    ].map((item) => (
-                      <Text
-                        key={item}
-                        fontSize="sm"
-                        color={textColor}
-                        lineHeight="1.5"
-                      >
-                        {item}
-                      </Text>
-                    ))}
-                  </address>
-                </VStack>
-              </SimpleGrid>
-            </VStack>
-          </SimpleGrid>
-
-          <Separator borderColor="gray.700" />
-
-          {/* Footer Bottom */}
-          <Flex
-            direction={{ base: "column", md: "row" }}
-            justify="space-between"
-            align="center"
-            gap={4}
-            pt={4}
-          >
-            <HStack gap={2}>
-              <Text fontSize="sm" color={textColor}>
-                &copy; {new Date().getFullYear()} Douglas Borges. Todos os
-                direitos reservados.
-              </Text>
-              <HeartIcon />
-            </HStack>
-
-            <GoToTop />
-          </Flex>
-        </VStack>
+              Agendar Consulta
+            </Link>
+          </HStack>
+        </Flex>
       </Container>
     </Box>
   );

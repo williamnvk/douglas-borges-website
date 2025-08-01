@@ -1,11 +1,4 @@
-import {
-  Box,
-  VStack,
-  Heading,
-  Text,
-  Flex,
-  Button,
-} from "@chakra-ui/react";
+import { Box, VStack, Heading, Text, Flex, Button } from "@chakra-ui/react";
 
 export function FinalCTA() {
   return (
@@ -32,9 +25,8 @@ export function FinalCTA() {
           color="gray.700"
           maxW="700px"
         >
-          Decisões sobre pessoas baseadas apenas em intuição podem
-          resultar em custos elevados. O assessment comportamental
-          oferece{" "}
+          Decisões sobre pessoas baseadas apenas em intuição podem resultar em
+          custos elevados. O assessment comportamental oferece{" "}
           <strong>dados objetivos para decisões mais seguras</strong>.
           Interessado em outros serviços? Visite nossa{" "}
           <Text
@@ -45,8 +37,11 @@ export function FinalCTA() {
             _hover={{ color: "blue.500" }}
             fontWeight="600"
           >
-            <a href="/contato">página de contato</a>
-          </Text>.
+            <a href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20do%20Douglas%20Borges%20|%20Psic%C3%B3logo%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Assessment%20Comportamental%20para%20minha%20empresa">
+              página de contato
+            </a>
+          </Text>
+          .
         </Text>
 
         <Flex gap={{ base: 3, sm: 4 }} flexWrap="wrap" justify="center">
@@ -85,8 +80,8 @@ export function FinalCTA() {
 
         <Text fontSize={{ base: "xs", sm: "sm" }} color="fg.muted">
           <strong>Validade da proposta:</strong> 10 dias úteis |
-          <strong> Pagamento:</strong> PIX, Cartão de Crédito ou boleto à vista |
-          <strong> Sigilo:</strong> Confidencialidade total
+          <strong> Pagamento:</strong> PIX, Cartão de Crédito ou boleto à vista
+          |<strong> Sigilo:</strong> Confidencialidade total
         </Text>
       </VStack>
     </Box>
