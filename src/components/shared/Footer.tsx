@@ -89,7 +89,8 @@ function Footer() {
             
             <Link
               href="https://instagram.com/douglasborgespsicologo"
-              isExternal
+              target="_blank"
+              referrerPolicy="no-referrer"
               color="gray.600"
               fontSize="sm"
               _hover={{ color: "blue.600" }}
@@ -104,7 +105,8 @@ function Footer() {
             
             <Link
               href="https://linkedin.com/in/douglasborgespsicologo"
-              isExternal
+              target="_blank"
+              referrerPolicy="no-referrer"
               color="gray.600"
               fontSize="sm"
               _hover={{ color: "blue.600" }}
@@ -132,7 +134,8 @@ function Footer() {
             <Box>
               <Link
                 href="https://maps.app.goo.gl/X3jS4dC17Q1TtKC86"
-                isExternal
+                target="_blank"
+                referrerPolicy="no-referrer"
                 color="gray.600"
                 fontSize="sm"
                 _hover={{ color: "blue.600" }}
@@ -158,7 +161,8 @@ function Footer() {
             <Box>
               <Link
                 href="https://goo.gl/maps/CeckryQb4Z6s6rRr7"
-                isExternal
+                target="_blank"
+                referrerPolicy="no-referrer"
                 color="gray.600"
                 fontSize="sm"
                 _hover={{ color: "blue.600" }}
@@ -198,7 +202,8 @@ function Footer() {
           <HStack gap={4} fontSize="sm">
             <Link
               href="https://wa.me/5542988381261?text=Ol%C3%A1!%20Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20um%20atendimento."
-              isExternal
+              target="_blank"
+              referrerPolicy="no-referrer"
               color="blue.600"
               fontWeight="500"
               _hover={{ color: "blue.700" }}
