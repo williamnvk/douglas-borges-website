@@ -422,7 +422,7 @@ export default function Home() {
                 fontWeight="bold"
                 textAlign="center"
               >
-                Transforme Pressão em Performance. Lucre Mais, Estresse Menos.
+                Transforme Pressão em Performance. Lucre Mais, Se Estresse Menos.
               </Heading>
               <Text
                 textStyle={{ base: "md", md: "lg" }}
@@ -437,7 +437,7 @@ export default function Home() {
             </VStack>
 
             <SimpleGrid
-              columns={{ base: 1, md: 2, lg: 3 }}
+              columns={{ base: 1, md: 2, lg: 4 }}
               gap={{ base: 2, md: "0" }}
               rounded={{ base: "none", md: "3xl" }}
               bg={{
@@ -455,13 +455,7 @@ export default function Home() {
                     "Líderes aumentam produtividade em 40% e reduzem estresse em 70%. Para Diretores, Executivos e Gestores que precisam entregar resultados sem se esgotar.",
                   metric: "40% mais produtividade",
                 },
-                {
-                  icon: "plus",
-                  title: "Consultoria em Inteligência Emocional",
-                  description:
-                    "Equipes com alta IE geram 25% mais receita. Treinamentos práticos que transformam conflitos em colaboração e pressão em performance.",
-                  metric: "+25% de receita",
-                },
+                
                 {
                   icon: "scale",
                   title: "Programa de Retenção de Talentos",
@@ -473,7 +467,7 @@ export default function Home() {
                   icon: "user",
                   title: "Desenvolvimento de Liderança Executiva",
                   description:
-                    "Líderes treinados aumentam engajamento das equipes em 35%. Metodologia exclusiva baseada em 10 anos de experiência com C-Level.",
+                    "Entenda o que é preciso desenvolver nos líderes. Líderes treinados aumentam engajamento das equipes em 35%. Metodologia exclusiva baseada em 10 anos de experiência com C-Level.",
                   metric: "+35% engajamento",
                 },
                 {
@@ -483,15 +477,8 @@ export default function Home() {
                     "Tomada de decisão 50% mais assertiva. Acompanhamento 1:1 para Executivos e Diretores que precisam equilibrar crescimento empresarial com propósito de vida.",
                   metric: "+50% assertividade",
                 },
-                {
-                  icon: "handshake",
-                  title: "Assessment Comportamental Científico",
-                  description:
-                    "Elimine 89% dos erros de contratação. Metodologias Big Five, DISC e MBTI para identificar talentos de alta performance. ROI comprovado de 42.700%.",
-                  metric: "R$ 700 por avaliação",
-                },
+               
               ]
-                .slice(0, 6)
                 .map((service, i) => (
                   <Box
                     key={`service-${i}`}
